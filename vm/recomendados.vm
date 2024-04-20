@@ -1,0 +1,105 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Recomendados</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" type="text/css"
+    href="https://www.mundomarcruceros.com/wlgs/prtltmmc-css/dynamic-styles-mmc-20220304.css">
+  <link rel="stylesheet" type="text/css" href="https://www.mundomarcruceros.com/wlgs/prtltmmc-css/styles-vvs.css">
+  <link rel="stylesheet" type="text/css" href="https://www.mundomarcruceros.com/digitup/styles-vm.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+
+<body>
+
+  <!--
+<table border="1">
+#foreach( $item in $items )
+    <tr>
+        <td>$item.cruise</td>
+        <td>$item.ship</td>
+        <td>$item.leading</td>
+        <td>$item.flight</td>
+        <td>$item.transfer</td>
+        <td>$item.promocode</td>
+        <td>$item.promodescription</td>
+        <td><img src="$item.shipimage" width="150px"></td>
+        <td><img src="$item.map" width="150px"></td>
+        <td><img src="$item.companylogo" width="150px"></td>
+        <td>
+#foreach( $port in $item.ports )
+ $port.description
+#end
+        </td>
+        <td>$item.link</td>
+    </tr>
+#end
+</table>
+-->
+  <div class="prtlt-digitup-api-content">
+    <div class="recommendations__items slider swiper">
+      <div class="swiper-wrapper">
+        #foreach( $item in $items )
+        <div class="recommendations__item swiper-slide">
+          <img src="$item.shipimage" alt="" class="object-fit">
+          <div class="recommendations__item-wrapper">
+            <div class="recommendations__item-top">
+              <div class="recommendations__item-top_line">
+                <span>$item.startendtrip</span>
+                <img class="is_mobile more_info_recommendation_mobile"
+                  src="https://cdn.mundomarcruceros.com/wlgs/mundomar-images/info.svg" alt="">
+              </div>
+              <h2>$item.cruise</h2>
+              <ul>
+                <li>$item.ship</li>
+                <li>$item.fromdate</li>
+                <li>$item.duration</li>
+              </ul>
+              <p class="place">
+                #set($size = $item.ports.size())
+                #set($counter = 0)
+                #foreach( $port in $item.ports )
+                $port.description
+                #set($counter = $counter + 1)
+                #if($counter < $size) • #end #end </p>
+            </div>
+            <div class="recommendations__item-bottom_side">
+              <div class="recommendations__item-bottom">
+                <span>$message.leadingfrom</span>
+                <p>$item.leading</p>
+              </div>
+              <div class="recommendations__promo is_desktop">
+                <div class="recommendations__promo-images">
+                  #if($item.flight)
+                  <img src="https://cdn.mundomarcruceros.com/wlgs/mundomar-images/airplan.svg" alt="">
+                  #end
+                  #if($item.transfer)
+                  <img src="https://cdn.mundomarcruceros.com/wlgs/mundomar-images/home.svg" alt="">
+                  #end
+                </div>
+                #if($item.promocode)
+                <div class="recommendations__promo-text">
+                  <img src="https://cdn.mundomarcruceros.com/wlgs/mundomar-images/percent.svg" alt="">
+                  <span>$item.promodescription</span>
+                  <p class="promo">$item.promocode</p>
+                </div>
+                #end
+              </div>
+              <a href="$item.link" class="btn">$message.morebutton</a>
+            </div>
+          </div>
+        </div>
+        #end
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+</body>
+
+</html>

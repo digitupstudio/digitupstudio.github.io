@@ -12,7 +12,6 @@
   box-sizing: border-box;
 }
 
-/* Links */
 a,
 a:link,
 a:visited {
@@ -23,7 +22,6 @@ a:hover {
   text-decoration: none;
 }
 
-/* Common */
 aside,
 nav,
 footer,
@@ -63,7 +61,6 @@ address {
   font-style: normal;
 }
 
-/* Form */
 input,
 textarea,
 button,
@@ -729,12 +726,12 @@ body {
   .offers__item-left p:hover .hide-places::before {
     position: absolute;
     content: "";
-    bottom: -8px;
+    bottom: -7px;
     left: 50%;
     transform: translateX(-50%);
     width: 34px;
     height: 8px;
-    background: url("../img/vector.png") no-repeat;
+    background: url("../img/arrow-down.svg") no-repeat;
   }
 }
 
@@ -867,7 +864,7 @@ body {
   background-repeat: no-repeat;
   top: -2px;
   right: 0;
-  background: url("../img/down.png") no-repeat;
+  background: url("../img/down.svg") no-repeat;
 }
 
 .offers__item-left-bottom .data.visible+.calendar {
@@ -876,7 +873,7 @@ body {
 }
 
 .offers__item-left-bottom .data.visible::after {
-  background: url("../img/up.png") no-repeat;
+  background: url("../img/up.svg") no-repeat;
 }
 
 .offers__item-left-bottom .time::before {
@@ -991,12 +988,12 @@ body {
   .offers__item-right-text:hover span::before {
     position: absolute;
     content: "";
-    bottom: -8px;
+    bottom: -7px;
     left: 50%;
     transform: translateX(-50%);
     width: 34px;
     height: 8px;
-    background: url("../img/vector.png") no-repeat;
+    background: url("../img/arrow-down.svg") no-repeat;
   }
 }
 
@@ -1093,11 +1090,11 @@ body {
     background-repeat: no-repeat;
     top: 9px;
     right: 0;
-    background: url("../img/chevron-down.png") no-repeat;
+    background: url("../img/chevron-down.svg") no-repeat;
   }
 
   .offers__item-right-bottom div .price.visible::after {
-    background: url("../img/chevron-up.png") no-repeat;
+    background: url("../img/chevron-up.svg") no-repeat;
   }
 }
 
@@ -1233,11 +1230,11 @@ body {
 }
 
 .offers .hovered .offers__item-left-bottom .data::after {
-  background: url("../img/down-white.png") no-repeat;
+  background: url("../img/down-white.svg") no-repeat;
 }
 
 .offers .hovered .offers__item-left-bottom .data.visible::after {
-  background: url("../img/up-white.png") no-repeat;
+  background: url("../img/up-white.svg") no-repeat;
 }
 
 .offers .hovered .offers__item-right-images .image-static {
@@ -1258,11 +1255,11 @@ body {
 }
 
 .offers .hovered .offers__item-right-bottom .price::after {
-  background: url("../img/chevron-down.png") no-repeat;
+  background: url("../img/chevron-down.svg") no-repeat;
 }
 
 .offers .hovered .offers__item-right-bottom .price.visible::after {
-  background: url("../img/chevron-up.png") no-repeat;
+  background: url("../img/chevron-up.svg") no-repeat;
 }
 
 .offers .pagination {
@@ -1603,7 +1600,7 @@ body {
   height: 17px;
   top: 18px;
   left: 0;
-  background: url("../img/map1.svg") no-repeat;
+  background: url("../img/map.svg") no-repeat;
 }
 
 .recommendations__item-wrapper {

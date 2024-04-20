@@ -1,0 +1,2095 @@
+/* Base */
+/* Reset and base styles  */
+* {
+  padding: 0px;
+  margin: 0px;
+  border: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a,
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+aside,
+nav,
+footer,
+header,
+section,
+main {
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+ul,
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+address {
+  font-style: normal;
+}
+
+input,
+textarea,
+button,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button,
+input[type=submit] {
+  display: inline-block;
+  box-shadow: none;
+  background-color: transparent;
+  background: none;
+  cursor: pointer;
+}
+
+input:focus,
+input:active,
+button:focus,
+button:active {
+  outline: none;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+label {
+  cursor: pointer;
+}
+
+legend {
+  display: block;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f2f2f2;
+  font-family: "Archivo", sans-serif;
+}
+
+.prtlt-digitup-api .prtlt-digitup-api-options {
+  &::after{
+    content: 'Configuración';
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    cursor: pointer;
+    color: white;
+    background-color: #3F83F8;
+    padding: 4px 8px;
+    border-radius: 8px;
+  }
+}
+.prtlt-digitup-api .main_content {
+    margin: 48px 0;
+}
+.prtlt-digitup-api .title {
+  color: #333;
+  text-align: center;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0 auto;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .prtlt-digitup-api .title {
+    padding: 0 12.5px;
+    font-size: 24px;
+    line-height: 1.2;
+  }
+}
+
+.prtlt-digitup-api .none {
+  display: none !important;
+}
+
+.prtlt-digitup-api .visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.prtlt-digitup-api .no-scroll {
+  overflow-y: hidden;
+}
+
+html,
+.prtlt-digitup-api body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.prtlt-digitup-api .footer {
+  margin-top: auto;
+}
+
+.prtlt-digitup-api .footer {
+  padding: 60px 0;
+  background-color: #e3e3e3;
+}
+
+.prtlt-digitup-api .carts {
+  padding: 31px 0 70px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .prtlt-digitup-api .carts {
+    padding: 31px 0 40px;
+  }
+}
+
+.prtlt-digitup-api .carts .inner {
+  width: 100%;
+  max-width: 1226px;
+  padding: 0 16px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .prtlt-digitup-api .carts .inner {
+    padding: 0;
+  }
+}
+
+.prtlt-digitup-api .carts__items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px 18px;
+  margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+  .prtlt-digitup-api .carts__items {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    gap: 18px;
+    scrollbar-color: transparent transparent;
+    margin-top: 24px;
+    padding: 0 16px;
+  }
+}
+
+.prtlt-digitup-api .carts__items:hover a {
+  text-decoration: none;
+}
+
+.prtlt-digitup-api .carts__item {
+  width: 100%;
+  max-width: 285px;
+  border-radius: 24px;
+  height: 100%;
+  min-height: 360px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+
+.prtlt-digitup-api .carts__item .btn {
+  display: flex;
+  width: 100%;
+  padding: 12px 40px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 27px;
+  border: 1px solid #FFF;
+  color: #FFF;
+  font-family: "Archivo", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 0 auto;
+}
+
+.prtlt-digitup-api .carts__item:hover .btn {
+  display: flex;
+}
+
+.prtlt-digitup-api .carts__item:hover .carts__item-wrapper {
+  background-color: rgba(43, 103, 246, 0.7);
+}
+
+/* .carts__item:hover .carts__item-bottom {
+  margin-bottom: 60px;
+} */
+.prtlt-digitup-api .carts__item-wrapper {
+  position: relative;
+  border-radius: 24px;
+  background-color: rgba(0, 0, 0, 0.32);
+  height: 100%;
+  min-height: 360px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  transition: all 0.2s;
+}
+
+@media (max-width: 768px) {
+  .prtlt-digitup-api .carts__item-wrapper {
+    width: 285px;
+    max-width: 100%;
+  }
+}
+
+.prtlt-digitup-api .carts__item img {
+  position: absolute;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-position: center top;
+  border-radius: 24px;
+}
+
+.prtlt-digitup-api .carts__item-top span {
+  color: #FFF;
+  font-family: "Archivo", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.prtlt-digitup-api .carts__item-top h2 {
+  color: #FFF;
+  font-family: "Archivo", sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-top: 6px;
+}
+
+.prtlt-digitup-api .carts__item-bottom_side {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.prtlt-digitup-api .carts__item-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.prtlt-digitup-api .carts__item-bottom span {
+  color: #FFF;
+  text-align: right;
+  font-family: "Archivo", sans-serif;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+
+.prtlt-digitup-api .carts__item-bottom span:last-of-type {
+  line-height: 10px;
+}
+
+.prtlt-digitup-api .carts__item-bottom p {
+  color: #FFF;
+  font-family: "Archivo", sans-serif;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 38px;
+  margin-bottom: 4px;
+  text-align: right;
+}
+
+.prtlt-digitup-api .carts__item .btn {
+  display: none;
+}
+
+@media(max-width: 768px) {
+  .prtlt-digitup-api .carts__item .btn {
+    display: flex;
+  }
+}
+
+.prtlt-digitup-api .carts__button {
+  display: flex;
+  padding: 12px 24px;
+  align-items: flex-start;
+  gap: 8px;
+  border-radius: 100px;
+  background-color: #FFF;
+  margin: 40px auto 0;
+  width: fit-content;
+  transition: all 0.2s;
+}
+
+@media (max-width: 768px) {
+  .prtlt-digitup-api .carts__button {
+    display: none;
+  }
+}
+
+.prtlt-digitup-api .carts__button a {
+  display: flex;
+  height: 32px;
+  padding: 12px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  border-radius: 100px;
+  border: 1px solid #EBEBEB;
+  color: #4D515D;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  /* 142.857% */
+  position: relative;
+  transition: all 0.2s;
+}
+
+.prtlt-digitup-api .carts__button a:hover {
+  background-color: #2B67F6;
+  color: #fff;
+}
+
+.prtlt-digitup-api .carts__button a:hover::before {
+  background: url("https://cdn.mundomarcruceros.com/wlgs/mundomar-images/plus-white.svg") no-repeat;
+}
+
+.prtlt-digitup-api .carts__button a::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: url("https://cdn.mundomarcruceros.com/wlgs/mundomar-images/plus.svg") no-repeat;
+}
+
+.prtlt-digitup-api .offers {
+  padding: 70px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .prtlt-digitup-api .offers {
+    padding: 40px 0;
+  }
+}
+
+.prtlt-digitup-api .offers .inner {
+  width: 100%;
+  max-width: 1224px;
+  padding: 0 16px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1100px) {
+  .prtlt-digitup-api .offers .inner {
+    padding: 0 13px;
+  }
+}
+
+.prtlt-digitup-api .offers__calendar {
+  position: relative;
+}
+
+.prtlt-digitup-api .offers__items {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .prtlt-digitup-api .offers__items {
+    margin-top: 24px;
+    gap: 8px;
+  }
+}
+
+.prtlt-digitup-api .offers__item {
+  display: flex;
+  gap: 16px;
+  height: 100%;
+  max-height: 141px;
+}
+
+@media (max-width: 1100px) {
+  .prtlt-digitup-api .offers__item {
+    max-height: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .prtlt-digitup-api .offers__item {
+    gap: 8px;
+  }
+}
+
+.prtlt-digitup-api .offers__item-image {
+  position: relative;
+  width: 30%;
+  max-width: 300px;
+}
+
+@media (max-width: 1100px) {
+  .prtlt-digitup-api .offers__item-image {
+    width: 100%;
+    max-width: 30%;
+    height: 100%;
+  }
+}
+
+@media (max-width: 568px) {
+  .prtlt-digitup-api .offers__item-image {
+    max-width: 104px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
+  }
+}
+
+.prtlt-digitup-api .offers__item-image .image-static {
+  height: 100%;
+  min-height: 141px;
+  object-fit: cover;
+  border-radius: 16px;
+  width: 100%;
+}
+.prtlt-digitup-api .offers__item-image .image-hover {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  height: 100%;
+}
+
+@media (max-width: 1100px) {
+  .prtlt-digitup-api .offers__item-image .image-static {
+    width: 100%;
+
+  }
+}
+
+@media (max-width: 768px) {
+  .prtlt-digitup-api .offers__item-image .image-static {
+    height: 100%;
+    min-height: auto;
+  }
+}
+
+@media (min-width: 769px) {
+  .prtlt-digitup-api .offers__item-image {
+    height: auto;
+  }
+}
+
+@media (max-width: 568px) {
+  .prtlt-digitup-api .offers__item-image .image-static {
+    min-height: 91px;
+  }
+}
+
+@media (max-width: 400px) {
+  .prtlt-digitup-api .offers__item-image .image-static {
+    min-height: 81px;
+  }
+}
+
+.prtlt-digitup-api .offers__item-image p {
+  background: #fff;
+  padding: 5px 7px;
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  border-radius: 16px;
+}
+.prtlt-digitup-api .offers__item-image p img.image-before {
+  max-height: 18px;
+}
+
+@media (max-width: 768px) {
+  .prtlt-digitup-api .offers__item-image p {
+    position: relative;
+    top: auto;
+    left: auto;
+    text-align: center;
+    margin-top: 8px;
+    min-height: 29px;
+    border-radius: 10px;
+  }
+}
+
+.prtlt-digitup-api .offers__item-image .image-hover {
+  display: none;
+}
+
+@media (max-width: 568px) {
+  .prtlt-digitup-api .offers__item-image .image-hover {
+    min-height: 91px;
+  }
+}
+
+@media (max-width: 400px) {
+  .prtlt-digitup-api .offers__item-image .image-hover {
+    min-height: 81px;
+  }
+}
+
+.prtlt-digitup-api .offers__item-image:hover .image-hover {
+  display: block;
+}
+
+.offers__item-image:hover .image-static{
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .prtlt-digitup-api .offers__item-image:hover .image-before {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.prtlt-digitup-api .offers__item-text {
+  border-radius: 16px;
+  background: #FFF;
+  display: flex;
+  padding: 24px;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 963px;
+  transition: all 0.2s;
+}
+
+@media (max-width: 1100px) {
+  .prtlt-digitup-api .offers__item-text {
+    max-width: 80%;
+    padding: 15px;
+    align-items: flex-end;
+  }
+}
+
+@media (max-width: 768px) {
+  .prtlt-digitup-api .offers__item-text {
+    max-width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 400px) {
+  .prtlt-digitup-api .offers__item-text {
+    max-width: 238px;
+    padding: 8px;
+    align-items: flex-start;
+  }
+}
+
+.prtlt-digitup-api .offers__item-left h3 {
+  color: #333;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+@media (max-width: 568px) {
+  .prtlt-digitup-api .offers__item-left h3 {
+    font-size: 14px;
+  }
+}
+
+.prtlt-digitup-api .offers__item-left .hide-places {
+  display: none;
+}
+
+.prtlt-digitup-api .offers__item-left h4 {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .prtlt-digitup-api .offers__item-left h4 {
+    display: block;
+    color: var(--Black-color, #333);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    /* 133.333% */
+    margin-top: 2px;
+  }
+
+  .prtlt-digitup-api .offers__item-left h4 strong {
+    font-weight: 600;
+  }
+}
+
+.prtlt-digitup-api .offers__item-left p {
+  color: #2B67F6;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  /* 125% */
+  margin-top: 8px;
+  position: relative;
+  cursor: pointer;
+}
+
+.prtlt-digitup-api .offers__item-left p span {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .prtlt-digitup-api .offers__item-left p span {
+    display: inline-block;
+    font-weight: 600;
+  }
+}
+
+@media (max-width: 568px) {
+  .prtlt-digitup-api .offers__item-left p {
+    font-size: 12px;
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 769px) {
+  .prtlt-digitup-api .offers__item-left p:hover .hide-places {
+    position: absolute;
+    bottom: 22px;
+    left: -77px;
+    display: flex;
+    padding: 8px 12px;
+    align-items: center;
+    border-radius: 8px;
+    background: #E3EBFF;
+    color: var(--black, #000);
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    /* 138.462% */
+    width: 302px;
+  }
+}
+
+@media (max-width: 768px) {
+  .prtlt-digitup-api .offers__item-left p:hover .hide-places {
+    bottom: 21px;
+    left: 0;
+    padding: 5px;
+    width: 224px;
+    font-size: 11px;
+    line-height: 14px;
+    text-align: center;
+  }
+}
+
+@media (min-width: 769px) {
+  .prtlt-digitup-api .offers__item-left p:hover .hide-places::before {
+    position: absolute;
+    content: "";
+    bottom: -7px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 34px;
+    height: 8px;
+    background: url("https://cdn.mundomarcruceros.com/wlgs/mundomar-images/arrow-down.svg") no-repeat;
+  }
+}
+
+.prtlt-digitup-api .offers__item-left-bottom {
+  display: flex;
+  gap: 24px;
+  margin-top: 18px;
+}
+
+@media (max-width: 1100px) {
+  .prtlt-digitup-api .offers__item-left-bottom {
+    gap: 10px;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .prtlt-digitup-api .offers__item-left-bottom {
+    display: none;
+  }
+}
+
+.prtlt-digitup-api .offers__item-left-bottom .calendar {
+  display: none;
+  position: absolute;
+  right: -88%;
+  border-radius: 8px;
+  background: #E3EBFF;
+  box-shadow: 0px 2px 4px -2px rgba(0, 0, 0, 0.05), 0px 4px 6px -1px rgba(0, 0, 0, 0.1);
+  width: 286px;
+  z-index: 2;
+  max-height: 134px;
+  overflow-y: auto;
+}
+
+.prtlt-digitup-api .offers__item-left-bottom .calendar_data {
+  padding: 0;
+  color: var(--Black-color, #333) !important;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  /* 125% */
+}
+
+.prtlt-digitup-api .offers__item-left-bottom .calendar_price {
+  color: var(--Black-color, #333) !important;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  /* 111.111% */
+}
+
+.prtlt-digitup-api .offers__item-left-bottom .calendar_item {
+  cursor: pointer;
+  padding: 12px 16px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid #D8E3FF;
+  height: 44px;
+}
+
+.prtlt-digitup-api .offers__item-left-bottom .calendar_item:hover {
+  background: #d6dff7;
+}
+
+.prtlt-digitup-api .offers__item-left-bottom .calendar_item:last-of-type {
+  border-bottom: 0;
+}
+
+.prtlt-digitup-api .offers__item-left-bottom .calendar_item:last-of-type:hover {
+  border-radius: 0 0 8px 8px;
+}
+
+.prtlt-digitup-api .offers__item-left-bottom .calendar_item:first-of-type:hover {
+  border-radius: 8px 8px 0 0;
+}
+
+.prtlt-digitup-api .offers__item-left-bottom p {
+  color: var(--Black-color, #333);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  /* 111.111% */
+  position: relative;
+  padding-left: 28px;
+}
+
+@media (max-width: 1100px) {
+  .prtlt-digitup-api .offers__item-left-bottom p {
+    font-size: 15px;
+  }
+}
+
+.prtlt-digitup-api .offers__item-left-bottom p::before {
+  position: absolute;
+  content: "";
+  width: 22px;
+  height: 22px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  top: 0;
+  left: 0;
+}
+
+.prtlt-digitup-api .offers__item-left-bottom .ship::before {
+  background: url("https://cdn.mundomarcruceros.com/wlgs/mundomar-images/ship.svg") no-repeat;
+}
+
+.prtlt-digitup-api .offers__item-left-bottom .data {
+  padding-right: 24px;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.prtlt-digitup-api .offers__item-left-bottom .data::before {
+  background: url("https://cdn.mundomarcruceros.com/wlgs/mundomar-images/calendar.svg") no-repeat;
+}
+
+.prtlt-digitup-api .offers__item-left-bottom .data::after {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  top: -2px;
+  right: 0;
+  background: url("https://cdn.mundomarcruceros.com/wlgs/mundomar-images/down.svg") no-repeat;
+}
+
+.prtlt-digitup-api .offers__item-left-bottom .data.visible+.calendar {
+  display: flex !important;
+  flex-direction: column;
+}
+
+.prtlt-digitup-api .offers__item-left-bottom .data.visible::after {
+  background: url("https://cdn.mundomarcruceros.com/wlgs/mundomar-images/up.svg") no-repeat;
+}
+
+.prtlt-digitup-api .offers__item-left-bottom .time::before {
+  background: url("https://cdn.mundomarcruceros.com/wlgs/mundomar-images/clock.svg") no-repeat;
+}
+
+.prtlt-digitup-api .offers__item-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+@media (max-width: 768px) {
+  .prtlt-digitup-api .offers__item-right {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+.prtlt-digitup-api .offers__item-right-top {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .prtlt-digitup-api .offers__item-right-top {
+    align-items: flex-start;
+    flex-direction: column-reverse;
+  }
+}
+
+.prtlt-digitup-api .offers__item-right-images {
+  display: flex;
+  gap: 12px;
+}
+
+@media (max-width: 768px) {
+  .prtlt-digitup-api .offers__item-right-images {
+    flex-direction: row-reverse;
+    gap: 8px;
+  }
+}
+
+.prtlt-digitup-api .offers__item-right-images .image-static {
+  display: block;
+}
+
+.prtlt-digitup-api .offers__item-right-images .image-hover {
+  display: none;
+}
+
+.prtlt-digitup-api .offers__item-right-text {
+  display: flex;
+  padding: 3.08px 7.699px 3.08px 3.08px;
+  justify-content: center;
+  align-items: center;
+  gap: 7.699px;
+  position: relative;
+  border-radius: 37.724px;
+  background: var(--orange-50, #FFF8F1);
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .prtlt-digitup-api .offers__item-right-text {
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    gap: 0;
+  }
+}
+
+.prtlt-digitup-api .offers__item-right-text span {
+  display: none;
+}
+
+@media (min-width: 769px) {
+  .prtlt-digitup-api .offers__item-right-text:hover span {
+    position: absolute;
+    bottom: 28px;
+    right: 5%;
+    display: flex;
+    padding: 8px 12px;
+    align-items: center;
+    border-radius: 8px;
+    background: #E3EBFF;
+    color: var(--black, #000);
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    /* 138.462% */
+    width: 302px;
+  }
+}
+
+@media (max-width: 768px) {
+  .prtlt-digitup-api .offers__item-right-text:hover span {
+    right: auto;
+    padding: 5px;
+    width: 224px;
+    font-size: 11px;
+    line-height: 14px;
+    text-align: center;
+  }
+}
+
+@media (min-width: 769px) {
+  .prtlt-digitup-api .offers__item-right-text:hover span::before {
+    position: absolute;
+    content: "";
+    bottom: -7px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 34px;
+    height: 8px;
+    background: url("https://cdn.mundomarcruceros.com/wlgs/mundomar-images/arrow-down.svg") no-repeat;
+  }
+}
+
+.prtlt-digitup-api .offers__item-right-text img {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .prtlt-digitup-api .offers__item-right-text img {
+    display: none;
+  }
+}
+
+.prtlt-digitup-api .offers__item-right-text .promo {
+  color: var(--orange-400, #FF8A4C);
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 15.398px;
+  /* 139.978% */
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .prtlt-digitup-api .offers__item-right-text .promo {
+    font-size: 9px;
+    line-height: 15.398px;
+  }
+}
+
+.prtlt-digitup-api .offers__item-right-bottom {
+  display: flex;
+  gap: 32px;
+  align-items: flex-end;
+  margin-top: 20px;
+}
+
+@media (max-width: 1100px) {
+  .prtlt-digitup-api .offers__item-right-bottom {
+    gap: 10px;
+    margin-top: 0;
+  }
+}
+
+.prtlt-digitup-api .offers__item-right-bottom div {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.prtlt-digitup-api .offers__item-right-bottom div span {
+  color: #333;
+  text-align: right;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+}
+
+@media (max-width: 568px) {
+  .prtlt-digitup-api .offers__item-right-bottom div span {
+    font-size: 8px;
+    padding-right: 24px;
+  }
+}
+
+.prtlt-digitup-api .offers__item-right-bottom div .price {
+  color: #333;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 37px;
+  position: relative;
+}
+
+.prtlt-digitup-api .offers__item-right-bottom div .price.visible+.calendar {
+  display: flex !important;
+}
+
+@media (max-width: 768px) {
+  .prtlt-digitup-api .offers__item-right-bottom div .price {
+    padding-right: 24px;
+    cursor: pointer;
+    width: fit-content;
+  }
+
+  .prtlt-digitup-api .offers__item-right-bottom div .price::after {
+    position: absolute;
+    content: "";
+    width: 17px;
+    height: 16px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    top: 9px;
+    right: 0;
+    background: url("https://cdn.mundomarcruceros.com/wlgs/mundomar-images/chevron-down.svg") no-repeat;
+  }
+
+  .prtlt-digitup-api .offers__item-right-bottom div .price.visible::after {
+    background: url("https://cdn.mundomarcruceros.com/wlgs/mundomar-images/chevron-up.svg") no-repeat;
+  }
+}
+
+@media (max-width: 568px) {
+  .prtlt-digitup-api .offers__item-right-bottom div .price {
+    font-size: 24px;
+    line-height: 22px;
+  }
+
+  .prtlt-digitup-api .offers__item-right-bottom div .price::after {
+    top: 2px;
+  }
+}
+
+.prtlt-digitup-api .offers__item-right-bottom div .calendar {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 50px;
+  border-radius: 8px;
+  background: #E3EBFF;
+  box-shadow: 0px 2px 4px -2px rgba(0, 0, 0, 0.05), 0px 4px 6px -1px rgba(0, 0, 0, 0.1);
+  width: 286px;
+  z-index: 2;
+  max-height: 134px;
+  overflow-y: auto;
+}
+
+.prtlt-digitup-api .offers__item-right-bottom div .calendar_data {
+  padding: 0;
+  color: var(--Black-color, #333) !important;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  /* 125% */
+}
+
+.prtlt-digitup-api .offers__item-right-bottom div .calendar_price {
+  color: var(--Black-color, #333) !important;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  /* 111.111% */
+}
+
+.prtlt-digitup-api .offers__item-right-bottom div .calendar_item {
+  cursor: pointer;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid #D8E3FF;
+  flex-direction: row;
+  height: 44px;
+}
+
+.prtlt-digitup-api .offers__item-right-bottom div .calendar_item:hover {
+  background: #adb9d9;
+}
+
+.prtlt-digitup-api .offers__item-right-bottom div .calendar_item:last-of-type {
+  border-bottom: 0;
+}
+
+.prtlt-digitup-api .offers__item-right-bottom div .calendar_item:last-of-type:hover {
+  border-radius: 0 0 8px 8px;
+}
+
+.prtlt-digitup-api .offers__item-right-bottom div .calendar_item:first-of-type:hover {
+  border-radius: 8px 8px 0 0;
+}
+
+.prtlt-digitup-api .offers__item-right-bottom a {
+  display: flex;
+  padding: 12px 40px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 27px;
+  background: #2B67F6;
+  color: #FFF;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  /* 111.111% */
+  height: 44px;
+  width: 100%;
+  min-width: 145px;
+  border: 1px solid #2B67F6;
+}
+
+@media (max-width: 1100px) {
+  .prtlt-digitup-api .offers__item-right-bottom a {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .prtlt-digitup-api .offers__item-right-bottom a {
+    display: none;
+  }
+}
+
+.prtlt-digitup-api .offers .hovered {
+  background: #2B67F6;
+}
+
+.offers .hovered .offers__item-left h3,
+.offers .hovered .offers__item-left span,
+.offers .hovered .offers__item-left p,
+.prtlt-digitup-api .offers .hovered .offers__item-left h4 {
+  color: #fff;
+}
+
+.prtlt-digitup-api .offers .hovered .offers__item-left-bottom p {
+  color: #fff;
+}
+
+.prtlt-digitup-api .offers .hovered .offers__item-left-bottom .ship::before {
+  background: url("https://cdn.mundomarcruceros.com/wlgs/mundomar-images/ship-white.svg") no-repeat;
+}
+
+.prtlt-digitup-api .offers .hovered .offers__item-left-bottom .time::before {
+  background: url("https://cdn.mundomarcruceros.com/wlgs/mundomar-images/clock-white.svg") no-repeat;
+}
+
+.prtlt-digitup-api .offers .hovered .offers__item-left-bottom .data::before {
+  background: url("https://cdn.mundomarcruceros.com/wlgs/mundomar-images/calendar-white.svg") no-repeat;
+}
+
+.prtlt-digitup-api .offers .hovered .offers__item-left-bottom .data::after {
+  background: url("https://cdn.mundomarcruceros.com/wlgs/mundomar-images/down-white.svg") no-repeat;
+}
+
+.prtlt-digitup-api .offers .hovered .offers__item-left-bottom .data.visible::after {
+  background: url("https://cdn.mundomarcruceros.com/wlgs/mundomar-images/up-white.svg") no-repeat;
+}
+
+.prtlt-digitup-api .offers .hovered .offers__item-right-images .image-static {
+  display: none;
+}
+
+.prtlt-digitup-api .offers .hovered .offers__item-right-images .image-hover {
+  display: block;
+}
+
+.offers .hovered .offers__item-right-bottom span,
+.prtlt-digitup-api .offers .hovered .offers__item-right-bottom .price {
+  color: #fff;
+}
+
+.prtlt-digitup-api .offers .hovered .offers__item-right-bottom a {
+  border: 1px solid #FFF;
+}
+
+.prtlt-digitup-api .offers .hovered .offers__item-right-bottom .price::after {
+  background: url("https://cdn.mundomarcruceros.com/wlgs/mundomar-images/chevron-down.svg") no-repeat;
+}
+
+.prtlt-digitup-api .offers .hovered .offers__item-right-bottom .price.visible::after {
+  background: url("https://cdn.mundomarcruceros.com/wlgs/mundomar-images/chevron-up.svg") no-repeat;
+}
+
+.prtlt-digitup-api .offers .pagination {
+  margin: 40px auto 0;
+  padding: 12px 24px;
+  border-radius: 100px;
+  background: #FFF;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+  max-width: 352px;
+}
+
+@media (max-width: 768px) {
+  .prtlt-digitup-api .offers .pagination {
+    margin: 24px auto 0;
+    padding: 6.667px 13.333px;
+    border-radius: 83.333px;
+    gap: 6.667px;
+    max-width: fit-content;
+    justify-content: center;
+  }
+}
+
+.prtlt-digitup-api .offers .pagination li {
+  display: flex;
+  height: 32px;
+  padding: 12px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  gap: 10px;
+  border-radius: 100px;
+  border: 1px solid #EBEBEB;
+  color: #4D515D;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  background-color: #fff;
+  transition: all 0.2s;
+}
+
+.prtlt-digitup-api .offers .pagination li:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.prtlt-digitup-api .offers .pagination li:hover a {
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .prtlt-digitup-api .offers .pagination li {
+    width: 27px;
+    height: 27px;
+  }
+}
+
+.prtlt-digitup-api .offers .pagination li a {
+  color: #4D515D;
+}
+
+.offers .pagination li:first-of-type,
+.prtlt-digitup-api .offers .pagination li:last-of-type {
+  width: 100%;
+  max-width: 48px;
+}
+
+@media (max-width: 768px) {
+
+  .offers .pagination li:first-of-type,
+  .prtlt-digitup-api .offers .pagination li:last-of-type {
+    max-width: 20px;
+  }
+}
+
+.offers .pagination li:first-of-type .black,
+.prtlt-digitup-api .offers .pagination li:last-of-type .black {
+  display: block;
+}
+
+.offers .pagination li:first-of-type .white,
+.prtlt-digitup-api .offers .pagination li:last-of-type .white {
+  display: none;
+}
+
+.offers .pagination li:first-of-type:hover .black,
+.prtlt-digitup-api .offers .pagination li:last-of-type:hover .black {
+  display: none;
+}
+
+.offers .pagination li:first-of-type:hover .white,
+.prtlt-digitup-api .offers .pagination li:last-of-type:hover .white {
+  display: block;
+}
+
+.offers .pagination li:first-of-type a,
+.prtlt-digitup-api .offers .pagination li:last-of-type a {
+  width: 24px;
+  height: 24px;
+}
+
+.prtlt-digitup-api .offers .pagination li.active {
+  background-color: #007bff;
+}
+
+.prtlt-digitup-api .offers .pagination li.active a {
+  color: #fff;
+}
+
+.prtlt-digitup-api .offers .pagination li.disabled {
+  color: #ccc;
+}
+
+.prtlt-digitup-api .offers .calendar::-webkit-scrollbar {
+  width: 2.3px;
+}
+
+.prtlt-digitup-api .offers .calendar::-webkit-scrollbar-thumb {
+  background: #2B67F6;
+}
+
+.prtlt-digitup-api .offers .calendar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.prtlt-digitup-api .offers .calendar::-webkit-scrollbar-button {
+  display: none;
+}
+
+.prtlt-digitup-api .recommendations {
+  padding: 70px 0 140px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .prtlt-digitup-api .recommendations {
+    padding: 40px 0;
+  }
+}
+
+.prtlt-digitup-api .recommendations .inner {
+  width: 100%;
+  max-width: 1191px;
+  padding: 0;
+  margin: 0 auto;
+  position: relative;
+}
+
+@media (max-width: 1024px) {
+  .prtlt-digitup-api .recommendations .inner {
+    /* padding: 0 16px; */
+  }
+}
+
+@media (max-width: 568px) {
+  .prtlt-digitup-api .recommendations .inner {
+    padding: 0;
+  }
+}
+
+.prtlt-digitup-api .recommendations__items {
+  display: flex;
+  gap: 17px;
+  position: relative;
+  width: 100%;
+  max-width: 1223px;
+  padding: 0 16px !important;
+}
+
+@media (max-width: 568px) {
+  .prtlt-digitup-api .recommendations__items {
+    overflow: visible !important;
+    /* max-width: 260px; */
+    margin: 0 !important;
+  }
+}
+
+.prtlt-digitup-api .recommendations__item {
+  width: 100%;
+  max-width: 285px;
+  border-radius: 24px;
+  height: 100%;
+  min-height: 435px;
+  max-height: 435px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+@media (max-width: 768px) {
+  .prtlt-digitup-api .recommendations__item {
+    max-width: 100%;
+  }
+}
+
+.prtlt-digitup-api .recommendations__item .btn {
+  display: none;
+  padding: 12px 40px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 27px;
+  border: 1px solid #FFF;
+  color: #FFF;
+  font-family: "Archivo", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  height: 44px;
+  width: 100%;
+}
+
+
+@media(max-width: 768px) {
+  .prtlt-digitup-api .recommendations__item .recommendations__item-bottom_side {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .prtlt-digitup-api .recommendations__item:hover .btn {}
+}
+
+@media(min-width: 769px) {
+  .prtlt-digitup-api .recommendations__item:hover .btn {
+    display: flex;
+  }
+
+  .prtlt-digitup-api .recommendations__item:hover .recommendations__item-bottom_side {
+    width: 100%;
+  }
+
+  .prtlt-digitup-api .recommendations__item:hover .recommendations__item-wrapper {
+    background-color: rgba(43, 103, 246, 0.7);
+  }
+
+  .prtlt-digitup-api .recommendations__item:hover .recommendations__item-top ul {
+    display: none;
+  }
+
+  .prtlt-digitup-api .recommendations__item:hover .recommendations__item-top .place {
+    display: block;
+  }
+
+  .prtlt-digitup-api .recommendations__item:hover .recommendations__promo {
+    display: none;
+  }
+}
+
+@media(max-width: 768px) {
+  .prtlt-digitup-api .recommendations__item.hovered .btn {
+    display: none;
+  }
+
+  .prtlt-digitup-api .recommendations__item.hovered .recommendations__item-bottom_side {
+    width: 100%;
+  }
+
+  .prtlt-digitup-api .recommendations__item.hovered .recommendations__item-wrapper {
+    background-color: rgba(43, 103, 246, 0.7);
+  }
+
+  .prtlt-digitup-api .recommendations__item.hovered .recommendations__item-top ul {
+    display: none;
+  }
+
+  .prtlt-digitup-api .recommendations__item.hovered .recommendations__item-top .place {
+    display: block;
+  }
+
+  .prtlt-digitup-api .recommendations__item.hovered .recommendations__promo {
+    display: flex;
+  }
+
+}
+
+/* .recommendations__item:hover .recommendations__item-bottom {
+  margin-top: 55px;
+} */
+@media (max-width: 1100px) {}
+
+@media (max-width: 1024px) {}
+
+@media (max-width: 868px) {
+  .prtlt-digitup-api .recommendations__item:hover .recommendations__item-bottom {
+    height: 20px;
+  }
+}
+
+@media (max-width: 380px) {
+  .prtlt-digitup-api .recommendations__item:hover .recommendations__item-bottom {
+    height: 37px;
+  }
+}
+
+@media (max-width: 350px) {
+  .prtlt-digitup-api .recommendations__item:hover .recommendations__item-bottom {
+    height: 23px;
+  }
+}
+
+.prtlt-digitup-api .recommendations__item-top {
+  width: 100%;
+}
+
+.prtlt-digitup-api .recommendations__item-top_line {
+  display: flex;
+  justify-content: space-between;
+}
+
+.prtlt-digitup-api .recommendations__item .recommendations__item-top .place {
+  display: none;
+  color: #FFF;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  position: relative;
+  padding-left: 24px;
+  padding-top: 16px;
+  width: 100%;
+  /* max-width: 225px; */
+}
+
+@media (max-width: 350px) {
+  .prtlt-digitup-api .recommendations__item:hover .recommendations__item-top .place {
+    font-size: 11px;
+  }
+}
+
+.prtlt-digitup-api .recommendations__item .recommendations__item-top .place::before {
+  position: absolute;
+  content: "";
+  width: 17px;
+  height: 17px;
+  top: 18px;
+  left: 0;
+  background: url("https://cdn.mundomarcruceros.com/wlgs/mundomar-images/map.svg") no-repeat;
+}
+
+.prtlt-digitup-api .recommendations__item-wrapper {
+  position: relative;
+  border-radius: 24px;
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 100%;
+  min-height: 435px;
+  padding: 18px 15px 18px 17px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  transition: all 0.2s;
+}
+
+@media (max-width: 768px) {
+  .prtlt-digitup-api .recommendations__item-wrapper {
+    padding: 16px 16.5px;
+  }
+}
+
+.prtlt-digitup-api .recommendations__item .object-fit {
+  position: absolute;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-position: center top;
+  border-radius: 24px;
+}
+
+.prtlt-digitup-api .recommendations__item-top span {
+  color: #FFF;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 21.742px;
+  /* 155.3% */
+}
+
+@media (max-width: 768px) {
+  .prtlt-digitup-api .recommendations__item-top span {
+    font-size: 12px;
+  }
+}
+
+.prtlt-digitup-api .recommendations__item-top h2 {
+  color: #FFF;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+  .prtlt-digitup-api .recommendations__item-top h2 {
+    font-size: 18px;
+    /* margin-top: 8px; */
+    padding-bottom: 12px;
+  }
+}
+
+.prtlt-digitup-api .recommendations__item-top ul {
+  padding-top: 16px;
+}
+
+@media (max-width: 768px) {
+  .prtlt-digitup-api .recommendations__item-top ul {
+    padding-bottom: 12px;
+  }
+}
+
+.prtlt-digitup-api .recommendations__item-top ul li {
+  color: #FFF;
+  position: relative;
+  padding-left: 27px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 21.742px;
+  /* 135.887% */
+  margin-bottom: 4.35px;
+}
+
+@media (max-width: 768px) {
+  .prtlt-digitup-api .recommendations__item-top ul li {
+    font-size: 14px;
+  }
+}
+
+.prtlt-digitup-api .recommendations__item-top ul li::before {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 20px;
+  top: 0;
+  left: 0;
+  background-size: 100%;
+  background-position: center;
+}
+
+.prtlt-digitup-api .recommendations__item-top ul li:first-of-type::before {
+  background: url("https://cdn.mundomarcruceros.com/wlgs/mundomar-images/ship-white.svg") no-repeat;
+}
+
+.prtlt-digitup-api .recommendations__item-top ul li:nth-child(2)::before {
+  background: url("https://cdn.mundomarcruceros.com/wlgs/mundomar-images/clock-white.svg") no-repeat center;
+}
+
+.prtlt-digitup-api .recommendations__item-top ul li:last-of-type {
+  margin-bottom: 0;
+}
+
+.prtlt-digitup-api .recommendations__item-top ul li:last-of-type::before {
+  background: url("https://cdn.mundomarcruceros.com/wlgs/mundomar-images/calendar-white.svg") no-repeat;
+}
+
+.prtlt-digitup-api .recommendations__item-top .place {
+  display: none;
+}
+
+.prtlt-digitup-api .recommendations__item-bottom_side {
+  margin-left: auto;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.prtlt-digitup-api .recommendations__item-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.prtlt-digitup-api .recommendations__item-bottom span {
+  color: #FFF;
+  text-align: right;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+}
+
+.prtlt-digitup-api .recommendations__item-bottom p {
+  color: #FFF;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 40.223px;
+}
+
+@media (max-width: 768px) {
+  .prtlt-digitup-api .recommendations__item-bottom p {
+    font-size: 38px;
+    line-height: 37.2px;
+  }
+}
+
+.prtlt-digitup-api .recommendations__item .btn {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .prtlt-digitup-api .recommendations__item .btn {
+    display: flex;
+  }
+}
+
+.prtlt-digitup-api .recommendations__promo {
+  display: flex;
+  padding: 4.348px 6.523px;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 6.523px;
+  border-radius: 86.968px;
+  background: #FFF;
+  width: fit-content;
+  max-width: 238px;
+  align-self: flex-end;
+}
+
+@media (max-width: 450px) {
+  .prtlt-digitup-api .recommendations__promo {
+    justify-content: center;
+  }
+}
+
+.prtlt-digitup-api .recommendations__promo span {
+  display: none;
+}
+
+.prtlt-digitup-api .recommendations__promo-text {
+  display: flex;
+  padding: 2.174px 8.369px 2.174px 3.348px;
+  justify-content: center;
+  align-items: center;
+  gap: 8.369px;
+  border-radius: 41.01px;
+  border: 1.087px solid rgba(255, 138, 76, 0.12);
+  background: var(--orange-50, #FFF8F1);
+}
+
+.prtlt-digitup-api .recommendations__promo-text img {
+  width: 17.39px;
+  height: 17.39px;
+}
+
+.prtlt-digitup-api .recommendations__promo-text p {
+  color: #FF8A4C;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+@media (max-width: 1100px) {
+  .prtlt-digitup-api .recommendations__promo-text p {
+    font-size: 8px;
+    line-height: unset;
+  }
+}
+
+.prtlt-digitup-api .recommendations__promo-images {
+  display: flex;
+  gap: 6.52px;
+}
+
+.prtlt-digitup-api .recommendations__promo-images img {
+  width: 17.39px;
+  height: 17.39px;
+}
+
+.prtlt-digitup-api .recommendations .slider-controls {
+  display: flex;
+  cursor: pointer;
+  padding: 12px 24px;
+  align-items: center;
+  gap: 8px;
+  border-radius: 100px;
+  background: #FFF;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  bottom: -96px;
+  width: 100%;
+  max-width: 152px;
+}
+
+@media (max-width: 768px) {
+  .prtlt-digitup-api .recommendations .slider-controls {
+    display: none;
+  }
+}
+
+.prtlt-digitup-api .recommendations .slider-controls .black {
+  display: block;
+}
+
+.prtlt-digitup-api .recommendations .slider-controls .white {
+  display: none;
+}
+
+.recommendations .slider-controls .prev-slide,
+.prtlt-digitup-api .recommendations .slider-controls .next-slide {
+  border-radius: 100px;
+  border: 1px solid #EBEBEB;
+  width: 48px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.recommendations .slider-controls .prev-slide a,
+.prtlt-digitup-api .recommendations .slider-controls .next-slide a {
+  width: 25px;
+  height: 25px;
+}
+
+.recommendations .slider-controls .prev-slide:hover,
+.prtlt-digitup-api .recommendations .slider-controls .next-slide:hover {
+  background: #2B67F6;
+}
+
+.recommendations .slider-controls .prev-slide:hover .black,
+.prtlt-digitup-api .recommendations .slider-controls .next-slide:hover .black {
+  display: none;
+}
+
+.recommendations .slider-controls .prev-slide:hover .white,
+.prtlt-digitup-api .recommendations .slider-controls .next-slide:hover .white {
+  display: block;
+}
+
+.prtlt-digitup-api .recommendations .slider-controls .next-slide {
+  right: 0;
+}
+
+.prtlt-digitup-api .recommendations .slider-controls .prev-slide {
+  left: 0;
+}
+
+.prtlt-digitup-api .recommendations .tabs {
+  display: flex;
+  gap: 8px;
+  margin-top: 40px;
+  overflow-x: auto;
+  scrollbar-color: transparent transparent;
+  padding: 0 16px;
+}
+
+@media (max-width: 1024px) {
+  .prtlt-digitup-api .recommendations .tabs {
+    padding-left: 12px;
+    margin-top: 24px;
+  }
+}
+
+.prtlt-digitup-api .recommendations .tabs .tab {
+  display: flex;
+  padding: 8px 12px;
+  align-items: center;
+  gap: 10px;
+  border-radius: 63px;
+  background: #FFF;
+  height: 29px;
+  color: rgba(107, 111, 123, 0.97);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.prtlt-digitup-api .recommendations .tabs .tab:hover {
+  background: #2B67F6;
+  color: #fff;
+}
+
+.prtlt-digitup-api .recommendations .tabs .tab.active {
+  background: #2B67F6;
+  color: #fff;
+}
+
+.prtlt-digitup-api .recommendations .tab-pane {
+  display: none;
+}
+
+.prtlt-digitup-api .recommendations .tab-pane.active {
+  display: block;
+  width: 100%;
+  max-width: 1191px;
+}
+
+.prtlt-digitup-api .recommendations .tab-content {
+  display: flex;
+  justify-content: flex-end;
+  overflow: hidden;
+  margin-top: 40px;
+  height: 435px;
+}
+
+@media (max-width: 768px) {
+  .prtlt-digitup-api .recommendations .tab-content {
+    height: auto;
+  }
+}
+
+.prtlt-digitup-api .swiper-button-disabled {
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.prtlt-digitup-api .is_mobile {
+  display: none;
+}
+
+.prtlt-digitup-api .is_desktop {
+  display: flex;
+}
+
+@media(max-width: 768px) {
+  .prtlt-digitup-api .is_mobile {
+    display: flex;
+  }
+
+  .prtlt-digitup-api .is_desktop {
+    display: none;
+  }
+}
+
+/* Estilos para la modal de configuración */
+.config-modal-api-backdrop {
+  position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+.config-modal-api {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 650px;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 8px;
+  z-index: 1001;
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+}
+.config-modal-api h2 {
+  font-size: 24px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.config-modal-api input,
+.config-modal-api select {
+  width: 100%;
+  background-color: white;
+  border: solid 1px grey;
+  border-radius: 4px;
+  padding: 4px 8px;
+}
+
+.config-modal-api .bottom_side {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.config-modal-api button {
+  padding: 5px 10px;
+  border-radius: 8px;
+  color: white;
+}
+
+.config-modal-api #saveConfig {
+  background-color: green;
+  margin-right: 5px;
+}
+
+.config-modal-api #cancelConfig {
+  background-color: red;
+}

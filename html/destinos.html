@@ -1,0 +1,166 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Recomendados</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" type="text/css"
+    href="https://www.mundomarcruceros.com/wlgs/prtltmmc-css/dynamic-styles-mmc-20220304.css">
+  <link rel="stylesheet" type="text/css" href="https://www.mundomarcruceros.com/wlgs/prtltmmc-css/styles-vvs.css">
+  <link rel="stylesheet" type="text/css" href="../css/styles-vm.css">
+  <!-- <link rel="stylesheet" type="text/css" href="https://www.mundomarcruceros.com/digitup/styles-vm.css"> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+
+<body>
+  <div class="prtltmmc-content-portlet">
+    <!-- <div class="prtltmmc-global-wrap prtltmmc-content-portlet" style="display:none"> -->
+    <div class="prtlt-digitup">
+      <div class="prtlt-digitup-api prtlt-digitup-api-destinos">
+        <div class="prtlt-digitup-api-options"></div>
+        <div class="main_content">
+          <div class="title prtltmmc-contenteditable">¡Adelántate al verano 2024 con Princess y Cunard!</div>
+          <div class="api_content" data-portlet="prtlt-digitup-api-destinos"
+            data-url="/api-wlgs/wlgs/portal/no-session/portlet/destinos/show">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function getContent() {
+      // Selecciona el elemento div que contiene la información de la API
+      const contentDiv = document.querySelector('.prtlt-digitup-api .api_content');
+
+      var language = 'es';
+      if (typeof MMC !== 'undefined') {
+        const language = MMC.language || 'es';
+      }
+      const apiUrl = contentDiv.getAttribute('data-url') + '/' + language;
+
+      const fetchOptions = {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'text/html',
+          // Agrega otros encabezados necesarios aquí
+        },
+        // body: JSON.stringify({
+        //   // Agrega el cuerpo necesario para la solicitud POST, si aplica
+        // })
+      };
+
+      fetch(apiUrl)
+        .then(response => {
+          // if (!response.ok) {
+          //   throw new Error('Network response was not ok');
+          // }
+          return response.text(); // Suponiendo que la respuesta es HTML directo
+        })
+        .then(htmlString => {
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(htmlString, "text/html");
+
+          // Extrae el elemento deseado usando querySelector
+          const content = doc.querySelector('.prtlt-digitup-api-content');
+
+          // Verifica si se encontró el elemento y actualiza el DOM
+          if (content) {
+            contentDiv.innerHTML = content.innerHTML; // Usamos innerHTML del contenido encontrado
+          } else {
+            throw new Error('Element with specified class not found in the response.');
+          }
+        })
+        .catch(error => {
+          console.error('There was a problem with your fetch operation:', error);
+          contentDiv.innerHTML = '<p>Error loading content.</p>';
+        });
+
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+      getContent();
+
+      $(document).on('click', '.prtlt-digitup-api-options', function () {
+        // Subir al contenedor principal y luego buscar el div de contenido API
+        var apiContent = $(this).closest('.prtlt-digitup-api').find('.api_content');
+        var currentUrl = apiContent.attr('data-url');
+        var currentType = apiContent.attr('data-type') || ''; // Asegúrate de manejar undefined
+        var currentStyle = apiContent.attr('data-style') || ''; // Asegúrate de manejar undefined
+        var currentPortlet = apiContent.attr('data-portlet') || ''; // Asegúrate de manejar undefined
+
+        var modalHtml = `
+          <div class="config-modal-api-backdrop"></div>
+          <div class="config-modal-api">
+              <h2>Configuración portlet Destinos</h2>
+              <div>
+                  <label>URL:</label>
+                  <input type="text" id="configUrl" value="${currentUrl}">
+              </div>
+              <div>
+                  <label>Type:</label>
+                  <select id="configType">
+                      <option value="type1" ${currentType === 'type1' ? 'selected' : ''}>Type 1</option>
+                      <option value="type2" ${currentType === 'type2' ? 'selected' : ''}>Type 2</option>
+                  </select>
+              </div>
+              <div>
+                  <label>Style:</label>
+                  <input type="text" id="configStyle" value="${currentStyle}">
+              </div>
+              <div class="bottom_side">
+                <button id="cancelConfig">Cancelar</button>
+                <button id="saveConfig" data-portlet=${currentPortlet}>Guardar</button>
+              </div>
+          </div>
+      `;
+
+        // Añadir el HTML de la modal al body y mostrarla
+        $('body').append(modalHtml);
+      });
+
+
+      $(document).on('click', '#saveConfig', function () {
+        var url = $('#configUrl').val();
+        var type = $('#configType').val();
+        var style = $('#configStyle').val();
+        var portlet = $(this).data('portlet');
+
+        console.log('portlet', portlet);
+        var apiContent = $('.' + portlet).closest('.prtlt-digitup-api').find('.api_content');
+        var currentUrl = apiContent.data('url');
+        console.log('currentUrl', currentUrl);
+        console.log('url', url);
+        apiContent.attr('data-url', url);
+        apiContent.attr('data-type', type);
+        apiContent.attr('data-style', style);
+        getContent();
+      });
+
+      $(document).on('click', '#cancelConfig, #saveConfig', function () {
+        $('.config-modal-api-backdrop, .config-modal-api').remove(); // Esto removerá ambos elementos del DOM
+      });
+
+      $(document).on('click', '.config-modal-api-backdrop', function () {
+        $('.config-modal-api-backdrop, .config-modal-api').remove(); // Esto removerá ambos elementos del DOM
+      });
+
+    });
+  </script>
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script type="module" src="../js/index.js"></script>
+</body>
+
+
+</html>
