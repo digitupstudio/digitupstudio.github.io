@@ -1,43 +1,23 @@
-<!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
-
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Destinos</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="stylesheet" type="text/css"
-        href="https://www.mundomarcruceros.com/wlgs/prtltmmc-css/dynamic-styles-mmc-20220304.css">
-    <link rel="stylesheet" type="text/css" href="https://www.mundomarcruceros.com/wlgs/prtltmmc-css/styles-vvs.css">
-    <link rel="stylesheet" type="text/css" href="https://www.mundomarcruceros.com/digitup/styles-vm.css">
-</head>
-
-<body>
-    <div class="prtlt-digitup-api-content">
-        <div class="carts__items">
-            #foreach( $item in $items )
-            <div class="carts__item">
-                <img src="$item.map" alt="">
-                <div class="carts__item-wrapper">
-                    <div class="carts__item-top">
-                        <span>$item.duration $message.days</span>
-                        <h2>$item.cruise</h2>
+<div class="prtlt-digitup-api-content">
+    <div class="carts__items">
+        #foreach( $item in $items )
+        <div class="carts__item">
+            <img src="$item.map" alt="">
+            <div class="carts__item-wrapper">
+                <div class="carts__item-top">
+                    <span>$item.duration $message.days</span>
+                    <h2>$item.cruise</h2>
+                </div>
+                <div class="carts__item-bottom_side">
+                    <div class="carts__item-bottom">
+                        <span>$message.from</span>
+                        <p>$item.leading</p>
+                        <span>$message.perperson</span>
                     </div>
-                    <div class="carts__item-bottom_side">
-                        <div class="carts__item-bottom">
-                            <span>$message.from</span>
-                            <p>$item.leading €</p>
-                            <span>$message.perperson</span>
-                        </div>
-                        <a href="$item.link" class="btn">$message.morebutton</a>
-                    </div>
+                    <a href="$item.link" class="btn">$message.morebutton</a>
                 </div>
             </div>
-            #end
         </div>
+        #end
     </div>
-
-</body>
-
-</html>
+</div>

@@ -21,22 +21,21 @@ const swiper = new Swiper('.swiper', {
     navigation: {
         nextEl: '.next-slide',
         prevEl: '.prev-slide',
-      },    
-  });
-
-$('.tabs .tab').click(function() {
-    var tabId = $(this).data('tab');
-    
-    $('.tabs .tab').removeClass('active');
-    $(this).addClass('active');
-    
-    $('.tab-pane').removeClass('active');
-    $('#' + tabId).addClass('active');
-    
-    
+    },
 });
 
-$(document).ready(function() {
+$('.tabs .tab').click(function () {
+    var tabId = $(this).data('tab');
+
+    $('.tabs .tab').removeClass('active');
+    $(this).addClass('active');
+
+    $('.tab-pane').removeClass('active');
+    $('#' + tabId).addClass('active');
+
+
+});
+
+$(document).ready(function () {
     $('.tabs .tab:first').addClass('active');
-    
 });

@@ -1,52 +1,5 @@
-<!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
-
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Recomendados</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="stylesheet" type="text/css"
-        href="https://www.mundomarcruceros.com/wlgs/prtltmmc-css/dynamic-styles-mmc-20220304.css">
-    <link rel="stylesheet" type="text/css" href="https://www.mundomarcruceros.com/wlgs/prtltmmc-css/styles-vvs.css">
-    <link rel="stylesheet" type="text/css" href="https://www.mundomarcruceros.com/digitup/styles-vm.css">
-</head>
-
-<body>
-    <!--
-<table border="1">
-#foreach( $item in $items )
-    <tr>
-        <td>$item.embark</td>
-        <td>$item.debark</td>
-        <td>$item.cruise</td>
-        <td>$item.ship</td>
-        <td>
-        <ul>
-#foreach( $departure in $item.departures )
- <li>$departure.leading $departure.departure $departure.duration</li>
-#end
-        </ul>
-        </td>
-        <td>$item.flight</td>
-        <td>$item.transfer</td>
-        <td>$item.promocode</td>
-        <td>$item.promodescription</td>
-        <td><img src="$item.shipimage" width="150px"></td>
-        <td><img src="$item.map" width="150px"></td>
-        <td><img src="$item.companylogo" width="150px"></td>
-        <td>
-#foreach( $port in $item.ports )
- $port.description
-#end
-        </td>
-        <td>$item.link</td>
-    </tr>
-#end
-</table>
--->
-    <div class="prtlt-digitup-api-content">
+<div class="prtlt-digitup-api-content">
+    <div class="offers">
         <div class="offers__items">
             #foreach( $item in $items )
             <div class="offers__item">
@@ -57,16 +10,21 @@
                 </div>
                 <div class="offers__item-text">
                     <div class="offers__item-left">
-                        <h3>$item.cruise</h3>
-                        <p><span>$item.duration</span> $item.embark - $item.debark<span class="hide-places">
-                                #set($size = $item.ports.size())
-                                #set($counter = 0)
-                                #foreach( $port in $item.ports )
-                                $port.description
-                                #set($counter = $counter + 1)
-                                #if($counter < $size) • #end #end </span>
-                        </p>
-                        <h4><strong>$item.textstart:</strong> $item.fromdate</h4>
+                        <div class="offers__item-left-top">
+                            <h3>$item.cruise</h3>
+                            <p><span>$item.departures.get(0).duration $message.days</span> $item.embark -
+                                $item.debark<span class="hide-places">
+                                    #set($size = $item.ports.size())
+                                    #set($counter = 0)
+                                    #foreach( $port in $item.ports )
+                                    $port.description
+                                    #set($counter = $counter + 1)
+                                    #if($counter < $size) • #end #end </span>
+                            </p>
+                            <h4><strong><img
+                                        src="https://cdn.mundomarcruceros.com/wlgs/mundomar-images/calendar.svg"></strong>
+                                $item.departures.get(0).departure</h4>
+                        </div>
                         <div class="offers__item-left-bottom">
                             <p class="ship">$item.ship</p>
                             <div class="offers__calendar">
@@ -80,12 +38,12 @@
                                     #end
                                 </div>
                             </div>
-                            <p class="time">$item.departures.get(0).duration</p>
+                            <p class="time">$item.departures.get(0).duration $message.days</p>
                         </div>
                     </div>
                     <div class="offers__item-right">
                         <div class="offers__item-right-top">
-                            <div class="offers__item-right-images">
+                            <div class="offers__item-right-text">
                                 #if($item.flight)
                                 <img src="https://cdn.mundomarcruceros.com/wlgs/mundomar-images/airplan.svg" alt=""
                                     class="image-static">
@@ -94,22 +52,21 @@
                                 <img src="https://cdn.mundomarcruceros.com/wlgs/mundomar-images/home.svg" alt=""
                                     class="image-static">
                                 #end
-                                #if($item.flight)
-                                <img src="https://cdn.mundomarcruceros.com/wlgs/mundomar-images/airplane-white.svg"
-                                    alt="" class="image-hover">
-                                #end
-                                #if($item.transfer)
-                                <img src="https://cdn.mundomarcruceros.com/wlgs/mundomar-images/home-white.svg" alt=""
-                                    class="image-hover">
-                                #end
-                            </div>
-                            #if($item.promocode)
-                            <div class="offers__item-right-text">
+                                #if($item.promocode)
                                 <img src="https://cdn.mundomarcruceros.com/wlgs/mundomar-images/percent.svg" alt="">
-                                <span> $item.promodescription</span>
-                                <p class="promo">$item.promocode</p>
+                                #end
+                                <span>
+                                    #if($item.flight)
+                                    Vuelo incluido
+                                    #end
+                                    #if($item.transfer)
+                                    <br>Transfer incluido
+                                    #end
+                                    #if($item.promocode)
+                                    <br>$item.promodescription
+                                    #end
+                                </span>
                             </div>
-                            #end
 
                         </div>
                         <div class="offers__item-right-bottom">
@@ -133,7 +90,4 @@
             #end
         </div>
     </div>
-
-</body>
-
-</html>
+</div>

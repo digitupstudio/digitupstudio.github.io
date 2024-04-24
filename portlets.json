@@ -1,0 +1,34 @@
+[
+	{
+		"id": "PORTLET_VV_IMG_TEXT",
+		"name": "Virgin image+texto"
+	},
+	{
+		"id": "PORTLET_VV_HERO",
+		"name": "Virgin hero"
+	},
+	{
+		"id": "PORTLET_VV_SLIDER_PRICE",
+		"name": "Virgin Slider precios"
+	},
+	{
+		"id": "PORTLET_VV_SEPARATOR",
+		"name": "Virgin separador"
+	},
+	{
+		"id": "PORTLET_VV_SLIDER2",
+		"name": "Virgin Slider 2"
+	},
+	{
+		"id": "PRTLT-DESTINOS",
+		"name": "Portlet destinos"
+	},
+	{
+		"id": "PRTLT-CHOLLOS",
+		"name": "Portlet chollos"
+	},
+	{
+		"id": "PRTLT-RECOMENDADOS",
+		"name": "Portlet recomendados"
+	}
+]
