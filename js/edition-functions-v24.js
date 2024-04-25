@@ -12,7 +12,7 @@ $.getMultiScripts = function (arr, path) {
 
 	return $.when.apply($, _arr);
 }
-
+console.log('!!! edition-functions-v24 !!!');
 var prtltmmcCkEditor = {
 	config: {},
 	textRemovePortlet: 'Are you sure to delete this portlet?',

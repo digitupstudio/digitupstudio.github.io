@@ -21,8 +21,7 @@ function getContent() {
     let urlWeb = '';
 
     if (portletType === 'recomendados') {
-      config = loadRecomendedTabs();
-      console.log('portletType recomendados', config);
+      config = loadRecomendedTabs($this);
     } else {
       config = $this.attr('data-url');
     }
@@ -41,39 +40,6 @@ function getLanguage() {
   }
   return language;
 }
-
-function loadRecomendedTabs() {
-  const language = getLanguage();
-  console.log('loadRecomendedTabs!!!');
-  let config = '';
-  var apiContent = $('.prtlt-digitup-api-recomendados').find('.api_content');
-  const dataObject = JSON.parse(apiContent.attr('data-object') || '[]');
-  console.log('dataObject', dataObject);
-  if (dataObject.length) {
-    config = dataObject[0].url;
-    let tabs = '';
-    dataObject.forEach((elem, index) => {
-      tabs += `<div class="tab recomended_tab ${index === 0 ? 'active' : ''}" data-url="${elem.url}">${elem.title[language]}</div>`;
-    });
-    $('.main_content .tabs').html(tabs);
-    // $('.prtlt-digitup-api-recomendados .main_content .api_content').addClass('hidden');
-  }
-  return config;
-}
-
-$(document).on('click', '.recomended_tab', function () {
-  const config = $(this).attr('data-url');
-  const urlWeb = `/api-wlgs-portlets/wlgs/portal/no-session/portlet/recomendados/show`;
-  const language = getLanguage();
-
-  $('.recommendations .tabs .tab').removeClass('active');
-
-  $(this).addClass('active');
-
-  const apiUrl = urlWeb + '/' + language;
-  console.log($(this));
-  requestData(apiUrl, config, $(this).closest('.tabs_block').find('.api_content'));
-});
 
 function requestData(apiUrl, filter, contentDiv) {
   if (!filter) {
@@ -117,11 +83,115 @@ function requestData(apiUrl, filter, contentDiv) {
     });
 }
 
+///////////////////////////////////////////////////
+///////////////// DESTINATIONS ////////////////////
+///////////////////////////////////////////////////
+// Filter destination cards and hide other elements
+function checkDestinations() {
+  const initTotal = 30;
+  const destinationBlocks = $('.prtlt-digitup-api-destinos');
+  if (destinationBlocks) {
+    destinationBlocks.each(function () {
+      var $this = $(this);
+      const items = $this.find('.carts__item');
+      // Verifica si hay más de 30 ítems
+      if (items.length > initTotal) {
+        // Oculta todos los ítems después del 30º
+        items.slice(initTotal).addClass('hide_all');
+        // Asegura que el botón para mostrar más ítems es visible
+        $this.find('.carts__button').removeClass('hide_all');
+      }
+    });
+  }
+}
+
+// Get more destination card Click and hide load more button
+$(document).on('click', '.prtlt-digitup-api-destinos .carts__button', function () {
+  $(this).closest('.prtlt-digitup-api-destinos').find('.carts__item').removeClass('hide_all');
+  $(this).remove();
+});
+
+///////////////////////////////////////////////////
+///////////////////////////////////////////////////
+///////////////////////////////////////////////////
+
+///////////////////////////////////////////////////
+///////////////////// CHOLLOS /////////////////////
+///////////////////////////////////////////////////
+const totalPages = 10; // Total pages of chollos
+let currentPage = 1; // current chollo page
+
+function updatePagination() {
+  $('.prtlt-digitup-api .pagination .actual a')?.text(currentPage);
+  $('.prtlt-digitup-api .pagination .prev')?.toggleClass('disabled', currentPage === 1);
+  $('.prtlt-digitup-api .pagination .next')?.toggleClass('disabled', currentPage === totalPages);
+}
+
+// Evento clic para el botón "next" in pagination Chollos
+$('.prtlt-digitup-api .pagination .next').click(function (e) {
+  e.preventDefault();
+  if (currentPage < totalPages) {
+    currentPage++;
+    updatePagination();
+  }
+});
+
+// Evento clic para el botón "prev" in pagination chollos
+$('.prtlt-digitup-api .pagination .prev').click(function (e) {
+  e.preventDefault();
+  if (currentPage > 1) {
+    currentPage--;
+    updatePagination();
+  }
+});
+
+// Pagination for chollos
+$('.prtlt-digitup-api .pagination .actual').click(function (e) {
+  e.preventDefault();
+
+  // Elimina cualquier menú existente primero
+  $('.chollos-pagination-dropdown').remove();
+
+  // Crear el menú desplegable
+  let dropdown = $('<ul>', { 'class': 'chollos-pagination-dropdown' }).appendTo('body');
+
+  // Posicionamiento del menú
+  let pos = $(this).offset();
+  dropdown.css({
+    left: pos.left + 'px',
+    top: (pos.top + $(this).outerHeight()) + 'px'
+  });
+
+  // Llenar el menú con opciones
+  for (let i = 1; i <= 10; i++) {
+    $('<li>', {
+      text: i,
+      click: function () {
+        $('.pagination .actual a').text(i); // Actualiza el texto del botón "actual"
+        dropdown.remove(); // Elimina el menú después de hacer la selección
+      }
+    }).appendTo(dropdown);
+  }
+
+  // Mostrar el menú
+  dropdown.show();
+
+  // Cierra el menú si se hace clic fuera
+  $(document).on('click', function (event) {
+    if (!$(event.target).closest('.chollos-pagination-dropdown, .pagination .actual').length) {
+      dropdown.remove();
+    }
+  });
+
+  e.stopPropagation(); // Detener la propagación para evitar que se cierre inmediatamente
+});
+
+// Calendar configuration in chollos
 function calendarConfig() {
   console.log('Loaded calendarConfig!!')
   var offersItems = document.querySelectorAll('.offers__item');
 
-  offersItems.forEach(function (offer) {
+  offersItems?.forEach(function (offer) {
     var dataElement = offer.querySelector('.data');
     var calendarBlock = offer.querySelector('.calendar');
     var priceElement = offer.querySelector('.price');
@@ -184,11 +254,12 @@ function calendarConfig() {
   });
 }
 
+// Hover efects in chollos
 function hoveredConfig() {
   console.log('Loaded hoveredConfig!!')
   var itemTextBlocks = document.querySelectorAll('.offers__item-text');
 
-  itemTextBlocks.forEach(function (itemTextBlock) {
+  itemTextBlocks?.forEach(function (itemTextBlock) {
     var link = itemTextBlock.querySelector('a');
 
     link.addEventListener('mouseover', function () {
@@ -217,76 +288,27 @@ function hoveredConfig() {
   });
 }
 
-const totalPages = 10; // Este valor debería obtenerse de alguna parte, por ejemplo, una respuesta de la API
+///////////////////////////////////////////////////
+///////////////////////////////////////////////////
+///////////////////////////////////////////////////
 
-// Inicialización de la página actual
-let currentPage = 1;
-
-function updatePagination() {
-  $('.prtlt-digitup-api .pagination .actual a').text(currentPage);
-  $('.prtlt-digitup-api .pagination .prev').toggleClass('disabled', currentPage === 1);
-  $('.prtlt-digitup-api .pagination .next').toggleClass('disabled', currentPage === totalPages);
+///////////////////////////////////////////////////
+///////////////// RECOMENDADOS ////////////////////
+///////////////////////////////////////////////////
+function checkRecomendados() {
+  const recomendadosBlocks = $('.prtlt-digitup-api-recomendados');
+  if (recomendadosBlocks) {
+    recomendadosBlocks.each(function () {
+      var $this = $(this);
+      const items = $this.find('.recommendations__items');
+      if (items.length > 0) {
+        items.slice(1).addClass('hide_all');
+      }
+    });
+  }
 }
 
-// Evento clic para el botón "next"
-$('.prtlt-digitup-api .pagination .next').click(function (e) {
-  e.preventDefault();
-  if (currentPage < totalPages) {
-    currentPage++;
-    updatePagination();
-  }
-});
-
-// Evento clic para el botón "prev"
-$('.prtlt-digitup-api .pagination .prev').click(function (e) {
-  e.preventDefault();
-  if (currentPage > 1) {
-    currentPage--;
-    updatePagination();
-  }
-});
-
-// Evento clic para el número de página actual
-$('.prtlt-digitup-api .pagination .actual').click(function (e) {
-  e.preventDefault();
-
-  // Elimina cualquier menú existente primero
-  $('.chollos-pagination-dropdown').remove();
-
-  // Crear el menú desplegable
-  let dropdown = $('<ul>', { 'class': 'chollos-pagination-dropdown' }).appendTo('body');
-
-  // Posicionamiento del menú
-  let pos = $(this).offset();
-  dropdown.css({
-    left: pos.left + 'px',
-    top: (pos.top + $(this).outerHeight()) + 'px'
-  });
-
-  // Llenar el menú con opciones
-  for (let i = 1; i <= 10; i++) {
-    $('<li>', {
-      text: i,
-      click: function () {
-        $('.pagination .actual a').text(i); // Actualiza el texto del botón "actual"
-        dropdown.remove(); // Elimina el menú después de hacer la selección
-      }
-    }).appendTo(dropdown);
-  }
-
-  // Mostrar el menú
-  dropdown.show();
-
-  // Cierra el menú si se hace clic fuera
-  $(document).on('click', function (event) {
-    if (!$(event.target).closest('.chollos-pagination-dropdown, .pagination .actual').length) {
-      dropdown.remove();
-    }
-  });
-
-  e.stopPropagation(); // Detener la propagación para evitar que se cierre inmediatamente
-});
-
+// Load slider for recomendatios
 function loadSliderConfig() {
   new Swiper('.swiper', {
     slidesPerView: 1.3,
@@ -304,12 +326,71 @@ function loadSliderConfig() {
   });
 }
 
+// Loading all recomendation tabs
+function loadRecomendedTabsFunc() {
+  const contentDiv = $('.prtlt-digitup-api .api_content');
+  contentDiv?.each(function () {
+    loadRecomendedTabs($(this));
+  });
+}
+
+// Load individual recomendation tab
+function loadRecomendedTabs(contentDiv) {
+  const language = getLanguage();
+  console.log('loadRecomendedTabs!!!');
+  let config = '';
+  var apiContent = contentDiv;
+  const dataObject = JSON.parse(apiContent.attr('data-object') || '[]');
+  console.log('dataObject', dataObject);
+  if (dataObject.length) {
+    config = dataObject[0].url;
+    let tabs = '';
+    dataObject.forEach((elem, index) => {
+      tabs += `<div class="tab recomended_tab ${index === 0 ? 'active' : ''}" data-index="${index}">${elem.title[language]}</div>`;
+    });
+    contentDiv.closest('.main_content').find('.tabs').html(tabs);
+  }
+  return config;
+}
+
+$(document).on('click', '.recomended_tab', function () {
+  const index = $(this).attr('data-index') || 0;
+  console.log('index', index);
+  // const config = $(this).attr('data-url');
+  // const urlWeb = `/api-wlgs-portlets/wlgs/portal/no-session/portlet/recomendados/show`;
+  // const language = getLanguage();
+
+  $('.recommendations .tabs .tab').removeClass('active');
+  $(this).addClass('active');
+
+  console.log('vlock', $(this).closest('.prtlt-digitup-api-recomendados').find('.recommendations__items'));
+  $(this).closest('.prtlt-digitup-api-recomendados').find('.recommendations__items').addClass('hide_all');
+  $(this).closest('.prtlt-digitup-api-recomendados').find('.recommendations__items').eq(index)?.removeClass('hide_all');
+
+  // const apiUrl = urlWeb + '/' + language;
+  // console.log($(this));
+  // requestData(apiUrl, config, $(this).closest('.tabs_block').find('.api_content'));
+});
+
+///////////////////////////////////////////////////
+///////////////////////////////////////////////////
+///////////////////////////////////////////////////
+
+///////////////////////////////////////////////////
+///////////////// GENERAL METHODS /////////////////
+///////////////////////////////////////////////////
 function execConfigs() {
+  // Destinos
+  checkDestinations();
+  // Chollos
+  updatePagination();
   calendarConfig();
   hoveredConfig();
+  // Recomendados
+  loadRecomendedTabsFunc();
+  checkRecomendados();
   loadSliderConfig();
 }
 
-updatePagination();
-loadRecomendedTabs();
-// getContent();
+// All scripts
+execConfigs();

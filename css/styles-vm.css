@@ -322,7 +322,7 @@
   border-radius: 24px;
 }
 
-.prtlt-digitup-api .carts__item-top span {
+.prtlt-digitup-api .carts__item-top .top_text {
   color: #FFF;
   font-family: "Archivo", sans-serif;
   font-size: 16px;
@@ -355,7 +355,7 @@
   width: 100%;
 }
 
-.prtlt-digitup-api .carts__item-bottom span {
+.prtlt-digitup-api .carts__item-bottom .small_text {
   color: #FFF;
   text-align: right;
   font-family: "Archivo", sans-serif;
@@ -370,7 +370,7 @@
   line-height: 10px;
 }
 
-.prtlt-digitup-api .carts__item-bottom p {
+.prtlt-digitup-api .carts__item-bottom p.large_text {
   color: #FFF;
   font-family: "Archivo", sans-serif;
   font-size: 40px;
@@ -450,7 +450,7 @@
 
 @media (max-width: 768px) {
   .prtlt-digitup-api .offers {
-    padding: 40px 0;
+    padding: 0 0 40px;
   }
 }
 
@@ -729,10 +729,8 @@
   font-style: normal;
   font-weight: 400;
   line-height: 1.4;
-  /* 125% */
   margin-top: 8px;
   position: relative;
-  cursor: pointer;
 }
 
 .prtlt-digitup-api .offers__item-left p span {
@@ -749,7 +747,7 @@
 @media (max-width: 568px) {
   .prtlt-digitup-api .offers__item-left p {
     font-size: 14px;
-    margin-top: 0;
+    margin-top: 4px;
   }
 }
 
@@ -889,7 +887,6 @@
   font-style: normal;
   font-weight: 400;
   line-height: 20px;
-  /* 111.111% */
   position: relative;
   padding-left: 28px;
 }
@@ -1494,7 +1491,7 @@
 }
 
 .prtlt-digitup-api .recommendations {
-  padding: 70px 0 140px;
+  padding: 70px 48px 140px;
   width: 100%;
 }
 
@@ -2010,7 +2007,12 @@
   background: #2B67F6;
 }
 
-.prtlt-digitup-api .recommendations .slider-controls .prev-slide:hover .black,
+.prtlt-digitup-api .recommendations .slider-controls .prev-slide:hover a svg path,
+.prtlt-digitup-api .recommendations .slider-controls .next-slide:hover a svg path {
+  stroke: white;
+}
+
+/* .prtlt-digitup-api .recommendations .slider-controls .prev-slide:hover .black,
 .prtlt-digitup-api .recommendations .slider-controls .next-slide:hover .black {
   display: none;
 }
@@ -2018,7 +2020,7 @@
 .prtlt-digitup-api .recommendations .slider-controls .prev-slide:hover .white,
 .prtlt-digitup-api .recommendations .slider-controls .next-slide:hover .white {
   display: block;
-}
+} */
 
 .prtlt-digitup-api .recommendations .slider-controls .next-slide {
   right: 0;
@@ -2105,6 +2107,10 @@
 
 .prtlt-digitup-api .hidden {
   visibility: hidden !important;
+}
+
+.prtlt-digitup-api .hide_all {
+  display: none !important;
 }
 
 .prtlt-digitup-api .swiper-button-disabled {

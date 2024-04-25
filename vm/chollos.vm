@@ -19,10 +19,11 @@
                                     #foreach( $port in $item.ports )
                                     $port.description
                                     #set($counter = $counter + 1)
-                                    #if($counter < $size) • #end #end </span>
+                                    #if($counter < $size) - #end #end </span>
                             </p>
-                            <h4><strong><img
-                                        src="https://cdn.mundomarcruceros.com/wlgs/mundomar-images/calendar.svg"></strong>
+                            <h4><img src="https://cdn.mundomarcruceros.com/wlgs/mundomar-images/ship.svg">
+                                $item.ship</h4>
+                            <h4><img src="https://cdn.mundomarcruceros.com/wlgs/mundomar-images/calendar.svg">
                                 $item.departures.get(0).departure</h4>
                         </div>
                         <div class="offers__item-left-bottom">

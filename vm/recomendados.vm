@@ -23,7 +23,7 @@
               #foreach( $port in $item.ports )
               $port.description
               #set($counter = $counter + 1)
-              #if($counter < $size) • #end #end </p>
+              #if($counter < $size) - #end #end </p>
           </div>
           <div class="recommendations__item-bottom_side">
             <div class="recommendations__item-bottom">

@@ -1,4 +1,4 @@
-// import { getContent } from './portlets-vm.js';
+
 
 document.addEventListener('DOMContentLoaded', function () {
   var dataObject = [];
@@ -83,6 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
       apiContent.attr('data-url', url);
     } else {
       apiContent.attr('data-object', JSON.stringify(dataObject));
+      // apiContent.attr('data-url', dataObject[0]?.url || '');
     }
     getContent();
   });
