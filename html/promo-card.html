@@ -22,32 +22,47 @@
 <body style="background-color: blue;">
   <div class="prtltmmc-global-wrap-web">
     <div class="prtltmmc-content-portlets">
-      <!-- <div class="prtltmmc-content-portlet"> -->
-      <div class="prtltmmc-global-wrap prtltmmc-content-portlet" data-portlet="promo-card">
-        <div class="prtlt-digitup-static prtlt-digitup-static-promo-card">
-          <!-- <div class="prtlt-digitup-api-options">
-        <div class="remove-api-portlet danger">Eliminar portlet</div>
-        <div class="open-api-config">Añadir card</div>
-      </div> -->
+      <div class="prtltmmc-global-wrap prtltmmc-content-portlet" data-portlet="PRTLT-PROMOCARD">
+        <div class="prtlt-digitup-generic prtlt-digitup-static prtlt-digitup-static-promo-card"
+          data-optionscards="{general: {class: 'prtlt-digitup-generic', options: ['add']}, individual: {class: 'prtlt-digitup-generic', options: ['delete', 'add_url', 'add_image']}}">
+          <div class="prtlt-digitup-api-options prtlt-digitup-generic-options">
+            <div class="option_button delete-cards-option warning">Editar cards</div>
+            <div class="option_button add-new-card success">Añadir card</div>
+          </div>
           <div class="main_content carts grey">
-            <div class="title prtltmmc-contenteditable">¡Adelántate al verano 2024 con Princess y Cunard!</div>
+            <div class="title prtltmmc-contenteditable">
+              <h2>¡Adelántate al verano 2024 con Princess y Cunard!</h2>
+            </div>
             <div class="card_content">
-              <div class="carts__items">
-                <div class="carts__item">
-                  <img src="https://www.cruiseplatform.com/almacen/cruceros/QVI000718.JPG" alt="">
+              <div class="carts__items options_all_items">
+                <div class="carts__item options_item_to_copy">
+                  <div class="prtlt-digitup-api-options prtlt-digitup-generic-options in_top">
+                    <div class="option_button delete-card hidden danger">Eliminar</div>
+                    <div class="option_button open-options-link success">Imagen</div>
+                  </div>
+                  <img class="option-image-link" src="https://www.cruiseplatform.com/almacen/cruceros/QVI000718.JPG"
+                    alt="">
                   <div class="carts__item-wrapper">
                     <div class="carts__item-top">
                       <div class="top_text prtltmmc-contenteditable">De 4 a 14 días</div>
-                      <h2 class="prtltmmc-contenteditable">Mediterráneos verano 2024</h2>
+                      <div class="prtltmmc-contenteditable">
+                        <h2>Mediterráneos verano 2024</h2>
+                      </div>
                     </div>
                     <div class="carts__item-bottom_side">
                       <div class="carts__item-bottom">
-                        <div class="small_text prtltmmc-contenteditable">DESDE</div>
-                        <p class="large_text prtltmmc-contenteditable">1.128</p>
-                        <div class="small_text prtltmmc-contenteditable">POR PERSONA</div>
+                        <div class="small_text prtltmmc-contenteditable">
+                          <h6>DESDE</h6>
+                        </div>
+                        <div class="large_text prtltmmc-contenteditable">
+                          <h1>1.128 €</h1>
+                        </div>
+                        <div class="small_text prtltmmc-contenteditable">
+                          <h6>POR PERSONA</h6>
+                        </div>
                       </div>
-                      <div class="prtltmmc-contenteditable">
-                        <a href="#" class="btn">Ver más</a>
+                      <div class="btn prtltmmc-contenteditable">
+                        <p>Ver más</p>
                       </div>
                     </div>
                   </div>
@@ -57,103 +72,102 @@
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- <script src="https://www.mundomarcruceros.com/api-lib/requirejs/require.js"></script> -->
-    <!-- <script src="https://www.mundomarcruceros.com/api-lib/requirejs/require.js" data-main="/wlgs/main-v24.1b.min"
+      <!-- <script src="https://www.mundomarcruceros.com/api-lib/requirejs/require.js"></script> -->
+      <!-- <script src="https://www.mundomarcruceros.com/api-lib/requirejs/require.js" data-main="/wlgs/main-v24.1b.min"
     data-module="wlgs/controller-cruises"></script> -->
-    <!-- <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="main-v24.1b.min"
+      <!-- <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="main-v24.1b.min"
     src="https://www.mundomarcruceros.com/wlgs/main-v24.1b.min.js"></script> -->
-    <script src="https://www.mundomarcruceros.com/wlgs/prtltmmc-js/jquery-3.1.1.min.js"></script>
-    <script src="https://www.mundomarcruceros.com/wlgs/prtltmmc-js/modernizr-2.6.2.min.js"></script>
-    <script src="https://www.mundomarcruceros.com/wlgs/prtltmmc-js/jquery.cookie.min.js"></script>
-    <script src="https://www.mundomarcruceros.com/wlgs/prtltmmc-js/jquery.nicescroll.min.js"></script>
-    <script src="https://www.mundomarcruceros.com/wlgs/prtltmmc-js/global-functions-v24.2.js?v23"></script>
-    <script src="https://www.mundomarcruceros.com/wlgs/prtltmmc-js/prtltmmc-slider.min.js"></script>
-    <script src="https://www.mundomarcruceros.com/wlgs/prtltmmc-js/jquery-ui.1.12.1.min.js"></script>
-    <script src="https://www.mundomarcruceros.com/wlgs/prtltmmc-js/search-functions-v21.3-a.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="https://www.mundomarcruceros.com/wlgs/prtltmmc-js/ckeditor/ckeditor.js"></script>
-    <script src="https://www.mundomarcruceros.com/api-lib/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
-    <script src="https://www.mundomarcruceros.com/api-lib/requirejs/require.js"
-      data-main="https://www.mundomarcruceros.com/wlgs/main-v24.1b.min.js"
-      data-module="wlgs/controller-cruises"></script>
-    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="main-v24.1b.min"
-      src="https://www.mundomarcruceros.com/wlgs/main-v24.1b.min.js"></script>
-    <script src="https://www.mundomarcruceros.com/wlgs/prtltmmc-js/portlet-editor-v24a.js"></script>
-    <!-- <script src="https://www.mundomarcruceros.com/api-lib/requirejs/require.js"></script> -->
-    <!-- <script src="https://www.mundomarcruceros.com/wlgs/main-v24.1b.min.js"></script> -->
+      <script src="https://www.mundomarcruceros.com/wlgs/prtltmmc-js/jquery-3.1.1.min.js"></script>
+      <script src="https://www.mundomarcruceros.com/wlgs/prtltmmc-js/modernizr-2.6.2.min.js"></script>
+      <script src="https://www.mundomarcruceros.com/wlgs/prtltmmc-js/jquery.cookie.min.js"></script>
+      <script src="https://www.mundomarcruceros.com/wlgs/prtltmmc-js/jquery.nicescroll.min.js"></script>
+      <script src="https://www.mundomarcruceros.com/wlgs/prtltmmc-js/global-functions-v24.2.js?v23"></script>
+      <script src="https://www.mundomarcruceros.com/wlgs/prtltmmc-js/prtltmmc-slider.min.js"></script>
+      <script src="https://www.mundomarcruceros.com/wlgs/prtltmmc-js/jquery-ui.1.12.1.min.js"></script>
+      <script src="https://www.mundomarcruceros.com/wlgs/prtltmmc-js/search-functions-v21.3-a.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+      <script src="https://www.mundomarcruceros.com/wlgs/prtltmmc-js/ckeditor/ckeditor.js"></script>
+      <script src="https://www.mundomarcruceros.com/api-lib/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+      <script src="https://www.mundomarcruceros.com/api-lib/requirejs/require.js"
+        data-main="https://www.mundomarcruceros.com/wlgs/main-v24.1b.min.js"
+        data-module="wlgs/controller-cruises"></script>
+      <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_"
+        data-requiremodule="main-v24.1b.min" src="https://www.mundomarcruceros.com/wlgs/main-v24.1b.min.js"></script>
+      <script src="https://www.mundomarcruceros.com/wlgs/prtltmmc-js/portlet-editor-v2441.js"></script>
+      <!-- <script src="https://www.mundomarcruceros.com/api-lib/requirejs/require.js"></script> -->
+      <!-- <script src="https://www.mundomarcruceros.com/wlgs/main-v24.1b.min.js"></script> -->
 
 
-    <script src="../js/portlets-vm.js"></script>
-    <script src="../js/portlets-vm-editor.js"></script>
-    <script src="../js/edition-functions-v24.js"></script>
-    <!-- <script src="../js/general.js"></script> -->
+      <script src="../js/portlets-vm.js"></script>
+      <script src="../js/portlets-vm-editor.js"></script>
+      <script src="../js/edition-functions-v24.js"></script>
+      <!-- <script src="../js/general.js"></script> -->
 
 
-    <script>
-      window.cookiebox = window.cookiebox || [];
-    </script>
-    <script>
-      $(document).ready(function () {
-        prtltmmcNav.init();
-        prtltmmcCookieNotice.init(cookiebox);
-        prtltmmcFrameImage.init();
-        prtltmmcCookieNewsletter.init();
-      });
-    </script>
-    <script>
-      $(document).ready(function () {
-
-        setTimeout(function () {
-
-          $('[src-delay]').each(function () {
-            var $iframe = $(this), src = $iframe.attr('src-delay');
-            $iframe.removeAttr('src-delay');
-            $iframe.attr('src', src.replace('$session', '4136k9cp4cc1ei8d6imm558nhu'));
-            $iframe.removeAttr('style');
-          });
-
-          var attr = 'src-cache';
-          $('img[' + attr + ']').each(function () {
-            var $img = $(this), src = $img.attr(attr);
-            $img.attr('src', src);
-          });
-
-        }, 2000);
-
-      });
-
-    </script>
-    <script>
-      $(document).ready(function () {
-        prtltmmcSliderHome.init();
-        prtltmmcPopUps.init();
-      });
-    </script>
-    <script>
-      var CRLP = { editor: { js: [] } };
-      $(document).ready(function () {
-        $('.digitup-cruiseditor').on('click', function (e) {
-          e.preventDefault();
-          var script = document.createElement("script");
-          script.src = "https://www.mundomarcruceros.com/wlgs/prtltmmc-js/portlet-editor-v24a.js";
-          script.setAttribute("digitup-script", "true");
-          document.body.appendChild(script);
-          MMC.portletDemo = 'https://www.mundomarcruceros.com/digitup'
-          $('.digitup-cruiseditor').remove();
+      <script>
+        window.cookiebox = window.cookiebox || [];
+      </script>
+      <script>
+        $(document).ready(function () {
+          prtltmmcNav.init();
+          prtltmmcCookieNotice.init(cookiebox);
+          prtltmmcFrameImage.init();
+          prtltmmcCookieNewsletter.init();
         });
-      });
-    </script>
-    <script>
-      var prtltmmcrequest = { "canNavigate": false };
-      var MMC = { "cookie": "4136k9cp4cc1ei8d6imm558nhu", "language": "es", "label": "portal", "member": "mundomar", "api": "\/api-wlgs\/wlgs", "portletDemo": "\/wlgs\/portlets", "apilib": "\/api-lib", "page": "", "ckeditorjs": "\/wlgs\/prtltmmc-js\/ckeditor\/ckeditor.js", "shiplanding": false, "init": { "portlet3js": { "waitplease": "Un momento por favor", "updatecruises": "Cargando Cruceros", "updatenopromotions": "En este momento no existe ninguna promoci\u00f3n disponible dentro de los criterios de b\u00fasqueda seleccionados\", \"features\" : \"En este momento no existe ninguna caracter\u00edstica disponible dentro de los criterios de b\u00fasqueda seleccionados", "updateerror": "No se han encontrado cruceros con las opciones de b\u00fasqueda seleccionadas. Por favor, reintente con un nuevo criterio de b\u00fasqueda.", "errorsendmail": "Error enviando email", "soldout": "Vendido", "updatenewcruises": "Cargando m\u00e1s Cruceros" }, "portlet2": true, "portlet2opened": true, "findCruise": "\/portal\/buscador.html", "result": "\/portal\/cruceros", "pageURL": "https:\/\/www.mundomarcruceros.com\/portal\/cruceros" }, "criteria": {} };
-    </script>
+      </script>
+      <script>
+        $(document).ready(function () {
 
-    <script>
-      prtltmmcLogin.init('https://www.mundomarcruceros.com/portal/digitup.html', '/api-wlgs/wlgs', 'portal', 'es');
-    </script>
+          setTimeout(function () {
+
+            $('[src-delay]').each(function () {
+              var $iframe = $(this), src = $iframe.attr('src-delay');
+              $iframe.removeAttr('src-delay');
+              $iframe.attr('src', src.replace('$session', '4136k9cp4cc1ei8d6imm558nhu'));
+              $iframe.removeAttr('style');
+            });
+
+            var attr = 'src-cache';
+            $('img[' + attr + ']').each(function () {
+              var $img = $(this), src = $img.attr(attr);
+              $img.attr('src', src);
+            });
+
+          }, 2000);
+
+        });
+
+      </script>
+      <script>
+        $(document).ready(function () {
+          prtltmmcSliderHome.init();
+          prtltmmcPopUps.init();
+        });
+      </script>
+      <script>
+        var CRLP = { editor: { js: [] } };
+        $(document).ready(function () {
+          $('.digitup-cruiseditor').on('click', function (e) {
+            e.preventDefault();
+            var script = document.createElement("script");
+            script.src = "https://www.mundomarcruceros.com/wlgs/prtltmmc-js/portlet-editor-v24a.js";
+            script.setAttribute("digitup-script", "true");
+            document.body.appendChild(script);
+            MMC.portletDemo = 'https://www.mundomarcruceros.com/digitup'
+            $('.digitup-cruiseditor').remove();
+          });
+        });
+      </script>
+      <script>
+        var prtltmmcrequest = { "canNavigate": false };
+        var MMC = { "cookie": "digit-up", "language": "es", "label": "portal", "member": "mundomar", "api": "\/api-wlgs\/wlgs", "portletDemo": "\/wlgs\/portlets", "apilib": "\/api-lib", "page": "Prueba-Virgin-Portlets-DigitUp", "ckeditorjs": "\/wlgs\/prtltmmc-js\/ckeditor\/ckeditor.js", "shiplanding": false, "init": { "portlet3js": { "waitplease": "Un momento por favor", "updatecruises": "Cargando Cruceros", "updatenopromotions": "En este momento no existe ninguna promoci\u00f3n disponible dentro de los criterios de b\u00fasqueda seleccionados\", \"features\" : \"En este momento no existe ninguna caracter\u00edstica disponible dentro de los criterios de b\u00fasqueda seleccionados", "updateerror": "No se han encontrado cruceros con las opciones de b\u00fasqueda seleccionadas. Por favor, reintente con un nuevo criterio de b\u00fasqueda.", "errorsendmail": "Error enviando email", "soldout": "Vendido", "updatenewcruises": "Cargando m\u00e1s Cruceros" }, "portlet2": true, "portlet2opened": true, "findCruise": "\/portal\/buscador.html", "result": "\/portal\/cruceros", "pageURL": "https:\/\/www.mundomarcruceros.com\/portal\/cruceros" }, "criteria": {} };
+      </script>
+
+      <script>
+        prtltmmcLogin.init('https://www.mundomarcruceros.com/portal/digitup.html', '/api-wlgs/wlgs', 'portal', 'es');
+      </script>
 </body>
 
 

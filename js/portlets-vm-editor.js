@@ -88,14 +88,6 @@ document.addEventListener('DOMContentLoaded', function () {
     getContent();
   });
 
-  $(document).on('click', '#cancelConfig, #saveConfig', function () {
-    $('.config-modal-api-backdrop, .config-modal-api').remove(); // Esto removerá ambos elementos del DOM
-  });
-
-  $(document).on('click', '.config-modal-api-backdrop', function () {
-    $('.config-modal-api-backdrop, .config-modal-api').remove(); // Esto removerá ambos elementos del DOM
-  });
-
   // Recomendados:
   $(document).on('click', '#add-item', function () {
     var titleEs = $('#title-es').val();
@@ -139,5 +131,79 @@ document.addEventListener('DOMContentLoaded', function () {
         `);
     });
   }
+
+  $(document).on('click', '.add-new-card', function () {
+    var itemsBlock = $(this).closest('.prtlt-digitup-generic').find('.options_all_items');
+    var item = $(this).closest('.prtlt-digitup-generic').find('.options_item_to_copy');
+    var lastElem = item[item.length - 1];
+    var clonedElem = $(lastElem).clone(); // Clonar el último elemento
+    itemsBlock.append(clonedElem);
+  });
+
+  $(document).on('click', '.delete-cards-option', function () {
+    $(this).closest('.prtlt-digitup-generic').find('.option_button.delete-card').toggleClass('hidden');
+    if ($(this).hasClass('warning')) {
+      $(this).addClass('success');
+      $(this).removeClass('warning');
+      $(this).text('Terminar edición');
+    } else {
+      $(this).removeClass('success');
+      $(this).addClass('warning');
+      $(this).text('Editar cards');
+    }
+  });
+
+  $(document).on('click', '.open-options-link', function () {
+    var $mainContent = $(this).closest('.carts__items');
+    var $images = $mainContent.find('img');
+    // Suponiendo que 'this' es parte de un ítem que también incluye la imagen
+    var $image = $(this).closest('.carts__item').find('img');
+    var imageIndex = $images.index($image);
+    console.log("Índice de la imagen: " + imageIndex);
+
+    modalHtml = `
+          <div class="config-modal-api-backdrop"></div>
+          <div class="config-modal-api">
+              <h2>Configuración imagen</h2>
+              <div>
+                  <label>URL configuracion:</label>
+                  <input type="text" id="imageConfigUrl" value="${$image.attr('src')}">
+              </div>
+              <div class="bottom_side">
+                <button class="danger" id="cancelConfig">Cancelar</button>
+                <button class="success" id="saveImageUrl" data-image-index="${imageIndex}">Guardar</button>
+              </div>
+          </div>
+      `;
+
+    $('body').append(modalHtml);
+  });
+
+  $(document).on('click', '#saveImageUrl', function () {
+    console.log('click #saveImageUrl');
+    var imageIndex = $(this).attr('data-image-index');  // Recupera el índice del portlet
+    console.log('imageIndex', imageIndex);
+    console.log('url', $('#imageConfigUrl').val());
+    var url = $('#imageConfigUrl').val();
+    console.log('url', url);
+    var imageContent = $('.carts__items').eq(imageIndex).find('img');
+    console.log('imageContent', imageContent);
+
+    imageContent.attr('src', url);
+  });
+
+  $(document).on('click', '.delete-card', function () {
+    if (confirm("¿Estás seguro de que deseas eliminar este elemento?")) {
+      $(this).closest('.carts__item').remove();
+    }
+  });
+
+  $(document).on('click', '#cancelConfig, #saveConfig, #saveImageUrl', function () {
+    $('.config-modal-api-backdrop, .config-modal-api').remove(); // Esto removerá ambos elementos del DOM
+  });
+
+  $(document).on('click', '.config-modal-api-backdrop', function () {
+    $('.config-modal-api-backdrop, .config-modal-api').remove(); // Esto removerá ambos elementos del DOM
+  });
 
 });

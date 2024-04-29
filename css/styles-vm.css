@@ -1,85 +1,113 @@
 /* Base */
 /* Reset and base styles  */
-.prtlt-digitup-api * {
+.prtlt-digitup-generic * {
   padding: 0px;
   margin: 0px;
   border: none;
 }
 
-.prtlt-digitup-api *,
-.prtlt-digitup-api *::before,
-.prtlt-digitup-api *::after {
+.prtlt-digitup-generic *,
+.prtlt-digitup-generic *::before,
+.prtlt-digitup-generic *::after {
   box-sizing: border-box;
 }
 
-.prtlt-digitup-api a,
-.prtlt-digitup-api a:link,
-.prtlt-digitup-api a:visited {
+.prtlt-digitup-generic a,
+.prtlt-digitup-generic a:link,
+.prtlt-digitup-generic a:visited {
   text-decoration: none;
 }
 
-.prtlt-digitup-api a:hover {
+.prtlt-digitup-generic a:hover {
   text-decoration: none;
 }
 
-.prtlt-digitup-api aside,
-.prtlt-digitup-api nav,
-.prtlt-digitup-api footer,
-.prtlt-digitup-api header,
-.prtlt-digitup-api section,
-.prtlt-digitup-api main {
+.prtlt-digitup-generic aside,
+.prtlt-digitup-generic nav,
+.prtlt-digitup-generic footer,
+.prtlt-digitup-generic header,
+.prtlt-digitup-generic section,
+.prtlt-digitup-generic main {
   display: block;
 }
 
-.prtlt-digitup-api h1,
-.prtlt-digitup-api h2,
-.prtlt-digitup-api h3,
-.prtlt-digitup-api h4,
-.prtlt-digitup-api h5,
-.prtlt-digitup-api h6,
-.prtlt-digitup-api p {
+.prtlt-digitup-generic h1,
+.prtlt-digitup-generic h2,
+.prtlt-digitup-generic h3,
+.prtlt-digitup-generic h4,
+.prtlt-digitup-generic h5,
+.prtlt-digitup-generic h6,
+.prtlt-digitup-generic p {
   font-size: inherit;
   font-weight: inherit;
 }
-.prtlt-digitup-api p {
+.prtlt-digitup-generic p {
   margin: 0;
 }
 
-.prtlt-digitup-api ul,
-.prtlt-digitup-api ul li {
+.prtlt-digitup-generic h1 {
+  font-size: 46px !important;
+}
+
+.prtlt-digitup-generic h2 {
+  font-size: 36px !important;
+}
+
+.prtlt-digitup-generic h3 {
+  font-size: 30px !important;
+}
+
+.prtlt-digitup-generic h4 {
+  font-size: 24px !important;
+}
+
+.prtlt-digitup-generic h5 {
+  font-size: 14px !important;
+}
+
+.prtlt-digitup-generic h6 {
+  font-size: 10px !important;
+}
+
+.prtlt-digitup-generic p {
+  font-size: 16px !important;
+}
+
+.prtlt-digitup-generic ul,
+.prtlt-digitup-generic ul li {
   list-style: none;
 }
 
-.prtlt-digitup-api img {
+.prtlt-digitup-generic img {
   vertical-align: top;
 }
 
-.prtlt-digitup-api img,
-.prtlt-digitup-api svg {
+.prtlt-digitup-generic img,
+.prtlt-digitup-generic svg {
   max-width: 100%;
   height: auto;
 }
 
-.prtlt-digitup-api address {
+.prtlt-digitup-generic address {
   font-style: normal;
 }
 
-.prtlt-digitup-api input,
-.prtlt-digitup-api textarea,
-.prtlt-digitup-api button,
-.prtlt-digitup-api select {
+.prtlt-digitup-generic input,
+.prtlt-digitup-generic textarea,
+.prtlt-digitup-generic button,
+.prtlt-digitup-generic select {
   font-family: inherit;
   font-size: inherit;
   color: inherit;
   background-color: transparent;
 }
 
-.prtlt-digitup-api input::-ms-clear {
+.prtlt-digitup-generic input::-ms-clear {
   display: none;
 }
 
-.prtlt-digitup-api button,
-.prtlt-digitup-api input[type=submit] {
+.prtlt-digitup-generic button,
+.prtlt-digitup-generic input[type=submit] {
   display: inline-block;
   box-shadow: none;
   background-color: transparent;
@@ -87,73 +115,98 @@
   cursor: pointer;
 }
 
-.prtlt-digitup-api input:focus,
-.prtlt-digitup-api input:active,
-.prtlt-digitup-api button:focus,
-.prtlt-digitup-api button:active {
+.prtlt-digitup-generic input:focus,
+.prtlt-digitup-generic input:active,
+.prtlt-digitup-generic button:focus,
+.prtlt-digitup-generic button:active {
   outline: none;
 }
 
-.prtlt-digitup-api button::-moz-focus-inner {
+.prtlt-digitup-generic button::-moz-focus-inner {
   padding: 0;
   border: 0;
 }
 
-.prtlt-digitup-api label {
+.prtlt-digitup-generic label {
   cursor: pointer;
 }
 
-.prtlt-digitup-api legend {
+.prtlt-digitup-generic legend {
   display: block;
 }
 
-.prtlt-digitup-api .prtlt-digitup-api-options {
+.prtlt-digitup-generic .prtlt-digitup-generic-options {
   position: absolute;
   top: 16px;
   right: 16px;
   display: flex;
   gap: 16px;
+  z-index: 1111;
 }
-.prtlt-digitup-api .prtlt-digitup-api-options .open-api-config {
+
+.prtlt-digitup-generic .prtlt-digitup-generic-options.in_top {
+  position: absolute;
+  top: -32px;
+  right: 0px;
+  display: flex;
+  gap: 16px;
+  z-index: 1111;
+}
+.prtlt-digitup-generic .prtlt-digitup-generic-options .open-api-config {
   color: white;
   background-color: #0E9F6E;
   padding: 4px 8px;
   border-radius: 8px;
   cursor: pointer;
 }
-.prtlt-digitup-api .prtlt-digitup-api-options .remove-api-portlet {
+.prtlt-digitup-generic .prtlt-digitup-generic-options .remove-api-portlet {
   color: white;
   background-color: #E02424;
   padding: 4px 8px;
   border-radius: 8px;
   cursor: pointer;
 }
+.prtlt-digitup-generic .prtlt-digitup-generic-options .option_button {
+  color: white;
+  padding: 4px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.prtlt-digitup-generic .prtlt-digitup-generic-options .option_button.success {
+  background-color: #0E9F6E;
+}
+.prtlt-digitup-generic .prtlt-digitup-generic-options .option_button.danger {
+  background-color: #E02424;
+}
+.prtlt-digitup-generic .prtlt-digitup-generic-options .option_button.warning {
+  background-color: #EBA747;
+}
 
-.prtlt-digitup-api {
+.prtlt-digitup-generic {
   position: relative;
 }
-.prtlt-digitup-api .main_content {
+.prtlt-digitup-generic .main_content {
   padding: 48px;
   background-color: white;
   font-family: 'Archivo';
 }
 
 @media(max-width: 768px) {
-  .prtlt-digitup-api .main_content {
+  .prtlt-digitup-generic .main_content {
     padding: 48px 16px;
   }
 }
 
 @media(max-width: 568px) {
-  .prtlt-digitup-api .main_content {
+  .prtlt-digitup-generic .main_content {
     padding: 48px 8px;
   }
 }
 
-.prtlt-digitup-api .main_content.grey {
+.prtlt-digitup-generic .main_content.grey {
   background-color: #f2f2f2;
 }
-.prtlt-digitup-api .title {
+.prtlt-digitup-generic .title {
   color: #333;
   text-align: center;
   font-size: 32px;
@@ -165,18 +218,18 @@
 }
 
 @media (max-width: 768px) {
-  .prtlt-digitup-api .title {
+  .prtlt-digitup-generic .title {
     padding: 0 12.5px;
     font-size: 24px;
     line-height: 1.2;
   }
 }
 
-.prtlt-digitup-api .none {
+.prtlt-digitup-generic .none {
   display: none !important;
 }
 
-.prtlt-digitup-api .visually-hidden {
+.prtlt-digitup-generic .visually-hidden {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -189,31 +242,31 @@
   overflow: hidden;
 }
 
-.prtlt-digitup-api .no-scroll {
+.prtlt-digitup-generic .no-scroll {
   overflow-y: hidden;
 }
 
-.prtlt-digitup-api .footer {
+.prtlt-digitup-generic .footer {
   margin-top: auto;
 }
 
-.prtlt-digitup-api .footer {
+.prtlt-digitup-generic .footer {
   padding: 60px 0;
   background-color: #e3e3e3;
 }
 
-.prtlt-digitup-api .carts {
+.prtlt-digitup-generic .carts {
   padding: 31px 0 70px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 768px) {
-  .prtlt-digitup-api .carts {
+  .prtlt-digitup-generic .carts {
     padding: 31px 0 40px;
   }
 }
 
-.prtlt-digitup-api .carts .inner {
+.prtlt-digitup-generic .carts .inner {
   width: 100%;
   max-width: 1226px;
   padding: 0 16px;
@@ -221,12 +274,12 @@
 }
 
 @media (max-width: 768px) {
-  .prtlt-digitup-api .carts .inner {
+  .prtlt-digitup-generic .carts .inner {
     padding: 0;
   }
 }
 
-.prtlt-digitup-api .carts__items {
+.prtlt-digitup-generic .carts__items {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -235,7 +288,7 @@
 }
 
 @media (max-width: 768px) {
-  .prtlt-digitup-api .carts__items {
+  .prtlt-digitup-generic .carts__items {
     flex-wrap: nowrap;
     overflow-x: auto;
     justify-content: flex-start;
@@ -246,25 +299,25 @@
   }
 }
 
-.prtlt-digitup-api .carts__items:hover a {
+.prtlt-digitup-generic .carts__items:hover a {
   text-decoration: none;
 }
 
-.prtlt-digitup-api .carts__item {
+.prtlt-digitup-generic .carts__item {
   width: 100%;
   max-width: 285px;
   border-radius: 24px;
   height: 100%;
   min-height: 360px;
   position: relative;
-  cursor: pointer;
   transition: all 0.2s ease-in;
 }
 
-.prtlt-digitup-api .carts__item .btn {
-  display: flex;
+.prtlt-digitup-generic .carts__item .btn {
+  display: none;
   width: 100%;
-  padding: 12px 40px;
+  padding: 0;
+  min-height: 46px;
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -278,19 +331,33 @@
   line-height: 20px;
   margin: 0 auto;
 }
+.prtlt-digitup-generic .prtlt-digitup-api-options + .main_content .btn {
+  display: flex !important;
+}
 
-.prtlt-digitup-api .carts__item:hover .btn {
+.prtlt-digitup-generic .carts__item .btn p {
+  width: 100%;
+  text-align: center;
+}
+.prtlt-digitup-generic .carts__item .btn a {
+  width: 100%;
+  padding: 12px 40px;
+  display: block;
+  color: white;
+}
+
+.prtlt-digitup-generic .carts__item:hover .btn {
   display: flex;
 }
 
-.prtlt-digitup-api .carts__item:hover .carts__item-wrapper {
+.prtlt-digitup-generic .carts__item:hover .carts__item-wrapper {
   background-color: rgba(43, 103, 246, 0.7);
 }
 
 /* .carts__item:hover .carts__item-bottom {
   margin-bottom: 60px;
 } */
-.prtlt-digitup-api .carts__item-wrapper {
+.prtlt-digitup-generic .carts__item-wrapper {
   position: relative;
   border-radius: 24px;
   background-color: rgba(0, 0, 0, 0.32);
@@ -305,13 +372,13 @@
 }
 
 @media (max-width: 768px) {
-  .prtlt-digitup-api .carts__item-wrapper {
+  .prtlt-digitup-generic .carts__item-wrapper {
     width: 285px;
     max-width: 100%;
   }
 }
 
-.prtlt-digitup-api .carts__item img {
+.prtlt-digitup-generic .carts__item img {
   position: absolute;
   object-fit: cover;
   top: 0;
@@ -322,7 +389,7 @@
   border-radius: 24px;
 }
 
-.prtlt-digitup-api .carts__item-top .top_text {
+.prtlt-digitup-generic .carts__item-top .top_text {
   color: #FFF;
   font-family: "Archivo", sans-serif;
   font-size: 16px;
@@ -331,7 +398,7 @@
   line-height: normal;
 }
 
-.prtlt-digitup-api .carts__item-top h2 {
+.prtlt-digitup-generic .carts__item-top h2 {
   color: #FFF;
   font-family: "Archivo", sans-serif;
   font-size: 32px;
@@ -341,21 +408,21 @@
   margin-top: 6px;
 }
 
-.prtlt-digitup-api .carts__item-bottom_side {
+.prtlt-digitup-generic .carts__item-bottom_side {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.prtlt-digitup-api .carts__item-bottom {
+.prtlt-digitup-generic .carts__item-bottom {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   width: 100%;
 }
 
-.prtlt-digitup-api .carts__item-bottom .small_text {
+.prtlt-digitup-generic .carts__item-bottom .small_text {
   color: #FFF;
   text-align: right;
   font-family: "Archivo", sans-serif;
@@ -366,11 +433,11 @@
   text-transform: uppercase;
 }
 
-.prtlt-digitup-api .carts__item-bottom span:last-of-type {
+.prtlt-digitup-generic .carts__item-bottom span:last-of-type {
   line-height: 10px;
 }
 
-.prtlt-digitup-api .carts__item-bottom p.large_text {
+.prtlt-digitup-generic .carts__item-bottom .large_text {
   color: #FFF;
   font-family: "Archivo", sans-serif;
   font-size: 40px;
@@ -381,17 +448,13 @@
   text-align: right;
 }
 
-.prtlt-digitup-api .carts__item .btn {
-  display: none;
-}
-
 @media(max-width: 768px) {
-  .prtlt-digitup-api .carts__item .btn {
+  .prtlt-digitup-generic .carts__item .btn {
     display: flex;
   }
 }
 
-.prtlt-digitup-api .carts__button {
+.prtlt-digitup-generic .carts__button {
   display: flex;
   padding: 12px 24px;
   align-items: flex-start;
@@ -404,12 +467,12 @@
 }
 
 @media (max-width: 768px) {
-  .prtlt-digitup-api .carts__button {
+  .prtlt-digitup-generic .carts__button {
     display: none;
   }
 }
 
-.prtlt-digitup-api .carts__button .button_more {
+.prtlt-digitup-generic .carts__button .button_more {
   cursor: pointer;
   display: flex;
   height: 32px;
@@ -428,33 +491,33 @@
   transition: all 0.2s;
 }
 
-.prtlt-digitup-api .carts__button .button_more:hover {
+.prtlt-digitup-generic .carts__button .button_more:hover {
   background-color: #2B67F6;
   color: #fff;
 }
 
-.prtlt-digitup-api .carts__button .button_more:hover::before {
+.prtlt-digitup-generic .carts__button .button_more:hover::before {
   background: url("https://cdn.mundomarcruceros.com/wlgs/mundomar-images/plus-white.svg") no-repeat;
 }
 
-.prtlt-digitup-api .carts__button .button_more::before {
+.prtlt-digitup-generic .carts__button .button_more::before {
   content: "";
   width: 20px;
   height: 20px;
   background: url("https://cdn.mundomarcruceros.com/wlgs/mundomar-images/plus.svg") no-repeat;
 }
 
-.prtlt-digitup-api .offers {
+.prtlt-digitup-generic .offers {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 768px) {
-  .prtlt-digitup-api .offers {
+  .prtlt-digitup-generic .offers {
     padding: 0 0 40px;
   }
 }
 
-.prtlt-digitup-api .offers .inner {
+.prtlt-digitup-generic .offers .inner {
   width: 100%;
   max-width: 1224px;
   padding: 0 16px;
@@ -462,17 +525,17 @@
 }
 
 @media (max-width: 1100px) {
-  .prtlt-digitup-api .offers .inner {
+  .prtlt-digitup-generic .offers .inner {
     padding: 0 13px;
   }
 }
 
-.prtlt-digitup-api .offers__calendar {
+.prtlt-digitup-generic .offers__calendar {
   width: fit-content;
   position: relative;
 }
 
-.prtlt-digitup-api .offers__items {
+.prtlt-digitup-generic .offers__items {
   margin-top: 40px;
   display: flex;
   flex-direction: column;
@@ -480,13 +543,13 @@
 }
 
 @media (max-width: 768px) {
-  .prtlt-digitup-api .offers__items {
+  .prtlt-digitup-generic .offers__items {
     margin-top: 24px;
     gap: 8px;
   }
 }
 
-.prtlt-digitup-api .offers__item {
+.prtlt-digitup-generic .offers__item {
   display: flex;
   gap: 16px;
   /* height: 100%; */
@@ -497,26 +560,26 @@
 }
 
 @media (max-width: 1100px) {
-  .prtlt-digitup-api .offers__item {
+  .prtlt-digitup-generic .offers__item {
     /* max-height: 100%; */
     max-height: none;
   }
 }
 
 @media (max-width: 768px) {
-  .prtlt-digitup-api .offers__item {
+  .prtlt-digitup-generic .offers__item {
     gap: 8px;
   }
 }
 
-.prtlt-digitup-api .offers__item-image {
+.prtlt-digitup-generic .offers__item-image {
   position: relative;
   width: 30%;
   max-width: 300px;
 }
 
 @media (max-width: 1100px) {
-  .prtlt-digitup-api .offers__item-image {
+  .prtlt-digitup-generic .offers__item-image {
     width: 100%;
     max-width: 30%;
     height: 100%;
@@ -524,7 +587,7 @@
 }
 
 @media (max-width: 568px) {
-  .prtlt-digitup-api .offers__item-image {
+  .prtlt-digitup-generic .offers__item-image {
     max-width: 104px;
     display: flex;
     flex-direction: column;
@@ -533,7 +596,7 @@
   }
 }
 
-.prtlt-digitup-api .offers__item-image .image-static {
+.prtlt-digitup-generic .offers__item-image .image-static {
   /* height: 100%; */
   /* min-height: 141px; */
   object-fit: cover;
@@ -542,7 +605,7 @@
   max-height: 160px;
   min-height: 100%;
 }
-.prtlt-digitup-api .offers__item-image .image-hover {
+.prtlt-digitup-generic .offers__item-image .image-hover {
   width: 100%;
   object-fit: cover;
   border-radius: 16px;
@@ -551,38 +614,38 @@
 }
 
 @media (max-width: 1100px) {
-  .prtlt-digitup-api .offers__item-image .image-static {
+  .prtlt-digitup-generic .offers__item-image .image-static {
     width: 100%;
 
   }
 }
 
 @media (max-width: 768px) {
-  .prtlt-digitup-api .offers__item-image .image-static {
+  .prtlt-digitup-generic .offers__item-image .image-static {
     height: 100%;
     min-height: auto;
   }
 }
 
 @media (min-width: 769px) {
-  .prtlt-digitup-api .offers__item-image {
+  .prtlt-digitup-generic .offers__item-image {
     height: auto;
   }
 }
 
 @media (max-width: 568px) {
-  .prtlt-digitup-api .offers__item-image .image-static {
+  .prtlt-digitup-generic .offers__item-image .image-static {
     min-height: 91px;
   }
 }
 
 @media (max-width: 400px) {
-  .prtlt-digitup-api .offers__item-image .image-static {
+  .prtlt-digitup-generic .offers__item-image .image-static {
     min-height: 81px;
   }
 }
 
-.prtlt-digitup-api .offers__item-image p {
+.prtlt-digitup-generic .offers__item-image p {
   background: #fff;
   padding: 5px 7px;
   position: absolute;
@@ -590,12 +653,12 @@
   left: 12px;
   border-radius: 16px;
 }
-.prtlt-digitup-api .offers__item-image p img.image-before {
+.prtlt-digitup-generic .offers__item-image p img.image-before {
   max-height: 24px;
 }
 
 @media (max-width: 768px) {
-  .prtlt-digitup-api .offers__item-image p {
+  .prtlt-digitup-generic .offers__item-image p {
     position: relative;
     top: auto;
     left: auto;
@@ -606,23 +669,23 @@
   }
 }
 
-.prtlt-digitup-api .offers__item-image .image-hover {
+.prtlt-digitup-generic .offers__item-image .image-hover {
   display: none;
 }
 
 @media (max-width: 568px) {
-  .prtlt-digitup-api .offers__item-image .image-hover {
+  .prtlt-digitup-generic .offers__item-image .image-hover {
     min-height: 91px;
   }
 }
 
 @media (max-width: 400px) {
-  .prtlt-digitup-api .offers__item-image .image-hover {
+  .prtlt-digitup-generic .offers__item-image .image-hover {
     height: 100%;
   }
 }
 
-.prtlt-digitup-api .offers__item-image:hover .image-hover {
+.prtlt-digitup-generic .offers__item-image:hover .image-hover {
   display: block;
 }
 
@@ -631,13 +694,13 @@
 }
 
 @media (max-width: 768px) {
-  .prtlt-digitup-api .offers__item-image:hover .image-before {
+  .prtlt-digitup-generic .offers__item-image:hover .image-before {
     display: block;
     margin: 0 auto;
   }
 }
 
-.prtlt-digitup-api .offers__item-text {
+.prtlt-digitup-generic .offers__item-text {
   border-radius: 16px;
   background: #FFF;
   display: flex;
@@ -650,7 +713,7 @@
 }
 
 @media (max-width: 1100px) {
-  .prtlt-digitup-api .offers__item-text {
+  .prtlt-digitup-generic .offers__item-text {
     max-width: 80%;
     padding: 15px;
     align-items: flex-end;
@@ -658,7 +721,7 @@
 }
 
 @media (max-width: 768px) {
-  .prtlt-digitup-api .offers__item-text {
+  .prtlt-digitup-generic .offers__item-text {
     max-width: 100%;
     flex-direction: column;
     align-items: flex-start;
@@ -666,21 +729,21 @@
 }
 
 @media (max-width: 400px) {
-  .prtlt-digitup-api .offers__item-text {
+  .prtlt-digitup-generic .offers__item-text {
     max-width: 238px;
     padding: 8px;
     align-items: flex-start;
   }
 }
 
-.prtlt-digitup-api .offers__item-left {
+.prtlt-digitup-generic .offers__item-left {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
 }
 
-.prtlt-digitup-api .offers__item-left h3 {
+.prtlt-digitup-generic .offers__item-left h3 {
   color: #333;
   font-size: 24px;
   font-style: normal;
@@ -689,21 +752,21 @@
 }
 
 @media (max-width: 568px) {
-  .prtlt-digitup-api .offers__item-left h3 {
+  .prtlt-digitup-generic .offers__item-left h3 {
     font-size: 14px;
   }
 }
 
-.prtlt-digitup-api .offers__item-left .hide-places {
+.prtlt-digitup-generic .offers__item-left .hide-places {
   display: none;
 }
 
-.prtlt-digitup-api .offers__item-left h4 {
+.prtlt-digitup-generic .offers__item-left h4 {
   display: none;
 }
 
 @media (max-width: 768px) {
-  .prtlt-digitup-api .offers__item-left h4 {
+  .prtlt-digitup-generic .offers__item-left h4 {
     display: block;
     color: var(--Black-color, #333);
     font-size: 14px;
@@ -715,15 +778,15 @@
     gap: 4px;
   }
 
-  .prtlt-digitup-api .offers__item-left h4 strong {
+  .prtlt-digitup-generic .offers__item-left h4 strong {
     font-weight: 600;
   }
-  .prtlt-digitup-api .offers__item-left h4 strong img {
+  .prtlt-digitup-generic .offers__item-left h4 strong img {
     width: 20px;
   }
 }
 
-.prtlt-digitup-api .offers__item-left p {
+.prtlt-digitup-generic .offers__item-left p {
   color: #2B67F6;
   font-size: 16px;
   font-style: normal;
@@ -733,26 +796,26 @@
   position: relative;
 }
 
-.prtlt-digitup-api .offers__item-left p span {
+.prtlt-digitup-generic .offers__item-left p span {
   display: none;
 }
 
 @media (max-width: 768px) {
-  .prtlt-digitup-api .offers__item-left p span {
+  .prtlt-digitup-generic .offers__item-left p span {
     display: inline-block;
     font-weight: 600;
   }
 }
 
 @media (max-width: 568px) {
-  .prtlt-digitup-api .offers__item-left p {
+  .prtlt-digitup-generic .offers__item-left p {
     font-size: 14px;
     margin-top: 4px;
   }
 }
 
 @media (min-width: 769px) {
-  .prtlt-digitup-api .offers__item-left p:hover .hide-places {
+  .prtlt-digitup-generic .offers__item-left p:hover .hide-places {
     position: absolute;
     bottom: 22px;
     left: -77px;
@@ -771,7 +834,7 @@
 }
 
 @media (max-width: 768px) {
-  .prtlt-digitup-api .offers__item-left p .hide-places.active {
+  .prtlt-digitup-generic .offers__item-left p .hide-places.active {
     position: absolute;
     bottom: 22px;
     left: -45%;
@@ -791,7 +854,7 @@
 }
 
 @media (min-width: 769px) {
-  .prtlt-digitup-api .offers__item-left p:hover .hide-places::before {
+  .prtlt-digitup-generic .offers__item-left p:hover .hide-places::before {
     position: absolute;
     content: "";
     bottom: -7px;
@@ -803,26 +866,26 @@
   }
 }
 
-.prtlt-digitup-api .offers__item-left-bottom {
+.prtlt-digitup-generic .offers__item-left-bottom {
   display: flex;
   gap: 24px;
   margin-top: 18px;
 }
 
 @media (max-width: 1260px) {
-  .prtlt-digitup-api .offers__item-left-bottom {
+  .prtlt-digitup-generic .offers__item-left-bottom {
     gap: 10px;
     flex-direction: column;
   }
 }
 
 @media (max-width: 768px) {
-  .prtlt-digitup-api .offers__item-left-bottom {
+  .prtlt-digitup-generic .offers__item-left-bottom {
     display: none;
   }
 }
 
-.prtlt-digitup-api .offers__item-left-bottom .calendar {
+.prtlt-digitup-generic .offers__item-left-bottom .calendar {
   display: none;
   position: absolute;
   right: -88%;
@@ -835,7 +898,7 @@
   overflow-y: auto;
 }
 
-.prtlt-digitup-api .offers__item-left-bottom .calendar_data {
+.prtlt-digitup-generic .offers__item-left-bottom .calendar_data {
   padding: 0;
   color: var(--Black-color, #333) !important;
   font-size: 16px;
@@ -845,7 +908,7 @@
   /* 125% */
 }
 
-.prtlt-digitup-api .offers__item-left-bottom .calendar_price {
+.prtlt-digitup-generic .offers__item-left-bottom .calendar_price {
   color: var(--Black-color, #333) !important;
   font-size: 18px;
   font-style: normal;
@@ -854,7 +917,7 @@
   /* 111.111% */
 }
 
-.prtlt-digitup-api .offers__item-left-bottom .calendar_item {
+.prtlt-digitup-generic .offers__item-left-bottom .calendar_item {
   cursor: pointer;
   padding: 12px 16px;
   display: flex;
@@ -865,23 +928,23 @@
   height: 44px;
 }
 
-.prtlt-digitup-api .offers__item-left-bottom .calendar_item:hover {
+.prtlt-digitup-generic .offers__item-left-bottom .calendar_item:hover {
   background: #d6dff7;
 }
 
-.prtlt-digitup-api .offers__item-left-bottom .calendar_item:last-of-type {
+.prtlt-digitup-generic .offers__item-left-bottom .calendar_item:last-of-type {
   border-bottom: 0;
 }
 
-.prtlt-digitup-api .offers__item-left-bottom .calendar_item:last-of-type:hover {
+.prtlt-digitup-generic .offers__item-left-bottom .calendar_item:last-of-type:hover {
   border-radius: 0 0 8px 8px;
 }
 
-.prtlt-digitup-api .offers__item-left-bottom .calendar_item:first-of-type:hover {
+.prtlt-digitup-generic .offers__item-left-bottom .calendar_item:first-of-type:hover {
   border-radius: 8px 8px 0 0;
 }
 
-.prtlt-digitup-api .offers__item-left-bottom p {
+.prtlt-digitup-generic .offers__item-left-bottom p {
   color: var(--Black-color, #333);
   font-size: 18px;
   font-style: normal;
@@ -892,12 +955,12 @@
 }
 
 @media (max-width: 1100px) {
-  .prtlt-digitup-api .offers__item-left-bottom p {
+  .prtlt-digitup-generic .offers__item-left-bottom p {
     font-size: 15px;
   }
 }
 
-.prtlt-digitup-api .offers__item-left-bottom p::before {
+.prtlt-digitup-generic .offers__item-left-bottom p::before {
   position: absolute;
   content: "";
   width: 22px;
@@ -908,21 +971,21 @@
   left: 0;
 }
 
-.prtlt-digitup-api .offers__item-left-bottom .ship::before {
+.prtlt-digitup-generic .offers__item-left-bottom .ship::before {
   background: url("https://cdn.mundomarcruceros.com/wlgs/mundomar-images/ship.svg") no-repeat;
 }
 
-.prtlt-digitup-api .offers__item-left-bottom .data {
+.prtlt-digitup-generic .offers__item-left-bottom .data {
   padding-right: 24px;
   cursor: pointer;
   width: fit-content;
 }
 
-.prtlt-digitup-api .offers__item-left-bottom .data::before {
+.prtlt-digitup-generic .offers__item-left-bottom .data::before {
   background: url("https://cdn.mundomarcruceros.com/wlgs/mundomar-images/calendar.svg") no-repeat;
 }
 
-.prtlt-digitup-api .offers__item-left-bottom .data::after {
+.prtlt-digitup-generic .offers__item-left-bottom .data::after {
   position: absolute;
   content: "";
   width: 20px;
@@ -934,20 +997,20 @@
   background: url("https://cdn.mundomarcruceros.com/wlgs/mundomar-images/down.svg") no-repeat;
 }
 
-.prtlt-digitup-api .offers__item-left-bottom .data.visible+.calendar {
+.prtlt-digitup-generic .offers__item-left-bottom .data.visible+.calendar {
   display: flex !important;
   flex-direction: column;
 }
 
-.prtlt-digitup-api .offers__item-left-bottom .data.visible::after {
+.prtlt-digitup-generic .offers__item-left-bottom .data.visible::after {
   background: url("https://cdn.mundomarcruceros.com/wlgs/mundomar-images/up.svg") no-repeat;
 }
 
-.prtlt-digitup-api .offers__item-left-bottom .time::before {
+.prtlt-digitup-generic .offers__item-left-bottom .time::before {
   background: url("https://cdn.mundomarcruceros.com/wlgs/mundomar-images/clock.svg") no-repeat;
 }
 
-.prtlt-digitup-api .offers__item-right {
+.prtlt-digitup-generic .offers__item-right {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -956,7 +1019,7 @@
 }
 
 @media (max-width: 768px) {
-  .prtlt-digitup-api .offers__item-right {
+  .prtlt-digitup-generic .offers__item-right {
     flex-direction: row;
     align-items: flex-end;
     justify-content: space-between;
@@ -964,32 +1027,32 @@
   }
 }
 
-.prtlt-digitup-api .offers__item-right-top {
+.prtlt-digitup-generic .offers__item-right-top {
   display: flex;
   gap: 9px;
   align-items: center;
 }
 
 @media (max-width: 768px) {
-  .prtlt-digitup-api .offers__item-right-top {
+  .prtlt-digitup-generic .offers__item-right-top {
     align-items: flex-start;
     flex-direction: column-reverse;
   }
 }
 
-.prtlt-digitup-api .offers__item-right-images {
+.prtlt-digitup-generic .offers__item-right-images {
   display: flex;
   gap: 12px;
 }
 
 @media (max-width: 768px) {
-  .prtlt-digitup-api .offers__item-right-images {
+  .prtlt-digitup-generic .offers__item-right-images {
     flex-direction: row-reverse;
     gap: 8px;
   }
 }
 
-.prtlt-digitup-api .offers__item-right-text {
+.prtlt-digitup-generic .offers__item-right-text {
   display: flex;
   padding: 3px 8px;
   justify-content: center;
@@ -1001,28 +1064,28 @@
   position: relative;
 }
 
-.prtlt-digitup-api .offers__item-right-text img {
+.prtlt-digitup-generic .offers__item-right-text img {
   width: 22px;
 }
 
 @media (max-width: 768px) {
-  /* .prtlt-digitup-api .offers__item-right-text {
+  /* .prtlt-digitup-generic .offers__item-right-text {
     background: transparent;
     padding: 0;
     border-radius: 0;
     gap: 0;
   } */
-  .prtlt-digitup-api .offers__item-right-text img {
+  .prtlt-digitup-generic .offers__item-right-text img {
     width: 18px;
   }
 }
 
-.prtlt-digitup-api .offers__item-right-text span {
+.prtlt-digitup-generic .offers__item-right-text span {
   display: none;
 }
 
 @media (min-width: 769px) {
-  .prtlt-digitup-api .offers__item-right-text:hover span {
+  .prtlt-digitup-generic .offers__item-right-text:hover span {
     position: absolute;
     bottom: 28px;
     left: 50%;
@@ -1042,7 +1105,7 @@
 }
 
 @media (max-width: 768px) {
-  .prtlt-digitup-api .offers__item-right-text span.active {
+  .prtlt-digitup-generic .offers__item-right-text span.active {
     position: absolute;
     display: block;
     left: 50%;
@@ -1062,7 +1125,7 @@
 }
 
 @media (min-width: 769px) {
-  .prtlt-digitup-api .offers__item-right-text:hover span::before {
+  .prtlt-digitup-generic .offers__item-right-text:hover span::before {
     position: absolute;
     content: "";
     bottom: -7px;
@@ -1074,17 +1137,17 @@
   }
 }
 
-.prtlt-digitup-api .offers__item-right-text img {
+.prtlt-digitup-generic .offers__item-right-text img {
   display: block;
 }
 
 /* @media (max-width: 768px) {
-  .prtlt-digitup-api .offers__item-right-text img {
+  .prtlt-digitup-generic .offers__item-right-text img {
     display: none;
   }
 } */
 
-.prtlt-digitup-api .offers__item-right-text .promo {
+.prtlt-digitup-generic .offers__item-right-text .promo {
   color: var(--orange-400, #FF8A4C);
   font-size: 11px;
   font-style: normal;
@@ -1096,13 +1159,13 @@
 }
 
 @media (max-width: 768px) {
-  .prtlt-digitup-api .offers__item-right-text .promo {
+  .prtlt-digitup-generic .offers__item-right-text .promo {
     font-size: 9px;
     line-height: 15.398px;
   }
 }
 
-.prtlt-digitup-api .offers__item-right-bottom {
+.prtlt-digitup-generic .offers__item-right-bottom {
   display: flex;
   gap: 32px;
   align-items: flex-end;
@@ -1110,7 +1173,7 @@
 }
 
 @media (max-width: 1260px) {
-  .prtlt-digitup-api .offers__item-right-bottom {
+  .prtlt-digitup-generic .offers__item-right-bottom {
     gap: 10px;
     margin-top: 0;
     flex-wrap: wrap;
@@ -1118,13 +1181,13 @@
   }
 }
 
-.prtlt-digitup-api .offers__item-right-bottom div {
+.prtlt-digitup-generic .offers__item-right-bottom div {
   display: flex;
   flex-direction: column;
   position: relative;
 }
 
-.prtlt-digitup-api .offers__item-right-bottom div span {
+.prtlt-digitup-generic .offers__item-right-bottom div span {
   color: #333;
   text-align: right;
   font-size: 10px;
@@ -1135,14 +1198,14 @@
 }
 
 @media (max-width: 568px) {
-  .prtlt-digitup-api .offers__item-right-bottom div span {
+  .prtlt-digitup-generic .offers__item-right-bottom div span {
     font-size: 8px;
     padding-right: 24px;
     line-height: 12px;
   }
 }
 
-.prtlt-digitup-api .offers__item-right-bottom div .price {
+.prtlt-digitup-generic .offers__item-right-bottom div .price {
   color: #333;
   font-size: 40px;
   font-style: normal;
@@ -1152,18 +1215,18 @@
   white-space: nowrap;
 }
 
-.prtlt-digitup-api .offers__item-right-bottom div .price.visible+.calendar {
+.prtlt-digitup-generic .offers__item-right-bottom div .price.visible+.calendar {
   display: flex !important;
 }
 
 @media (max-width: 768px) {
-  .prtlt-digitup-api .offers__item-right-bottom div .price {
+  .prtlt-digitup-generic .offers__item-right-bottom div .price {
     padding-right: 24px;
     cursor: pointer;
     width: fit-content;
   }
 
-  .prtlt-digitup-api .offers__item-right-bottom div .price::after {
+  .prtlt-digitup-generic .offers__item-right-bottom div .price::after {
     position: absolute;
     content: "";
     width: 17px;
@@ -1175,23 +1238,23 @@
     background: url("https://cdn.mundomarcruceros.com/wlgs/mundomar-images/chevron-down.svg") no-repeat;
   }
 
-  .prtlt-digitup-api .offers__item-right-bottom div .price.visible::after {
+  .prtlt-digitup-generic .offers__item-right-bottom div .price.visible::after {
     background: url("https://cdn.mundomarcruceros.com/wlgs/mundomar-images/chevron-up.svg") no-repeat;
   }
 }
 
 @media (max-width: 568px) {
-  .prtlt-digitup-api .offers__item-right-bottom div .price {
+  .prtlt-digitup-generic .offers__item-right-bottom div .price {
     font-size: 24px;
     line-height: 22px;
   }
 
-  .prtlt-digitup-api .offers__item-right-bottom div .price::after {
+  .prtlt-digitup-generic .offers__item-right-bottom div .price::after {
     top: 2px;
   }
 }
 
-.prtlt-digitup-api .offers__item-right-bottom div .calendar {
+.prtlt-digitup-generic .offers__item-right-bottom div .calendar {
   display: none;
   position: absolute;
   right: 0;
@@ -1205,7 +1268,7 @@
   overflow-y: auto;
 }
 
-.prtlt-digitup-api .offers__item-right-bottom div .calendar_data {
+.prtlt-digitup-generic .offers__item-right-bottom div .calendar_data {
   padding: 0;
   color: var(--Black-color, #333) !important;
   font-size: 16px;
@@ -1215,7 +1278,7 @@
   /* 125% */
 }
 
-.prtlt-digitup-api .offers__item-right-bottom div .calendar_price {
+.prtlt-digitup-generic .offers__item-right-bottom div .calendar_price {
   color: var(--Black-color, #333) !important;
   font-size: 18px;
   font-style: normal;
@@ -1224,7 +1287,7 @@
   /* 111.111% */
 }
 
-.prtlt-digitup-api .offers__item-right-bottom div .calendar_item {
+.prtlt-digitup-generic .offers__item-right-bottom div .calendar_item {
   cursor: pointer;
   padding: 12px 16px;
   display: flex;
@@ -1236,23 +1299,23 @@
   height: 44px;
 }
 
-.prtlt-digitup-api .offers__item-right-bottom div .calendar_item:hover {
+.prtlt-digitup-generic .offers__item-right-bottom div .calendar_item:hover {
   background: #adb9d9;
 }
 
-.prtlt-digitup-api .offers__item-right-bottom div .calendar_item:last-of-type {
+.prtlt-digitup-generic .offers__item-right-bottom div .calendar_item:last-of-type {
   border-bottom: 0;
 }
 
-.prtlt-digitup-api .offers__item-right-bottom div .calendar_item:last-of-type:hover {
+.prtlt-digitup-generic .offers__item-right-bottom div .calendar_item:last-of-type:hover {
   border-radius: 0 0 8px 8px;
 }
 
-.prtlt-digitup-api .offers__item-right-bottom div .calendar_item:first-of-type:hover {
+.prtlt-digitup-generic .offers__item-right-bottom div .calendar_item:first-of-type:hover {
   border-radius: 8px 8px 0 0;
 }
 
-.prtlt-digitup-api .offers__item-right-bottom a {
+.prtlt-digitup-generic .offers__item-right-bottom a {
   display: flex;
   padding: 12px 40px;
   justify-content: center;
@@ -1274,78 +1337,78 @@
 }
 
 @media (max-width: 1100px) {
-  .prtlt-digitup-api .offers__item-right-bottom a {
+  .prtlt-digitup-generic .offers__item-right-bottom a {
     padding: 12px;
   }
 }
 
 @media (max-width: 768px) {
-  .prtlt-digitup-api .offers__item-right-bottom a {
+  .prtlt-digitup-generic .offers__item-right-bottom a {
     display: none;
   }
 }
 
-.prtlt-digitup-api .offers .hovered {
+.prtlt-digitup-generic .offers .hovered {
   background: #2B67F6;
 }
 
-.prtlt-digitup-api .offers .hovered .offers__item-left h3,
-.prtlt-digitup-api .offers .hovered .offers__item-left span,
-.prtlt-digitup-api .offers .hovered .offers__item-left p,
-.prtlt-digitup-api .offers .hovered .offers__item-left h4 {
+.prtlt-digitup-generic .offers .hovered .offers__item-left h3,
+.prtlt-digitup-generic .offers .hovered .offers__item-left span,
+.prtlt-digitup-generic .offers .hovered .offers__item-left p,
+.prtlt-digitup-generic .offers .hovered .offers__item-left h4 {
   color: #fff;
 }
 
-.prtlt-digitup-api .offers .hovered .offers__item-left-bottom p {
+.prtlt-digitup-generic .offers .hovered .offers__item-left-bottom p {
   color: #fff;
 }
 
-.prtlt-digitup-api .offers .hovered .offers__item-left-bottom .ship::before {
+.prtlt-digitup-generic .offers .hovered .offers__item-left-bottom .ship::before {
   background: url("https://cdn.mundomarcruceros.com/wlgs/mundomar-images/ship-white.svg") no-repeat;
 }
 
-.prtlt-digitup-api .offers .hovered .offers__item-left-bottom .time::before {
+.prtlt-digitup-generic .offers .hovered .offers__item-left-bottom .time::before {
   background: url("https://cdn.mundomarcruceros.com/wlgs/mundomar-images/clock-white.svg") no-repeat;
 }
 
-.prtlt-digitup-api .offers .hovered .offers__item-left-bottom .data::before {
+.prtlt-digitup-generic .offers .hovered .offers__item-left-bottom .data::before {
   background: url("https://cdn.mundomarcruceros.com/wlgs/mundomar-images/calendar-white.svg") no-repeat;
 }
 
-.prtlt-digitup-api .offers .hovered .offers__item-left-bottom .data::after {
+.prtlt-digitup-generic .offers .hovered .offers__item-left-bottom .data::after {
   background: url("https://cdn.mundomarcruceros.com/wlgs/mundomar-images/down-white.svg") no-repeat;
 }
 
-.prtlt-digitup-api .offers .hovered .offers__item-left-bottom .data.visible::after {
+.prtlt-digitup-generic .offers .hovered .offers__item-left-bottom .data.visible::after {
   background: url("https://cdn.mundomarcruceros.com/wlgs/mundomar-images/up-white.svg") no-repeat;
 }
 
-.prtlt-digitup-api .offers .hovered .offers__item-right-images .image-static {
+.prtlt-digitup-generic .offers .hovered .offers__item-right-images .image-static {
   display: none;
 }
 
-.prtlt-digitup-api .offers .hovered .offers__item-right-images .image-hover {
+.prtlt-digitup-generic .offers .hovered .offers__item-right-images .image-hover {
   display: block;
 }
 
 .offers .hovered .offers__item-right-bottom span,
-.prtlt-digitup-api .offers .hovered .offers__item-right-bottom .price {
+.prtlt-digitup-generic .offers .hovered .offers__item-right-bottom .price {
   color: #fff;
 }
 
-.prtlt-digitup-api .offers .hovered .offers__item-right-bottom a {
+.prtlt-digitup-generic .offers .hovered .offers__item-right-bottom a {
   border: 1px solid #FFF;
 }
 
-.prtlt-digitup-api .offers .hovered .offers__item-right-bottom .price::after {
+.prtlt-digitup-generic .offers .hovered .offers__item-right-bottom .price::after {
   background: url("https://cdn.mundomarcruceros.com/wlgs/mundomar-images/chevron-down.svg") no-repeat;
 }
 
-.prtlt-digitup-api .offers .hovered .offers__item-right-bottom .price.visible::after {
+.prtlt-digitup-generic .offers .hovered .offers__item-right-bottom .price.visible::after {
   background: url("https://cdn.mundomarcruceros.com/wlgs/mundomar-images/chevron-up.svg") no-repeat;
 }
 
-.prtlt-digitup-api .offers .pagination {
+.prtlt-digitup-generic .offers .pagination {
   margin: 40px auto 0;
   padding: 12px 24px;
   border-radius: 100px;
@@ -1358,7 +1421,7 @@
 }
 
 @media (max-width: 768px) {
-  .prtlt-digitup-api .offers .pagination {
+  .prtlt-digitup-generic .offers .pagination {
     margin: 24px auto 0;
     padding: 7px 13px;
     border-radius: 83px;
@@ -1368,7 +1431,7 @@
   }
 }
 
-.prtlt-digitup-api .offers .pagination li {
+.prtlt-digitup-generic .offers .pagination li {
   display: flex;
   height: 32px;
   padding: 12px;
@@ -1418,90 +1481,90 @@
   color: white;
 }
 
-.prtlt-digitup-api .offers .pagination li:hover {
+.prtlt-digitup-generic .offers .pagination li:hover {
   background-color: #007bff;
   color: #fff;
 }
 
-.prtlt-digitup-api .offers .pagination li:hover a {
+.prtlt-digitup-generic .offers .pagination li:hover a {
   color: #fff;
 }
-.prtlt-digitup-api .offers .pagination li:hover svg path {
+.prtlt-digitup-generic .offers .pagination li:hover svg path {
   stroke: #fff;
 }
 
 @media (max-width: 768px) {
-  .prtlt-digitup-api .offers .pagination li {
+  .prtlt-digitup-generic .offers .pagination li {
     width: fit-content;
     height: 27px;
   }
 }
 
-.prtlt-digitup-api .offers .pagination li a {
+.prtlt-digitup-generic .offers .pagination li a {
   color: #4D515D;
 }
 
-.prtlt-digitup-api .offers .pagination li:first-of-type,
-.prtlt-digitup-api .offers .pagination li:last-of-type {
+.prtlt-digitup-generic .offers .pagination li:first-of-type,
+.prtlt-digitup-generic .offers .pagination li:last-of-type {
   width: 100%;
   max-width: 48px;
 }
 
 @media (max-width: 768px) {
-  .prtlt-digitup-api .offers .pagination li:first-of-type,
-  .prtlt-digitup-api .offers .pagination li:last-of-type {
+  .prtlt-digitup-generic .offers .pagination li:first-of-type,
+  .prtlt-digitup-generic .offers .pagination li:last-of-type {
     max-width: 20px;
   }
 }
 
-.prtlt-digitup-api .offers .pagination li:first-of-type:hover a svg path,
-.prtlt-digitup-api .offers .pagination li:last-of-type:hover a svg path {
+.prtlt-digitup-generic .offers .pagination li:first-of-type:hover a svg path,
+.prtlt-digitup-generic .offers .pagination li:last-of-type:hover a svg path {
   stroke: white;
 }
 
-.prtlt-digitup-api .offers .pagination li.active {
+.prtlt-digitup-generic .offers .pagination li.active {
   background-color: #007bff;
 }
 
-.prtlt-digitup-api .offers .pagination li.active a {
+.prtlt-digitup-generic .offers .pagination li.active a {
   color: #fff;
 }
 
-.prtlt-digitup-api .offers .pagination li.disabled {
+.prtlt-digitup-generic .offers .pagination li.disabled {
   pointer-events: none;
 }
-.prtlt-digitup-api .offers .pagination li.disabled a svg path {
+.prtlt-digitup-generic .offers .pagination li.disabled a svg path {
   stroke: #ccc;
 }
 
-.prtlt-digitup-api .offers .calendar::-webkit-scrollbar {
+.prtlt-digitup-generic .offers .calendar::-webkit-scrollbar {
   width: 2.3px;
 }
 
-.prtlt-digitup-api .offers .calendar::-webkit-scrollbar-thumb {
+.prtlt-digitup-generic .offers .calendar::-webkit-scrollbar-thumb {
   background: #2B67F6;
 }
 
-.prtlt-digitup-api .offers .calendar::-webkit-scrollbar-track {
+.prtlt-digitup-generic .offers .calendar::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
 
-.prtlt-digitup-api .offers .calendar::-webkit-scrollbar-button {
+.prtlt-digitup-generic .offers .calendar::-webkit-scrollbar-button {
   display: none;
 }
 
-.prtlt-digitup-api .recommendations {
+.prtlt-digitup-generic .recommendations {
   padding: 70px 48px 140px;
   width: 100%;
 }
 
 @media (max-width: 768px) {
-  .prtlt-digitup-api .recommendations {
+  .prtlt-digitup-generic .recommendations {
     padding: 40px 0;
   }
 }
 
-.prtlt-digitup-api .recommendations .inner {
+.prtlt-digitup-generic .recommendations .inner {
   width: 100%;
   max-width: 1191px;
   padding: 0;
@@ -1510,18 +1573,18 @@
 }
 
 @media (max-width: 1024px) {
-  .prtlt-digitup-api .recommendations .inner {
+  .prtlt-digitup-generic .recommendations .inner {
     /* padding: 0 16px; */
   }
 }
 
 @media (max-width: 568px) {
-  .prtlt-digitup-api .recommendations .inner {
+  .prtlt-digitup-generic .recommendations .inner {
     padding: 0;
   }
 }
 
-.prtlt-digitup-api .recommendations__items {
+.prtlt-digitup-generic .recommendations__items {
   margin-top: 40px;
   /* display: flex;
   gap: 17px;
@@ -1532,14 +1595,14 @@
 }
 
 @media (max-width: 568px) {
-  .prtlt-digitup-api .recommendations__items {
+  .prtlt-digitup-generic .recommendations__items {
     overflow: visible !important;
     /* max-width: 260px; */
     margin: 32px 0 !important;
   }
 }
 
-.prtlt-digitup-api .recommendations__item {
+.prtlt-digitup-generic .recommendations__item {
   width: 100%;
   max-width: 285px;
   border-radius: 24px;
@@ -1552,12 +1615,12 @@
 }
 
 @media (max-width: 768px) {
-  .prtlt-digitup-api .recommendations__item {
+  .prtlt-digitup-generic .recommendations__item {
     max-width: 100%;
   }
 }
 
-.prtlt-digitup-api .recommendations__item .btn {
+.prtlt-digitup-generic .recommendations__item .btn {
   display: none;
   padding: 12px 40px;
   justify-content: center;
@@ -1577,63 +1640,63 @@
 
 
 @media(max-width: 768px) {
-  .prtlt-digitup-api .recommendations__item .recommendations__item-bottom_side {
+  .prtlt-digitup-generic .recommendations__item .recommendations__item-bottom_side {
     width: 100%;
   }
 }
 
 @media (max-width: 1200px) {
-  .prtlt-digitup-api .recommendations__item:hover .btn {}
+  .prtlt-digitup-generic .recommendations__item:hover .btn {}
 }
 
 @media(min-width: 769px) {
-  .prtlt-digitup-api .recommendations__item:hover .btn {
+  .prtlt-digitup-generic .recommendations__item:hover .btn {
     display: flex;
   }
 
-  .prtlt-digitup-api .recommendations__item:hover .recommendations__item-bottom_side {
+  .prtlt-digitup-generic .recommendations__item:hover .recommendations__item-bottom_side {
     width: 100%;
   }
 
-  .prtlt-digitup-api .recommendations__item:hover .recommendations__item-wrapper {
+  .prtlt-digitup-generic .recommendations__item:hover .recommendations__item-wrapper {
     background-color: rgba(43, 103, 246, 0.7);
   }
 
-  .prtlt-digitup-api .recommendations__item:hover .recommendations__item-top ul {
+  .prtlt-digitup-generic .recommendations__item:hover .recommendations__item-top ul {
     display: none;
   }
 
-  .prtlt-digitup-api .recommendations__item:hover .recommendations__item-top .place {
+  .prtlt-digitup-generic .recommendations__item:hover .recommendations__item-top .place {
     display: block;
   }
 
-  .prtlt-digitup-api .recommendations__item:hover .recommendations__promo {
+  .prtlt-digitup-generic .recommendations__item:hover .recommendations__promo {
     display: none;
   }
 }
 
 @media(max-width: 768px) {
-  .prtlt-digitup-api .recommendations__item.hovered .btn {
+  .prtlt-digitup-generic .recommendations__item.hovered .btn {
     display: none;
   }
 
-  .prtlt-digitup-api .recommendations__item.hovered .recommendations__item-bottom_side {
+  .prtlt-digitup-generic .recommendations__item.hovered .recommendations__item-bottom_side {
     width: 100%;
   }
 
-  .prtlt-digitup-api .recommendations__item.hovered .recommendations__item-wrapper {
+  .prtlt-digitup-generic .recommendations__item.hovered .recommendations__item-wrapper {
     background-color: rgba(43, 103, 246, 0.7);
   }
 
-  .prtlt-digitup-api .recommendations__item.hovered .recommendations__item-top ul {
+  .prtlt-digitup-generic .recommendations__item.hovered .recommendations__item-top ul {
     display: none;
   }
 
-  .prtlt-digitup-api .recommendations__item.hovered .recommendations__item-top .place {
+  .prtlt-digitup-generic .recommendations__item.hovered .recommendations__item-top .place {
     display: block;
   }
 
-  .prtlt-digitup-api .recommendations__item.hovered .recommendations__promo {
+  .prtlt-digitup-generic .recommendations__item.hovered .recommendations__promo {
     display: flex;
   }
 
@@ -1647,33 +1710,33 @@
 @media (max-width: 1024px) {}
 
 @media (max-width: 868px) {
-  .prtlt-digitup-api .recommendations__item:hover .recommendations__item-bottom {
+  .prtlt-digitup-generic .recommendations__item:hover .recommendations__item-bottom {
     height: 20px;
   }
 }
 
 @media (max-width: 380px) {
-  .prtlt-digitup-api .recommendations__item:hover .recommendations__item-bottom {
+  .prtlt-digitup-generic .recommendations__item:hover .recommendations__item-bottom {
     height: 37px;
   }
 }
 
 @media (max-width: 350px) {
-  .prtlt-digitup-api .recommendations__item:hover .recommendations__item-bottom {
+  .prtlt-digitup-generic .recommendations__item:hover .recommendations__item-bottom {
     height: 23px;
   }
 }
 
-.prtlt-digitup-api .recommendations__item-top {
+.prtlt-digitup-generic .recommendations__item-top {
   width: 100%;
 }
 
-.prtlt-digitup-api .recommendations__item-top_line {
+.prtlt-digitup-generic .recommendations__item-top_line {
   display: flex;
   justify-content: space-between;
 }
 
-.prtlt-digitup-api .recommendations__item .recommendations__item-top .place {
+.prtlt-digitup-generic .recommendations__item .recommendations__item-top .place {
   display: none;
   color: #FFF;
   font-size: 14px;
@@ -1688,12 +1751,12 @@
 }
 
 @media (max-width: 350px) {
-  .prtlt-digitup-api .recommendations__item:hover .recommendations__item-top .place {
+  .prtlt-digitup-generic .recommendations__item:hover .recommendations__item-top .place {
     font-size: 11px;
   }
 }
 
-/* .prtlt-digitup-api .recommendations__item .recommendations__item-top .place::before {
+/* .prtlt-digitup-generic .recommendations__item .recommendations__item-top .place::before {
   position: absolute;
   content: "";
   width: 17px;
@@ -1703,7 +1766,7 @@
   background: url("https://cdn.mundomarcruceros.com/wlgs/mundomar-images/map.svg") no-repeat;
 } */
 
-.prtlt-digitup-api .recommendations__item-wrapper {
+.prtlt-digitup-generic .recommendations__item-wrapper {
   position: relative;
   border-radius: 24px;
   background-color: rgba(0, 0, 0, 0.4);
@@ -1718,12 +1781,12 @@
 }
 
 @media (max-width: 768px) {
-  .prtlt-digitup-api .recommendations__item-wrapper {
+  .prtlt-digitup-generic .recommendations__item-wrapper {
     padding: 16px 16.5px;
   }
 }
 
-.prtlt-digitup-api .recommendations__item .object-fit {
+.prtlt-digitup-generic .recommendations__item .object-fit {
   position: absolute;
   object-fit: cover;
   top: 0;
@@ -1734,7 +1797,7 @@
   border-radius: 24px;
 }
 
-.prtlt-digitup-api .recommendations__item-top span {
+.prtlt-digitup-generic .recommendations__item-top span {
   color: #FFF;
   font-size: 14px;
   font-style: normal;
@@ -1744,12 +1807,12 @@
 }
 
 @media (max-width: 768px) {
-  .prtlt-digitup-api .recommendations__item-top span {
+  .prtlt-digitup-generic .recommendations__item-top span {
     font-size: 12px;
   }
 }
 
-.prtlt-digitup-api .recommendations__item-top h2 {
+.prtlt-digitup-generic .recommendations__item-top h2 {
   color: #FFF;
   font-size: 24px;
   font-style: normal;
@@ -1760,37 +1823,37 @@
 }
 
 @media (max-width: 992px) {
-  .prtlt-digitup-api .recommendations__item-top h2 {
+  .prtlt-digitup-generic .recommendations__item-top h2 {
     font-size: 20px;
     padding-bottom: 10px;
   }
 }
 
 @media (max-width: 768px) {
-  .prtlt-digitup-api .recommendations__item-top h2 {
+  .prtlt-digitup-generic .recommendations__item-top h2 {
     font-size: 18px;
     /* margin-top: 8px; */
     padding-bottom: 10px;
   }
 }
 
-.prtlt-digitup-api .recommendations__item-top ul {
+.prtlt-digitup-generic .recommendations__item-top ul {
   padding-top: 14px;
 }
 
 @media (max-width: 992px) {
-  .prtlt-digitup-api .recommendations__item-top ul {
+  .prtlt-digitup-generic .recommendations__item-top ul {
     padding-top: 10px;
   }
 }
 
 @media (max-width: 768px) {
-  .prtlt-digitup-api .recommendations__item-top ul {
+  .prtlt-digitup-generic .recommendations__item-top ul {
     padding-bottom: 12px;
   }
 }
 
-.prtlt-digitup-api .recommendations__item-top ul li {
+.prtlt-digitup-generic .recommendations__item-top ul li {
   color: #FFF;
   position: relative;
   padding-left: 27px;
@@ -1803,12 +1866,12 @@
 }
 
 @media (max-width: 768px) {
-  .prtlt-digitup-api .recommendations__item-top ul li {
+  .prtlt-digitup-generic .recommendations__item-top ul li {
     font-size: 14px;
   }
 }
 
-.prtlt-digitup-api .recommendations__item-top ul li::before {
+.prtlt-digitup-generic .recommendations__item-top ul li::before {
   position: absolute;
   content: "";
   width: 20px;
@@ -1819,27 +1882,27 @@
   background-position: center;
 }
 
-.prtlt-digitup-api .recommendations__item-top ul li:first-of-type::before {
+.prtlt-digitup-generic .recommendations__item-top ul li:first-of-type::before {
   background: url("https://cdn.mundomarcruceros.com/wlgs/mundomar-images/ship-white.svg") no-repeat;
 }
 
-.prtlt-digitup-api .recommendations__item-top ul li:nth-child(2)::before {
+.prtlt-digitup-generic .recommendations__item-top ul li:nth-child(2)::before {
   background: url("https://cdn.mundomarcruceros.com/wlgs/mundomar-images/clock-white.svg") no-repeat center;
 }
 
-.prtlt-digitup-api .recommendations__item-top ul li:last-of-type {
+.prtlt-digitup-generic .recommendations__item-top ul li:last-of-type {
   margin-bottom: 0;
 }
 
-.prtlt-digitup-api .recommendations__item-top ul li:last-of-type::before {
+.prtlt-digitup-generic .recommendations__item-top ul li:last-of-type::before {
   background: url("https://cdn.mundomarcruceros.com/wlgs/mundomar-images/calendar-white.svg") no-repeat;
 }
 
-.prtlt-digitup-api .recommendations__item-top .place {
+.prtlt-digitup-generic .recommendations__item-top .place {
   display: none;
 }
 
-.prtlt-digitup-api .recommendations__item-bottom_side {
+.prtlt-digitup-generic .recommendations__item-bottom_side {
   margin-left: auto;
   min-height: 120px;
   display: flex;
@@ -1847,14 +1910,14 @@
   justify-content: space-between;
 }
 
-.prtlt-digitup-api .recommendations__item-bottom {
+.prtlt-digitup-generic .recommendations__item-bottom {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   width: 100%;
 }
 
-.prtlt-digitup-api .recommendations__item-bottom span {
+.prtlt-digitup-generic .recommendations__item-bottom span {
   color: #FFF;
   text-align: right;
   font-size: 10px;
@@ -1864,7 +1927,7 @@
   text-transform: uppercase;
 }
 
-.prtlt-digitup-api .recommendations__item-bottom p {
+.prtlt-digitup-generic .recommendations__item-bottom p {
   color: #FFF;
   font-size: 40px;
   font-style: normal;
@@ -1873,23 +1936,23 @@
 }
 
 @media (max-width: 768px) {
-  .prtlt-digitup-api .recommendations__item-bottom p {
+  .prtlt-digitup-generic .recommendations__item-bottom p {
     font-size: 38px;
     line-height: 37.2px;
   }
 }
 
-.prtlt-digitup-api .recommendations__item .btn {
+.prtlt-digitup-generic .recommendations__item .btn {
   display: none;
 }
 
 @media (max-width: 768px) {
-  .prtlt-digitup-api .recommendations__item .btn {
+  .prtlt-digitup-generic .recommendations__item .btn {
     display: flex;
   }
 }
 
-.prtlt-digitup-api .recommendations__promo {
+.prtlt-digitup-generic .recommendations__promo {
   display: flex;
   padding: 4.348px 6.523px;
   justify-content: flex-end;
@@ -1903,16 +1966,16 @@
 }
 
 @media (max-width: 450px) {
-  .prtlt-digitup-api .recommendations__promo {
+  .prtlt-digitup-generic .recommendations__promo {
     justify-content: center;
   }
 }
 
-.prtlt-digitup-api .recommendations__promo span {
+.prtlt-digitup-generic .recommendations__promo span {
   display: none;
 }
 
-.prtlt-digitup-api .recommendations__promo-text {
+.prtlt-digitup-generic .recommendations__promo-text {
   display: flex;
   padding: 2.174px 8.369px 2.174px 3.348px;
   justify-content: center;
@@ -1923,12 +1986,12 @@
   background: var(--orange-50, #FFF8F1);
 }
 
-.prtlt-digitup-api .recommendations__promo-text img {
+.prtlt-digitup-generic .recommendations__promo-text img {
   width: 17.39px;
   height: 17.39px;
 }
 
-.prtlt-digitup-api .recommendations__promo-text p {
+.prtlt-digitup-generic .recommendations__promo-text p {
   color: #FF8A4C;
   font-size: 10px;
   font-style: normal;
@@ -1939,23 +2002,23 @@
 }
 
 @media (max-width: 1100px) {
-  .prtlt-digitup-api .recommendations__promo-text p {
+  .prtlt-digitup-generic .recommendations__promo-text p {
     font-size: 8px;
     line-height: unset;
   }
 }
 
-.prtlt-digitup-api .recommendations__promo-images {
+.prtlt-digitup-generic .recommendations__promo-images {
   display: flex;
   gap: 6.52px;
 }
 
-.prtlt-digitup-api .recommendations__promo-images img {
+.prtlt-digitup-generic .recommendations__promo-images img {
   width: 17.39px;
   height: 17.39px;
 }
 
-.prtlt-digitup-api .recommendations .slider-controls {
+.prtlt-digitup-generic .recommendations .slider-controls {
   display: flex;
   cursor: pointer;
   padding: 12px 24px;
@@ -1972,21 +2035,21 @@
 }
 
 @media (max-width: 768px) {
-  .prtlt-digitup-api .recommendations .slider-controls {
+  .prtlt-digitup-generic .recommendations .slider-controls {
     display: none;
   }
 }
 
-.prtlt-digitup-api .recommendations .slider-controls .black {
+.prtlt-digitup-generic .recommendations .slider-controls .black {
   display: block;
 }
 
-.prtlt-digitup-api .recommendations .slider-controls .white {
+.prtlt-digitup-generic .recommendations .slider-controls .white {
   display: none;
 }
 
-.prtlt-digitup-api .recommendations .slider-controls .prev-slide,
-.prtlt-digitup-api .recommendations .slider-controls .next-slide {
+.prtlt-digitup-generic .recommendations .slider-controls .prev-slide,
+.prtlt-digitup-generic .recommendations .slider-controls .next-slide {
   border-radius: 100px;
   border: 1px solid #EBEBEB;
   width: 48px;
@@ -1996,41 +2059,41 @@
   justify-content: center;
 }
 
-.prtlt-digitup-api .recommendations .slider-controls .prev-slide a,
-.prtlt-digitup-api .recommendations .slider-controls .next-slide a {
+.prtlt-digitup-generic .recommendations .slider-controls .prev-slide a,
+.prtlt-digitup-generic .recommendations .slider-controls .next-slide a {
   width: 25px;
   height: 25px;
 }
 
-.prtlt-digitup-api .recommendations .slider-controls .prev-slide:hover,
-.prtlt-digitup-api .recommendations .slider-controls .next-slide:hover {
+.prtlt-digitup-generic .recommendations .slider-controls .prev-slide:hover,
+.prtlt-digitup-generic .recommendations .slider-controls .next-slide:hover {
   background: #2B67F6;
 }
 
-.prtlt-digitup-api .recommendations .slider-controls .prev-slide:hover a svg path,
-.prtlt-digitup-api .recommendations .slider-controls .next-slide:hover a svg path {
+.prtlt-digitup-generic .recommendations .slider-controls .prev-slide:hover a svg path,
+.prtlt-digitup-generic .recommendations .slider-controls .next-slide:hover a svg path {
   stroke: white;
 }
 
-/* .prtlt-digitup-api .recommendations .slider-controls .prev-slide:hover .black,
-.prtlt-digitup-api .recommendations .slider-controls .next-slide:hover .black {
+/* .prtlt-digitup-generic .recommendations .slider-controls .prev-slide:hover .black,
+.prtlt-digitup-generic .recommendations .slider-controls .next-slide:hover .black {
   display: none;
 }
 
-.prtlt-digitup-api .recommendations .slider-controls .prev-slide:hover .white,
-.prtlt-digitup-api .recommendations .slider-controls .next-slide:hover .white {
+.prtlt-digitup-generic .recommendations .slider-controls .prev-slide:hover .white,
+.prtlt-digitup-generic .recommendations .slider-controls .next-slide:hover .white {
   display: block;
 } */
 
-.prtlt-digitup-api .recommendations .slider-controls .next-slide {
+.prtlt-digitup-generic .recommendations .slider-controls .next-slide {
   right: 0;
 }
 
-.prtlt-digitup-api .recommendations .slider-controls .prev-slide {
+.prtlt-digitup-generic .recommendations .slider-controls .prev-slide {
   left: 0;
 }
 
-.prtlt-digitup-api .recommendations .tabs {
+.prtlt-digitup-generic .recommendations .tabs {
   display: flex;
   gap: 8px;
   margin-top: 40px;
@@ -2038,7 +2101,7 @@
   scrollbar-color: transparent transparent;
   padding: 0 16px;
 }
-.prtlt-digitup-api .recommendations .tabs_block {
+.prtlt-digitup-generic .recommendations .tabs_block {
   position: relative;
   width: 100%;
   max-width: 1223px;
@@ -2047,13 +2110,13 @@
 }
 
 @media (max-width: 1024px) {
-  .prtlt-digitup-api .recommendations .tabs {
+  .prtlt-digitup-generic .recommendations .tabs {
     padding-left: 12px;
     margin-top: 24px;
   }
 }
 
-.prtlt-digitup-api .recommendations .tabs .tab {
+.prtlt-digitup-generic .recommendations .tabs .tab {
   display: flex;
   padding: 8px 12px;
   align-items: center;
@@ -2071,27 +2134,27 @@
   cursor: pointer;
 }
 
-.prtlt-digitup-api .recommendations .tabs .tab:hover {
+.prtlt-digitup-generic .recommendations .tabs .tab:hover {
   background: #2B67F6;
   color: #fff;
 }
 
-.prtlt-digitup-api .recommendations .tabs .tab.active {
+.prtlt-digitup-generic .recommendations .tabs .tab.active {
   background: #2B67F6;
   color: #fff;
 }
 
-/* .prtlt-digitup-api .recommendations .tab-pane {
+/* .prtlt-digitup-generic .recommendations .tab-pane {
   display: none;
 }
 
-.prtlt-digitup-api .recommendations .tab-pane.active {
+.prtlt-digitup-generic .recommendations .tab-pane.active {
   display: block;
   width: 100%;
   max-width: 1191px;
 }
 
-.prtlt-digitup-api .recommendations .tab-content {
+.prtlt-digitup-generic .recommendations .tab-content {
   display: flex;
   justify-content: flex-end;
   overflow: hidden;
@@ -2100,38 +2163,38 @@
 }
 
 @media (max-width: 768px) {
-  .prtlt-digitup-api .recommendations .tab-content {
+  .prtlt-digitup-generic .recommendations .tab-content {
     height: auto;
   }
 } */
 
-.prtlt-digitup-api .hidden {
+.prtlt-digitup-generic .hidden {
   visibility: hidden !important;
 }
 
-.prtlt-digitup-api .hide_all {
+.prtlt-digitup-generic .hide_all {
   display: none !important;
 }
 
-.prtlt-digitup-api .swiper-button-disabled {
+.prtlt-digitup-generic .swiper-button-disabled {
   opacity: 0.2;
   pointer-events: none;
 }
 
-.prtlt-digitup-api .is_mobile {
+.prtlt-digitup-generic .is_mobile {
   display: none;
 }
 
-.prtlt-digitup-api .is_desktop {
+.prtlt-digitup-generic .is_desktop {
   display: flex;
 }
 
 @media(max-width: 768px) {
-  .prtlt-digitup-api .is_mobile {
+  .prtlt-digitup-generic .is_mobile {
     display: flex;
   }
 
-  .prtlt-digitup-api .is_desktop {
+  .prtlt-digitup-generic .is_desktop {
     display: none;
   }
 }
@@ -2212,13 +2275,13 @@
   margin-top: 4px;
 }
 
-.config-modal-api #saveConfig {
+.config-modal-api #saveConfig, .config-modal-api .success {
   background-color: #0E9F6E;
   margin-right: 5px;
   cursor: pointer;
 }
 
-.config-modal-api #cancelConfig {
+.config-modal-api #cancelConfig, .config-modal-api .danger {
   background-color: #E02424;
   cursor: pointer;
 }
