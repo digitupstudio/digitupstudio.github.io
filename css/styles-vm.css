@@ -46,31 +46,45 @@
 }
 
 .prtlt-digitup-generic h1 {
-  font-size: 46px !important;
+  font-size: 46px;
+  line-height: 1;
+  font-family: 'Archivo';
 }
 
 .prtlt-digitup-generic h2 {
-  font-size: 36px !important;
+  font-size: 36px;
+  line-height: 1;
+  font-family: 'Archivo';
 }
 
 .prtlt-digitup-generic h3 {
-  font-size: 30px !important;
+  font-size: 30px;
+  line-height: 1;
+  font-family: 'Archivo';
 }
 
 .prtlt-digitup-generic h4 {
-  font-size: 24px !important;
+  font-size: 24px;
+  line-height: 1;
+  font-family: 'Archivo';
 }
 
 .prtlt-digitup-generic h5 {
-  font-size: 14px !important;
+  font-size: 14px;
+  line-height: 1;
+  font-family: 'Archivo';
 }
 
 .prtlt-digitup-generic h6 {
-  font-size: 10px !important;
+  font-size: 10px;
+  line-height: 1;
+  font-family: 'Archivo';
 }
 
 .prtlt-digitup-generic p {
-  font-size: 16px !important;
+  font-size: 16px;
+  line-height: 1;
+  font-family: 'Archivo';
 }
 
 .prtlt-digitup-generic ul,
@@ -113,6 +127,12 @@
   background-color: transparent;
   background: none;
   cursor: pointer;
+}
+
+.prtlt-digitup-generic .btn-primary {
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
 }
 
 .prtlt-digitup-generic input:focus,
@@ -189,6 +209,13 @@
   padding: 48px;
   background-color: white;
   font-family: 'Archivo';
+}
+.prtlt-digitup-generic .main_content .prtltmmc-delete-element.prtltmmc-delete-boxes {
+  padding: 30px;
+  top: -60px;
+}
+.prtlt-digitup-generic .main_content .prtltmmc-delete-element.prtltmmc-delete-boxes + .prtltmmc-options-portlet-digitup {
+  display: none;
 }
 
 @media(max-width: 768px) {
@@ -331,7 +358,7 @@
   line-height: 20px;
   margin: 0 auto;
 }
-.prtlt-digitup-generic .prtlt-digitup-api-options + .main_content .btn {
+.prtlt-digitup-static .prtlt-digitup-api-options + .main_content .btn {
   display: flex !important;
 }
 
@@ -398,7 +425,7 @@
   line-height: normal;
 }
 
-.prtlt-digitup-generic .carts__item-top h2 {
+.prtlt-digitup-generic .carts__item-top .title_text {
   color: #FFF;
   font-family: "Archivo", sans-serif;
   font-size: 32px;
@@ -433,6 +460,10 @@
   text-transform: uppercase;
 }
 
+.prtlt-digitup-generic .carts__item-bottom .small_text span {
+  text-transform: unset;
+}
+
 .prtlt-digitup-generic .carts__item-bottom span:last-of-type {
   line-height: 10px;
 }
@@ -444,7 +475,6 @@
   font-style: normal;
   font-weight: 700;
   line-height: 38px;
-  margin-bottom: 4px;
   text-align: right;
 }
 
@@ -944,7 +974,7 @@
   border-radius: 8px 8px 0 0;
 }
 
-.prtlt-digitup-generic .offers__item-left-bottom p {
+.prtlt-digitup-generic .offers__item-left-bottom p, .prtlt-digitup-generic .offers__item-left-bottom .ship  {
   color: var(--Black-color, #333);
   font-size: 18px;
   font-style: normal;
@@ -955,12 +985,12 @@
 }
 
 @media (max-width: 1100px) {
-  .prtlt-digitup-generic .offers__item-left-bottom p {
+  .prtlt-digitup-generic .offers__item-left-bottom p, .prtlt-digitup-generic .offers__item-left-bottom .ship {
     font-size: 15px;
   }
 }
 
-.prtlt-digitup-generic .offers__item-left-bottom p::before {
+.prtlt-digitup-generic .offers__item-left-bottom p::before, .prtlt-digitup-generic .offers__item-left-bottom .ship::before {
   position: absolute;
   content: "";
   width: 22px;
@@ -1359,7 +1389,7 @@
   color: #fff;
 }
 
-.prtlt-digitup-generic .offers .hovered .offers__item-left-bottom p {
+.prtlt-digitup-generic .offers .hovered .offers__item-left-bottom p, .prtlt-digitup-generic .offers .hovered .offers__item-left-bottom .ship {
   color: #fff;
 }
 
@@ -1408,7 +1438,7 @@
   background: url("https://cdn.mundomarcruceros.com/wlgs/mundomar-images/chevron-up.svg") no-repeat;
 }
 
-.prtlt-digitup-generic .offers .pagination {
+.prtlt-digitup-generic .main_content .pagination {
   margin: 40px auto 0;
   padding: 12px 24px;
   border-radius: 100px;
@@ -1421,7 +1451,7 @@
 }
 
 @media (max-width: 768px) {
-  .prtlt-digitup-generic .offers .pagination {
+  .prtlt-digitup-generic .main_content .pagination {
     margin: 24px auto 0;
     padding: 7px 13px;
     border-radius: 83px;
@@ -1431,7 +1461,7 @@
   }
 }
 
-.prtlt-digitup-generic .offers .pagination li {
+.prtlt-digitup-generic .main_content .pagination li {
   display: flex;
   height: 32px;
   padding: 12px;
@@ -1465,7 +1495,7 @@
   /* Asegúrate de que sea más alto que otros elementos */
   display: none;
   /* Oculto por defecto */
-  padding: 0;
+  padding: 0 !important;
   margin: 0;
   list-style: none;
 }
@@ -1481,59 +1511,59 @@
   color: white;
 }
 
-.prtlt-digitup-generic .offers .pagination li:hover {
+.prtlt-digitup-generic .main_content .pagination li:hover {
   background-color: #007bff;
   color: #fff;
 }
 
-.prtlt-digitup-generic .offers .pagination li:hover a {
+.prtlt-digitup-generic .main_content .pagination li:hover a {
   color: #fff;
 }
-.prtlt-digitup-generic .offers .pagination li:hover svg path {
+.prtlt-digitup-generic .main_content .pagination li:hover svg path {
   stroke: #fff;
 }
 
 @media (max-width: 768px) {
-  .prtlt-digitup-generic .offers .pagination li {
+  .prtlt-digitup-generic .main_content .pagination li {
     width: fit-content;
     height: 27px;
   }
 }
 
-.prtlt-digitup-generic .offers .pagination li a {
+.prtlt-digitup-generic .main_content .pagination li a {
   color: #4D515D;
 }
 
-.prtlt-digitup-generic .offers .pagination li:first-of-type,
-.prtlt-digitup-generic .offers .pagination li:last-of-type {
+.prtlt-digitup-generic .main_content .pagination li:first-of-type,
+.prtlt-digitup-generic .main_content .pagination li:last-of-type {
   width: 100%;
   max-width: 48px;
 }
 
 @media (max-width: 768px) {
-  .prtlt-digitup-generic .offers .pagination li:first-of-type,
-  .prtlt-digitup-generic .offers .pagination li:last-of-type {
+  .prtlt-digitup-generic .main_content .pagination li:first-of-type,
+  .prtlt-digitup-generic .main_content .pagination li:last-of-type {
     max-width: 20px;
   }
 }
 
-.prtlt-digitup-generic .offers .pagination li:first-of-type:hover a svg path,
-.prtlt-digitup-generic .offers .pagination li:last-of-type:hover a svg path {
+.prtlt-digitup-generic .main_content .pagination li:first-of-type:hover a svg path,
+.prtlt-digitup-generic .main_content .pagination li:last-of-type:hover a svg path {
   stroke: white;
 }
 
-.prtlt-digitup-generic .offers .pagination li.active {
+.prtlt-digitup-generic .main_content .pagination li.active {
   background-color: #007bff;
 }
 
-.prtlt-digitup-generic .offers .pagination li.active a {
+.prtlt-digitup-generic .main_content .pagination li.active a {
   color: #fff;
 }
 
-.prtlt-digitup-generic .offers .pagination li.disabled {
+.prtlt-digitup-generic .main_content .pagination li.disabled {
   pointer-events: none;
 }
-.prtlt-digitup-generic .offers .pagination li.disabled a svg path {
+.prtlt-digitup-generic .main_content .pagination li.disabled a svg path {
   stroke: #ccc;
 }
 
@@ -1667,7 +1697,13 @@
   }
 
   .prtlt-digitup-generic .recommendations__item:hover .recommendations__item-top .place {
-    display: block;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    max-height: 124px;
   }
 
   .prtlt-digitup-generic .recommendations__item:hover .recommendations__promo {
@@ -1693,7 +1729,13 @@
   }
 
   .prtlt-digitup-generic .recommendations__item.hovered .recommendations__item-top .place {
-    display: block;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    max-height: 124px;
   }
 
   .prtlt-digitup-generic .recommendations__item.hovered .recommendations__promo {
@@ -1818,22 +1860,30 @@
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   padding-bottom: 14px;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  max-height: 81px;
 }
 
 @media (max-width: 992px) {
   .prtlt-digitup-generic .recommendations__item-top h2 {
     font-size: 20px;
     padding-bottom: 10px;
+    max-height: 67px;
   }
 }
 
 @media (max-width: 768px) {
   .prtlt-digitup-generic .recommendations__item-top h2 {
     font-size: 18px;
-    /* margin-top: 8px; */
     padding-bottom: 10px;
+    max-height: 62px;
   }
 }
 
@@ -1920,10 +1970,10 @@
 .prtlt-digitup-generic .recommendations__item-bottom span {
   color: #FFF;
   text-align: right;
-  font-size: 10px;
+  font-size: 12px;
   font-style: normal;
   font-weight: 500;
-  line-height: 18px;
+  line-height: 1;
   text-transform: uppercase;
 }
 
@@ -2010,12 +2060,12 @@
 
 .prtlt-digitup-generic .recommendations__promo-images {
   display: flex;
-  gap: 6.52px;
+  gap: 7px;
 }
 
 .prtlt-digitup-generic .recommendations__promo-images img {
-  width: 17.39px;
-  height: 17.39px;
+  width: 22px;
+  height: 22px;
 }
 
 .prtlt-digitup-generic .recommendations .slider-controls {
@@ -2101,6 +2151,16 @@
   scrollbar-color: transparent transparent;
   padding: 0 16px;
 }
+
+.prtlt-digitup-generic .recommendations .title.cke_editable + .tabs_block .tabs {
+  padding: 56px 120px;
+  gap: 48px;
+}
+
+.prtlt-digitup-generic .recommendations .title.cke_editable + .tabs_block .tabs .tab .prtltmmc-options-portlet-digitup {
+  top: -32px;  
+}
+
 .prtlt-digitup-generic .recommendations .tabs_block {
   position: relative;
   width: 100%;
@@ -2132,6 +2192,10 @@
   text-transform: uppercase;
   white-space: nowrap;
   cursor: pointer;
+  position: relative;
+}
+.prtlt-digitup-generic .recommendations .tabs .tab p {
+  font-size: 12px;
 }
 
 .prtlt-digitup-generic .recommendations .tabs .tab:hover {

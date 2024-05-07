@@ -91,7 +91,7 @@ var prtltmmcCkEditor = {
 		});
 
 		//sort boxes
-		$('body').on('click', '.prtltmmc-sorting .prtltmmc-options-portlet', function (event) {
+		$('body').on('click', '.prtltmmc-sorting .prtltmmc-options-portlet, .prtltmmc-sorting .prtltmmc-options-portlet-digitup', function (event) {
 			$portlet = $(this).closest('[data-portlet]');
 			$portlet.removeClass('prtltmmc-sorting');
 			$portlet.find('.prtltmmc-row-boxes-outstand').sortable('destroy');
@@ -101,6 +101,7 @@ var prtltmmcCkEditor = {
 		});
 
 		$('body').on('click', '.prtltmmc-sort-boxes', function (event) {
+			copyTabsUrlToApi();
 			event.preventDefault();
 			$portlet = $(this).closest('[data-portlet]');
 			$portlet.addClass('prtltmmc-sorting');
@@ -392,7 +393,7 @@ var prtltmmcCkEditor = {
 			'</div>';
 		$('.prtltmmc-boxes-outstand').each(function (index) {
 			if ($(this).find('.prtltmmc-options-portlet').length == 0) {
-				$(this).find('.prtltmmc-row-boxes-outstand').after(toolBarBoxes);
+				$(this).find('.prtltmmc-row-boxes-outstand:not(.tabs)').after(toolBarBoxes);
 			};
 		});
 
@@ -447,21 +448,119 @@ var prtltmmcCkEditor = {
 			$item.after(toolBarImages);
 		});
 
-		$('.prtlt-digitup-api').each(function () {
-			var $this = $(this);
-			// Construir y añadir el contenedor del menú desplegable
-			var optionApiContent = `
-				<div class="prtlt-digitup-api-options">
-					<div class="remove-api-portlet danger">Eliminar portlet</div>
-					<div class="open-api-config">Configuración</div>
-				</div>
-			`;
+		////////////////////////////////////////////////////////////////
+		///////////// ADD options buttons PROMOCARD/////////////////////
+		////////////////////////////////////////////////////////////////
+		$('.prtlt-digitup-static.prtlt-digitup-static-promo-card').each(function () {
+			// const thisParent = $(this);
+			// const optionsGeneral = `
+			// 	<div class="prtlt-digitup-api-options prtlt-digitup-generic-options">
+			// 		<div class="option_button delete-cards-option warning">Edit cards</div>
+			// 		<div class="option_button add-new-card success">Add card</div>
+			// 	</div>
+			// `;
 
-			// Insertar después de cada elemento .prtltmmc-image-content-item
-			$this.prepend(optionApiContent);
+			// thisParent.prepend(optionsGeneral);
+
+			// const optionsItem = `
+			// 	<div class="prtlt-digitup-api-options prtlt-digitup-generic-options in_top">
+			// 		<div class="option_button delete-card hidden danger">Delete</div>
+			// 		<div class="option_button open-options-link success">Image</div>
+			// 	</div>
+			// `;
+
+			// thisParent.find('.carts__item').each(function () {
+			// 	const thisChild = $(this);
+			// 	thisChild.prepend(optionsItem);
+			// });
+
+			const thisParent = $(this);
+			if (thisParent.find('.prtltmmc-options-portlet-digitup').length === 0) {
+				var toolBarMenu = '<ul class="dropdown-menu prtlt-digitup-api-options">';
+				toolBarMenu += `<li><a href="#" class="add-new-card">${prtltmmcCkEditor.textAddElement}</a></li>`;
+				toolBarMenu += `<li><a href="#" class="prtltmmc-sort-boxes">${prtltmmcCkEditor.textSortElement}</a></li>`;
+				toolBarMenu += '</ul>';
+				var optionsGeneral = '<div class="btn-group dropdown-menu-right prtltmmc-options-portlet-digitup">' +
+					'<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">Options</button>' +
+					toolBarMenu + '</div>';
+				thisParent.find('.card_content').prepend(optionsGeneral);
+			}
 		});
+		setTimeout(() => {
+			this.addItemOptions();
+		}, 2000);
 
+		////////////////////////////////////////////////////////////////
+		////////////////// ADD options buttons API /////////////////////
+		////////////////////////////////////////////////////////////////
+		// $('.prtlt-digitup-api').each(function () {
+		// 	const thisParent = $(this);
+		// 	var toolBarMenu = '<ul style="display: block;" class="dropdown-menu prtlt-digitup-api-options open">';
+		// 	toolBarMenu += '<li><a href="#" class="open-api-config">Add new tab</a></li>';
+		// 	toolBarMenu += '</ul>';
+		// 	var optionsGeneral = '<div class="btn-group dropdown-menu-right prtltmmc-options-portlet-digitup">' +
+		// 		'<button class="btn btn-primary dropdown-toggle open-api-config" type="button" data-toggle="dropdown" aria-expanded="false">Options</button>' +
+		// 		toolBarMenu + '</div>';
+		// 	thisParent.prepend(optionsGeneral);
+		// });
 
+		////////////////////////////////////////////////////////////////
+		////////////////// ADD options buttons API /////////////////////
+		////////////////////////////////////////////////////////////////
+		$('.prtlt-digitup-api.prtlt-digitup-api-recomendados').each(function () {
+			const thisParent = $(this);
+			if (thisParent.find('.prtltmmc-options-portlet-digitup').length === 0) {
+				var toolBarMenu = '<ul class="dropdown-menu prtlt-digitup-api-options">';
+				toolBarMenu += `<li><a href="#" class="add-new-tab">${prtltmmcCkEditor.textAddElement}</a></li>`;
+				toolBarMenu += `<li><a href="#" class="prtltmmc-sort-boxes">${prtltmmcCkEditor.textSortElement}</a></li>`;
+				toolBarMenu += '</ul>';
+				var optionsGeneral = '<div class="btn-group dropdown-menu-right prtltmmc-options-portlet-digitup">' +
+					'<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">Options</button>' +
+					toolBarMenu + '</div>';
+				thisParent.find('.tabs').prepend(optionsGeneral);
+			}
+		});
+		setTimeout(() => {
+			this.addTabsOptions();
+			$('.dropdown-toggle').dropdown();
+		}, 2000);
+
+	},
+
+	addTabsOptions() {
+		$('.recomended_tab').each(function () {
+			const thisParent = $(this);
+			if (thisParent.find('.prtltmmc-options-portlet-digitup').length === 0) {
+				var toolBarMenu = '<ul class="dropdown-menu prtlt-digitup-api-options">';
+				toolBarMenu += '<li><a href="#" class="open-api-config">Configuration</a></li>';
+				toolBarMenu += '</ul>';
+				var optionsGeneral = '<div class="btn-group dropdown-menu-right prtltmmc-options-portlet-digitup">' +
+					'<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">Options</button>' +
+					toolBarMenu + '</div>';
+				thisParent.prepend(optionsGeneral);
+			}
+		});
+	},
+
+	addItemOptions() {
+		// const optionsItem = `
+		// 	<div class="prtlt-digitup-api-options prtlt-digitup-generic-options in_top">
+		// 		<div class="option_button delete-card hidden danger">Delete</div>
+		// 		<div class="option_button open-options-link success">Image</div>
+		// 	</div>
+		// `;
+		$('.prtlt-digitup-static.prtlt-digitup-static-promo-card .carts__item').each(function () {
+			const thisParent = $(this);
+			if (thisParent.find('.prtltmmc-options-portlet-digitup').length === 0) {
+				var toolBarMenu = '<ul class="dropdown-menu prtlt-digitup-api-options">';
+				toolBarMenu += '<li><a href="#" class="open-options-link">Change image</a></li>';
+				toolBarMenu += '</ul>';
+				var optionsGeneral = '<div class="btn-group dropdown-menu-right prtltmmc-options-portlet-digitup">' +
+					'<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">Options</button>' +
+					toolBarMenu + '</div>';
+				thisParent.prepend(optionsGeneral);
+			}
+		});
 	},
 
 	removeDataAttributes: function (target, string) {

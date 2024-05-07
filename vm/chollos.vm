@@ -27,7 +27,9 @@
                                 $item.departures.get(0).departure</h4>
                         </div>
                         <div class="offers__item-left-bottom">
-                            <p class="ship">$item.ship</p>
+                            <a class="ship" href="#" class="prtltmmc-image-ship  prtltmmc-open-popup"
+                                rel="https://www.mundomarcruceros.com/popup/portal/barcodecrucero/sapphireprincess.html"
+                                title="Barco $item.ship" data-add-class="prtltmmc-without-margins">$item.ship</a>
                             <div class="offers__calendar">
                                 <p class="data">$item.departures.get(0).departure</p>
                                 <div class="calendar">

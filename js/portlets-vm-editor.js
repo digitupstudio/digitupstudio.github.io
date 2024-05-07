@@ -1,143 +1,194 @@
 
 
 document.addEventListener('DOMContentLoaded', function () {
-  var dataObject = [];
+  // TODO: DELETE
+  // $('body').on('click', '.dropdown-menu-right.prtltmmc-options-portlet-digitup', function (e) {
+  //   e.preventDefault();
+  //   if (!$(this).closest('.ui-sortable').length) {
+  //     $(this).toggleClass('open');
+  //   } else {
+
+  //   }
+  // });
+
+  $(document).on('click', '.prtlt-digitup-api-options .add-new-tab', function () {
+    const tabsContainer = $(this).closest('.tabs');
+    // const allTabs = tabsContainer.find('.tab');
+    // const lastIndex = allTabs.length - 1;  // Índice del último tab actual
+    // const newIndex = lastIndex + 1;  // Nuevo índice para el nuevo tab
+
+    // Crear el nuevo tab con el índice correcto
+    const newTab = `<div class="tab recomended_tab prtltmmc-contenteditable prtltmmc-cell-boxes-outstand" data-url="">New tab</div>`;
+    tabsContainer.append(newTab);
+
+    // Suponiendo que esto inicializa alguna funcionalidad en el nuevo tab
+    prtltmmcCkEditor.createNewInstances();
+  });
+
   $(document).on('click', '.prtlt-digitup-api-options .open-api-config', function () {
     var apiContent = $(this).closest('.prtlt-digitup-api').find('.api_content');
     var currentUrl = apiContent.attr('data-url');
-    var currentPortlet = apiContent.attr('data-portletType') || ''; // Asegúrate de manejar undefined
+    // var currentPortlet = apiContent.attr('data-portletType') || ''; // Asegúrate de manejar undefined
     var $portlet = $(this).closest('.prtlt-digitup-api');
     // Obtén el índice o un identificador único del portlet
     var portletIndex = $('.prtlt-digitup-api').index($portlet);
-    dataObject = JSON.parse(apiContent.attr('data-object') || '[]');
+    // const dataObject = JSON.parse(apiContent.attr('data-object') || '[]');
+    var tabIndex = -1;
+    if (!currentUrl) {
+      const tab = $(this).closest('.tab');
+      const tabs = $(this).closest('.tabs').find('.tab');
+      tabIndex = tabs.index(tab);
+      // console.log('dataObject', dataObject);
+      // console.log('tabIndex', tabIndex);
+      currentUrl = tab.attr('data-url');
+      // if (!currentUrl) {
+      //   currentUrl = dataObject?.[tabIndex]?.url || ''
+      // }
+    }
 
     var modalHtml;
-    if (currentPortlet !== 'prtlt-digitup-api-recomendados') {
-      modalHtml = `
-          <div class="config-modal-api-backdrop"></div>
-          <div class="config-modal-api">
-              <h2>Configuración portlet</h2>
-              <div>
-                  <label>URL configuracion:</label>
-                  <input type="text" id="configUrl" value="${currentUrl}">
-              </div>
-              <div class="bottom_side">
-                <button id="cancelConfig">Cancelar</button>
-                <button id="saveConfig" data-portlet-index="${portletIndex}">Guardar</button>
-              </div>
-          </div>
-      `;
-    } else {
-      modalHtml = `
+    modalHtml = `
         <div class="config-modal-api-backdrop"></div>
-          <div class="config-modal-api">
-              <h2>Configuración portlet Recomendados</h2>
-              <div id="items-container">
-                  ${dataObject.map(item => `
-                      <div class="item">
-                        <div class="left_side">
-                          <div><b>ES:</b> ${item.title.es}</div>
-                          <div><b>EN:</b> ${item.title.en}</div>
-                          <div><b>Config:</b> ${item.url}</div>
-                        </div>
-                        <div class="right_side">
-                          <button class="remove-item" data-index="${dataObject.indexOf(item)}">Eliminar</button>
-                        </div>
-                      </div>
-                  `).join('')}
-              </div>
-              <div class="inputs_fields">
-                  <input id="title-es" placeholder="Título ES" />
-                  <input id="title-en" placeholder="Título EN" />
-                  <input id="config-url" placeholder="URL de Configuración" />
-                  <button id="add-item">Añadir</button>
-              </div>
-              <div class="bottom_side">
-                  <button id="cancelConfig">Cancelar</button>
-                  <button id="saveConfig" data-portlet-index="${portletIndex}">Guardar</button>
-              </div>
-          </div>
-      `;
-    }
+        <div class="config-modal-api">
+            <h2>Portlet configuration</h2>
+            <div>
+                <label>URL configuration:</label>
+                <input type="text" placeholder="url configuration" id="configUrl" value="${currentUrl}">
+            </div>
+            <div class="bottom_side">
+              <button id="cancelConfig">Cancel</button>
+              <button id="saveConfig" data-tab-index="${tabIndex}" data-portlet-index="${portletIndex}">Save</button>
+            </div>
+        </div>
+    `;
+    // if (currentPortlet !== 'prtlt-digitup-api-recomendados') {
+    // } else {
+    //   modalHtml = `
+    //     <div class="config-modal-api-backdrop"></div>
+    //       <div class="config-modal-api">
+    //           <h2>Portlet configuration "Recomended"</h2>
+    //           <div id="items-container">
+    //               ${dataObject.map(item => `
+    //                   <div class="item">
+    //                     <div class="left_side">
+    //                       <div><b>ES:</b> ${item.title.es}</div>
+    //                       <div><b>EN:</b> ${item.title.en}</div>
+    //                       <div><b>Config:</b> ${item.url}</div>
+    //                     </div>
+    //                     <div class="right_side">
+    //                       <button class="remove-item" data-index="${dataObject.indexOf(item)}">Delete</button>
+    //                     </div>
+    //                   </div>
+    //               `).join('')}
+    //           </div>
+    //           <div class="inputs_fields">
+    //               <input id="title-es" placeholder="Título ES" />
+    //               <input id="title-en" placeholder="Título EN" />
+    //               <input id="config-url" placeholder="URL configuration" />
+    //               <button id="add-item">Add</button>
+    //           </div>
+    //           <div class="bottom_side">
+    //               <button id="cancelConfig">Cancel</button>
+    //               <button id="saveConfig" data-portlet-index="${portletIndex}">Save</button>
+    //           </div>
+    //       </div>
+    //   `;
+    // }
 
     $('body').append(modalHtml);
   });
 
   $(document).on('click', '.prtlt-digitup-api-options .remove-api-portlet', function () {
-    if (confirm("¿Estás seguro de que deseas eliminar este portlet?")) {
+    if (confirm("Are you sure you want to delete this portlet?")) {
       $(this).closest('.prtlt-digitup-api').remove();
     }
   });
 
   $(document).on('click', '#saveConfig', function () {
-    var portletIndex = $(this).data('portlet-index');  // Recupera el índice del portlet
+    var tabIndex = $(this).attr('data-tab-index');  // Recupera el índice del portlet
+    var portletIndex = $(this).attr('data-portlet-index');  // Recupera el índice del portlet
+    console.log('tabIndex', tabIndex);
+    console.log('portletIndex', portletIndex);
     var url = $('#configUrl').val();
     // var portlet = $(this).attr('data-portletType');
 
     // console.log('portlet', portlet);
     // var apiContent = $('.' + portlet).closest('.prtlt-digitup-api').find('.api_content');
     var apiContent = $('.prtlt-digitup-api').eq(portletIndex).find('.api_content');
+    console.log('apiContent', apiContent);
 
     var currentPortlet = apiContent.attr('data-portletType') || ''; // Asegúrate de manejar undefined
+    console.log('currentPortlet', currentPortlet);
     if (currentPortlet !== 'prtlt-digitup-api-recomendados') {
       apiContent.attr('data-url', url);
-    } else {
-      apiContent.attr('data-object', JSON.stringify(dataObject));
-      // apiContent.attr('data-url', dataObject[0]?.url || '');
+    } else if (currentPortlet === 'prtlt-digitup-api-recomendados') {
+      // const dataObject = JSON.parse(apiContent.attr('data-object'));
+      // if (!dataObject[tabIndex]) {
+      //   dataObject[tabIndex] = {};
+      // }
+      // dataObject[tabIndex].url = url
+      // apiContent.attr('data-object', JSON.stringify(dataObject));
+      const tab = $('.prtlt-digitup-api').find('.tab').eq(tabIndex);
+      tab.attr('data-url', url);
+      copyTabsUrlToApi();
     }
     getContent();
   });
 
   // Recomendados:
-  $(document).on('click', '#add-item', function () {
-    var titleEs = $('#title-es').val();
-    var titleEn = $('#title-en').val();
-    var configUrl = $('#config-url').val();
-    if (titleEs && titleEn && configUrl) {
-      var newItem = {
-        title: { es: titleEs, en: titleEn },
-        url: configUrl
-      };
-      dataObject.push(newItem);
-      $('#title-es').val('');
-      $('#title-en').val('');
-      $('#config-url').val('');
-      updateItemsDisplay();  // Función para actualizar la visualización de ítems
-    }
-  });
+  // $(document).on('click', '#add-item', function () {
+  //   var titleEs = $('#title-es').val();
+  //   var titleEn = $('#title-en').val();
+  //   var configUrl = $('#config-url').val();
+  //   if (titleEs && titleEn && configUrl) {
+  //     var newItem = {
+  //       title: { es: titleEs, en: titleEn },
+  //       url: configUrl
+  //     };
+  //     dataObject.push(newItem);
+  //     $('#title-es').val('');
+  //     $('#title-en').val('');
+  //     $('#config-url').val('');
+  //     updateItemsDisplay();  // Función para actualizar la visualización de ítems
+  //   }
+  // });
 
-  $(document).on('click', '.remove-item', function () {
-    var index = $(this).data('index');
-    dataObject.splice(index, 1);
-    updateItemsDisplay();  // Actualizar la visualización después de eliminar
-  });
+  // $(document).on('click', '.remove-item', function () {
+  //   var index = $(this).data('index');
+  //   dataObject.splice(index, 1);
+  //   updateItemsDisplay();  // Actualizar la visualización después de eliminar
+  // });
 
   // Función para actualizar la lista de ítems en la modal
-  function updateItemsDisplay() {
-    var itemsContainer = $('#items-container');
-    itemsContainer.empty();
-    dataObject.forEach((item, index) => {
-      itemsContainer.append(`
-            <div class="item">
-              <div class="left_side">
-                <div><b>ES:</b> ${item.title.es}</div>
-                <div><b>EN:</b> ${item.title.en}</div>
-                <div><b>Config:</b> ${item.url}</div>
-              </div>
-              <div class="right_side">
-                <button class="remove-item" data-index="${index}">Eliminar</button>
-              </div>
-            </div>
-        `);
-    });
-  }
+  // function updateItemsDisplay() {
+  //   var itemsContainer = $('#items-container');
+  //   itemsContainer.empty();
+  //   dataObject.forEach((item, index) => {
+  //     itemsContainer.append(`
+  //           <div class="item">
+  //             <div class="left_side">
+  //               <div><b>ES:</b> ${item.title.es}</div>
+  //               <div><b>EN:</b> ${item.title.en}</div>
+  //               <div><b>Config:</b> ${item.url}</div>
+  //             </div>
+  //             <div class="right_side">
+  //               <button class="remove-item" data-index="${index}">Delete</button>
+  //             </div>
+  //           </div>
+  //       `);
+  //   });
+  // }
 
   $(document).on('click', '.add-new-card', function () {
     var itemsBlock = $(this).closest('.prtlt-digitup-generic').find('.options_all_items');
     var item = $(this).closest('.prtlt-digitup-generic').find('.options_item_to_copy');
     var lastElem = item[item.length - 1];
-    var clonedElem = $(lastElem).clone(); // Clonar el último elemento
+    var clonedElem = $(lastElem).clone(true); // Clonar el último elemento
+    clonedElem.find('.cke_editable').removeClass('cke_editable');
     itemsBlock.append(clonedElem);
+
+    prtltmmcCkEditor.createNewInstances();
+
   });
 
   $(document).on('click', '.delete-cards-option', function () {
@@ -164,14 +215,14 @@ document.addEventListener('DOMContentLoaded', function () {
     modalHtml = `
           <div class="config-modal-api-backdrop"></div>
           <div class="config-modal-api">
-              <h2>Configuración imagen</h2>
+              <h2>Image configuration</h2>
               <div>
-                  <label>URL configuracion:</label>
+                  <label>URL configuration:</label>
                   <input type="text" id="imageConfigUrl" value="${$image.attr('src')}">
               </div>
               <div class="bottom_side">
-                <button class="danger" id="cancelConfig">Cancelar</button>
-                <button class="success" id="saveImageUrl" data-image-index="${imageIndex}">Guardar</button>
+                <button class="danger" id="cancelConfig">Cancel</button>
+                <button class="success" id="saveImageUrl" data-image-index="${imageIndex}">Save</button>
               </div>
           </div>
       `;
@@ -183,17 +234,16 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log('click #saveImageUrl');
     var imageIndex = $(this).attr('data-image-index');  // Recupera el índice del portlet
     console.log('imageIndex', imageIndex);
-    console.log('url', $('#imageConfigUrl').val());
     var url = $('#imageConfigUrl').val();
     console.log('url', url);
-    var imageContent = $('.carts__items').eq(imageIndex).find('img');
+    var imageContent = $('.carts__item').eq(imageIndex).find('img');
     console.log('imageContent', imageContent);
 
     imageContent.attr('src', url);
   });
 
   $(document).on('click', '.delete-card', function () {
-    if (confirm("¿Estás seguro de que deseas eliminar este elemento?")) {
+    if (confirm("Are you sure you want to delete this element?")) {
       $(this).closest('.carts__item').remove();
     }
   });
@@ -207,3 +257,20 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 });
+
+function copyTabsUrlToApi() {
+  $('.prtlt-digitup-api-recomendados').each(function () {
+    const dataObject = [];
+    // const dataObject = JSON.parse(apiContent.attr('data-object') || '[]');
+    $(this).find('.tab').each(function () {
+      console.log('tab each');
+      const url = $(this).attr('data-url');
+      console.log('url', url);
+      const title = $(this).find('p').text();
+      console.log('title', title);
+      dataObject.push({ title, url });
+    });
+    $(this).find('.api_content').attr('data-object', JSON.stringify(dataObject));
+  });
+
+}

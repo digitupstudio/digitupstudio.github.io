@@ -29,6 +29,9 @@ function getContent() {
     urlWeb = `/api-wlgs-portlets/wlgs/portal/no-session/portlet/${portletType}/show`;
 
     const apiUrl = urlWeb + '/' + language;
+    console.log('apiUrl', apiUrl);
+    console.log('config', config);
+    console.log('$this', $this);
     requestData(apiUrl, config, $this);
   });
 }
@@ -94,11 +97,8 @@ function checkDestinations() {
     destinationBlocks.each(function () {
       var $this = $(this);
       const items = $this.find('.carts__item');
-      // Verifica si hay más de 30 ítems
       if (items.length > initTotal) {
-        // Oculta todos los ítems después del 30º
         items.slice(initTotal).addClass('hide_all');
-        // Asegura que el botón para mostrar más ítems es visible
         $this.find('.carts__button').removeClass('hide_all');
       }
     });
@@ -335,26 +335,37 @@ function loadRecomendedTabsFunc() {
 }
 
 // Load individual recomendation tab
-function loadRecomendedTabs(contentDiv) {
-  const language = getLanguage();
+function loadRecomendedTabs(apiContent) {
   console.log('loadRecomendedTabs!!!');
+  const tabs = apiContent.closest('.tabs_block').find('.tabs .tab');
+  console.log('tabs', tabs);
   let config = '';
-  var apiContent = contentDiv;
+  console.log('apiContent.attr()', apiContent.attr('data-object'));
   const dataObject = JSON.parse(apiContent.attr('data-object') || '[]');
-  console.log('dataObject', dataObject);
   if (dataObject.length) {
     config = dataObject[0].url;
+  }
+  if (tabs.length) {
+    return config;
+  }
+  // const language = getLanguage();
+  console.log('loadRecomendedTabs!!!');
+  console.log('dataObject', dataObject);
+  if (dataObject.length) {
     let tabs = '';
     dataObject.forEach((elem, index) => {
-      tabs += `<div class="tab recomended_tab ${index === 0 ? 'active' : ''}" data-index="${index}">${elem.title[language]}</div>`;
+      tabs += `<div class="prtltmmc-cell-boxes-outstand tab recomended_tab prtltmmc-contenteditable ${index === 0 ? 'active' : ''}" data-url="${elem.url}">${elem.title}</div>`;
     });
-    contentDiv.closest('.main_content').find('.tabs').html(tabs);
+    apiContent.closest('.main_content').find('.tabs').html(tabs);
   }
   return config;
 }
 
 $(document).on('click', '.recomended_tab', function () {
-  const index = $(this).attr('data-index') || 0;
+  // const index = $(this).attr('data-index') || 0;
+  // const tab = $(this).closest('.tab');
+  const tabs = $(this).closest('.tabs').find('.tab');
+  const index = tabs.index($(this));
   console.log('index', index);
   // const config = $(this).attr('data-url');
   // const urlWeb = `/api-wlgs-portlets/wlgs/portal/no-session/portlet/recomendados/show`;
