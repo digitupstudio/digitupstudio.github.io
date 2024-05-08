@@ -12,7 +12,8 @@ function getContent() {
     console.error('contentDiv not found');
     return;
   }
-  contentDiv.each(function () {
+  contentDiv.empty();
+  contentDiv.each(function (index) {
     var $this = $(this);
     let config = '';
     const portlet = $this.attr('data-portletType');
@@ -21,18 +22,24 @@ function getContent() {
     let urlWeb = '';
 
     if (portletType === 'recomendados') {
-      config = loadRecomendedTabs($this);
+      // config = loadRecomendedTabs($this, index);
+      const dataObject = JSON.parse($this.attr('data-object') || '[]');
+      if (dataObject.length) {
+        dataObject.forEach(function (elem) {
+          config = elem.url;
+          urlWeb = `/api-wlgs-portlets/wlgs/portal/no-session/portlet/${portletType}/show`;
+          const apiUrl = urlWeb + '/' + language;
+          requestData(apiUrl, config, $this);
+        });
+        // config = dataObject[index].url;
+      }
     } else {
       config = $this.attr('data-url');
+      urlWeb = `/api-wlgs-portlets/wlgs/portal/no-session/portlet/${portletType}/show`;
+      const apiUrl = urlWeb + '/' + language;
+      requestData(apiUrl, config, $this);
     }
 
-    urlWeb = `/api-wlgs-portlets/wlgs/portal/no-session/portlet/${portletType}/show`;
-
-    const apiUrl = urlWeb + '/' + language;
-    console.log('apiUrl', apiUrl);
-    console.log('config', config);
-    console.log('$this', $this);
-    requestData(apiUrl, config, $this);
   });
 }
 
@@ -73,7 +80,8 @@ function requestData(apiUrl, filter, contentDiv) {
 
       // Verifica si se encontró el elemento y actualiza el DOM
       if (content) {
-        contentDiv.html(content.innerHTML);
+        contentDiv.append(content.innerHTML);
+        // contentDiv.html(content.innerHTML);
         console.log('contentDiv', contentDiv);
         execConfigs();
       } else {
@@ -260,7 +268,7 @@ function hoveredConfig() {
   var itemTextBlocks = document.querySelectorAll('.offers__item-text');
 
   itemTextBlocks?.forEach(function (itemTextBlock) {
-    var link = itemTextBlock.querySelector('a');
+    var link = itemTextBlock.querySelector('.offers__item-right-bottom a');
 
     link.addEventListener('mouseover', function () {
       itemTextBlock.classList.add('hovered');
@@ -308,8 +316,20 @@ function checkRecomendados() {
   }
 }
 
-// Load slider for recomendatios
-function loadSliderConfig() {
+// function loadSliderConfigAllOld() {
+//   const swipers = document.querySelectorAll('.swiper');
+
+//   swipers.forEach((swiper, index) => {
+//     const prevButton = swiper.querySelector('.prev-slide');
+//     const nextButton = swiper.querySelector('.next-slide');
+
+//     prevButton?.classList?.add(`prev-slide${index}`);
+//     nextButton?.classList?.add(`next-slide${index}`);
+
+//     loadSliderConfig(swiper, index);
+//   });
+// }
+function loadSliderConfigAll() {
   new Swiper('.swiper', {
     slidesPerView: 1.3,
     spaceBetween: 16,
@@ -320,8 +340,8 @@ function loadSliderConfig() {
       1200: { slidesPerView: 4 }
     },
     navigation: {
-      nextEl: '.next-slide',
-      prevEl: '.prev-slide',
+      nextEl: `.next-slide`,
+      prevEl: `.prev-slide`,
     },
   });
 }
@@ -335,15 +355,15 @@ function loadRecomendedTabsFunc() {
 }
 
 // Load individual recomendation tab
-function loadRecomendedTabs(apiContent) {
+function loadRecomendedTabs(apiContent, index = 0) {
   console.log('loadRecomendedTabs!!!');
-  const tabs = apiContent.closest('.tabs_block').find('.tabs .tab');
+  const tabs = apiContent.closest('.recommendations').find('.tabs .tab');
   console.log('tabs', tabs);
   let config = '';
   console.log('apiContent.attr()', apiContent.attr('data-object'));
   const dataObject = JSON.parse(apiContent.attr('data-object') || '[]');
   if (dataObject.length) {
-    config = dataObject[0].url;
+    config = dataObject[index].url;
   }
   if (tabs.length) {
     return config;
@@ -400,7 +420,7 @@ function execConfigs() {
   // Recomendados
   loadRecomendedTabsFunc();
   checkRecomendados();
-  loadSliderConfig();
+  loadSliderConfigAll();
 }
 
 // All scripts

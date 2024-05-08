@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   $(document).on('click', '.prtlt-digitup-api-options .open-api-config', function () {
     var apiContent = $(this).closest('.prtlt-digitup-api').find('.api_content');
-    var currentUrl = apiContent.attr('data-url');
+    var currentUrl = apiContent.attr('data-url') || '';
     // var currentPortlet = apiContent.attr('data-portletType') || ''; // Asegúrate de manejar undefined
     var $portlet = $(this).closest('.prtlt-digitup-api');
     // Obtén el índice o un identificador único del portlet
@@ -36,11 +36,13 @@ document.addEventListener('DOMContentLoaded', function () {
     var tabIndex = -1;
     if (!currentUrl) {
       const tab = $(this).closest('.tab');
-      const tabs = $(this).closest('.tabs').find('.tab');
-      tabIndex = tabs.index(tab);
-      // console.log('dataObject', dataObject);
-      // console.log('tabIndex', tabIndex);
-      currentUrl = tab.attr('data-url');
+      if (tab) {
+        const tabs = $(this).closest('.tabs').find('.tab');
+        tabIndex = tabs.index(tab);
+        // console.log('dataObject', dataObject);
+        // console.log('tabIndex', tabIndex);
+        currentUrl = tab.attr('data-url');
+      }
       // if (!currentUrl) {
       //   currentUrl = dataObject?.[tabIndex]?.url || ''
       // }
@@ -53,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <h2>Portlet configuration</h2>
             <div>
                 <label>URL configuration:</label>
-                <input type="text" placeholder="url configuration" id="configUrl" value="${currentUrl}">
+                <input type="text" placeholder="url configuration" id="configUrl" value="${currentUrl || ''}">
             </div>
             <div class="bottom_side">
               <button id="cancelConfig">Cancel</button>
@@ -122,13 +124,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (currentPortlet !== 'prtlt-digitup-api-recomendados') {
       apiContent.attr('data-url', url);
     } else if (currentPortlet === 'prtlt-digitup-api-recomendados') {
-      // const dataObject = JSON.parse(apiContent.attr('data-object'));
-      // if (!dataObject[tabIndex]) {
-      //   dataObject[tabIndex] = {};
-      // }
-      // dataObject[tabIndex].url = url
-      // apiContent.attr('data-object', JSON.stringify(dataObject));
-      const tab = $('.prtlt-digitup-api').find('.tab').eq(tabIndex);
+      const tab = apiContent.closest('.recommendations').find('.tab').eq(tabIndex);
       tab.attr('data-url', url);
       copyTabsUrlToApi();
     }
@@ -181,9 +177,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
   $(document).on('click', '.add-new-card', function () {
     var itemsBlock = $(this).closest('.prtlt-digitup-generic').find('.options_all_items');
-    var item = $(this).closest('.prtlt-digitup-generic').find('.options_item_to_copy');
+    console.log('itemsBlock', itemsBlock);
+    var item = itemsBlock.find('.options_item_to_copy');
+    console.log('item', item);
     var lastElem = item[item.length - 1];
+    console.log('lastElem', lastElem);
     var clonedElem = $(lastElem).clone(true); // Clonar el último elemento
+    console.log('clonedElem', clonedElem);
     clonedElem.find('.cke_editable').removeClass('cke_editable');
     itemsBlock.append(clonedElem);
 
@@ -207,8 +207,7 @@ document.addEventListener('DOMContentLoaded', function () {
   $(document).on('click', '.open-options-link', function () {
     var $mainContent = $(this).closest('.carts__items');
     var $images = $mainContent.find('img');
-    // Suponiendo que 'this' es parte de un ítem que también incluye la imagen
-    var $image = $(this).closest('.carts__item').find('img');
+    var $image = $(this).closest('.options_item_to_copy').find('img');
     var imageIndex = $images.index($image);
     console.log("Índice de la imagen: " + imageIndex);
 

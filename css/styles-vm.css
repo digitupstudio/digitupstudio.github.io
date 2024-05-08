@@ -314,6 +314,12 @@
   margin-top: 40px;
 }
 
+.prtlt-digitup-generic .carts__items .options_item_to_copy {
+  position: relative;
+  background: unset;
+  padding-top: 0 !important;
+}
+
 @media (max-width: 768px) {
   .prtlt-digitup-generic .carts__items {
     flex-wrap: nowrap;
@@ -358,7 +364,7 @@
   line-height: 20px;
   margin: 0 auto;
 }
-.prtlt-digitup-static .prtlt-digitup-api-options + .main_content .btn {
+.prtlt-digitup-static .prtltmmc-options-portlet-digitup + .carts__item .btn {
   display: flex !important;
 }
 
@@ -380,6 +386,10 @@
 .prtlt-digitup-generic .carts__item:hover .carts__item-wrapper {
   background-color: rgba(43, 103, 246, 0.7);
 }
+
+/* .prtlt-digitup-generic .carts__item.edit_mode .carts__item-wrapper {
+  background-color: rgba(43, 103, 246, 0.7);
+} */
 
 /* .carts__item:hover .carts__item-bottom {
   margin-bottom: 60px;
@@ -1889,6 +1899,7 @@
 
 .prtlt-digitup-generic .recommendations__item-top ul {
   padding-top: 14px;
+  padding-left: 0;
 }
 
 @media (max-width: 992px) {

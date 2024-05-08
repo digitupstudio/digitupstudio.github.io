@@ -12,8 +12,15 @@
                     <div class="offers__item-left">
                         <div class="offers__item-left-top">
                             <h3>$item.cruise</h3>
-                            <p><span>$item.departures.get(0).duration $message.days</span> $item.embark -
-                                $item.debark<span class="hide-places">
+                            <p><span>$item.departures.get(0).duration $message.days</span>
+                                #set($embark = $item.embark)
+                                #set($debark = $item.debark)
+                                #if($embark == $debark)
+                                $embark
+                                #else
+                                $embark - $debark
+                                #end
+                                <span class="hide-places">
                                     #set($size = $item.ports.size())
                                     #set($counter = 0)
                                     #foreach( $port in $item.ports )
@@ -27,9 +34,13 @@
                                 $item.departures.get(0).departure</h4>
                         </div>
                         <div class="offers__item-left-bottom">
-                            <a class="ship" href="#" class="prtltmmc-image-ship  prtltmmc-open-popup"
+                            #if($item.shipurl)
+                            <a href="#" class="ship prtltmmc-image-ship prtltmmc-open-popup"
                                 rel="https://www.mundomarcruceros.com/popup/portal/barcodecrucero/sapphireprincess.html"
                                 title="Barco $item.ship" data-add-class="prtltmmc-without-margins">$item.ship</a>
+                            #else
+                            <p class="ship">$item.ship</p>
+                            #end
                             <div class="offers__calendar">
                                 <p class="data">$item.departures.get(0).departure</p>
                                 <div class="calendar">

@@ -90,8 +90,10 @@ var prtltmmcCkEditor = {
 			};
 		});
 
+		// TODO:
 		//sort boxes
 		$('body').on('click', '.prtltmmc-sorting .prtltmmc-options-portlet, .prtltmmc-sorting .prtltmmc-options-portlet-digitup', function (event) {
+			console.log('Click!!! close');
 			$portlet = $(this).closest('[data-portlet]');
 			$portlet.removeClass('prtltmmc-sorting');
 			$portlet.find('.prtltmmc-row-boxes-outstand').sortable('destroy');
@@ -393,7 +395,7 @@ var prtltmmcCkEditor = {
 			'</div>';
 		$('.prtltmmc-boxes-outstand').each(function (index) {
 			if ($(this).find('.prtltmmc-options-portlet').length == 0) {
-				$(this).find('.prtltmmc-row-boxes-outstand:not(.tabs)').after(toolBarBoxes);
+				$(this).find('.prtltmmc-row-boxes-outstand:not(.tabs, .options_all_items)').after(toolBarBoxes);
 			};
 		});
 
@@ -452,28 +454,6 @@ var prtltmmcCkEditor = {
 		///////////// ADD options buttons PROMOCARD/////////////////////
 		////////////////////////////////////////////////////////////////
 		$('.prtlt-digitup-static.prtlt-digitup-static-promo-card').each(function () {
-			// const thisParent = $(this);
-			// const optionsGeneral = `
-			// 	<div class="prtlt-digitup-api-options prtlt-digitup-generic-options">
-			// 		<div class="option_button delete-cards-option warning">Edit cards</div>
-			// 		<div class="option_button add-new-card success">Add card</div>
-			// 	</div>
-			// `;
-
-			// thisParent.prepend(optionsGeneral);
-
-			// const optionsItem = `
-			// 	<div class="prtlt-digitup-api-options prtlt-digitup-generic-options in_top">
-			// 		<div class="option_button delete-card hidden danger">Delete</div>
-			// 		<div class="option_button open-options-link success">Image</div>
-			// 	</div>
-			// `;
-
-			// thisParent.find('.carts__item').each(function () {
-			// 	const thisChild = $(this);
-			// 	thisChild.prepend(optionsItem);
-			// });
-
 			const thisParent = $(this);
 			if (thisParent.find('.prtltmmc-options-portlet-digitup').length === 0) {
 				var toolBarMenu = '<ul class="dropdown-menu prtlt-digitup-api-options">';
@@ -507,6 +487,32 @@ var prtltmmcCkEditor = {
 		////////////////////////////////////////////////////////////////
 		////////////////// ADD options buttons API /////////////////////
 		////////////////////////////////////////////////////////////////
+		$('.prtlt-digitup-api.prtlt-digitup-api-chollos, .prtlt-digitup-api.prtlt-digitup-api-destinos').each(function () {
+			const thisParent = $(this);
+			console.log('thisParent destinos', thisParent);
+			if (thisParent.find('.prtltmmc-options-portlet-digitup').length === 0) {
+				var toolBarMenu = '<ul class="dropdown-menu prtlt-digitup-api-options">';
+				toolBarMenu += `<li><a href="#" class="open-api-config">Configuration</a></li>`;
+				toolBarMenu += '</ul>';
+				var optionsGeneral = '<div class="btn-group dropdown-menu-right prtltmmc-options-portlet-digitup">' +
+					'<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">Options</button>' +
+					toolBarMenu + '</div>';
+				thisParent.find('.main_content').prepend(optionsGeneral);
+			}
+		});
+		$('.prtlt-digitup-api.prtlt-digitup-api-chollos').each(function () {
+			const thisParent = $(this);
+			if (thisParent.find('.prtltmmc-options-portlet-digitup').length === 0) {
+				var toolBarMenu = '<ul class="dropdown-menu prtlt-digitup-api-options">';
+				toolBarMenu += `<li><a href="#" class="open-api-config">Configuration</a></li>`;
+				toolBarMenu += '</ul>';
+				var optionsGeneral = '<div class="btn-group dropdown-menu-right prtltmmc-options-portlet-digitup">' +
+					'<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">Options</button>' +
+					toolBarMenu + '</div>';
+				thisParent.find('.tabs').prepend(optionsGeneral);
+			}
+		});
+
 		$('.prtlt-digitup-api.prtlt-digitup-api-recomendados').each(function () {
 			const thisParent = $(this);
 			if (thisParent.find('.prtltmmc-options-portlet-digitup').length === 0) {
@@ -522,7 +528,8 @@ var prtltmmcCkEditor = {
 		});
 		setTimeout(() => {
 			this.addTabsOptions();
-			$('.dropdown-toggle').dropdown();
+			// $('.dropdown-toggle').dropdown();
+			// initializeDropdowns();
 		}, 2000);
 
 	},
@@ -549,7 +556,7 @@ var prtltmmcCkEditor = {
 		// 		<div class="option_button open-options-link success">Image</div>
 		// 	</div>
 		// `;
-		$('.prtlt-digitup-static.prtlt-digitup-static-promo-card .carts__item').each(function () {
+		$('.prtlt-digitup-static.prtlt-digitup-static-promo-card .options_item_to_copy').each(function () {
 			const thisParent = $(this);
 			if (thisParent.find('.prtltmmc-options-portlet-digitup').length === 0) {
 				var toolBarMenu = '<ul class="dropdown-menu prtlt-digitup-api-options">';
