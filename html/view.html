@@ -1,0 +1,58 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Recomendados</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" type="text/css"
+    href="https://www.mundomarcruceros.com/wlgs/prtltmmc-css/dynamic-styles-mmc-20220304.css">
+  <link rel="stylesheet" type="text/css" href="https://www.mundomarcruceros.com/wlgs/prtltmmc-css/styles-vvs.css">
+  <link rel="stylesheet" type="text/css" href="../css/styles-vm.css">
+  <!-- <link rel="stylesheet" type="text/css" href="https://www.mundomarcruceros.com/digitup/styles-vm.css"> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+
+<body>
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script type="module" src="../js/portlets-vm.js"></script>
+<script>
+  function fetchAndReplaceBody(url) {
+    fetch(url)
+      .then(response => {
+        if (response.ok) {
+          return response.text(); // Obtener el HTML como texto
+        }
+        throw new Error('Failed to fetch the page: ' + response.status);
+      })
+      .then(html => {
+        const parser = new DOMParser(); // Crear un nuevo DOMParser
+        const doc = parser.parseFromString(html, "text/html"); // Parsear el HTML
+        const newBody = doc.body; // Obtener el <body> del documento parseado
+
+        // Reemplazar el contenido del body actual con el nuevo
+        document.body.innerHTML = newBody.innerHTML;
+      })
+      .catch(error => {
+        console.error('Error fetching the URL:', error);
+      });
+  }
+
+  fetchAndReplaceBody('https://www.mundomarcruceros.com/portal/Prueba-Virgin-Portlets-DigitUp.html');
+
+</script>
+
+
+</html>

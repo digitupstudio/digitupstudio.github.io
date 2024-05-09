@@ -310,7 +310,13 @@ function checkRecomendados() {
       var $this = $(this);
       const items = $this.find('.recommendations__items');
       if (items.length > 0) {
+        // items.removeClass('hide_all');
         items.slice(1).addClass('hide_all');
+      }
+      const tabs = $this.find('.tabs .tab');
+      if (tabs.length > 0) {
+        tabs.addClass('active');
+        tabs.slice(1).removeClass('active');
       }
     });
   }
@@ -329,10 +335,12 @@ function checkRecomendados() {
 //     loadSliderConfig(swiper, index);
 //   });
 // }
+
 function loadSliderConfigAll() {
+  // $('.swiper').addClass('hide_all');
   new Swiper('.swiper', {
     slidesPerView: 1.3,
-    spaceBetween: 16,
+    spaceBetween: 8,
     breakpoints: {
       280: { slidesPerView: 1.3 },
       568: { slidesPerView: 2 },
@@ -344,6 +352,9 @@ function loadSliderConfigAll() {
       prevEl: `.prev-slide`,
     },
   });
+  setTimeout(() => {
+    checkRecomendados();
+  }, 500);
 }
 
 // Loading all recomendation tabs
@@ -384,14 +395,15 @@ function loadRecomendedTabs(apiContent, index = 0) {
 $(document).on('click', '.recomended_tab', function () {
   // const index = $(this).attr('data-index') || 0;
   // const tab = $(this).closest('.tab');
-  const tabs = $(this).closest('.tabs').find('.tab');
-  const index = tabs.index($(this));
+  const tabs = $(this).closest('.tabs');
+  const tab = tabs.find('.tab');
+  const index = tab.index($(this));
   console.log('index', index);
   // const config = $(this).attr('data-url');
   // const urlWeb = `/api-wlgs-portlets/wlgs/portal/no-session/portlet/recomendados/show`;
   // const language = getLanguage();
 
-  $('.recommendations .tabs .tab').removeClass('active');
+  tabs.find('.tab').removeClass('active');
   $(this).addClass('active');
 
   console.log('vlock', $(this).closest('.prtlt-digitup-api-recomendados').find('.recommendations__items'));
@@ -411,6 +423,8 @@ $(document).on('click', '.recomended_tab', function () {
 ///////////////// GENERAL METHODS /////////////////
 ///////////////////////////////////////////////////
 function execConfigs() {
+
+  // $('.swiper').addClass('hide_all');
   // Destinos
   checkDestinations();
   // Chollos
@@ -419,7 +433,7 @@ function execConfigs() {
   hoveredConfig();
   // Recomendados
   loadRecomendedTabsFunc();
-  checkRecomendados();
+  // checkRecomendados();
   loadSliderConfigAll();
 }
 

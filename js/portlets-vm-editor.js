@@ -11,7 +11,8 @@ document.addEventListener('DOMContentLoaded', function () {
   //   }
   // });
 
-  $(document).on('click', '.prtlt-digitup-api-options .add-new-tab', function () {
+  $(document).on('click', '.prtlt-digitup-api-options .add-new-tab', function (event) {
+    event.preventDefault();
     const tabsContainer = $(this).closest('.tabs');
     // const allTabs = tabsContainer.find('.tab');
     // const lastIndex = allTabs.length - 1;  // Índice del último tab actual
@@ -25,7 +26,8 @@ document.addEventListener('DOMContentLoaded', function () {
     prtltmmcCkEditor.createNewInstances();
   });
 
-  $(document).on('click', '.prtlt-digitup-api-options .open-api-config', function () {
+  $(document).on('click', '.prtlt-digitup-api-options .open-api-config', function (event) {
+    event.preventDefault();
     var apiContent = $(this).closest('.prtlt-digitup-api').find('.api_content');
     var currentUrl = apiContent.attr('data-url') || '';
     // var currentPortlet = apiContent.attr('data-portletType') || ''; // Asegúrate de manejar undefined
@@ -107,8 +109,8 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   $(document).on('click', '#saveConfig', function () {
-    var tabIndex = $(this).attr('data-tab-index');  // Recupera el índice del portlet
-    var portletIndex = $(this).attr('data-portlet-index');  // Recupera el índice del portlet
+    var tabIndex = $(this).attr('data-tab-index');
+    var portletIndex = $(this).attr('data-portlet-index');
     console.log('tabIndex', tabIndex);
     console.log('portletIndex', portletIndex);
     var url = $('#configUrl').val();
@@ -175,7 +177,8 @@ document.addEventListener('DOMContentLoaded', function () {
   //   });
   // }
 
-  $(document).on('click', '.add-new-card', function () {
+  $(document).on('click', '.add-new-card', function (event) {
+    event.preventDefault();
     var itemsBlock = $(this).closest('.prtlt-digitup-generic').find('.options_all_items');
     console.log('itemsBlock', itemsBlock);
     var item = itemsBlock.find('.options_item_to_copy');
@@ -204,11 +207,14 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  $(document).on('click', '.open-options-link', function () {
+  $(document).on('click', '.open-options-link', function (event) {
+    event.preventDefault();
     var $mainContent = $(this).closest('.carts__items');
     var $images = $mainContent.find('img');
     var $image = $(this).closest('.options_item_to_copy').find('img');
     var imageIndex = $images.index($image);
+    var $portlet = $(this).closest('.prtlt-digitup-generic');
+    var portletIndex = $('.prtlt-digitup-generic').index($portlet);
     console.log("Índice de la imagen: " + imageIndex);
 
     modalHtml = `
@@ -221,7 +227,7 @@ document.addEventListener('DOMContentLoaded', function () {
               </div>
               <div class="bottom_side">
                 <button class="danger" id="cancelConfig">Cancel</button>
-                <button class="success" id="saveImageUrl" data-image-index="${imageIndex}">Save</button>
+                <button class="success" id="saveImageUrl" data-image-index="${imageIndex}" data-portlet-index="${portletIndex}">Save</button>
               </div>
           </div>
       `;
@@ -235,7 +241,9 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log('imageIndex', imageIndex);
     var url = $('#imageConfigUrl').val();
     console.log('url', url);
-    var imageContent = $('.carts__item').eq(imageIndex).find('img');
+    var portletIndex = $(this).attr('data-portlet-index');
+    console.log('portletIndex', portletIndex);
+    var imageContent = $('.prtlt-digitup-generic').eq(portletIndex).find('.carts__item').eq(imageIndex).find('img');
     console.log('imageContent', imageContent);
 
     imageContent.attr('src', url);

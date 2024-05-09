@@ -39,6 +39,7 @@
               <p>$item.leading</p>
               <span>$message.perperson ($message.taxincluded2)</span>
             </div>
+            #if(false)
             <div class="recommendations__promo is_desktop">
               <div class="recommendations__promo-images">
                 #if($item.flight)
@@ -52,6 +53,7 @@
                 #end
               </div>
             </div>
+            #end
             <a href="$item.link" class="btn">$message.morebutton</a>
           </div>
         </div>

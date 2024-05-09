@@ -57,6 +57,7 @@
                     </div>
                     <div class="offers__item-right">
                         <div class="offers__item-right-top">
+                            #if(false)
                             <div class="offers__item-right-text">
                                 #if($item.flight)
                                 <img src="https://cdn.mundomarcruceros.com/wlgs/mundomar-images/airplan.svg" alt=""
@@ -81,12 +82,13 @@
                                     #end
                                 </span>
                             </div>
-
+                            #end
                         </div>
                         <div class="offers__item-right-bottom">
                             <div>
                                 <span>$message.from</span>
                                 <p class="price">$item.departures.get(0).leading</p>
+                                <span>$message.perperson ($message.taxincluded2)</span>
                                 <div class="calendar">
                                     #foreach( $departure in $item.departures )
                                     <div class="calendar_item">
