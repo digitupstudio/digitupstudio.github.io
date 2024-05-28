@@ -99,6 +99,7 @@ var prtltmmcCkEditor = {
 			$portlet.find('.prtltmmc-row-boxes-outstand').sortable('destroy');
 			$portlet.find('.prtltmmc-delete-element').remove();
 			$('.prtltmmc-edition-toolbar').show();
+			copyTabsUrlToApi();
 			event.stopPropagation();
 		});
 

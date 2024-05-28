@@ -12,7 +12,10 @@
                     <div class="offers__item-left">
                         <div class="offers__item-left-top">
                             <h3>$item.cruise</h3>
-                            <p><span>$item.departures.get(0).duration $message.days</span>
+                            <p>
+                                #if ($item.departures && $item.departures.size() > 0)
+                                <span>$item.departures.get(0).duration $message.days</span>
+                                #end
                                 #set($embark = $item.embark)
                                 #set($debark = $item.debark)
                                 #if($embark == $debark)
@@ -30,8 +33,10 @@
                             </p>
                             <h4><img src="https://cdn.mundomarcruceros.com/wlgs/mundomar-images/ship.svg">
                                 $item.ship</h4>
+                            #if ($item.departures && $item.departures.size() > 0)
                             <h4><img src="https://cdn.mundomarcruceros.com/wlgs/mundomar-images/calendar.svg">
                                 $item.departures.get(0).departure</h4>
+                            #end
                         </div>
                         <div class="offers__item-left-bottom">
                             #if($item.shipurl)
@@ -42,7 +47,9 @@
                             <p class="ship">$item.ship</p>
                             #end
                             <div class="offers__calendar">
+                                #if ($item.departures && $item.departures.size() > 0)
                                 <p class="data">$item.departures.get(0).departure</p>
+                                #end
                                 <div class="calendar">
                                     #foreach( $departure in $item.departures )
                                     <div class="calendar_item">
@@ -52,7 +59,9 @@
                                     #end
                                 </div>
                             </div>
+                            #if ($item.departures && $item.departures.size() > 0)
                             <p class="time">$item.departures.get(0).duration $message.days</p>
+                            #end
                         </div>
                     </div>
                     <div class="offers__item-right">
@@ -87,7 +96,9 @@
                         <div class="offers__item-right-bottom">
                             <div>
                                 <span>$message.from</span>
+                                #if ($item.departures && $item.departures.size() > 0)
                                 <p class="price">$item.departures.get(0).leading</p>
+                                #end
                                 <span>$message.perperson ($message.taxincluded2)</span>
                                 <div class="calendar">
                                     #foreach( $departure in $item.departures )

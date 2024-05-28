@@ -4,16 +4,15 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title>Recomendados</title>
+  <title>View page</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" type="text/css"
-    href="https://www.mundomarcruceros.com/wlgs/prtltmmc-css/dynamic-styles-mmc-20220304.css">
-  <link rel="stylesheet" type="text/css" href="https://www.mundomarcruceros.com/wlgs/prtltmmc-css/styles-vvs.css">
+  <link rel="stylesheet" type="text/css" href="/wlgs/prtltmmc-css/dynamic-styles-mmc-20220304.css">
+  <link rel="stylesheet" type="text/css" href="/wlgs/prtltmmc-css/styles-vvs.css">
   <link rel="stylesheet" type="text/css" href="../css/styles-vm.css">
   <!-- <link rel="stylesheet" type="text/css" href="https://www.mundomarcruceros.com/digitup/styles-vm.css"> -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -25,13 +24,11 @@
 
 
 </body>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-<script type="module" src="../js/portlets-vm.js"></script>
 <script>
   function fetchAndReplaceBody(url) {
     fetch(url)
       .then(response => {
+        console.log('response', response);
         if (response.ok) {
           return response.text(); // Obtener el HTML como texto
         }
@@ -43,16 +40,30 @@
         const newBody = doc.body; // Obtener el <body> del documento parseado
 
         // Reemplazar el contenido del body actual con el nuevo
-        document.body.innerHTML = newBody.innerHTML;
+        // document.body.innerHTML = newBody.innerHTML;
+        document.documentElement.replaceChild(newBody, document.body);
+
+
       })
       .catch(error => {
         console.error('Error fetching the URL:', error);
       });
   }
 
-  fetchAndReplaceBody('https://www.mundomarcruceros.com/portal/Prueba-Virgin-Portlets-DigitUp.html');
+  fetchAndReplaceBody('/portal/Prueba-Virgin-Portlets-DigitUp.html');
+  setTimeout(() => {
+    loadSliderConfigAll();
+  }, 2000);
+  // setTimeout(() => {
+  //   loadSliderConfigAll();
+  // }, 1000);
+
 
 </script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<!-- <script type="module" src="../js/portlets-vm.js"></script> -->
+<script src="../js/portlets-vm.js"></script>
 
 
 </html>

@@ -99,7 +99,7 @@ function requestData(apiUrl, filter, contentDiv) {
 ///////////////////////////////////////////////////
 // Filter destination cards and hide other elements
 function checkDestinations() {
-  const initTotal = 30;
+  const initTotal = 12;
   const destinationBlocks = $('.prtlt-digitup-api-destinos');
   if (destinationBlocks) {
     destinationBlocks.each(function () {
@@ -322,40 +322,112 @@ function checkRecomendados() {
   }
 }
 
-// function loadSliderConfigAllOld() {
-//   const swipers = document.querySelectorAll('.swiper');
-
-//   swipers.forEach((swiper, index) => {
-//     const prevButton = swiper.querySelector('.prev-slide');
-//     const nextButton = swiper.querySelector('.next-slide');
-
-//     prevButton?.classList?.add(`prev-slide${index}`);
-//     nextButton?.classList?.add(`next-slide${index}`);
-
-//     loadSliderConfig(swiper, index);
-//   });
-// }
-
 function loadSliderConfigAll() {
-  // $('.swiper').addClass('hide_all');
-  new Swiper('.swiper', {
-    slidesPerView: 1.3,
-    spaceBetween: 8,
-    breakpoints: {
-      280: { slidesPerView: 1.3 },
-      568: { slidesPerView: 2 },
-      768: { slidesPerView: 3 },
-      1200: { slidesPerView: 4 }
-    },
-    navigation: {
-      nextEl: `.next-slide`,
-      prevEl: `.prev-slide`,
-    },
+  // new Swiper('.swiper', {
+  //   slidesPerView: 1.3,
+  //   spaceBetween: 8,
+  //   breakpoints: {
+  //     280: { slidesPerView: 1.3 },
+  //     568: { slidesPerView: 2 },
+  //     768: { slidesPerView: 3 },
+  //     1200: { slidesPerView: 4 }
+  //   },
+  //   navigation: {
+  //     nextEl: `.next-slide`,
+  //     prevEl: `.prev-slide`,
+  //   },
+  // });
+  // setTimeout(() => {
+  //   checkRecomendados();
+  // }, 500);
+  // document.querySelectorAll('.tabs_block').forEach(tabsBlock => {
+  //   updateButtons(tabsBlock);
+
+  //   // Agregar evento de scroll a cada contenedor
+  //   const recommendationsItems = tabsBlock.querySelector('.recommendations__items');
+  //   if (recommendationsItems) {
+  //     recommendationsItems.each(function (elem) {
+  //       elem.addEventListener('scroll', () => updateButtons(tabsBlock));
+  //     })
+  //   }
+  // });
+
+  $('.next-slide, .prev-slide').on('click', function () {
+    const isNext = this.classList.contains('next-slide');
+
+    // Encontrar el contenedor tabs_block más cercano
+    const tabsBlock = this.closest('.tabs_block');
+    // Dentro del tabs_block, encontrar el contenedor de los ítems
+    const recommendationsItems = tabsBlock.querySelector('.recommendations__items:not(.hide_all)');
+
+    if (!recommendationsItems) {
+      return;
+    }
+    var computedStyle = getComputedStyle(recommendationsItems);
+    var padding = computedStyle.padding;
+    var paddingValues = padding.replace(/px/g, '').split(' '); // Elimina 'px' y divide la cadena en un array
+    var paddingNumbers = parseFloat(paddingValues) || 12;
+
+    // Calcular el ancho del primer elemento y el gap
+    const item = recommendationsItems.querySelector('.recommendations__item');
+    // const style = window.getComputedStyle(item);
+    // Asumiendo que el gap es el marginRight (ajustar según tu estructura CSS)
+    const gap = 16;
+    const scrollWidth = item.offsetWidth + gap + paddingNumbers / 2;
+
+    // Determinar la dirección del scroll
+    const scrollAmount = isNext ? scrollWidth : -scrollWidth;
+
+    // Realizar el scroll
+    recommendationsItems.scrollBy({
+      left: scrollAmount,
+      behavior: 'smooth' // Efecto de scroll suave
+    });
   });
-  setTimeout(() => {
-    checkRecomendados();
-  }, 500);
+
+  checkRecomendados();
+
+  $('.tabs_block').each(function () {
+    const tabsBlock = $(this);
+    const recommendationsItems = tabsBlock.find('.recommendations__items');
+    recommendationsItems.each(function () {
+      updateButtons(tabsBlock);
+      $(this).on('scroll', function () {
+        updateButtons(tabsBlock);
+      });
+    });
+  });
+
 }
+
+function updateButtons(tabsBlock) {
+  const recommendationsItems = tabsBlock.find('.recommendations__items:not(.hide_all)');
+  const prevButton = tabsBlock.find('.prev-slide');
+  const nextButton = tabsBlock.find('.next-slide');
+
+  if (!recommendationsItems.length) {
+    return;
+  }
+
+  const scrollLeft = recommendationsItems.scrollLeft();
+  const scrollWidth = recommendationsItems[0].scrollWidth;
+  const clientWidth = recommendationsItems[0].clientWidth;
+
+  // Check if we are at the beginning
+  if (scrollLeft === 0) {
+    prevButton.addClass('swiper-button-disabled');
+  } else {
+    prevButton.removeClass('swiper-button-disabled');
+  }
+
+  // Check if we are at the end
+  if (scrollLeft + clientWidth >= scrollWidth) {
+    nextButton.addClass('swiper-button-disabled');
+  } else {
+    nextButton.removeClass('swiper-button-disabled');
+  }
+}
+
 
 // Loading all recomendation tabs
 function loadRecomendedTabsFunc() {
@@ -398,7 +470,6 @@ $(document).on('click', '.recomended_tab', function () {
   const tabs = $(this).closest('.tabs');
   const tab = tabs.find('.tab');
   const index = tab.index($(this));
-  console.log('index', index);
   // const config = $(this).attr('data-url');
   // const urlWeb = `/api-wlgs-portlets/wlgs/portal/no-session/portlet/recomendados/show`;
   // const language = getLanguage();
@@ -406,9 +477,13 @@ $(document).on('click', '.recomended_tab', function () {
   tabs.find('.tab').removeClass('active');
   $(this).addClass('active');
 
-  console.log('vlock', $(this).closest('.prtlt-digitup-api-recomendados').find('.recommendations__items'));
   $(this).closest('.prtlt-digitup-api-recomendados').find('.recommendations__items').addClass('hide_all');
   $(this).closest('.prtlt-digitup-api-recomendados').find('.recommendations__items').eq(index)?.removeClass('hide_all');
+
+  const tabsBlock = $(this).closest('.tabs_block');
+  setTimeout(function () {
+    updateButtons(tabsBlock);
+  }, 0);
 
   // const apiUrl = urlWeb + '/' + language;
   // console.log($(this));

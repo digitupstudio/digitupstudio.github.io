@@ -215,6 +215,13 @@
   background-color: white;
   font-family: 'Archivo';
 }
+.prtlt-digitup-generic .main_content.bottom_border {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.prtlt-digitup-generic .api_content {
+  max-width: 1223px;
+  margin: auto;
+}
 .prtlt-digitup-generic .main_content .prtltmmc-delete-element.prtltmmc-delete-boxes {
   padding: 30px;
   top: -60px;
@@ -316,7 +323,8 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 40px 18px;
-  margin-top: 40px;
+  max-width: 1223px;
+  margin: 40px auto 0;
 }
 
 .prtlt-digitup-generic .carts__items .options_item_to_copy {
@@ -448,6 +456,13 @@
   font-weight: 500;
   line-height: normal;
   margin-top: 6px;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
 }
 
 .prtlt-digitup-generic .carts__item-bottom_side {
@@ -550,10 +565,6 @@
   width: 20px;
   height: 20px;
   background: url("https://cdn.mundomarcruceros.com/wlgs/mundomar-images/plus.svg") no-repeat;
-}
-
-.prtlt-digitup-generic .offers {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 768px) {
@@ -1631,13 +1642,14 @@
 }
 
 .prtlt-digitup-generic .recommendations__items {
-  margin-top: 40px;
-  /* display: flex;
-  gap: 17px;
-  position: relative;
-  width: 100%;
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  background-color: white;
+  margin: 24px auto;
+  border-radius: 32px;
   max-width: 1223px;
-  padding: 0 16px !important; */
+  padding: 24px !important;
 }
 
 @media (max-width: 568px) {
@@ -1656,7 +1668,6 @@
   min-height: 435px;
   max-height: 435px;
   position: relative;
-  cursor: pointer;
   transition: all 0.2s;
   min-width: 270px;
 }
@@ -1770,7 +1781,7 @@
 
 @media (max-width: 868px) {
   .prtlt-digitup-generic .recommendations__item:hover .recommendations__item-bottom {
-    height: 20px;
+    /* height: 20px; */
   }
 }
 
@@ -1972,10 +1983,10 @@
 
 .prtlt-digitup-generic .recommendations__item-bottom_side {
   margin-left: auto;
-  min-height: 120px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 16px;
 }
 
 .prtlt-digitup-generic .recommendations__item-bottom {
