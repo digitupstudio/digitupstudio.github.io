@@ -1,0 +1,118 @@
+<div class="prtltmmc-global-content">
+  <div class="prtltmmc-distable prtltmmc-web-map">
+    <div class="prtltmmc-disrow">
+      <div class="prtltmmc-discell">
+        <div class="footer_logo">
+          <a href="/">
+            <img class="" loading="eager"
+              src="https://cdn.speedsize.com/eb8d0010-7300-4129-8a6d-74bc221f9caf/https://www.virginvoyages.com/dam/jcr:1c9568af-fc03-47e9-a4ca-5ea25c9c56b4/ILL-BRAND-virgin-voyages-logo-horizontal-v1-01-129-39.svg"
+              data-src="https://cdn.speedsize.com/eb8d0010-7300-4129-8a6d-74bc221f9caf/https://www.virginvoyages.com/dam/jcr:1c9568af-fc03-47e9-a4ca-5ea25c9c56b4/ILL-BRAND-virgin-voyages-logo-horizontal-v1-01-129-39.svg"
+              alt="VV logo">
+          </a>
+        </div>
+        <div class="footer_language">
+          <div class="footer_language_line">
+            <div class="footer_language_line_left">
+              <label class="languageSelector__label" for="footerLanguageSelect">
+                Idioma:
+              </label>
+            </div>
+            <div class="footer_language_line_right">
+              <div class="dropdown_virgin">
+                <button class="dropbtn">Español</button>
+                <div class="dropdown-content">
+                  <a href="/es">Español</a>
+                  <a href="/en">English</a>
+                  <a href="/pt">Portuguese</a>
+                </div>
+              </div>
+              <span class="Icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="#fe1b0a" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M11.74121,15.20947a.52488.52488,0,0,1-.47749-.312L8.24121,8.15l.954-.44055,2.546,5.68176,2.5455-5.68176.9545.44055-3.023,6.7474A.52217.52217,0,0,1,11.74121,15.20947Z" />
+                </svg>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="prtltmmc-discell">
+        #foreach( $item in $menu )
+        <a href="$item.link">$item.text</a>
+        #end
+        <!-- <h2 class="prtltmmc-title-web-map">Destinos</h2>
+        <h3 class="prtltmmc-subtitle-web-map">ELIJA SU DESTINO MARÍTIMO</h3>
+        <h3 class="prtltmmc-subtitle-web-map">Cruceros Especiales</h3>
+        <a href="/portal/crucero-Muevete.html">Cruceros Muévete!</a>
+        <a href="/portal/Cruceros-Guia-Asistente-Excursiones-Opcionales.html">Verano en Europa con Guía Asistente
+          en Español</a>
+        <h3 class="prtltmmc-subtitle-web-map">Viajes Completos con Guía Asistente en Princess Cruises</h3>
+        <a href="/portal/Viajes-Completos-2024.html">Viajes Completos 2024</a>
+        <a href="/portal/Viaje-Completo-Japon-Julio.html">Japón Julio 2024</a>
+        <a href="/portal/viaje-completo-alaska.html">Alaska 4 Agosto 2024</a>
+        <a href="/portal/japon-viaje-agosto.html">Japón Agosto 2024</a>
+        <a href="/portal/Viaje-Completo-Australia-Noviembre.html">Australia y Nueva Zelanda Noviembre 2024</a> -->
+      </div>
+      <div class="prtltmmc-discell">
+        #foreach( $item in $menu )
+        <a href="$item.link">$item.text</a>
+        #end
+        <!-- <h2 class="prtltmmc-title-web-map">Catálogos</h2>
+        <h2 class="prtltmmc-title-web-map">Barcos</h2>
+        <a href="/portal/barcodecrucero/amawaterways-amabella.html">Barco AmaBella</a>
+        <a href="/portal/barcodecrucero/amawaterways-amacello.html">Barco AmaCello</a>
+        <a href="/portal/barcodecrucero/amawaterways-amacerto.html">Barco AmaCerto</a>
+        <a href="/portal/barcodecrucero/amawaterways-amadahlia.html">Barco AmaDahlia</a>
+        <a href="/portal/barcodecrucero/amawaterways-amadante.html">Barco AmaDante</a>
+        <a href="/portal/barcodecrucero/amawaterways-amadara.html">Barco AmaDara</a>
+        <a href="/portal/barcodecrucero/amawaterways-amadolce.html">Barco AmaDolce</a>
+        <a href="/portal/barcodecrucero/amawaterways-amadouro.html">Barco AmaDouro</a>
+        <a href="/portal/barcodecrucero/amawaterways-amakristina.html">Barco AmaKristina</a>
+        <a href="/portal/barcodecrucero/amawaterways-amalea.html">Barco AmaLea</a>
+        <a href="/almacen/planos/ALW.pdf">Barco AmaLilia</a>
+        <a href="/portal/barcodecrucero/amawaterways-amalucia.html">Barco AmaLucia</a>
+        <a href="/portal/barcodecrucero/amawaterways-amalyra.html">Barco AmaLyra</a>
+        <a href="/almacen/planos/AMW.pdf">Barco AmaMagdalena</a> -->
+      </div>
+      <div class="prtltmmc-discell">
+        <h2 class="prtltmmc-title-web-map">Siguenos en</h2>
+        <a target="_blank" title="Follow Princess on Facebook" class="prtltmmc-social-icon prtltmmc-fb"
+          href="https://www.facebook.com/MundomarCrucero/">Facebook </a> <a target="_blank"
+          title="Follow Princess on Twitter" class="prtltmmc-social-icon prtltmmc-tw"
+          href="https://twitter.com/mundomarcrucero">Twitter;</a> <a target="_blank"
+          title="Follow Princess on Instagram" class="prtltmmc-social-icon prtltmmc-ig"
+          href="https://www.instagram.com/mundomarcruceros/">Instagram</a>
+        <h2 class="prtltmmc-title-web-map">Notas de prensa</h2>
+        <ul class="prtltmmc-list-press-releases">
+          <li><a class="prtltmmc-open-popup" href="/portal/popup/NP-Cunard-nombra-Liverpool-madrina-del-Queen-Anne.html"
+              rel="/portal/popup/NP-Cunard-nombra-Liverpool-madrina-del-Queen-Anne.html">Cunard ha nombrado a
+              Liverpool como madrina del Queen Anne con cinco icónicas celebridades de la ciudad (10/06/2024)</a>
+          </li>
+          <li><a class="prtltmmc-open-popup" href="/portal/popup/NP-Princess-Presenta-Love-Line-Premium-Liquors.html"
+              rel="/portal/popup/NP-Princess-Presenta-Love-Line-Premium-Liquors.html">Princess Cruises se asocia
+              con Pitbull, Jason Aldean y Romero Britto para presentar la exclusiva colección “Love Line Premium
+              Liquors” (05/06/2024)</a>
+          </li>
+          <li><a class="prtltmmc-open-popup" href="/portal/popup/NP-Andrea-Bocelli-Ceremonia-Queen-Anne.html"
+              rel="/portal/popup/NP-Andrea-Bocelli-Ceremonia-Queen-Anne.html">El legendario tenor andrea bocelli,
+              protagonista de la ceremonia de nombramiento del queen anne de cunard en liverpool (30/05/2024)</a>
+          </li>
+        </ul>
+        <a href="/portal/press.html">Ver más notas de prensa</a>
+        <h2 class="prtltmmc-title-web-map">Soporte técnico</h2>
+        <a href="/portal/Soporte-tecnico.html">Autorización del soporte remoto</a>
+      </div>
+    </div>
+  </div>
+  <p>©2006-2024 Mundomar Cruceros S.L. All Rights Reserved. Site content may not be reproduced without express
+    written permission.
+    <a style="display:none" class="prtltmmc-open-popup prtltmmc-open-popup-cookies-definition"
+      href="/wlgs/cookie-consent.php?member=mundomar&amp;label=portal&amp;language=es&amp;mode=2"
+      rel="/wlgs/cookie-consent.php?member=mundomar&amp;label=portal&amp;language=es&amp;mode=2"
+      data-add-class="prtltmmc-without-margins prtltmmc-fixed-modal"></a>
+    <a style="display:none" class="prtltmmc-open-popup prtltmmc-open-cookie-policy"
+      href="/wlgs/cookie-consent.php?member=mundomar&amp;label=portal&amp;language=es&amp;mode=3"
+      rel="/wlgs/cookie-consent.php?member=mundomar&amp;label=portal&amp;language=es&amp;mode=3"
+      data-add-class="prtltmmc-without-margins prtltmmc-fixed-modal"></a>
+  </p>
+</div>

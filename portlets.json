@@ -34,5 +34,9 @@
 	{
 		"id": "PRTLT-PROMOCARD",
 		"name": "Portlet promo card"
+	},
+	{
+		"id": "PRTLT-VIDEO",
+		"name": "Portlet Video"
 	}
 ]
