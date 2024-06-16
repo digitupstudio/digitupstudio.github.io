@@ -1,3 +1,4 @@
+var swiper;
 function getContent() {
   // function getContent() {
   console.log('Loaded getContent!!')
@@ -323,34 +324,18 @@ function checkRecomendados() {
 }
 
 function loadSliderConfigAll() {
-  // new Swiper('.swiper', {
-  //   slidesPerView: 1.3,
-  //   spaceBetween: 8,
-  //   breakpoints: {
-  //     280: { slidesPerView: 1.3 },
-  //     568: { slidesPerView: 2 },
-  //     768: { slidesPerView: 3 },
-  //     1200: { slidesPerView: 4 }
-  //   },
-  //   navigation: {
-  //     nextEl: `.next-slide`,
-  //     prevEl: `.prev-slide`,
-  //   },
-  // });
-  // setTimeout(() => {
-  //   checkRecomendados();
-  // }, 500);
-  // document.querySelectorAll('.tabs_block').forEach(tabsBlock => {
-  //   updateButtons(tabsBlock);
-
-  //   // Agregar evento de scroll a cada contenedor
-  //   const recommendationsItems = tabsBlock.querySelector('.recommendations__items');
-  //   if (recommendationsItems) {
-  //     recommendationsItems.each(function (elem) {
-  //       elem.addEventListener('scroll', () => updateButtons(tabsBlock));
-  //     })
-  //   }
-  // });
+  swiper = new Swiper('.swiper', {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    navigation: {
+      nextEl: `.next-swipe`,
+      prevEl: `.prev-swipe`,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  });
 
   $('.next-slide, .prev-slide').on('click', function () {
     const isNext = this.classList.contains('next-slide');

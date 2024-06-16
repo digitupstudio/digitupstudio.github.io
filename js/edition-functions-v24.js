@@ -245,12 +245,15 @@ var prtltmmcCkEditor = {
 			}
 		});
 
-		function openImageChangeBox(clickedElement, imageClass) {
+		function openImageChangeBox(clickedElement, imageClass, isVideo = false) {
+			console.log('clickedElement', clickedElement);
+			console.log('imageClass', imageClass);
+			console.log('isVideo', isVideo);
 			// Eliminar cualquier caja abierta anteriormente
 			$('.image-change-box').remove();
 
 			// Encontrar el padre con la clase 'prtltmmc-image-content'
-			var parentElement = clickedElement.closest('.prtltmmc-image-content');
+			var parentElement = isVideo ? clickedElement.closest('.edit-option-video') : clickedElement.closest('.prtltmmc-image-content');
 
 			// Obtener la URL actual de la imagen
 			var currentImageUrl = parentElement.find(imageClass).attr(imageClass === '.edit_url' ? 'href' : 'src');
@@ -290,6 +293,101 @@ var prtltmmcCkEditor = {
 		$('body').on('click', '.prtltmmc-change-desktop-image', function (e) {
 			e.preventDefault();
 			openImageChangeBox($(this), '.main_image.is_desktop');
+		});
+
+		$('body').on('click', '.prtlt-change-video', function (e) {
+			e.preventDefault();
+			openImageChangeBox($(this), '.prtlt-video-content', true);
+		});
+
+		/////////////////////////////////////////////////////
+		///////////////// SWIPER ADD/REMOVE /////////////////
+		/////////////////////////////////////////////////////
+		$('body').on('click', '.prtlt-change-addSlide', function (e) {
+			e.preventDefault();
+			var $container = $(this).closest('.prtltmmc-image-content');
+			var $lastElement = $container.find('.swiper_item').last();
+			var $newElement = $lastElement.clone();
+			$lastElement.after($newElement);
+			swiper.update();
+			swiper.slideTo(swiper.slides.length - 1);
+		});
+
+		$('body').on('click', '.prtlt-change-deleteSlide', function (e) {
+			e.preventDefault();
+			var activeIndex = swiper.activeIndex;
+			var $slides = $(swiper.slides);
+			if ($slides.length > 1) {
+				var $activeSlide = $($slides[activeIndex]);
+				$activeSlide.remove();
+				swiper.update();
+				if (activeIndex === swiper.slides.length) {
+					swiper.slideTo(activeIndex - 1);
+				} else {
+					swiper.slideTo(activeIndex);
+				}
+			} else {
+				alert('No se puede eliminar la única diapositiva.');
+			}
+		});
+		function moveSlide(swiper, fromIndex, toIndex) {
+			if (fromIndex === toIndex || fromIndex < 0 || toIndex < 0 || fromIndex >= swiper.slides.length || toIndex >= swiper.slides.length) {
+				return; // No hacer nada si los índices son iguales o están fuera de los límites
+			}
+
+			// Obtener el contenedor de las diapositivas
+			var $wrapper = $(swiper.wrapperEl);
+
+			// Obtener todas las diapositivas
+			var $slides = $wrapper.children('.swiper-slide');
+
+			// Seleccionar la diapositiva que queremos mover
+			var $slideToMove = $($slides[fromIndex]);
+
+			// Mover la diapositiva a la nueva posición
+			if (toIndex === 0) {
+				$wrapper.prepend($slideToMove);
+			} else if (toIndex === $slides.length - 1) {
+				$wrapper.append($slideToMove);
+			} else {
+				$($slides[toIndex]).before($slideToMove);
+			}
+
+			// Actualizar Swiper para reconocer el nuevo orden
+			swiper.update();
+			swiper.slideTo(toIndex);
+		}
+
+		$('body').on('click', '.prtlt-change-moveSlideLeft', function (e) {
+			e.preventDefault();
+			var activeIndex = swiper.activeIndex;
+			var $slides = $(swiper.slides);
+			if ($slides.length > 1) {
+				if (activeIndex !== 0) {
+					moveSlide(swiper, activeIndex, activeIndex - 1);
+				} else {
+					alert('No se puede mover el primero slide a izquerda.');
+				}
+
+			} else {
+				alert('No se puede eliminar la única diapositiva.');
+			}
+		});
+
+		$('body').on('click', '.prtlt-change-moveSlideRight', function (e) {
+			e.preventDefault();
+			var activeIndex = swiper.activeIndex;
+			var $slides = $(swiper.slides);
+
+			if ($slides.length > 1) {
+				if (activeIndex !== $slides.length - 1) {
+					moveSlide(swiper, activeIndex, activeIndex + 1);
+				} else {
+					alert('No se puede mover la última diapositiva a la derecha.');
+				}
+			} else {
+				alert('No se puede mover la única diapositiva.');
+			}
 		});
 
 		$('body').on('click', '.prtltmmc-change-mobile-image', function (e) {
@@ -426,19 +524,34 @@ var prtltmmcCkEditor = {
 				toolBarMenu += '<li><a href="#" class="prtltmmc-change-mobile-image">Mobile image</a></li>';
 			}
 			if ($this.hasClass('edit-option-promo')) {
-				const name = $item.hasClass('promo') ? 'Eliminar promo' : 'Añadir promo';
+				const name = $item.hasClass('promo') ? 'Delete promo' : 'Add promo';
 				toolBarMenu += '<li><a href="#" class="prtltmmc-change-class-promo">' + name + '</a></li>';
 			}
 			if ($this.hasClass('edit-option-reverse')) {
-				const name = $item.hasClass('reverse') ? 'Eliminar reverse' : 'Añadir reverse';
+				const name = $item.hasClass('reverse') ? 'Delete reverse' : 'Add reverse';
 				toolBarMenu += '<li><a href="#" class="prtltmmc-change-class-reverse">' + name + '</a></li>';
+			}
+			if ($this.hasClass('edit-option-video')) {
+				toolBarMenu += '<li><a href="#" class="prtlt-change-video">Change video</a></li>';
+			}
+			if ($this.hasClass('edit-option-addSlide')) {
+				toolBarMenu += '<li><a href="#" class="prtlt-change-addSlide">Add slide</a></li>';
+			}
+			if ($this.hasClass('edit-option-deleteSlide')) {
+				toolBarMenu += '<li><a href="#" class="prtlt-change-deleteSlide">Delete slide</a></li>';
+			}
+			if ($this.hasClass('edit-option-moveSlideLeft')) {
+				toolBarMenu += '<li><a href="#" class="prtlt-change-moveSlideLeft">Move left</a></li>';
+			}
+			if ($this.hasClass('edit-option-moveSlideRight')) {
+				toolBarMenu += '<li><a href="#" class="prtlt-change-moveSlideRight">Move right</a></li>';
 			}
 			if ($this.hasClass('edit-option-color-dark')) {
 				const name = $item.hasClass('color-dark') ? 'Modo white' : 'Modo dark';
 				toolBarMenu += '<li><a href="#" class="prtltmmc-change-class-color-dark">' + name + '</a></li>';
 			}
 			if ($this.hasClass('edit-option-url')) {
-				toolBarMenu += '<li><a href="#" class="prtltmmc-change-url">Añadir enlace</a></li>';
+				toolBarMenu += '<li><a href="#" class="prtltmmc-change-url">Add link</a></li>';
 			}
 			toolBarMenu += '</ul>';
 
