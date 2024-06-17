@@ -336,26 +336,32 @@ var prtltmmcCkEditor = {
 			}
 
 			// Obtener el contenedor de las diapositivas
-			var $wrapper = $(swiper.wrapperEl);
+			const wrapper = swiper.wrapperEl;
 
 			// Obtener todas las diapositivas
-			var $slides = $wrapper.children('.swiper-slide');
+			const slides = Array.from(wrapper.children);
 
 			// Seleccionar la diapositiva que queremos mover
-			var $slideToMove = $($slides[fromIndex]);
+			const slideToMove = slides[fromIndex];
+
+			// Ajustar el índice de destino si la diapositiva se mueve hacia adelante (a la derecha)
+			if (fromIndex < toIndex) {
+				toIndex += 1;
+			}
 
 			// Mover la diapositiva a la nueva posición
-			if (toIndex === 0) {
-				$wrapper.prepend($slideToMove);
-			} else if (toIndex === $slides.length - 1) {
-				$wrapper.append($slideToMove);
+			console.log('toIndex', toIndex);
+			if (toIndex >= slides.length) {
+				wrapper.appendChild(slideToMove);
 			} else {
-				$($slides[toIndex]).before($slideToMove);
+				wrapper.insertBefore(slideToMove, slides[toIndex]);
 			}
 
 			// Actualizar Swiper para reconocer el nuevo orden
 			swiper.update();
-			swiper.slideTo(toIndex);
+
+			// Deslizar a la nueva posición
+			swiper.slideTo(toIndex > fromIndex ? toIndex - 1 : toIndex);
 		}
 
 		$('body').on('click', '.prtlt-change-moveSlideLeft', function (e) {
@@ -380,6 +386,8 @@ var prtltmmcCkEditor = {
 			var $slides = $(swiper.slides);
 
 			if ($slides.length > 1) {
+				console.log('activeIndex', activeIndex);
+				console.log('$slides.length', $slides.length);
 				if (activeIndex !== $slides.length - 1) {
 					moveSlide(swiper, activeIndex, activeIndex + 1);
 				} else {

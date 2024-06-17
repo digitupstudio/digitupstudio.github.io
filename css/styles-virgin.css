@@ -57,6 +57,17 @@ body {
   color: white;
 }
 
+/* REMOVE STYLES MUNDOMAR FROM SEARCH */
+.prtltmmc-reduced-search-02 {
+  background: unset;
+  padding: 0;
+  font-size: unset;
+}
+
+.prtltmmc-dropdown:after {
+  display: none;
+}
+
 
 .virgin_header_bar {
   display: flex;
@@ -172,6 +183,7 @@ body.prtltmmc {
   color: #676d73;
   text-transform: uppercase;
   letter-spacing: 3.3px;
+  z-index: 11;
 }
 
 .prtltmmc-navbar-dropdown-menu>ul>li>a {
@@ -219,7 +231,7 @@ body.prtltmmc {
   box-shadow: none;
   backdrop-filter: blur(4px);
   position: fixed;
-  top: 60px;
+  top: 70px;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -319,7 +331,7 @@ body.prtltmmc {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   height: 75px;
   width: 992px;
-  max-width: 80%;
+  max-width: 90%;
   margin: auto;
 }
 
@@ -330,6 +342,7 @@ body.prtltmmc {
   font-size: 15px;
   color: #191919;
   position: relative;
+  padding: 0 20px;
 }
 
 .virgin_explore .filter-item .icon_location,
@@ -337,13 +350,18 @@ body.prtltmmc {
   display: none;
 }
 
-.virgin_explore .filter-item:nth-child(1) {
-  padding: 0 20px 0 30px;
+.virgin_explore .filter-item {
+  padding: 0 20px;
   border-right: 1px solid #e0e0e0;
 }
 
-.virgin_explore .filter-item:nth-child(2) {
-  padding: 0 30px 0 20px;
+.virgin_explore .filter-item:nth-last-child(2) {
+  border-right: none;
+}
+
+.virgin_explore .filter-item:last-child {
+  padding: 0;
+  border-right: none;
 }
 
 .virgin_explore .filter-item label {
@@ -360,14 +378,20 @@ body.prtltmmc {
   border-radius: 4px;
   appearance: none;
   /* Removes the default select appearance */
-  background: white url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20width%3D%2224%22%20height%3D%2224%22%3E%3Cpath%20fill%3D%22red%22%20d%3D%22M12%2015a1.05%201.05%200%200%200%20.75-.31l4.25-4.2L15.5%209%2012%2012.46%208.5%209%207%2010.49l4.25%204.2A1.05%201.05%200%200%200%2012%2015z%22/%3E%3C/svg%3E') no-repeat right 10px center;
+  background: white url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20width%3D%2224%22%20height%3D%2224%22%3E%3Cpath%20fill%3D%22red%22%20d%3D%22M12%2015a1.05%201.05%200%200%200%20.75-.31l4.25-4.2L15.5%209%2012%2012.46%208.5%209%207%2010.49l4.25%204.2A1.05%201.05%200%200%200%2012%2015z%22/%3E%3C/svg%3E') no-repeat right -6px center;
   background-size: 26px;
   cursor: pointer;
+  border: none;
+  padding: 0 4px 0 0;
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .virgin_explore .dropdown:focus {
-  border-color: #888;
-  outline: none;
+  border: none;
+  box-shadow: none;
 }
 
 .virgin_explore .explore-item {
@@ -401,12 +425,6 @@ body.prtltmmc {
 
 @media(max-width: 992px) {
   .virgin_explore .filter-bar {
-    max-width: 90%;
-  }
-}
-
-@media(max-width: 768px) {
-  .virgin_explore .filter-bar {
     flex-direction: column;
     height: unset;
     padding: 16px;
@@ -428,14 +446,24 @@ body.prtltmmc {
     transform: translateY(-50%);
   }
 
-  .virgin_explore .filter-item:nth-child(1) {
+  .virgin_explore .filter-item {
     border-right: 0;
     border-bottom: 1px solid #e0e0e0;
   }
 
+  .virgin_explore .filter-item:nth-last-child(2) {
+    border-right: 0;
+    border-bottom: none;
+  }
+
+  .virgin_explore .filter-item:last-child {
+    border-right: 0;
+    border-bottom: none;
+  }
+
   .virgin_explore .filter-item {
     padding: 16px 0 !important;
-    width: 100%;
+    width: 100% !important;
   }
 
   .virgin_explore .explore-item {
@@ -1091,6 +1119,10 @@ body.prtltmmc {
   position: relative;
 }
 
+.swiper_items p {
+  margin: 0;
+}
+
 .swiper_items .swiper_item {
   position: relative;
   user-select: none;
@@ -1114,7 +1146,7 @@ body.prtltmmc {
   height: 100%;
   display: flex;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .swiper_items .swiper_item .swiper_item_content_box.edit_mode {
@@ -1136,8 +1168,9 @@ body.prtltmmc {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  width: 100%;
-  max-width: 900px;
+  width: 65vw;
+  /* width: 100%;
+  max-width: 900px; */
   margin: auto;
 }
 
@@ -1167,9 +1200,12 @@ body.prtltmmc {
 .swiper_items .swiper_item .swiper_item_content_box .swiper_item_content .button div,
 .swiper_items .swiper_item .swiper_item_content_box .swiper_item_content .button a {
   color: #FFF;
-  border-radius: 27px;
+  /* border-radius: 27px;
   border: 1px solid #2B67F6;
-  background: #2B67F6;
+  background: #2B67F6; */
+  border-radius: 4px;
+  border: 1px solid #c00;
+  background: #c00;
   padding: 12px 40px;
   width: fit-content;
 }
@@ -1189,6 +1225,36 @@ body.prtltmmc {
   width: 80%;
   margin: auto;
   z-index: 1;
+}
+
+@media(min-width: 1400px) {
+  .swiper_items .swiper_item .swiper_item_content_box .swiper_item_content {
+    max-width: 65%;
+  }
+}
+
+@media(max-width: 992px) {
+  .swiper_items .slider-controls {
+    width: 90%;
+  }
+}
+
+@media(max-width: 576px) {
+  .swiper_items .slider-controls {
+    width: calc(100% - 16px);
+    transform: translateX(-50%);
+    top: unset;
+    bottom: 24px;
+  }
+
+  .swiper_items .swiper_item .swiper_item_image {
+    height: 500px;
+  }
+
+  .swiper_items .swiper_item .swiper_item_content_box .swiper_item_content {
+    width: calc(100% - 16px);
+    margin-top: 32px;
+  }
 }
 
 .swiper_items .slider-controls button {
