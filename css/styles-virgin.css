@@ -372,12 +372,11 @@ body.prtltmmc {
 }
 
 .virgin_explore .dropdown {
-  font-family: "VVCentra2";
+  /* font-family: "VVCentra2";
   font-size: 16px;
   font-weight: bold;
   border-radius: 4px;
   appearance: none;
-  /* Removes the default select appearance */
   background: white url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20width%3D%2224%22%20height%3D%2224%22%3E%3Cpath%20fill%3D%22red%22%20d%3D%22M12%2015a1.05%201.05%200%200%200%20.75-.31l4.25-4.2L15.5%209%2012%2012.46%208.5%209%207%2010.49l4.25%204.2A1.05%201.05%200%200%200%2012%2015z%22/%3E%3C/svg%3E') no-repeat right -6px center;
   background-size: 26px;
   cursor: pointer;
@@ -386,7 +385,77 @@ body.prtltmmc {
   line-height: 1.2;
   text-overflow: ellipsis;
   white-space: nowrap;
+  overflow: hidden; */
+  display: none;
+}
+
+.virgin_explore .custom-dropdown {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  background: white url(data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20width%3D%2224%22%20height%3D%2224%22%3E%3Cpath%20fill%3D%22red%22%20d%3D%22M12%2015a1.05%201.05%200%200%200%20.75-.31l4.25-4.2L15.5%209%2012%2012.46%208.5%209%207%2010.49l4.25%204.2A1.05%201.05%200%200%200%2012%2015z%22/%3E%3C/svg%3E) no-repeat right -6px center;
+  background-size: 26px;
+}
+
+.virgin_explore .custom-dropdown .selected-option {
+  background-color: #fff;
+  display: inline-block;
+  font-family: "VVCentra2";
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0 4px 0 0;
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   overflow: hidden;
+  max-width: 105px;
+}
+
+.virgin_explore .custom-dropdown .dropdown-options {
+  position: absolute;
+  top: -16px;
+  left: 0;
+  right: 0;
+  box-shadow: 0 2px 4px #00000026;
+  border-radius: 4px;
+  background-color: #fff;
+  z-index: 1000;
+  max-height: 320px;
+  overflow-y: auto;
+  width: fit-content;
+  min-width: 160px;
+}
+
+.virgin_explore .custom-dropdown .dropdown-options .option:first-child {
+  text-transform: uppercase;
+  font-size: 10px;
+}
+
+.virgin_explore .custom-dropdown .dropdown-options .option {
+  padding: 10px;
+  cursor: pointer;
+  width: max-content;
+  max-width: 240px;
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.virgin_explore .custom-dropdown .dropdown-options .option:hover,
+.virgin_explore .custom-dropdown .dropdown-options .option.selected {
+  background-color: #f0f0f0;
+}
+
+.virgin_explore .custom-dropdown .dropdown-options .optgroup-label {
+  font-weight: bold;
+  padding: 5px 10px;
+  background-color: rgba(238, 238, 238, 0.5);
+  user-select: none;
+  cursor: auto;
+}
+
+.virgin_explore .custom-dropdown .dropdown-options .option.optgroup-option {
+  padding-left: 25px;
+  /* Ajusta este valor según sea necesario */
 }
 
 .virgin_explore .dropdown:focus {

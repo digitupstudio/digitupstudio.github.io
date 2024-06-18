@@ -475,6 +475,116 @@ $(document).on('click', '.recomended_tab', function () {
   // requestData(apiUrl, config, $(this).closest('.tabs_block').find('.api_content'));
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  const customDropdowns = document.querySelectorAll(".custom-dropdown");
+
+  customDropdowns.forEach(dropdown => {
+    const selectElement = dropdown.previousElementSibling; // Select element before custom dropdown
+    const selectedOption = dropdown.querySelector(".selected-option");
+    const dropdownOptions = dropdown.querySelector(".dropdown-options");
+
+    dropdown.addEventListener("click", function () {
+      // Cargar las opciones del select original
+      loadOptions(selectElement, selectedOption, dropdownOptions);
+
+      // Mostrar u ocultar las opciones del dropdown personalizado
+      dropdownOptions.style.display = dropdownOptions.style.display === "none" ? "block" : "none";
+    });
+
+    dropdownOptions.addEventListener("click", function (event) {
+      const option = event.target.closest(".option");
+      if (option) {
+        const value = option.getAttribute("data-value");
+        const text = option.textContent;
+
+        // Actualiza el select original y dispara el evento de cambio
+        selectElement.value = value;
+        const changeEvent = new Event("change", { bubbles: true });
+        selectElement.dispatchEvent(changeEvent);
+
+        // Actualiza el texto del dropdown personalizado
+        selectedOption.textContent = text;
+
+        // Oculta las opciones del dropdown
+        dropdownOptions.style.display = "none";
+      }
+    });
+
+    // Ocultar el dropdown si se hace clic fuera de él
+    document.addEventListener("click", function (event) {
+      if (!dropdown.contains(event.target)) {
+        dropdownOptions.style.display = "none";
+      }
+    });
+
+    function loadOptions(selectElement, selectedOption, dropdownOptions) {
+      // Limpiar las opciones actuales
+      dropdownOptions.innerHTML = '';
+
+      // Obtener todas las opciones del select original
+      const optgroups = selectElement.querySelectorAll('optgroup');
+      const options = selectElement.querySelectorAll(':scope > option');
+
+      // Añadir opciones fuera de optgroups
+      options.forEach(option => {
+        const value = option.value;
+        const text = option.textContent;
+
+        const customOption = document.createElement('div');
+        customOption.className = 'option';
+        customOption.setAttribute('data-value', value);
+        customOption.textContent = text;
+
+        // Verifica si esta opción es la seleccionada
+        if (selectElement.value === value) {
+          customOption.classList.add('selected');
+          selectedOption.textContent = text;
+        }
+
+        dropdownOptions.appendChild(customOption);
+      });
+
+      // Añadir optgroups y sus opciones
+      optgroups.forEach(optgroup => {
+        const label = optgroup.label;
+        const optgroupLabel = document.createElement('div');
+        optgroupLabel.className = 'optgroup-label';
+        optgroupLabel.textContent = label;
+        dropdownOptions.appendChild(optgroupLabel);
+
+        const optgroupOptions = optgroup.querySelectorAll('option');
+        optgroupOptions.forEach(optgroupOption => {
+          const value = optgroupOption.value;
+          const text = optgroupOption.textContent;
+
+          const customOption = document.createElement('div');
+          customOption.className = 'option optgroup-option';
+          customOption.setAttribute('data-value', value);
+          customOption.textContent = text;
+
+          // Verifica si esta opción es la seleccionada
+          if (selectElement.value === value) {
+            customOption.classList.add('selected');
+            selectedOption.textContent = text;
+          }
+
+          dropdownOptions.appendChild(customOption);
+        });
+      });
+    }
+
+    // Inicializa el texto del dropdown personalizado con la opción seleccionada
+    function initializeSelectedOption() {
+      const selected = selectElement.options[selectElement.selectedIndex];
+      selectedOption.textContent = selected.textContent;
+    }
+
+    initializeSelectedOption();
+  });
+});
+
+
+
 ///////////////////////////////////////////////////
 ///////////////////////////////////////////////////
 ///////////////////////////////////////////////////
