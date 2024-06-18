@@ -38,11 +38,11 @@
 }
 
 body {
-  font-family: VVCentra2;
+  font-family: "VVCentra2";
 }
 
-.prtltmmc {
-  font-family: VVCentra2;
+.prtltmmc * {
+  font-family: "VVCentra2";
 }
 
 .prtltmmc-boxes-outstand {
@@ -310,6 +310,13 @@ body.prtltmmc {
   z-index: 1;
   position: relative;
   width: 100%;
+  box-sizing: border-box;
+
+  padding: 0;
+  background-color: unset;
+  color: unset;
+  box-shadow: unset;
+  border-radius: unset;
 }
 
 .virgin_explore.in_video {
@@ -343,6 +350,7 @@ body.prtltmmc {
   color: #191919;
   position: relative;
   padding: 0 20px;
+  margin: 0;
 }
 
 .virgin_explore .filter-item .icon_location,
@@ -371,21 +379,7 @@ body.prtltmmc {
   cursor: auto !important;
 }
 
-.virgin_explore .dropdown {
-  /* font-family: "VVCentra2";
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 4px;
-  appearance: none;
-  background: white url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20width%3D%2224%22%20height%3D%2224%22%3E%3Cpath%20fill%3D%22red%22%20d%3D%22M12%2015a1.05%201.05%200%200%200%20.75-.31l4.25-4.2L15.5%209%2012%2012.46%208.5%209%207%2010.49l4.25%204.2A1.05%201.05%200%200%200%2012%2015z%22/%3E%3C/svg%3E') no-repeat right -6px center;
-  background-size: 26px;
-  cursor: pointer;
-  border: none;
-  padding: 0 4px 0 0;
-  line-height: 1.2;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden; */
+.virgin_explore .filter-item select {
   display: none;
 }
 
@@ -447,7 +441,7 @@ body.prtltmmc {
 
 .virgin_explore .custom-dropdown .dropdown-options .optgroup-label {
   font-weight: bold;
-  padding: 5px 10px;
+  padding: 0 10px;
   background-color: rgba(238, 238, 238, 0.5);
   user-select: none;
   cursor: auto;
@@ -506,6 +500,14 @@ body.prtltmmc {
     background: none;
   }
 
+  .virgin_explore .custom-dropdown {
+    background: none;
+  }
+
+  .virgin_explore .custom-dropdown .selected-option {
+    max-width: 100%;
+  }
+
   .virgin_explore .filter-item .icon_location,
   .virgin_explore .filter-item .icon_dates {
     display: block;
@@ -546,6 +548,91 @@ body.prtltmmc {
     font-size: 10px;
     font-weight: 700;
     width: 100%;
+  }
+}
+
+.virgin_explore.prtltmmc-search-02 .prtltmmc-search-block-A {
+  width: 100%;
+  padding: 0 !important;
+  display: unset;
+}
+
+.virgin_explore.prtltmmc-search-02 .prtltmmc-search-block-B {
+  position: absolute;
+  bottom: -64px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 16px !important;
+  border-radius: 4px;
+  width: fit-content;
+  max-width: calc(100% - 16px);
+  padding-left: 0;
+  border-left: none;
+  vertical-align: unset;
+  display: none;
+  border-top: none;
+}
+
+
+.virgin_explore.prtltmmc-search-02 .prtltmmc-search-block-B.show {
+  display: flex;
+}
+
+.virgin_explore.prtltmmc-search-02 .prtltmmc-dropdown-dates {
+  display: flex;
+  width: 100%;
+  margin-bottom: unset;
+  letter-spacing: 1px;
+  gap: 16px;
+}
+
+.virgin_explore.prtltmmc-search-02 .prtltmmc-dropdown-dates .prtltmmc-year-block {
+  margin-top: 0 !important;
+}
+
+.virgin_explore.prtltmmc-search-02 .prtltmmc-dropdown-dates .prtltmmc-year-block:last-child {
+  text-align: unset;
+}
+
+.virgin_explore.prtltmmc-search-02 .prtltmmc-dropdown-dates .prtltmmc-year-block:empty {
+  display: none;
+}
+
+.virgin_explore.prtltmmc-search-02 .prtltmmc-dropdown-dates .prtltmmc-year-block .prtltmmc-month {
+  padding: 0;
+  margin: 0;
+}
+
+@media(min-width: 991px) {
+  .virgin_explore.prtltmmc-search-02 .prtltmmc-search-block-B {
+    bottom: -146px;
+  }
+}
+
+@media(max-width: 576px) {
+  .virgin_explore.prtltmmc-search-02 .prtltmmc-search-block-B {
+    bottom: unset;
+    transform: translate(-50%, -70px);
+    margin: 0;
+    padding: 12px !important;
+    width: 100%;
+  }
+
+  .virgin_explore.prtltmmc-search-02 .prtltmmc-dropdown-dates {
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .virgin_explore.prtltmmc-search-02 .prtltmmc-dropdown-dates .prtltmmc-year-block {
+    margin-top: 0;
+    width: 158px;
+  }
+
+  .virgin_explore.prtltmmc-search-02 .prtltmmc-dropdown-dates .prtltmmc-year-block .prtltmmc-month li {
+    width: 28px;
   }
 }
 

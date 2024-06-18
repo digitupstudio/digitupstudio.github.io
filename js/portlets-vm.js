@@ -476,7 +476,28 @@ $(document).on('click', '.recomended_tab', function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const customDropdowns = document.querySelectorAll(".custom-dropdown");
+  const customDropdownsFake = document.querySelectorAll(".custom-dropdown.is_fake");
+
+  customDropdownsFake.forEach(dropdown => {
+    const dateComponent = dropdown.closest(".virgin_explore").querySelector(".prtltmmc-search-block-B");
+
+    dropdown.addEventListener("click", function (event) {
+      dateComponent.classList.toggle("show");
+
+      // Detener la propagación del evento para evitar el cierre inmediato
+      event.stopPropagation();
+
+      // Añadir el evento de clic al documento para ocultar el dateComponent cuando se hace clic fuera
+      document.addEventListener("click", function (event) {
+        if (!dateComponent.contains(event.target) && !dropdown.contains(event.target)) {
+          dateComponent.classList.remove("show");
+        }
+      });
+    });
+  });
+
+
+  const customDropdowns = document.querySelectorAll(".custom-dropdown:not(.is_fake)");
 
   customDropdowns.forEach(dropdown => {
     const selectElement = dropdown.previousElementSibling; // Select element before custom dropdown
@@ -484,14 +505,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const dropdownOptions = dropdown.querySelector(".dropdown-options");
 
     dropdown.addEventListener("click", function () {
-      // Cargar las opciones del select original
       loadOptions(selectElement, selectedOption, dropdownOptions);
-
       // Mostrar u ocultar las opciones del dropdown personalizado
       dropdownOptions.style.display = dropdownOptions.style.display === "none" ? "block" : "none";
     });
 
-    dropdownOptions.addEventListener("click", function (event) {
+    dropdownOptions?.addEventListener("click", function (event) {
       const option = event.target.closest(".option");
       if (option) {
         const value = option.getAttribute("data-value");
@@ -512,7 +531,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Ocultar el dropdown si se hace clic fuera de él
     document.addEventListener("click", function (event) {
-      if (!dropdown.contains(event.target)) {
+      if (dropdownOptions && !dropdown.contains(event.target)) {
         dropdownOptions.style.display = "none";
       }
     });

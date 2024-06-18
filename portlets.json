@@ -38,5 +38,13 @@
 	{
 		"id": "PRTLT-VIDEO",
 		"name": "Portlet Video"
+	},
+	{
+		"id": "PRTLT-SEARCH",
+		"name": "Portlet Buscador"
+	},
+	{
+		"id": "PRTLT-SWIPER",
+		"name": "Portlet Swiper"
 	}
 ]
