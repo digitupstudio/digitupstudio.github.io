@@ -36,15 +36,15 @@
 		"name": "Portlet promo card"
 	},
 	{
-		"id": "PRTLT-VIDEO",
+		"id": "PORTLET_VIDEO",
 		"name": "Portlet Video"
 	},
 	{
-		"id": "PRTLT-SEARCH",
+		"id": "PORTLET_SEARCH",
 		"name": "Portlet Buscador"
 	},
 	{
-		"id": "PRTLT-SWIPER",
+		"id": "PORTLET_SWIPER",
 		"name": "Portlet Swiper"
 	}
 ]

@@ -42,7 +42,7 @@ body {
 }
 
 .prtltmmc * {
-  font-family: "VVCentra2";
+  font-family: "VVCentra2" !important;
 }
 
 .prtltmmc-boxes-outstand {
@@ -213,10 +213,10 @@ body.prtltmmc {
   background: white;
 }
 
-.prtltmmc-nav-navbar>li:hover::before {
+.prtltmmc-nav-navbar>li:hover ul::before {
   content: "";
   width: 200vw;
-  height: 480px;
+  height: 100%;
   position: absolute;
   top: 40px;
   left: -100vw;
@@ -319,7 +319,11 @@ body.prtltmmc {
   border-radius: unset;
 }
 
-.virgin_explore.in_video {
+.virgin_explore.prtltmmc-search-02 {
+  box-shadow: none !important;
+}
+
+.virgin_explore.to_top {
   transform: translateY(-32vh);
 }
 
@@ -372,11 +376,15 @@ body.prtltmmc {
   border-right: none;
 }
 
-.virgin_explore .filter-item label {
+.virgin_explore .filter-item .filter-item_label {
   font-size: 12px;
   color: #888;
   font-family: "VVCentra2";
   cursor: auto !important;
+}
+
+.virgin_explore .filter-item .filter-item_label p {
+  margin: 0 !important;
 }
 
 .virgin_explore .filter-item select {
@@ -403,6 +411,10 @@ body.prtltmmc {
   white-space: nowrap;
   overflow: hidden;
   max-width: 105px;
+}
+
+.virgin_explore .custom-dropdown .selected-option p {
+  margin: 0 !important;
 }
 
 .virgin_explore .custom-dropdown .dropdown-options {
@@ -459,6 +471,10 @@ body.prtltmmc {
 
 .virgin_explore .explore-item {
   width: 217px;
+}
+
+.virgin_explore .explore-item p {
+  margin: 0 !important;
 }
 
 .virgin_explore .explore-item a {
@@ -559,11 +575,10 @@ body.prtltmmc {
 
 .virgin_explore.prtltmmc-search-02 .prtltmmc-search-block-B {
   position: absolute;
-  bottom: -64px;
   background-color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -70px);
   padding: 16px !important;
   border-radius: 4px;
   width: fit-content;
@@ -573,6 +588,7 @@ body.prtltmmc {
   vertical-align: unset;
   display: none;
   border-top: none;
+  margin: 0;
 }
 
 
@@ -580,7 +596,7 @@ body.prtltmmc {
   display: flex;
 }
 
-.virgin_explore.prtltmmc-search-02 .prtltmmc-dropdown-dates {
+.prtltmmc-search-02 .prtltmmc-dropdown-dates {
   display: flex;
   width: 100%;
   margin-bottom: unset;
@@ -588,26 +604,51 @@ body.prtltmmc {
   gap: 16px;
 }
 
-.virgin_explore.prtltmmc-search-02 .prtltmmc-dropdown-dates .prtltmmc-year-block {
+.prtltmmc-search-02 .prtltmmc-dropdown-dates .prtltmmc-year-block {
   margin-top: 0 !important;
 }
 
-.virgin_explore.prtltmmc-search-02 .prtltmmc-dropdown-dates .prtltmmc-year-block:last-child {
+.prtltmmc-search-02 .prtltmmc-dropdown-dates .prtltmmc-year-block:last-child {
   text-align: unset;
 }
 
-.virgin_explore.prtltmmc-search-02 .prtltmmc-dropdown-dates .prtltmmc-year-block:empty {
+.prtltmmc-search-02 .prtltmmc-dropdown-dates .prtltmmc-year-block:empty {
   display: none;
 }
 
-.virgin_explore.prtltmmc-search-02 .prtltmmc-dropdown-dates .prtltmmc-year-block .prtltmmc-month {
+.prtltmmc-search-02 .prtltmmc-dropdown-dates .prtltmmc-year-block .prtltmmc-month {
   padding: 0;
   margin: 0;
+  text-align: center;
+}
+
+.prtltmmc-search-02 .prtltmmc-dropdown-dates .prtltmmc-year-block .prtltmmc-month li {
+  border: none;
+  margin: 6px -1px 3px 6px;
+  padding: 6px;
+  background: white;
+  font-weight: bold;
+}
+
+.prtltmmc-search-02 .prtltmmc-dropdown-dates .prtltmmc-year-block .prtltmmc-month li.prtltmmc-disabled {
+  font-weight: 100;
+}
+
+.prtltmmc-search-02 .prtltmmc-dropdown-dates .prtltmmc-year-block .prtltmmc-month li:not(.prtltmmc-disabled):not(.prtltmmc-selected):hover {
+  background: #f0f0f0;
+}
+
+.prtltmmc-search-02 .prtltmmc-dropdown-dates .prtltmmc-year-block .prtltmmc-month li.prtltmmc-selected {
+  background: #c00;
+}
+
+.prtltmmc-search-02 .prtltmmc-dropdown-dates .prtltmmc-year-block .prtltmmc-title-year {
+  font-size: 12px;
 }
 
 @media(min-width: 991px) {
   .virgin_explore.prtltmmc-search-02 .prtltmmc-search-block-B {
-    bottom: -146px;
+    transform: translate(-50%, 10px);
   }
 }
 
@@ -620,19 +661,25 @@ body.prtltmmc {
     width: 100%;
   }
 
-  .virgin_explore.prtltmmc-search-02 .prtltmmc-dropdown-dates {
+  .prtltmmc-search-02 .prtltmmc-dropdown-dates {
     gap: 12px;
     flex-wrap: wrap;
     justify-content: space-between;
   }
 
-  .virgin_explore.prtltmmc-search-02 .prtltmmc-dropdown-dates .prtltmmc-year-block {
+  .prtltmmc-search-02 .prtltmmc-dropdown-dates .prtltmmc-year-block {
     margin-top: 0;
-    width: 158px;
+    /* width: 158px; */
   }
 
-  .virgin_explore.prtltmmc-search-02 .prtltmmc-dropdown-dates .prtltmmc-year-block .prtltmmc-month li {
-    width: 28px;
+  .prtltmmc-search-02 .prtltmmc-dropdown-dates .prtltmmc-year-block .prtltmmc-month {
+    width: 80%;
+  }
+
+  .prtltmmc-search-02 .prtltmmc-dropdown-dates .prtltmmc-year-block .prtltmmc-month li {
+    margin: 10px -1px 6px 12px;
+    padding: 8px;
+    font-size: 14px;
   }
 }
 
@@ -1146,7 +1193,7 @@ body.prtltmmc {
 
 @media screen and (min-width: 991px) {
   .prtltmmc-navbar-dropdown-menu>ul {
-    transition: all 0.4s ease;
+    transition: all 0.1s ease;
   }
 }
 
@@ -1224,7 +1271,7 @@ body.prtltmmc {
     line-height: 1.2;
   }
 
-  .virgin_explore.in_video {
+  .virgin_explore.to_top {
     transform: translateY(-42vh);
   }
 }
@@ -1243,7 +1290,7 @@ body.prtltmmc {
     font-size: 80px;
   }
 
-  .virgin_explore.in_video {
+  .virgin_explore.to_top {
     transform: translateY(-22vh);
   }
 }
@@ -1272,7 +1319,8 @@ body.prtltmmc {
 /******************************************/
 
 .swiper_items {
-  position: relative;
+  position: relative !important;
+  z-index: 0 !important;
 }
 
 .swiper_items p {
@@ -1281,7 +1329,6 @@ body.prtltmmc {
 
 .swiper_items .swiper_item {
   position: relative;
-  user-select: none;
 }
 
 .swiper_items .swiper_item .swiper_item_image {
@@ -1305,8 +1352,12 @@ body.prtltmmc {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.swiper_items .swiper_item .swiper_item_content_box.edit_mode {
+.prtltmmc-image-content-item~.prtltmmc-options-portlet-digitup .swiper_items .swiper_item .swiper_item_content_box {
   max-width: 90vw;
+}
+
+.edit_mode .swiper_items .swiper_item .swiper_item_content_box {
+  max-width: 90vw !important;
 }
 
 /* .swiper_items .swiper_item .swiper_item_content_box::before {
@@ -1418,6 +1469,7 @@ body.prtltmmc {
   width: 48px;
   height: 48px;
   border: none;
+  background: white;
 }
 
 .swiper_items .slider-controls button.swiper-button-disabled {
@@ -1447,4 +1499,374 @@ body.prtltmmc {
   width: 21px;
   opacity: 1;
   border-radius: 13px;
+}
+
+/*********************************/
+/****** VIRGIN SEARCH PAGE *******/
+/*********************************/
+
+.prtltmmc-global-wrap .prtltmmc-link-button,
+.prtltmmc-results-list-02 .prtltmmc-link-button,
+.prtltmmc-search-02 .prtltmmc-link-button,
+.prtltmmc-reduced-search-02 .prtltmmc-link-button,
+.prtltmmc-wrap-modal .prtltmmc-link-button,
+.prtltmmc-booking .prtltmmc-link-button,
+.prtltmmc-global-wrap .prtltmmc-submit,
+.prtltmmc-results-list-02 .prtltmmc-submit,
+.prtltmmc-search-02 .prtltmmc-submit,
+.prtltmmc-reduced-search-02 .prtltmmc-submit,
+.prtltmmc-wrap-modal .prtltmmc-submit,
+.prtltmmc-booking .prtltmmc-submit,
+.prtltmmc-global-wrap .prtltmmc-send,
+.prtltmmc-results-list-02 .prtltmmc-send,
+.prtltmmc-search-02 .prtltmmc-send,
+.prtltmmc-reduced-search-02 .prtltmmc-send,
+.prtltmmc-wrap-modal .prtltmmc-send,
+.prtltmmc-booking .prtltmmc-send,
+.prtltmmc-global-wrap .prtltmmc-link-button.prtltmmc-disabled,
+.prtltmmc-results-list-02 .prtltmmc-link-button.prtltmmc-disabled,
+.prtltmmc-search-02 .prtltmmc-link-button.prtltmmc-disabled,
+.prtltmmc-reduced-search-02 .prtltmmc-link-button.prtltmmc-disabled,
+.prtltmmc-wrap-modal .prtltmmc-link-button.prtltmmc-disabled,
+.prtltmmc-booking .prtltmmc-link-button.prtltmmc-disabled,
+.prtltmmc-global-wrap .prtltmmc-submit.prtltmmc-disabled,
+.prtltmmc-results-list-02 .prtltmmc-submit.prtltmmc-disabled,
+.prtltmmc-search-02 .prtltmmc-submit.prtltmmc-disabled,
+.prtltmmc-reduced-search-02 .prtltmmc-submit.prtltmmc-disabled,
+.prtltmmc-wrap-modal .prtltmmc-submit.prtltmmc-disabled,
+.prtltmmc-booking .prtltmmc-submit.prtltmmc-disabled,
+.prtltmmc-global-wrap .prtltmmc-send.prtltmmc-disabled,
+.prtltmmc-results-list-02 .prtltmmc-send.prtltmmc-disabled,
+.prtltmmc-search-02 .prtltmmc-send.prtltmmc-disabled,
+.prtltmmc-reduced-search-02 .prtltmmc-send.prtltmmc-disabled,
+.prtltmmc-wrap-modal .prtltmmc-send.prtltmmc-disabled,
+.prtltmmc-booking .prtltmmc-send.prtltmmc-disabled {
+  background: #c00;
+  border: 1px solid #c00;
+}
+
+.prtltmmc-global-wrap .prtltmmc-link-button:hover,
+.prtltmmc-results-list-02 .prtltmmc-link-button:hover,
+.prtltmmc-search-02 .prtltmmc-link-button:hover,
+.prtltmmc-reduced-search-02 .prtltmmc-link-button:hover,
+.prtltmmc-wrap-modal .prtltmmc-link-button:hover,
+.prtltmmc-booking .prtltmmc-link-button:hover,
+.prtltmmc-global-wrap .prtltmmc-submit:hover,
+.prtltmmc-results-list-02 .prtltmmc-submit:hover,
+.prtltmmc-search-02 .prtltmmc-submit:hover,
+.prtltmmc-reduced-search-02 .prtltmmc-submit:hover,
+.prtltmmc-wrap-modal .prtltmmc-submit:hover,
+.prtltmmc-booking .prtltmmc-submit:hover,
+.prtltmmc-global-wrap .prtltmmc-send:hover,
+.prtltmmc-results-list-02 .prtltmmc-send:hover,
+.prtltmmc-search-02 .prtltmmc-send:hover,
+.prtltmmc-reduced-search-02 .prtltmmc-send:hover,
+.prtltmmc-wrap-modal .prtltmmc-send:hover,
+.prtltmmc-booking .prtltmmc-send:hover,
+.prtltmmc-global-wrap .prtltmmc-link-button:focus,
+.prtltmmc-results-list-02 .prtltmmc-link-button:focus,
+.prtltmmc-search-02 .prtltmmc-link-button:focus,
+.prtltmmc-reduced-search-02 .prtltmmc-link-button:focus,
+.prtltmmc-wrap-modal .prtltmmc-link-button:focus,
+.prtltmmc-booking .prtltmmc-link-button:focus,
+.prtltmmc-global-wrap .prtltmmc-submit:focus,
+.prtltmmc-results-list-02 .prtltmmc-submit:focus,
+.prtltmmc-search-02 .prtltmmc-submit:focus,
+.prtltmmc-reduced-search-02 .prtltmmc-submit:focus,
+.prtltmmc-wrap-modal .prtltmmc-submit:focus,
+.prtltmmc-booking .prtltmmc-submit:focus,
+.prtltmmc-global-wrap .prtltmmc-send:focus,
+.prtltmmc-results-list-02 .prtltmmc-send:focus,
+.prtltmmc-search-02 .prtltmmc-send:focus,
+.prtltmmc-reduced-search-02 .prtltmmc-send:focus,
+.prtltmmc-wrap-modal .prtltmmc-send:focus,
+.prtltmmc-booking .prtltmmc-send:focus {
+  background: #c20000;
+  border: 1px solid #c20000;
+}
+
+.prtltmmc-global-wrap .prtltmmc-link-button,
+.prtltmmc-results-list-02 .prtltmmc-link-button,
+.prtltmmc-search-02 .prtltmmc-link-button,
+.prtltmmc-reduced-search-02 .prtltmmc-link-button,
+.prtltmmc-wrap-modal .prtltmmc-link-button,
+.prtltmmc-booking .prtltmmc-link-button,
+.prtltmmc-global-wrap .prtltmmc-link-button.prtltmmc-disabled,
+.prtltmmc-results-list-02 .prtltmmc-link-button.prtltmmc-disabled,
+.prtltmmc-search-02 .prtltmmc-link-button.prtltmmc-disabled,
+.prtltmmc-reduced-search-02 .prtltmmc-link-button.prtltmmc-disabled,
+.prtltmmc-wrap-modal .prtltmmc-link-button.prtltmmc-disabled,
+.prtltmmc-booking .prtltmmc-link-button.prtltmmc-disabled {
+  background: transparent !important;
+  border-color: transparent !important;
+}
+
+.prtltmmc-global-wrap .prtltmmc-submit.prtltmmc-disabled,
+.prtltmmc-results-list-02 .prtltmmc-submit.prtltmmc-disabled,
+.prtltmmc-search-02 .prtltmmc-submit.prtltmmc-disabled,
+.prtltmmc-reduced-search-02 .prtltmmc-submit.prtltmmc-disabled,
+.prtltmmc-wrap-modal .prtltmmc-submit.prtltmmc-disabled,
+.prtltmmc-booking .prtltmmc-submit.prtltmmc-disabled,
+.prtltmmc-global-wrap .prtltmmc-send.prtltmmc-disabled,
+.prtltmmc-results-list-02 .prtltmmc-send.prtltmmc-disabled,
+.prtltmmc-search-02 .prtltmmc-send.prtltmmc-disabled,
+.prtltmmc-reduced-search-02 .prtltmmc-send.prtltmmc-disabled,
+.prtltmmc-wrap-modal .prtltmmc-send.prtltmmc-disabled,
+.prtltmmc-booking .prtltmmc-send.prtltmmc-disabled {
+  opacity: .5;
+  background: #c20000 !important;
+  border: 1px solid #c20000 !important;
+}
+
+.prtltmmc-results-list-02 a:hover {
+  color: #c20000;
+}
+
+.prtltmmc-close-popup {
+  background: #fff;
+  border: none;
+  box-shadow: none;
+}
+
+.prtltmmc-popup>*>*>*>.prtltmmc-close-popup {
+  margin: 5px 5px 0 0;
+}
+
+.prtltmmc-popup>*>*>*>.prtltmmc-title-popup+.prtltmmc-close-popup {
+  margin: 0;
+}
+
+.prtltmmc-popup .prtltmmc-share-header {
+  background: white;
+  border-bottom: solid 1px #c2c2c2;
+}
+
+.prtltmmc-title {
+  color: #c00;
+}
+
+.prtltmmc-close-popup:after,
+.prtltmmc-close-popup:before {
+  border-color: #686d72;
+}
+
+.prtltmmc-popup .prtltmmc-title-popup {
+  background-color: #c00;
+  color: #fff;
+}
+
+.prtltmmc-search-02 .prtltmmc-header-seacrh {
+  background-color: #ccf2eb;
+  color: #000;
+}
+
+.prtltmmc-search-02 .prtltmmc-header-seacrh .prtltmmc-found-cruises {
+  color: #3c1053;
+}
+
+.prtltmmc-search-02 .prtltmmc-header-seacrh .prtltmmc-show-search {
+  color: #c00;
+}
+
+.prtltmmc-search-02 .prtltmmc-header-seacrh .prtltmmc-show-search:after {
+  border-color: #c00 transparent;
+}
+
+.prtltmmc-search-02 .prtltmmc-header-seacrh .prtltmmc-show-search:hover {
+  color: #c20000;
+}
+
+.prtltmmc-search.prtltmmc-search-02 .prtltmmc-distable {
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
+}
+
+.prtltmmc-search.prtltmmc-search-02 .prtltmmc-distable .prtltmmc-discell.prtltmmc-multicheck-modal {
+  width: fit-content;
+}
+
+.prtltmmc-search-02 .prtltmmc-search-form .prtltmmc-results {
+  display: flex;
+  padding: 15px 0;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0;
+}
+
+.prtltmmc-search-02 .prtltmmc-search-form .prtltmmc-results .prtltmmc-submit {
+  margin: auto 1em 0 0;
+}
+
+.prtltmmc-search-02 .prtltmmc-search-form .prtltmmc-results.prtltmmc-distable .prtltmmc-discell.prtltmmc-tal {
+  display: none;
+}
+
+.prtltmmc-note-seacrh {
+  background: #d9f4f999;
+  color: #686d72;
+  font-size: 12px;
+}
+
+.prtltmmc-note-seacrh::before {
+  background: none;
+}
+
+.prtltmmc-search-02 {
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.prtltmmc-dropdown select {
+  padding: .3em 2em .2em .5em;
+}
+
+.prtltmmc-search-02 .prtltmmc-sorts .prtltmmc-sort-results {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.prtltmmc-search-02 .prtltmmc-sorts .prtltmmc-sort-results .prtltmmc-label {
+  margin-bottom: 0;
+}
+
+.prtltmmc-search-02 .prtltmmc-header-seacrh .prtltmmc-sorts .prtltmmc-dropdown {
+  margin: 0;
+}
+
+.prtltmmc-search-02 .prtltmmc-sorts {
+  margin-top: 0;
+}
+
+.prtltmmc-results-list-02 .prtltmmc-item {
+  border: .0625rem solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 .125rem .5rem 0 #0000000f;
+  background: white;
+  padding: 0;
+}
+
+.prtltmmc-results-list-02 .prtltmmc-item .prtltmmc-item-header {
+  border-radius: 8px 8px 0 0;
+}
+
+.prtltmmc-results-list-02 .prtltmmc-item .prtltmmc-detail-cruise {
+  border-top: .0625rem solid #e0e0e0;
+  margin-top: 0;
+}
+
+.prtltmmc-results-list-02 .prtltmmc-item .prtltmmc-dates-price-cruise:before {
+  background: none;
+}
+
+.prtltmmc-results-list-02 .prtltmmc-icon-experience .prtltmmc-icon {
+  background-color: #3c1053;
+}
+
+.prtltmmc-global-wrap .prtltmmc-link-button .prtltmmc-icon,
+.prtltmmc-results-list-02 .prtltmmc-link-button .prtltmmc-icon,
+.prtltmmc-search-02 .prtltmmc-link-button .prtltmmc-icon,
+.prtltmmc-reduced-search-02 .prtltmmc-link-button .prtltmmc-icon,
+.prtltmmc-wrap-modal .prtltmmc-link-button .prtltmmc-icon,
+.prtltmmc-booking .prtltmmc-link-button .prtltmmc-icon,
+.prtltmmc-global-wrap .prtltmmc-link-button.prtltmmc-disabled .prtltmmc-icon,
+.prtltmmc-results-list-02 .prtltmmc-link-button.prtltmmc-disabled .prtltmmc-icon,
+.prtltmmc-search-02 .prtltmmc-link-button.prtltmmc-disabled .prtltmmc-icon,
+.prtltmmc-reduced-search-02 .prtltmmc-link-button.prtltmmc-disabled .prtltmmc-icon,
+.prtltmmc-wrap-modal .prtltmmc-link-button.prtltmmc-disabled .prtltmmc-icon,
+.prtltmmc-booking .prtltmmc-link-button.prtltmmc-disabled .prtltmmc-icon {
+  background-color: #c00;
+}
+
+.prtltmmc-global-wrap a.prtltmmc-link-button:hover .prtltmmc-icon,
+.prtltmmc-results-list-02 a.prtltmmc-link-button:hover .prtltmmc-icon,
+.prtltmmc-search-02 a.prtltmmc-link-button:hover .prtltmmc-icon,
+.prtltmmc-reduced-search-02 a.prtltmmc-link-button:hover .prtltmmc-icon,
+.prtltmmc-wrap-modal a.prtltmmc-link-button:hover .prtltmmc-icon,
+.prtltmmc-booking a.prtltmmc-link-button:hover .prtltmmc-icon,
+.prtltmmc-global-wrap a.prtltmmc-link-button.prtltmmc-disabled:hover .prtltmmc-icon,
+.prtltmmc-results-list-02 a.prtltmmc-link-button.prtltmmc-disabled:hover .prtltmmc-icon,
+.prtltmmc-search-02 a.prtltmmc-link-button.prtltmmc-disabled:hover .prtltmmc-icon,
+.prtltmmc-reduced-search-02 a.prtltmmc-link-button.prtltmmc-disabled:hover .prtltmmc-icon,
+.prtltmmc-wrap-modal a.prtltmmc-link-button.prtltmmc-disabled:hover .prtltmmc-icon,
+.prtltmmc-booking a.prtltmmc-link-button.prtltmmc-disabled:hover .prtltmmc-icon,
+.prtltmmc-global-wrap a.prtltmmc-link-button:focus .prtltmmc-icon,
+.prtltmmc-results-list-02 a.prtltmmc-link-button:focus .prtltmmc-icon,
+.prtltmmc-search-02 a.prtltmmc-link-button:focus .prtltmmc-icon,
+.prtltmmc-reduced-search-02 a.prtltmmc-link-button:focus .prtltmmc-icon,
+.prtltmmc-wrap-modal a.prtltmmc-link-button:focus .prtltmmc-icon,
+.prtltmmc-booking a.prtltmmc-link-button:focus .prtltmmc-icon,
+.prtltmmc-global-wrap a.prtltmmc-link-button.prtltmmc-disabled:focus .prtltmmc-icon,
+.prtltmmc-results-list-02 a.prtltmmc-link-button.prtltmmc-disabled:focus .prtltmmc-icon,
+.prtltmmc-search-02 a.prtltmmc-link-button.prtltmmc-disabled:focus .prtltmmc-icon,
+.prtltmmc-reduced-search-02 a.prtltmmc-link-button.prtltmmc-disabled:focus .prtltmmc-icon,
+.prtltmmc-wrap-modal a.prtltmmc-link-button.prtltmmc-disabled:focus .prtltmmc-icon,
+.prtltmmc-booking a.prtltmmc-link-button.prtltmmc-disabled:focus .prtltmmc-icon {
+  background-color: #c00;
+}
+
+.prtltmmc-results-list-02 .prtltmmc-item .prtltmmc-dates-price-cruise {
+  background: #e9f8fb;
+}
+
+.prtltmmc-global-wrap a.prtltmmc-link-button,
+.prtltmmc-results-list-02 a.prtltmmc-link-button,
+.prtltmmc-search-02 a.prtltmmc-link-button,
+.prtltmmc-reduced-search-02 a.prtltmmc-link-button,
+.prtltmmc-wrap-modal a.prtltmmc-link-button,
+.prtltmmc-booking a.prtltmmc-link-button,
+.prtltmmc-global-wrap a.prtltmmc-link-button.prtltmmc-disabled,
+.prtltmmc-results-list-02 a.prtltmmc-link-button.prtltmmc-disabled,
+.prtltmmc-search-02 a.prtltmmc-link-button.prtltmmc-disabled,
+.prtltmmc-reduced-search-02 a.prtltmmc-link-button.prtltmmc-disabled,
+.prtltmmc-wrap-modal a.prtltmmc-link-button.prtltmmc-disabled,
+.prtltmmc-booking a.prtltmmc-link-button.prtltmmc-disabled,
+.prtltmmc-global-wrap a.prtltmmc-link-button:hover,
+.prtltmmc-results-list-02 a.prtltmmc-link-button:hover,
+.prtltmmc-search-02 a.prtltmmc-link-button:hover,
+.prtltmmc-reduced-search-02 a.prtltmmc-link-button:hover,
+.prtltmmc-wrap-modal a.prtltmmc-link-button:hover,
+.prtltmmc-booking a.prtltmmc-link-button:hover {
+  color: #c00 !important;
+}
+
+.prtltmmc-results-list-02 .prtltmmc-item .prtltmmc-dates-price-cruise .prtltmmc-selector-date .prtltmmc-select-date.prtltmmc-on {
+  background: #3c1053;
+}
+
+.prtltmmc-results-list-02 .prtltmmc-item .prtltmmc-dates-price-cruise .prtltmmc-selector-date .prtltmmc-select-date.prtltmmc-on:after {
+  border-color: #3c1053 transparent;
+}
+
+.prtltmmc-results-list-02 .prtltmmc-item .prtltmmc-dates-price-cruise .prtltmmc-selector-date .prtltmmc-select-date {
+  color: #c00;
+}
+
+.prtltmmc-results-list-02 .prtltmmc-item .prtltmmc-dates-price-cruise .prtltmmc-pricing-header .prtltmmc-pricing-cell {
+  color: #3c1053;
+}
+
+.prtltmmc-results-list-02 .prtltmmc-item .prtltmmc-dates-price-cruise .prtltmmc-pricing-cell.prtltmmc-price.prtltmmc-with-discount:hover {
+  background-color: #3c1053;
+}
+
+.prtltmmc-results-list-02 .prtltmmc-icon-adventage .prtltmmc-icon {
+  background-color: #3c1053;
+}
+
+.prtltmmc-results-list-02 .prtltmmc-item .prtltmmc-dates-price-cruise .prtltmmc-pricing-cell.prtltmmc-date .prtltmmc-ribbon-promotions {
+  background: #c00;
+}
+
+.prtltmmc-results-list-02 .prtltmmc-item .prtltmmc-dates-price-cruise .prtltmmc-pricing-header {
+  margin-bottom: 0px;
+}
+
+.prtltmmc-results-list-02 .prtltmmc-item .prtltmmc-dates-price-cruise .prtltmmc-pricing-dates .prtltmmc-pricing-cell {
+  border-top: none;
+}
+
+.prtltmmc-results-list .prtltmmc-item .prtltmmc-item-header .prtltmmc-title>a,
+.prtltmmc-results-list .prtltmmc-item .prtltmmc-item-header .prtltmmc-title>a:hover {
+  color: #c00 !important;
 }

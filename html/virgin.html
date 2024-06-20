@@ -159,9 +159,9 @@
         <div class="prtltmmc-search-block-A">
           <div class="filter-bar">
             <div class="filter-item prtltmmc-dropdown">
-              <label for="searchCriteria.trades[0]">Regions</label>
+              <div class="filter-item_label" for="searchCriteria.trades[0]">Regions</div>
               <select name="searchCriteria.trades[0]" id="zones">
-                <option>Zonas</option>
+                <option value="">Zonas</option>
               </select>
               <div class="custom-dropdown">
                 <div class="selected-option">Regions</div>
@@ -176,9 +176,9 @@
               </svg>
             </div>
             <div class="filter-item prtltmmc-dropdown">
-              <label for="embark">Embarque</label>
+              <div class="filter-item_label" for="embark">Embarque</div>
               <select name="embark" id="embarks">
-                <option>Embarque</option>
+                <option value="">Embarque</option>
               </select>
               <div class="custom-dropdown">
                 <div class="selected-option">Embarque</div>
@@ -192,7 +192,7 @@
               </svg>
             </div>
             <div class="filter-item prtltmmc-dropdown">
-              <label for="duration">Duración</label>
+              <div class="filter-item_label" for="duration">Duración</div>
               <select name="duration" id="durations">
                 <option value="">Duración</option>
               </select>
@@ -210,13 +210,464 @@
               </svg>
             </div>
             <div class="filter-item prtltmmc-dropdown">
-              <label for="departure">Fecha Salida</label>
+              <div class="filter-item_label" for="departure">Fecha Salida</div>
               <!-- <select name="departure" id="departures_fake">
                 <option value="">Fecha Salida</option>
               </select> -->
               <div class="custom-dropdown is_fake">
                 <div class="selected-option">Fecha Salida</div>
                 <!-- <div class="dropdown-options" style="display: none;"></div> -->
+              </div>
+              <svg class="icon_dates" width="24px" xmlns="http://www.w3.org/2000/svg" fill="#f00" id="location"
+                viewBox="0 0 24 24">
+                <path d="M10 4h4v2h-4z" />
+                <path
+                  d="M19 4h-1v2h1a1 1 0 0 1 1 1v3H4V7a1 1 0 0 1 1-1h1V4H5a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm1 15a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-7h16z" />
+                <path
+                  d="M8 8a1 1 0 0 0 1-1V3a1 1 0 0 0-2 0v4a1 1 0 0 0 1 1zm8 0a1 1 0 0 0 1-1V3a1 1 0 0 0-2 0v4a1 1 0 0 0 1 1z" />
+              </svg>
+            </div>
+
+            <div class="filter-item explore-item">
+              <a id="explore-link" href="/virgin/buscador.html">EXPLORE</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="prtltmmc-search-block-B">
+          <div class="prtltmmc-dropdown-dates" id="departures">
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="prtltmmc-global-wrap" data-portlet="PORTLET_VV_HERO" data-id="VIRGIN-EXPERIENCE_PORTLET_VV_HERO_0">
+      <div
+        class="prtlt-digitup prtltmmc-image-content edit-option-desktop-image edit-option-mobile-image edit-option-promo">
+        <div class="prtltmmc-digitup-heroSlide prtltmmc-image-content-item">
+          <div class="prtltmmc-contenteditable" style="position: relative;">
+            <p><img src="https://www.mundomarcruceros.com/wlgs/mundomar-images/VIRGIN-PRUEBA-1142x500.webp" alt=""
+                class="is_desktop main_image prtltmmc-block-image"> <img
+                src="https://www.mundomarcruceros.com/wlgs/mundomar-images/VIRGIN-PRUEBA-1142x500.webp" alt=""
+                class="is_mobile main_image prtltmmc-block-image"></p>
+          </div>
+          <div class="main_box">
+            <div class="left_side">
+              <div class="left_side_box">
+                <div class="content_box">
+                  <div class="image_box prtltmmc-contenteditable" style="position: relative;">
+                    <p><br><img
+                        src="https://cdn.speedsize.com/eb8d0010-7300-4129-8a6d-74bc221f9caf/https://www.virginvoyages.com/dam/jcr:5ddc358f-3e87-4cb6-a4bc-0338d8d36d37/Wave2024-US-Lockup-desktop-3.png"
+                        alt="" class="promo prtltmmc-block-image"></p>
+                  </div>
+                  <div class="title prtltmmc-contenteditable" style="position: relative;">
+                    <h2>LUJO SIEMPRE INCLUIDO</h2>
+                  </div>
+                  <div class="description prtltmmc-contenteditable" style="position: relative;">
+                    <p>Virgin Voyages se ha ocupado de todos los detalles para que solo tengas que relajarte y
+                      disfrutar de las vacaciones que te mereces. Todo lo que se indica a continuación está incluido
+                      en tu viaje.
+                    </p>
+                    <div>
+                      <ul>
+                        <li>
+                          <h5>Todos los restaurantes de especialidad <br></h5>
+                        </li>
+                        <li>
+                          <h5>+ 20 espacios gastronómicos<br></h5>
+                        </li>
+                        <li>
+                          <h5>Bebidas esenciales<br></h5>
+                        </li>
+                        <li>
+                          <h5>WiFi<br></h5>
+                        </li>
+                        <li>
+                          <h5>Propinas<br></h5>
+                        </li>
+                        <li>
+                          <h5>Shows<br></h5>
+                        </li>
+                        <li>
+                          <h5>Clases de fitness en grupo</h5>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="button_side prtltmmc-contenteditable" style="position: relative;">
+                  <div><a href="Virgin-Voyages-Incluido.html">DESCUBRE MÁS</a></div>
+                </div>
+              </div>
+            </div>
+            <div class="right_side prtltmmc-contenteditable">
+              <p><br></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="prtltmmc-global-wrap" data-portlet="PORTLET_VV_SEPARATOR"
+      data-id="VIRGIN-EXPERIENCE_PORTLET_VV_SEPARATOR_0">
+      <div class="prtlt-digitup">
+        <div class="prtltmmc-digitup-separator">
+          <div class="main_content">
+            <div class="headline prtltmmc-contenteditable" style="position: relative;">
+              <p><br></p>
+            </div>
+            <div class="title prtltmmc-contenteditable" style="position: relative;">
+              <h1>LA EXPERIENCIA VIRGIN VOYAGES</h1>
+            </div>
+            <div class="description prtltmmc-contenteditable" style="position: relative;">
+              <h3>Descubre todo lo que Virgin Voyages tiene para ofrecer.</h3>
+            </div>
+            <div class="button_side prtltmmc-contenteditable" style="position: relative;">
+              <p>Una naviera galardonada, solo para adultos</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="prtltmmc-global-wrap" data-portlet="PORTLET_VV_SLIDER2"
+      data-id="VIRGIN-EXPERIENCE_PORTLET_VV_SLIDER2_0">
+      <div class="prtlt-digitup prtltmmc-boxes-outstand">
+        <div class="prtltmmc-digitup-slider2 prtltmmc-row-boxes-outstand">
+          <div
+            class="prtltmmc-digitup-slider2-item prtltmmc-cell-boxes-outstand prtltmmc-image-content edit-option-reverse edit-option-url edit-option-desktop-image">
+            <div class="prtltmmc-image-content-item">
+              <img class="main_image is_desktop prtltmmc-block-image"
+                src="https://cdn.mundomarcruceros.com/wlgs/mundomar-images/VV-NAVIERA-SLIDER1.webp" alt="">
+              <div class="text prtltmmc-contenteditable">
+                <h4>Menús elaborados por Chefs con Estrella Michelin en</h4>
+                <h4>+20 espacios gastronómicos y restaurantes de especialidad</h4>
+              </div>
+              <div class="arrow">
+                <a class="edit_url" href="Virgin-Voyages-Gastronomia.html">
+                  <svg viewBox="0 0 24 24" width="24" height="24">
+                    <path xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"
+                      d="M20.5408 11.9471C20.5408 11.773 20.4358 11.5419 20.3293 11.4297L14.3281 5.03486C14.0479 4.74435 13.594 4.71068 13.2673 5.00552C12.9753 5.26909 12.968 5.78315 13.238 6.06938L18.0554 11.1946L4.34977 11.1946C3.93546 11.1946 3.59961 11.5314 3.59961 11.9469C3.59961 12.3624 3.93546 12.6993 4.34977 12.6993L18.0554 12.6993L13.238 17.8246C12.968 18.1107 12.9872 18.6122 13.2673 18.8884C13.563 19.18 14.0522 19.154 14.3281 18.859L20.3293 12.4642C20.5056 12.2908 20.5378 12.1237 20.5408 11.9471Z"
+                      fill="#CC0000"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="prtltmmc-digitup-slider2-item prtltmmc-cell-boxes-outstand prtltmmc-image-content edit-option-reverse edit-option-url edit-option-desktop-image">
+            <div class="prtltmmc-image-content-item">
+              <img class="main_image is_desktop prtltmmc-block-image"
+                src="https://cdn.mundomarcruceros.com/wlgs/mundomar-images/VV-NAVIERA-SLIDER2.webp" alt="">
+              <div class="text prtltmmc-contenteditable">
+                <h4>Muchas razones para brindar una... o 2 veces</h4>
+              </div>
+              <div class="arrow">
+                <a class="edit_url" href="Virgin-Voyages-Bares-Bebidas.html">
+                  <svg viewBox="0 0 24 24" width="24" height="24">
+                    <path xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"
+                      d="M20.5408 11.9471C20.5408 11.773 20.4358 11.5419 20.3293 11.4297L14.3281 5.03486C14.0479 4.74435 13.594 4.71068 13.2673 5.00552C12.9753 5.26909 12.968 5.78315 13.238 6.06938L18.0554 11.1946L4.34977 11.1946C3.93546 11.1946 3.59961 11.5314 3.59961 11.9469C3.59961 12.3624 3.93546 12.6993 4.34977 12.6993L18.0554 12.6993L13.238 17.8246C12.968 18.1107 12.9872 18.6122 13.2673 18.8884C13.563 19.18 14.0522 19.154 14.3281 18.859L20.3293 12.4642C20.5056 12.2908 20.5378 12.1237 20.5408 11.9471Z"
+                      fill="#CC0000"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="prtltmmc-global-wrap" data-portlet="PORTLET_VV_SLIDER2"
+      data-id="VIRGIN-EXPERIENCE_PORTLET_VV_SLIDER2_1">
+      <div class="prtlt-digitup prtltmmc-boxes-outstand">
+        <div class="prtltmmc-digitup-slider2 prtltmmc-row-boxes-outstand">
+          <div
+            class="prtltmmc-digitup-slider2-item prtltmmc-cell-boxes-outstand prtltmmc-image-content edit-option-reverse edit-option-url edit-option-desktop-image">
+            <div class="prtltmmc-image-content-item">
+              <img class="main_image is_desktop prtltmmc-block-image"
+                src="https://cdn.mundomarcruceros.com/wlgs/mundomar-images/VV-NAVIERA-SLIDER3.webp" alt="">
+              <div class="text prtltmmc-contenteditable">
+                <h4>Producciones inmersivas para experiencias asombrosas</h4>
+              </div>
+              <div class="arrow">
+                <a class="edit_url" href="Virgin-Voyages-Entretenimiento.html">
+                  <svg viewBox="0 0 24 24" width="24" height="24">
+                    <path xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"
+                      d="M20.5408 11.9471C20.5408 11.773 20.4358 11.5419 20.3293 11.4297L14.3281 5.03486C14.0479 4.74435 13.594 4.71068 13.2673 5.00552C12.9753 5.26909 12.968 5.78315 13.238 6.06938L18.0554 11.1946L4.34977 11.1946C3.93546 11.1946 3.59961 11.5314 3.59961 11.9469C3.59961 12.3624 3.93546 12.6993 4.34977 12.6993L18.0554 12.6993L13.238 17.8246C12.968 18.1107 12.9872 18.6122 13.2673 18.8884C13.563 19.18 14.0522 19.154 14.3281 18.859L20.3293 12.4642C20.5056 12.2908 20.5378 12.1237 20.5408 11.9471Z"
+                      fill="#CC0000"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="prtltmmc-digitup-slider2-item prtltmmc-cell-boxes-outstand prtltmmc-image-content edit-option-reverse edit-option-url edit-option-desktop-image">
+            <div class="prtltmmc-image-content-item">
+              <img class="main_image is_desktop prtltmmc-block-image"
+                src="https://cdn.speedsize.com/eb8d0010-7300-4129-8a6d-74bc221f9caf/https://www.virginvoyages.com/dam/jcr:64a66570-223a-4e2c-96e1-a07f09fefa77/Wave24-Dual-Banner%20704x320-Splash-Romance-1.jpg"
+                alt="">
+              <div class="text prtltmmc-contenteditable">
+                <h4>Disfruta del mejor bienestar a tu manera</h4>
+              </div>
+              <div class="arrow">
+                <a class="edit_url" href="Virgin-Voyages-Fitness-Spa-es.html">
+                  <svg viewBox="0 0 24 24" width="24" height="24">
+                    <path xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"
+                      d="M20.5408 11.9471C20.5408 11.773 20.4358 11.5419 20.3293 11.4297L14.3281 5.03486C14.0479 4.74435 13.594 4.71068 13.2673 5.00552C12.9753 5.26909 12.968 5.78315 13.238 6.06938L18.0554 11.1946L4.34977 11.1946C3.93546 11.1946 3.59961 11.5314 3.59961 11.9469C3.59961 12.3624 3.93546 12.6993 4.34977 12.6993L18.0554 12.6993L13.238 17.8246C12.968 18.1107 12.9872 18.6122 13.2673 18.8884C13.563 19.18 14.0522 19.154 14.3281 18.859L20.3293 12.4642C20.5056 12.2908 20.5378 12.1237 20.5408 11.9471Z"
+                      fill="#CC0000"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="prtltmmc-global-wrap" data-portlet="PORTLET_VV_SLIDER2"
+      data-id="VIRGIN-EXPERIENCE_PORTLET_VV_SLIDER2_2">
+      <div class="prtlt-digitup prtltmmc-boxes-outstand">
+        <div class="prtltmmc-digitup-slider2 prtltmmc-row-boxes-outstand">
+          <div
+            class="prtltmmc-digitup-slider2-item prtltmmc-cell-boxes-outstand prtltmmc-image-content edit-option-reverse edit-option-url edit-option-desktop-image">
+            <div class="prtltmmc-image-content-item">
+              <img class="main_image is_desktop prtltmmc-block-image"
+                src="https://cdn.mundomarcruceros.com/wlgs/mundomar-images/VV-NAVIERA-SLIDER5.webp" alt="">
+              <div class="text prtltmmc-contenteditable">
+                <h4>Las suites de lujo que te ofrecen el estilo de vida que te mereces</h4>
+              </div>
+              <div class="arrow">
+                <a class="edit_url" href="Virgin-Voyages-Suites.html">
+                  <svg viewBox="0 0 24 24" width="24" height="24">
+                    <path xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"
+                      d="M20.5408 11.9471C20.5408 11.773 20.4358 11.5419 20.3293 11.4297L14.3281 5.03486C14.0479 4.74435 13.594 4.71068 13.2673 5.00552C12.9753 5.26909 12.968 5.78315 13.238 6.06938L18.0554 11.1946L4.34977 11.1946C3.93546 11.1946 3.59961 11.5314 3.59961 11.9469C3.59961 12.3624 3.93546 12.6993 4.34977 12.6993L18.0554 12.6993L13.238 17.8246C12.968 18.1107 12.9872 18.6122 13.2673 18.8884C13.563 19.18 14.0522 19.154 14.3281 18.859L20.3293 12.4642C20.5056 12.2908 20.5378 12.1237 20.5408 11.9471Z"
+                      fill="#CC0000"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="prtltmmc-digitup-slider2-item prtltmmc-cell-boxes-outstand prtltmmc-image-content edit-option-reverse edit-option-url edit-option-desktop-image">
+            <div class="prtltmmc-image-content-item">
+              <img class="main_image is_desktop prtltmmc-block-image"
+                src="https://cdn.mundomarcruceros.com/wlgs/mundomar-images/VV-NAVIERA-SLIDER6.webp" alt="">
+              <div class="text prtltmmc-contenteditable">
+                <h4>Disfruta de un sueño profundo en tu refugio privado</h4>
+              </div>
+              <div class="arrow">
+                <a class="edit_url" href="Virgin-Voyages-Camarotes.html">
+                  <svg viewBox="0 0 24 24" width="24" height="24">
+                    <path xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"
+                      d="M20.5408 11.9471C20.5408 11.773 20.4358 11.5419 20.3293 11.4297L14.3281 5.03486C14.0479 4.74435 13.594 4.71068 13.2673 5.00552C12.9753 5.26909 12.968 5.78315 13.238 6.06938L18.0554 11.1946L4.34977 11.1946C3.93546 11.1946 3.59961 11.5314 3.59961 11.9469C3.59961 12.3624 3.93546 12.6993 4.34977 12.6993L18.0554 12.6993L13.238 17.8246C12.968 18.1107 12.9872 18.6122 13.2673 18.8884C13.563 19.18 14.0522 19.154 14.3281 18.859L20.3293 12.4642C20.5056 12.2908 20.5378 12.1237 20.5408 11.9471Z"
+                      fill="#CC0000"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="prtltmmc-global-wrap" data-portlet="PORTLET_VV_IMG_TEXT"
+      data-id="BARCOS-VIRGIN-VOYAGES_PORTLET_VV_IMG_TEXT_0">
+      <div class="prtltmmc-image-content edit-option-reverse edit-option-color-dark">
+        <div class="prtltmmc-digitup prtlt-digitup prtltmmc-image-content-item">
+          <div class="main_box">
+            <div class="text_side">
+              <div class="top_side">
+                <div class="name prtltmmc-contenteditable">
+                  <p>100% SOLO PARA ADULTOS</p>
+                </div>
+                <h1 class="title prtltmmc-contenteditable" style="position: relative;"><strong>Experiencias
+                    exclusivamente para adultos</strong>
+                </h1>
+                <p class="description prtltmmc-contenteditable" style="position: relative;"><br>Desde cenas decadentes
+                  hasta afterparties bañadas en rojo, vuelve a conectar con tu pareja, tus mejores amigos y contigo
+                  mismo para celebrar los momentos más dulces de la vida a bordo de nuestros viajes 100% sólo para
+                  adultos.
+                </p>
+                <div class="button">
+                  <div class="button_text prtltmmc-contenteditable" style="position: relative;">
+                    <p><a href="Virgin-Voyages-Incluido.html">DESCUBRE MÁS</a></p>
+                  </div>
+                  <svg width="35" height="34" viewBox="0 0 35 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M22.9447 24.4972L29.7329 17.6972H3.79858V16.2789H29.7329L22.9551 9.50276L23.9599 8.5L31.9238 16.4867C31.9897 16.5525 32.0421 16.6306 32.0778 16.7167C32.1135 16.8027 32.1319 16.8949 32.1319 16.9881C32.1319 17.0813 32.1135 17.1735 32.0778 17.2595C32.0421 17.3456 31.9897 17.4237 31.9238 17.4895L23.9494 25.5L22.9447 24.4972Z">
+                    </path>
+                  </svg>
+                </div>
+              </div>
+              <div class="bottom_side">
+                <div class="secondary_image_box prtltmmc-contenteditable">
+                  <p><img src="https://cdn.mundomarcruceros.com/wlgs/mundomar-images/VV-NAVIERA-ADULTOS-PEQ.webp" alt=""
+                      class="prtltmmc-block-image secondary_image"></p>
+                </div>
+              </div>
+            </div>
+            <div class="image_side prtltmmc-contenteditable">
+              <p><img src="https://cdn.mundomarcruceros.com/wlgs/mundomar-images/VIRGIN-PRUEBA-800X1000.webp" alt=""
+                  class="main_image prtltmmc-block-image"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="prtltmmc-global-wrap" data-portlet="PORTLET_VV_IMG_TEXT"
+      data-id="BARCOS-VIRGIN-VOYAGES_PORTLET_VV_IMG_TEXT_1">
+      <div class="prtltmmc-image-content edit-option-reverse edit-option-color-dark">
+        <div class="prtltmmc-digitup prtlt-digitup prtltmmc-image-content-item reverse color-dark">
+          <div class="main_box">
+            <div class="text_side">
+              <div class="top_side">
+                <div class="name prtltmmc-contenteditable">
+                  <p>NAVEGANDO HACIA EL S. XXI</p>
+                </div>
+                <h1 class="title prtltmmc-contenteditable" style="position: relative;">Camarotes inteligentes</h1>
+                <p class="description prtltmmc-contenteditable" style="position: relative;"><br>Observa. Disminuye.
+                  Ordena. No estamos diciendo que te quedes en la cama todo el día, pero con una tableta en cada
+                  camarote y nuestra aplicación Virgin Voyages a mano, no te culparíamos si lo hicieras. Con sólo
+                  pulsar y deslizar un dedo, puedes cambiar el ambiente con la iluminación, ver las últimas películas
+                  (y clásicos), y pedir ShipEats - todo mientras permaneces completamente en posición horizontal.
+                </p>
+                <div class="button">
+                  <div class="button_text prtltmmc-contenteditable" style="position: relative;">
+                    <p><a href="Virgin-Voyages-Camarotes.html">DESCUBRE MÁS</a></p>
+                  </div>
+                  <svg width="35" height="34" viewBox="0 0 35 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M22.9447 24.4972L29.7329 17.6972H3.79858V16.2789H29.7329L22.9551 9.50276L23.9599 8.5L31.9238 16.4867C31.9897 16.5525 32.0421 16.6306 32.0778 16.7167C32.1135 16.8027 32.1319 16.8949 32.1319 16.9881C32.1319 17.0813 32.1135 17.1735 32.0778 17.2595C32.0421 17.3456 31.9897 17.4237 31.9238 17.4895L23.9494 25.5L22.9447 24.4972Z">
+                    </path>
+                  </svg>
+                </div>
+              </div>
+              <div class="bottom_side">
+                <div class="secondary_image_box prtltmmc-contenteditable">
+                  <p><img
+                      src="https://cdn.mundomarcruceros.com/wlgs/mundomar-images/VV-ADRIATICO-NEWPORTVV-CAMAROTES2.webp"
+                      alt="" class="prtltmmc-block-image secondary_image"></p>
+                </div>
+              </div>
+            </div>
+            <div class="image_side prtltmmc-contenteditable">
+              <p><img src="https://cdn.mundomarcruceros.com/wlgs/mundomar-images/VV-ADRIATICO-NEWPORTVV-CAMAROTES.webp"
+                  alt="" class="main_image prtltmmc-block-image"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="prtltmmc-global-wrap" data-portlet="PORTLET_VV_IMG_TEXT"
+      data-id="BARCOS-VIRGIN-VOYAGES_PORTLET_VV_IMG_TEXT_2">
+      <div class="prtltmmc-image-content edit-option-reverse edit-option-color-dark">
+        <div class="prtltmmc-digitup prtlt-digitup prtltmmc-image-content-item">
+          <div class="main_box">
+            <div class="text_side">
+              <div class="top_side">
+                <div class="name prtltmmc-contenteditable">
+                  <p>NAVEGAR HACIA EL CERO NETO</p>
+                </div>
+                <h1 class="title prtltmmc-contenteditable" style="position: relative;"><strong>A sea change for all,
+                    un cambio radical para todos</strong>
+                </h1>
+                <p class="description prtltmmc-contenteditable" style="position: relative;"><br>Restaurar la salud de
+                  los océanos y establecer relaciones positivas en nuestras comunidades forma parte del ADN de nuestra
+                  marca. El uso de tecnología sostenible, la prohibición de plásticos de un solo uso y una
+                  alimentación cuidadosamente seleccionada son sólo algunas de las formas en que Virgin Voyages planea
+                  cuidar (sin dejar de disfrutar) de nuestro planeta.
+                </p>
+                <div class="button">
+                  <div class="button_text prtltmmc-contenteditable" style="position: relative;">
+                    <p><a href="Virgin-Voyages-Sostenibilidad.html">DESCUBRE MÁS</a></p>
+                  </div>
+                  <svg width="35" height="34" viewBox="0 0 35 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M22.9447 24.4972L29.7329 17.6972H3.79858V16.2789H29.7329L22.9551 9.50276L23.9599 8.5L31.9238 16.4867C31.9897 16.5525 32.0421 16.6306 32.0778 16.7167C32.1135 16.8027 32.1319 16.8949 32.1319 16.9881C32.1319 17.0813 32.1135 17.1735 32.0778 17.2595C32.0421 17.3456 31.9897 17.4237 31.9238 17.4895L23.9494 25.5L22.9447 24.4972Z">
+                    </path>
+                  </svg>
+                </div>
+              </div>
+              <div class="bottom_side">
+                <div class="secondary_image_box prtltmmc-contenteditable">
+                  <p><img src="https://cdn.mundomarcruceros.com/wlgs/mundomar-images/VV-NAVIERA-SEACHANGE-PEQ.webp"
+                      alt="" class="prtltmmc-block-image secondary_image"></p>
+                </div>
+              </div>
+            </div>
+            <div class="image_side prtltmmc-contenteditable">
+              <p><img src="https://cdn.mundomarcruceros.com/wlgs/mundomar-images/VV-NAVIERA-SEACHANGE-GR.webp" alt=""
+                  class="main_image prtltmmc-block-image"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="video_box">
+      <div class="video_side">
+        <video loop="" playsinline="" muted="" preload="auto" autoplay=""
+          src="https://cdn.speedsize.com/eb8d0010-7300-4129-8a6d-74bc221f9caf/https://www.virginvoyages.com/dam/jcr:f7b8136a-ce81-4b46-8ccb-ae8d6ff11ffc/VID-LIFE-Mermaid-1.mp4">
+        </video>
+      </div>
+      <div class="video_content">
+        <div class="video_text">Reserve now.<br>Pay later.</div>
+      </div>
+    </div>
+    <div class="prtltmmc-content-portlets prtltmmc-results-list">
+      <div class="virgin_explore to_top prtltmmc-search-02">
+        <div class="prtltmmc-search-block-A">
+          <div class="filter-bar">
+            <div class="filter-item prtltmmc-dropdown">
+              <div class="filter-item_label" for="searchCriteria.trades[0]">Regions</div>
+              <select name="searchCriteria.trades[0]" id="zones">
+                <option>Zonas</option>
+              </select>
+              <div class="custom-dropdown">
+                <div class="selected-option">Regions</div>
+                <div class="dropdown-options" style="display: none;"></div>
+              </div>
+              <svg class="icon_location" width="24px" xmlns="http://www.w3.org/2000/svg" fill="#f00" id="location"
+                viewBox="0 0 24 24">
+                <path
+                  d="M12 2a8 8 0 0 0-8 8c0 5 8 12 8 12s8-7 8-12a8 8 0 0 0-8-8zm0 17.27C9.28 16.59 6 12.54 6 10a6 6 0 0 1 12 0c0 2.53-3.28 6.59-6 9.27z" />
+                <path
+                  d="M12 7a2.89 2.89 0 0 0-.5 0 3 3 0 0 0 .5 6 2.89 2.89 0 0 0 .5 0 3 3 0 0 0-.5-6zm.81 3.58a1 1 0 0 1-.64.41H12a1 1 0 0 1-.81-1.58 1 1 0 0 1 .64-.41H12a1 1 0 0 1 .81 1.58z" />
+              </svg>
+            </div>
+            <div class="filter-item prtltmmc-dropdown">
+              <div class="filter-item_label" for="embark">Embarque</div>
+              <select name="embark" id="embarks">
+                <option>Embarque</option>
+              </select>
+              <div class="custom-dropdown">
+                <div class="selected-option">Embarque</div>
+                <div class="dropdown-options" style="display: none;"></div>
+              </div>
+              <svg class="icon_dates" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 6.68758C12.3757 6.68758 12.7361 6.53833 13.0017 6.27265C13.2674 6.00697 13.4167 5.64664 13.4167 5.27091C13.4167 4.89519 13.2674 4.53486 13.0017 4.26918C12.7361 4.0035 12.3757 3.85425 12 3.85425C11.6243 3.85425 11.2639 4.0035 10.9983 4.26918C10.7326 4.53486 10.5833 4.89519 10.5833 5.27091C10.5833 5.64664 10.7326 6.00697 10.9983 6.27265C11.2639 6.53833 11.6243 6.68758 12 6.68758ZM12 6.68758V20.1459M8.45833 14.1251C7.04167 14.1251 5.97917 13.4167 4.91667 12.0001H4.5625C4.5625 15.3151 6.73 18.1222 9.72625 19.0834C10.5833 19.3667 11.2917 19.4376 11.9115 20.1459H12.0885C12.7083 19.4376 13.4167 19.3667 14.2745 19.0834C17.2693 18.1222 19.4375 15.3151 19.4375 12.0001H19.0833C18.0208 13.4167 16.9583 14.1251 15.5417 14.1251M8.45833 8.81258C8.45833 8.81258 10.2292 9.52091 12 9.52091C13.7708 9.52091 15.5417 8.81258 15.5417 8.81258"
+                  stroke="#CC0000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <div class="filter-item prtltmmc-dropdown">
+              <div class="filter-item_label" for="duration">Duración</div>
+              <select name="duration" id="durations">
+                <option value="">Duración</option>
+              </select>
+              <div class="custom-dropdown">
+                <div class="selected-option">Duración</div>
+                <div class="dropdown-options" style="display: none;"></div>
+              </div>
+              <svg class="icon_dates" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12.1468 20.8125C17.0199 20.8125 20.9703 16.895 20.9703 12.0625C20.9703 7.23001 17.0199 3.3125 12.1468 3.3125C7.27367 3.3125 3.32324 7.23001 3.32324 12.0625C3.32324 16.895 7.27367 20.8125 12.1468 20.8125Z"
+                  stroke="#CC0000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M12.3308 6.88599V12.2463L15.9344 14.0331" stroke="#CC0000" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <div class="filter-item prtltmmc-dropdown">
+              <div class="filter-item_label" for="departure">Fecha Salida</div>
+              <div class="custom-dropdown is_fake">
+                <div class="selected-option">Fecha Salida</div>
               </div>
               <svg class="icon_dates" width="24px" xmlns="http://www.w3.org/2000/svg" fill="#f00" id="location"
                 viewBox="0 0 24 24">
@@ -236,516 +687,6 @@
 
         <div class="prtltmmc-search-block-B">
           <div class="prtltmmc-dropdown-dates" id="departures">
-          </div>
-        </div>
-      </div>
-
-
-      <div class="prtltmmc-global-wrap" data-portlet="PORTLET_VV_HERO" data-id="VIRGIN-EXPERIENCE_PORTLET_VV_HERO_0">
-        <div
-          class="prtlt-digitup prtltmmc-image-content edit-option-desktop-image edit-option-mobile-image edit-option-promo">
-          <div class="prtltmmc-digitup-heroSlide prtltmmc-image-content-item">
-            <div class="prtltmmc-contenteditable" style="position: relative;">
-              <p><img src="https://www.mundomarcruceros.com/wlgs/mundomar-images/VIRGIN-PRUEBA-1142x500.webp" alt=""
-                  class="is_desktop main_image prtltmmc-block-image"> <img
-                  src="https://www.mundomarcruceros.com/wlgs/mundomar-images/VIRGIN-PRUEBA-1142x500.webp" alt=""
-                  class="is_mobile main_image prtltmmc-block-image"></p>
-            </div>
-            <div class="main_box">
-              <div class="left_side">
-                <div class="left_side_box">
-                  <div class="content_box">
-                    <div class="image_box prtltmmc-contenteditable" style="position: relative;">
-                      <p><br><img
-                          src="https://cdn.speedsize.com/eb8d0010-7300-4129-8a6d-74bc221f9caf/https://www.virginvoyages.com/dam/jcr:5ddc358f-3e87-4cb6-a4bc-0338d8d36d37/Wave2024-US-Lockup-desktop-3.png"
-                          alt="" class="promo prtltmmc-block-image"></p>
-                    </div>
-                    <div class="title prtltmmc-contenteditable" style="position: relative;">
-                      <h2>LUJO SIEMPRE INCLUIDO</h2>
-                    </div>
-                    <div class="description prtltmmc-contenteditable" style="position: relative;">
-                      <p>Virgin Voyages se ha ocupado de todos los detalles para que solo tengas que relajarte y
-                        disfrutar de las vacaciones que te mereces. Todo lo que se indica a continuación está incluido
-                        en tu viaje.
-                      </p>
-                      <div>
-                        <ul>
-                          <li>
-                            <h5>Todos los restaurantes de especialidad <br></h5>
-                          </li>
-                          <li>
-                            <h5>+ 20 espacios gastronómicos<br></h5>
-                          </li>
-                          <li>
-                            <h5>Bebidas esenciales<br></h5>
-                          </li>
-                          <li>
-                            <h5>WiFi<br></h5>
-                          </li>
-                          <li>
-                            <h5>Propinas<br></h5>
-                          </li>
-                          <li>
-                            <h5>Shows<br></h5>
-                          </li>
-                          <li>
-                            <h5>Clases de fitness en grupo</h5>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="button_side prtltmmc-contenteditable" style="position: relative;">
-                    <div><a href="Virgin-Voyages-Incluido.html">DESCUBRE MÁS</a></div>
-                  </div>
-                </div>
-              </div>
-              <div class="right_side prtltmmc-contenteditable">
-                <p><br></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="prtltmmc-global-wrap" data-portlet="PORTLET_VV_SEPARATOR"
-        data-id="VIRGIN-EXPERIENCE_PORTLET_VV_SEPARATOR_0">
-        <div class="prtlt-digitup">
-          <div class="prtltmmc-digitup-separator">
-            <div class="main_content">
-              <div class="headline prtltmmc-contenteditable" style="position: relative;">
-                <p><br></p>
-              </div>
-              <div class="title prtltmmc-contenteditable" style="position: relative;">
-                <h1>LA EXPERIENCIA VIRGIN VOYAGES</h1>
-              </div>
-              <div class="description prtltmmc-contenteditable" style="position: relative;">
-                <h3>Descubre todo lo que Virgin Voyages tiene para ofrecer.</h3>
-              </div>
-              <div class="button_side prtltmmc-contenteditable" style="position: relative;">
-                <p>Una naviera galardonada, solo para adultos</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="prtltmmc-global-wrap" data-portlet="PORTLET_VV_SLIDER2"
-        data-id="VIRGIN-EXPERIENCE_PORTLET_VV_SLIDER2_0">
-        <div class="prtlt-digitup prtltmmc-boxes-outstand">
-          <div class="prtltmmc-digitup-slider2 prtltmmc-row-boxes-outstand">
-            <div
-              class="prtltmmc-digitup-slider2-item prtltmmc-cell-boxes-outstand prtltmmc-image-content edit-option-reverse edit-option-url edit-option-desktop-image">
-              <div class="prtltmmc-image-content-item">
-                <img class="main_image is_desktop prtltmmc-block-image"
-                  src="https://cdn.mundomarcruceros.com/wlgs/mundomar-images/VV-NAVIERA-SLIDER1.webp" alt="">
-                <div class="text prtltmmc-contenteditable">
-                  <h4>Menús elaborados por Chefs con Estrella Michelin en</h4>
-                  <h4>+20 espacios gastronómicos y restaurantes de especialidad</h4>
-                </div>
-                <div class="arrow">
-                  <a class="edit_url" href="Virgin-Voyages-Gastronomia.html">
-                    <svg viewBox="0 0 24 24" width="24" height="24">
-                      <path xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"
-                        d="M20.5408 11.9471C20.5408 11.773 20.4358 11.5419 20.3293 11.4297L14.3281 5.03486C14.0479 4.74435 13.594 4.71068 13.2673 5.00552C12.9753 5.26909 12.968 5.78315 13.238 6.06938L18.0554 11.1946L4.34977 11.1946C3.93546 11.1946 3.59961 11.5314 3.59961 11.9469C3.59961 12.3624 3.93546 12.6993 4.34977 12.6993L18.0554 12.6993L13.238 17.8246C12.968 18.1107 12.9872 18.6122 13.2673 18.8884C13.563 19.18 14.0522 19.154 14.3281 18.859L20.3293 12.4642C20.5056 12.2908 20.5378 12.1237 20.5408 11.9471Z"
-                        fill="#CC0000"></path>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div
-              class="prtltmmc-digitup-slider2-item prtltmmc-cell-boxes-outstand prtltmmc-image-content edit-option-reverse edit-option-url edit-option-desktop-image">
-              <div class="prtltmmc-image-content-item">
-                <img class="main_image is_desktop prtltmmc-block-image"
-                  src="https://cdn.mundomarcruceros.com/wlgs/mundomar-images/VV-NAVIERA-SLIDER2.webp" alt="">
-                <div class="text prtltmmc-contenteditable">
-                  <h4>Muchas razones para brindar una... o 2 veces</h4>
-                </div>
-                <div class="arrow">
-                  <a class="edit_url" href="Virgin-Voyages-Bares-Bebidas.html">
-                    <svg viewBox="0 0 24 24" width="24" height="24">
-                      <path xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"
-                        d="M20.5408 11.9471C20.5408 11.773 20.4358 11.5419 20.3293 11.4297L14.3281 5.03486C14.0479 4.74435 13.594 4.71068 13.2673 5.00552C12.9753 5.26909 12.968 5.78315 13.238 6.06938L18.0554 11.1946L4.34977 11.1946C3.93546 11.1946 3.59961 11.5314 3.59961 11.9469C3.59961 12.3624 3.93546 12.6993 4.34977 12.6993L18.0554 12.6993L13.238 17.8246C12.968 18.1107 12.9872 18.6122 13.2673 18.8884C13.563 19.18 14.0522 19.154 14.3281 18.859L20.3293 12.4642C20.5056 12.2908 20.5378 12.1237 20.5408 11.9471Z"
-                        fill="#CC0000"></path>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="prtltmmc-global-wrap" data-portlet="PORTLET_VV_SLIDER2"
-        data-id="VIRGIN-EXPERIENCE_PORTLET_VV_SLIDER2_1">
-        <div class="prtlt-digitup prtltmmc-boxes-outstand">
-          <div class="prtltmmc-digitup-slider2 prtltmmc-row-boxes-outstand">
-            <div
-              class="prtltmmc-digitup-slider2-item prtltmmc-cell-boxes-outstand prtltmmc-image-content edit-option-reverse edit-option-url edit-option-desktop-image">
-              <div class="prtltmmc-image-content-item">
-                <img class="main_image is_desktop prtltmmc-block-image"
-                  src="https://cdn.mundomarcruceros.com/wlgs/mundomar-images/VV-NAVIERA-SLIDER3.webp" alt="">
-                <div class="text prtltmmc-contenteditable">
-                  <h4>Producciones inmersivas para experiencias asombrosas</h4>
-                </div>
-                <div class="arrow">
-                  <a class="edit_url" href="Virgin-Voyages-Entretenimiento.html">
-                    <svg viewBox="0 0 24 24" width="24" height="24">
-                      <path xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"
-                        d="M20.5408 11.9471C20.5408 11.773 20.4358 11.5419 20.3293 11.4297L14.3281 5.03486C14.0479 4.74435 13.594 4.71068 13.2673 5.00552C12.9753 5.26909 12.968 5.78315 13.238 6.06938L18.0554 11.1946L4.34977 11.1946C3.93546 11.1946 3.59961 11.5314 3.59961 11.9469C3.59961 12.3624 3.93546 12.6993 4.34977 12.6993L18.0554 12.6993L13.238 17.8246C12.968 18.1107 12.9872 18.6122 13.2673 18.8884C13.563 19.18 14.0522 19.154 14.3281 18.859L20.3293 12.4642C20.5056 12.2908 20.5378 12.1237 20.5408 11.9471Z"
-                        fill="#CC0000"></path>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div
-              class="prtltmmc-digitup-slider2-item prtltmmc-cell-boxes-outstand prtltmmc-image-content edit-option-reverse edit-option-url edit-option-desktop-image">
-              <div class="prtltmmc-image-content-item">
-                <img class="main_image is_desktop prtltmmc-block-image"
-                  src="https://cdn.speedsize.com/eb8d0010-7300-4129-8a6d-74bc221f9caf/https://www.virginvoyages.com/dam/jcr:64a66570-223a-4e2c-96e1-a07f09fefa77/Wave24-Dual-Banner%20704x320-Splash-Romance-1.jpg"
-                  alt="">
-                <div class="text prtltmmc-contenteditable">
-                  <h4>Disfruta del mejor bienestar a tu manera</h4>
-                </div>
-                <div class="arrow">
-                  <a class="edit_url" href="Virgin-Voyages-Fitness-Spa-es.html">
-                    <svg viewBox="0 0 24 24" width="24" height="24">
-                      <path xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"
-                        d="M20.5408 11.9471C20.5408 11.773 20.4358 11.5419 20.3293 11.4297L14.3281 5.03486C14.0479 4.74435 13.594 4.71068 13.2673 5.00552C12.9753 5.26909 12.968 5.78315 13.238 6.06938L18.0554 11.1946L4.34977 11.1946C3.93546 11.1946 3.59961 11.5314 3.59961 11.9469C3.59961 12.3624 3.93546 12.6993 4.34977 12.6993L18.0554 12.6993L13.238 17.8246C12.968 18.1107 12.9872 18.6122 13.2673 18.8884C13.563 19.18 14.0522 19.154 14.3281 18.859L20.3293 12.4642C20.5056 12.2908 20.5378 12.1237 20.5408 11.9471Z"
-                        fill="#CC0000"></path>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="prtltmmc-global-wrap" data-portlet="PORTLET_VV_SLIDER2"
-        data-id="VIRGIN-EXPERIENCE_PORTLET_VV_SLIDER2_2">
-        <div class="prtlt-digitup prtltmmc-boxes-outstand">
-          <div class="prtltmmc-digitup-slider2 prtltmmc-row-boxes-outstand">
-            <div
-              class="prtltmmc-digitup-slider2-item prtltmmc-cell-boxes-outstand prtltmmc-image-content edit-option-reverse edit-option-url edit-option-desktop-image">
-              <div class="prtltmmc-image-content-item">
-                <img class="main_image is_desktop prtltmmc-block-image"
-                  src="https://cdn.mundomarcruceros.com/wlgs/mundomar-images/VV-NAVIERA-SLIDER5.webp" alt="">
-                <div class="text prtltmmc-contenteditable">
-                  <h4>Las suites de lujo que te ofrecen el estilo de vida que te mereces</h4>
-                </div>
-                <div class="arrow">
-                  <a class="edit_url" href="Virgin-Voyages-Suites.html">
-                    <svg viewBox="0 0 24 24" width="24" height="24">
-                      <path xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"
-                        d="M20.5408 11.9471C20.5408 11.773 20.4358 11.5419 20.3293 11.4297L14.3281 5.03486C14.0479 4.74435 13.594 4.71068 13.2673 5.00552C12.9753 5.26909 12.968 5.78315 13.238 6.06938L18.0554 11.1946L4.34977 11.1946C3.93546 11.1946 3.59961 11.5314 3.59961 11.9469C3.59961 12.3624 3.93546 12.6993 4.34977 12.6993L18.0554 12.6993L13.238 17.8246C12.968 18.1107 12.9872 18.6122 13.2673 18.8884C13.563 19.18 14.0522 19.154 14.3281 18.859L20.3293 12.4642C20.5056 12.2908 20.5378 12.1237 20.5408 11.9471Z"
-                        fill="#CC0000"></path>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div
-              class="prtltmmc-digitup-slider2-item prtltmmc-cell-boxes-outstand prtltmmc-image-content edit-option-reverse edit-option-url edit-option-desktop-image">
-              <div class="prtltmmc-image-content-item">
-                <img class="main_image is_desktop prtltmmc-block-image"
-                  src="https://cdn.mundomarcruceros.com/wlgs/mundomar-images/VV-NAVIERA-SLIDER6.webp" alt="">
-                <div class="text prtltmmc-contenteditable">
-                  <h4>Disfruta de un sueño profundo en tu refugio privado</h4>
-                </div>
-                <div class="arrow">
-                  <a class="edit_url" href="Virgin-Voyages-Camarotes.html">
-                    <svg viewBox="0 0 24 24" width="24" height="24">
-                      <path xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"
-                        d="M20.5408 11.9471C20.5408 11.773 20.4358 11.5419 20.3293 11.4297L14.3281 5.03486C14.0479 4.74435 13.594 4.71068 13.2673 5.00552C12.9753 5.26909 12.968 5.78315 13.238 6.06938L18.0554 11.1946L4.34977 11.1946C3.93546 11.1946 3.59961 11.5314 3.59961 11.9469C3.59961 12.3624 3.93546 12.6993 4.34977 12.6993L18.0554 12.6993L13.238 17.8246C12.968 18.1107 12.9872 18.6122 13.2673 18.8884C13.563 19.18 14.0522 19.154 14.3281 18.859L20.3293 12.4642C20.5056 12.2908 20.5378 12.1237 20.5408 11.9471Z"
-                        fill="#CC0000"></path>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="prtltmmc-global-wrap" data-portlet="PORTLET_VV_IMG_TEXT"
-        data-id="BARCOS-VIRGIN-VOYAGES_PORTLET_VV_IMG_TEXT_0">
-        <div class="prtltmmc-image-content edit-option-reverse edit-option-color-dark">
-          <div class="prtltmmc-digitup prtlt-digitup prtltmmc-image-content-item">
-            <div class="main_box">
-              <div class="text_side">
-                <div class="top_side">
-                  <div class="name prtltmmc-contenteditable">
-                    <p>100% SOLO PARA ADULTOS</p>
-                  </div>
-                  <h1 class="title prtltmmc-contenteditable" style="position: relative;"><strong>Experiencias
-                      exclusivamente para adultos</strong>
-                  </h1>
-                  <p class="description prtltmmc-contenteditable" style="position: relative;"><br>Desde cenas decadentes
-                    hasta afterparties bañadas en rojo, vuelve a conectar con tu pareja, tus mejores amigos y contigo
-                    mismo para celebrar los momentos más dulces de la vida a bordo de nuestros viajes 100% sólo para
-                    adultos.
-                  </p>
-                  <div class="button">
-                    <div class="button_text prtltmmc-contenteditable" style="position: relative;">
-                      <p><a href="Virgin-Voyages-Incluido.html">DESCUBRE MÁS</a></p>
-                    </div>
-                    <svg width="35" height="34" viewBox="0 0 35 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M22.9447 24.4972L29.7329 17.6972H3.79858V16.2789H29.7329L22.9551 9.50276L23.9599 8.5L31.9238 16.4867C31.9897 16.5525 32.0421 16.6306 32.0778 16.7167C32.1135 16.8027 32.1319 16.8949 32.1319 16.9881C32.1319 17.0813 32.1135 17.1735 32.0778 17.2595C32.0421 17.3456 31.9897 17.4237 31.9238 17.4895L23.9494 25.5L22.9447 24.4972Z">
-                      </path>
-                    </svg>
-                  </div>
-                </div>
-                <div class="bottom_side">
-                  <div class="secondary_image_box prtltmmc-contenteditable">
-                    <p><img src="https://cdn.mundomarcruceros.com/wlgs/mundomar-images/VV-NAVIERA-ADULTOS-PEQ.webp"
-                        alt="" class="prtltmmc-block-image secondary_image"></p>
-                  </div>
-                </div>
-              </div>
-              <div class="image_side prtltmmc-contenteditable">
-                <p><img src="https://cdn.mundomarcruceros.com/wlgs/mundomar-images/VIRGIN-PRUEBA-800X1000.webp" alt=""
-                    class="main_image prtltmmc-block-image"></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="prtltmmc-global-wrap" data-portlet="PORTLET_VV_IMG_TEXT"
-        data-id="BARCOS-VIRGIN-VOYAGES_PORTLET_VV_IMG_TEXT_1">
-        <div class="prtltmmc-image-content edit-option-reverse edit-option-color-dark">
-          <div class="prtltmmc-digitup prtlt-digitup prtltmmc-image-content-item reverse color-dark">
-            <div class="main_box">
-              <div class="text_side">
-                <div class="top_side">
-                  <div class="name prtltmmc-contenteditable">
-                    <p>NAVEGANDO HACIA EL S. XXI</p>
-                  </div>
-                  <h1 class="title prtltmmc-contenteditable" style="position: relative;">Camarotes inteligentes</h1>
-                  <p class="description prtltmmc-contenteditable" style="position: relative;"><br>Observa. Disminuye.
-                    Ordena. No estamos diciendo que te quedes en la cama todo el día, pero con una tableta en cada
-                    camarote y nuestra aplicación Virgin Voyages a mano, no te culparíamos si lo hicieras. Con sólo
-                    pulsar y deslizar un dedo, puedes cambiar el ambiente con la iluminación, ver las últimas películas
-                    (y clásicos), y pedir ShipEats - todo mientras permaneces completamente en posición horizontal.
-                  </p>
-                  <div class="button">
-                    <div class="button_text prtltmmc-contenteditable" style="position: relative;">
-                      <p><a href="Virgin-Voyages-Camarotes.html">DESCUBRE MÁS</a></p>
-                    </div>
-                    <svg width="35" height="34" viewBox="0 0 35 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M22.9447 24.4972L29.7329 17.6972H3.79858V16.2789H29.7329L22.9551 9.50276L23.9599 8.5L31.9238 16.4867C31.9897 16.5525 32.0421 16.6306 32.0778 16.7167C32.1135 16.8027 32.1319 16.8949 32.1319 16.9881C32.1319 17.0813 32.1135 17.1735 32.0778 17.2595C32.0421 17.3456 31.9897 17.4237 31.9238 17.4895L23.9494 25.5L22.9447 24.4972Z">
-                      </path>
-                    </svg>
-                  </div>
-                </div>
-                <div class="bottom_side">
-                  <div class="secondary_image_box prtltmmc-contenteditable">
-                    <p><img
-                        src="https://cdn.mundomarcruceros.com/wlgs/mundomar-images/VV-ADRIATICO-NEWPORTVV-CAMAROTES2.webp"
-                        alt="" class="prtltmmc-block-image secondary_image"></p>
-                  </div>
-                </div>
-              </div>
-              <div class="image_side prtltmmc-contenteditable">
-                <p><img
-                    src="https://cdn.mundomarcruceros.com/wlgs/mundomar-images/VV-ADRIATICO-NEWPORTVV-CAMAROTES.webp"
-                    alt="" class="main_image prtltmmc-block-image"></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="prtltmmc-global-wrap" data-portlet="PORTLET_VV_IMG_TEXT"
-        data-id="BARCOS-VIRGIN-VOYAGES_PORTLET_VV_IMG_TEXT_2">
-        <div class="prtltmmc-image-content edit-option-reverse edit-option-color-dark">
-          <div class="prtltmmc-digitup prtlt-digitup prtltmmc-image-content-item">
-            <div class="main_box">
-              <div class="text_side">
-                <div class="top_side">
-                  <div class="name prtltmmc-contenteditable">
-                    <p>NAVEGAR HACIA EL CERO NETO</p>
-                  </div>
-                  <h1 class="title prtltmmc-contenteditable" style="position: relative;"><strong>A sea change for all,
-                      un cambio radical para todos</strong>
-                  </h1>
-                  <p class="description prtltmmc-contenteditable" style="position: relative;"><br>Restaurar la salud de
-                    los océanos y establecer relaciones positivas en nuestras comunidades forma parte del ADN de nuestra
-                    marca. El uso de tecnología sostenible, la prohibición de plásticos de un solo uso y una
-                    alimentación cuidadosamente seleccionada son sólo algunas de las formas en que Virgin Voyages planea
-                    cuidar (sin dejar de disfrutar) de nuestro planeta.
-                  </p>
-                  <div class="button">
-                    <div class="button_text prtltmmc-contenteditable" style="position: relative;">
-                      <p><a href="Virgin-Voyages-Sostenibilidad.html">DESCUBRE MÁS</a></p>
-                    </div>
-                    <svg width="35" height="34" viewBox="0 0 35 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M22.9447 24.4972L29.7329 17.6972H3.79858V16.2789H29.7329L22.9551 9.50276L23.9599 8.5L31.9238 16.4867C31.9897 16.5525 32.0421 16.6306 32.0778 16.7167C32.1135 16.8027 32.1319 16.8949 32.1319 16.9881C32.1319 17.0813 32.1135 17.1735 32.0778 17.2595C32.0421 17.3456 31.9897 17.4237 31.9238 17.4895L23.9494 25.5L22.9447 24.4972Z">
-                      </path>
-                    </svg>
-                  </div>
-                </div>
-                <div class="bottom_side">
-                  <div class="secondary_image_box prtltmmc-contenteditable">
-                    <p><img src="https://cdn.mundomarcruceros.com/wlgs/mundomar-images/VV-NAVIERA-SEACHANGE-PEQ.webp"
-                        alt="" class="prtltmmc-block-image secondary_image"></p>
-                  </div>
-                </div>
-              </div>
-              <div class="image_side prtltmmc-contenteditable">
-                <p><img src="https://cdn.mundomarcruceros.com/wlgs/mundomar-images/VV-NAVIERA-SEACHANGE-GR.webp" alt=""
-                    class="main_image prtltmmc-block-image"></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="video_box">
-        <div class="video_side">
-          <video loop="" playsinline="" muted="" preload="auto" autoplay=""
-            src="https://cdn.speedsize.com/eb8d0010-7300-4129-8a6d-74bc221f9caf/https://www.virginvoyages.com/dam/jcr:f7b8136a-ce81-4b46-8ccb-ae8d6ff11ffc/VID-LIFE-Mermaid-1.mp4">
-          </video>
-        </div>
-        <div class="video_content">
-          <div class="video_text">Reserve now.<br>Pay later.</div>
-        </div>
-      </div>
-      <div class="virgin_explore in_video">
-        <div class="filter-bar">
-          <div class="filter-item">
-            <label for="regions">Regions</label>
-            <select id="regions">
-              <option>Zonas</option>
-              <optgroup label="Europa Mediterráneo">
-                <option value="ADR">Adriático</option>
-                <option value="MDI">Islas Griegas</option>
-                <option value="MAT">Med desde Inglaterra</option>
-                <option value="MDX">Mediterraneo Completo</option>
-                <option value="MDC">Mediterráneo Occidental</option>
-                <option value="MDO">Mediterráneo Oriental</option>
-                <option value="TSA">Tierra Santa</option>
-                <option value="MED">Todos los Mediterráneos</option>
-              </optgroup>
-              <optgroup label="Europa Norte">
-                <option value="BAL">Báltico</option>
-                <option value="CNO">Cabo Norte</option>
-                <option value="FIO">Fiordos Noruegos</option>
-                <option value="ISL">Islandia</option>
-                <option value="IBR">Islas Británicas</option>
-                <option value="NOR">Todo Norte de Europa</option>
-              </optgroup>
-              <optgroup label="Europa Resto">
-                <option value="ATL">Atlántico Oriental</option>
-                <option value="CAN">Canarias, Madeira, Azores</option>
-              </optgroup>
-              <optgroup label="Asia">
-                <option value="JAP">Japón</option>
-                <option value="IMR">Oriente Próximo, Dubái</option>
-                <option value="SAS">Sudeste Asiático</option>
-                <option value="ASI">Todo Asia</option>
-              </optgroup>
-              <optgroup label="Sudamérica">
-                <option value="SUD">Sudamérica</option>
-              </optgroup>
-              <optgroup label="Alaska">
-                <option value="ALK">Alaska</option>
-              </optgroup>
-              <optgroup label="Australia y Nueva Zelanda">
-                <option value="AUS">Australia y Nueva Zelanda</option>
-              </optgroup>
-              <optgroup label="Caribe">
-                <option value="CAR">Caribe</option>
-              </optgroup>
-              <optgroup label="Canal de Panamá">
-                <option value="CNP">Canal de Panamá</option>
-              </optgroup>
-              <optgroup label="Mini Cruceros">
-                <option value="MNI">Mini Crucero</option>
-              </optgroup>
-              <optgroup label="Canadá costa este">
-                <option value="CNI">Canadá y Nueva Inglaterra</option>
-              </optgroup>
-              <optgroup label="Costa del Pacífico">
-                <option value="RIV">Costa del Pacífico</option>
-                <option value="RI2">Riviera Mexicana</option>
-              </optgroup>
-              <optgroup label="Islas del Pacífico">
-                <option value="HAW">Hawái</option>
-                <option value="PSU">Islas del Pacífico Sur</option>
-                <option value="POL">Polinesia</option>
-              </optgroup>
-              <optgroup label="Expedicion">
-                <option value="ANT">Antártico</option>
-                <option value="ART">Ártico y Groenlandia</option>
-              </optgroup>
-              <optgroup label="Resto del Mundo">
-                <option value="AFR">Africa</option>
-                <option value="OCI">Océano Indico</option>
-              </optgroup>
-              <optgroup label="Transoceánicos">
-                <option value="TRA">Transatlantico</option>
-                <option value="TRP">Transpacífico</option>
-              </optgroup>
-              <optgroup label="Vuelta al Mundo">
-                <option value="SEG">Parciales de Vuelta al Mundo</option>
-                <option value="VUE">Vuelta al Mundo</option>
-              </optgroup>
-            </select>
-            <svg class="icon_location" width="24px" xmlns="http://www.w3.org/2000/svg" fill="#f00" id="location"
-              viewBox="0 0 24 24">
-              <path
-                d="M12 2a8 8 0 0 0-8 8c0 5 8 12 8 12s8-7 8-12a8 8 0 0 0-8-8zm0 17.27C9.28 16.59 6 12.54 6 10a6 6 0 0 1 12 0c0 2.53-3.28 6.59-6 9.27z" />
-              <path
-                d="M12 7a2.89 2.89 0 0 0-.5 0 3 3 0 0 0 .5 6 2.89 2.89 0 0 0 .5 0 3 3 0 0 0-.5-6zm.81 3.58a1 1 0 0 1-.64.41H12a1 1 0 0 1-.81-1.58 1 1 0 0 1 .64-.41H12a1 1 0 0 1 .81 1.58z" />
-            </svg>
-          </div>
-          <div class="filter-item">
-            <label for="dates">Fecha Salida</label>
-            <select id="dates">
-              <option value="">Fecha Salida</option>
-              <option value="2024-6">Jun 2024</option>
-              <option value="2024-7">Jul 2024</option>
-              <option value="2024-8">Ago 2024</option>
-              <option value="2024-9">Sep 2024</option>
-              <option value="2024-10">Oct 2024</option>
-              <option value="2024-11">Nov 2024</option>
-              <option value="2024-12">Dic 2024</option>
-              <option value="2025-1">Ene 2025</option>
-              <option value="2025-2">Feb 2025</option>
-              <option value="2025-3">Mar 2025</option>
-              <option value="2025-4">Abr 2025</option>
-              <option value="2025-5">May 2025</option>
-              <option value="2025-6">Jun 2025</option>
-              <option value="2025-7">Jul 2025</option>
-              <option value="2025-8">Ago 2025</option>
-              <option value="2025-9">Sep 2025</option>
-              <option value="2025-10">Oct 2025</option>
-              <option value="2025-11">Nov 2025</option>
-              <option value="2025-12">Dic 2025</option>
-              <option value="2026-1">Ene 2026</option>
-              <option value="2026-2">Feb 2026</option>
-              <option value="2026-3">Mar 2026</option>
-              <option value="2026-4">Abr 2026</option>
-              <option value="2026-5">May 2026</option>
-              <option value="2026-6">Jun 2026</option>
-              <option value="2026-7">Jul 2026</option>
-              <option value="2026-8">Ago 2026</option>
-              <option value="2026-9">Sep 2026</option>
-              <option value="2026-10">Oct 2026</option>
-              <option value="2026-11">Nov 2026</option>
-              <option value="2026-12">Dic 2026</option>
-              <option value="2027-1">Ene 2027</option>
-            </select>
-            <svg class="icon_dates" width="24px" xmlns="http://www.w3.org/2000/svg" fill="#f00" id="location"
-              viewBox="0 0 24 24">
-              <path d="M10 4h4v2h-4z" />
-              <path
-                d="M19 4h-1v2h1a1 1 0 0 1 1 1v3H4V7a1 1 0 0 1 1-1h1V4H5a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm1 15a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-7h16z" />
-              <path
-                d="M8 8a1 1 0 0 0 1-1V3a1 1 0 0 0-2 0v4a1 1 0 0 0 1 1zm8 0a1 1 0 0 0 1-1V3a1 1 0 0 0-2 0v4a1 1 0 0 0 1 1z" />
-            </svg>
-          </div>
-          <div class="filter-item explore-item">
-            <a href="/portal/cruceros">EXPLORE</a>
           </div>
         </div>
       </div>
@@ -921,7 +862,7 @@
       "cookie": "liobb0i0nlh2g1prbrj7rch7tl", "language": "es", "label": "virgin", "member": "mundomar", "api": "\/api-wlgs\/wlgs", "init": {
         "portlet3js": {
           "waitplease": "Un momento por favor", "updatecruises": "Cargando Cruceros", "updatenopromotions": "En este momento no existe ninguna promoci\u00f3n disponible dentro de los criterios de b\u00fasqueda seleccionados\", \"features\" : \"En este momento no existe ninguna caracter\u00edstica disponible dentro de los criterios de b\u00fasqueda seleccionados", "updateerror": "No se han encontrado cruceros con las opciones de b\u00fasqueda seleccionadas.Por favor, reintente con un nuevo criterio de b\u00fasqueda.", "errorsendmail": "Error enviando email", "soldout": "Vendido", "updatenewcruises": "Cargando m\u00e1s Cruceros"
-        }, "portlet2": true, "portlet2opened": true, "findCruise": "\/ portal\/ buscador.html", "result": "\/ portal\/cruceros", "pageURL": "https:\/\/www.mundomarcruceros.com\/portal\/cruceros"
+        }, "portlet2": true, "portlet2opened": true, "findCruise": "/portal/buscador.html", "result": "/portal/cruceros", "pageURL": "https:\/\/www.mundomarcruceros.com\/portal\/cruceros"
       }, "criteria": { "company": "VVS" }
     };
 </script>

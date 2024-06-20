@@ -300,6 +300,28 @@ var prtltmmcCkEditor = {
 			openImageChangeBox($(this), '.prtlt-video-content', true);
 		});
 
+		function changePosition(e, addClass) {
+			e.preventDefault();
+			var $container = $(e.target).closest('.prtltmmc-image-content');
+			var $element = $container.find('.virgin_explore');
+			$element.removeClass('to_bottom to_top');
+			if (addClass) {
+				$element.addClass(addClass);
+			}
+		}
+
+		$('body').on('click', '.prtlt-change-topPosition', function (e) {
+			changePosition(e, 'to_top');
+		});
+
+		$('body').on('click', '.prtlt-change-normalPosition', function (e) {
+			changePosition(e, null);
+		});
+
+		$('body').on('click', '.prtlt-change-bottomPosition', function (e) {
+			changePosition(e, 'to_bottom');
+		});
+
 		/////////////////////////////////////////////////////
 		///////////////// SWIPER ADD/REMOVE /////////////////
 		/////////////////////////////////////////////////////
@@ -330,6 +352,7 @@ var prtltmmcCkEditor = {
 				alert('No se puede eliminar la única diapositiva.');
 			}
 		});
+
 		function moveSlide(swiper, fromIndex, toIndex) {
 			if (fromIndex === toIndex || fromIndex < 0 || toIndex < 0 || fromIndex >= swiper.slides.length || toIndex >= swiper.slides.length) {
 				return; // No hacer nada si los índices son iguales o están fuera de los límites
@@ -553,6 +576,11 @@ var prtltmmcCkEditor = {
 			}
 			if ($this.hasClass('edit-option-moveSlideRight')) {
 				toolBarMenu += '<li><a href="#" class="prtlt-change-moveSlideRight">Move right</a></li>';
+			}
+			if ($this.hasClass('edit-option-position')) {
+				toolBarMenu += '<li><a href="#" class="prtlt-change-topPosition">Top position</a></li>';
+				toolBarMenu += '<li><a href="#" class="prtlt-change-normalPosition">Normal position</a></li>';
+				toolBarMenu += '<li><a href="#" class="prtlt-change-bottomPosition">Bottom position</a></li>';
 			}
 			if ($this.hasClass('edit-option-color-dark')) {
 				const name = $item.hasClass('color-dark') ? 'Modo white' : 'Modo dark';

@@ -14,6 +14,7 @@
   <link rel="stylesheet" type="text/css" href="/wlgs/prtltmmc-css/dynamic-styles-mmc-20220304.css">
   <link rel="stylesheet" type="text/css" href="/wlgs/prtltmmc-css/styles-vvs.css">
   <link rel="stylesheet" type="text/css" href="../css/styles-vm.css">
+  <link rel="stylesheet" type="text/css" href="../css/styles-virgin.css">
   <!-- <link rel="stylesheet" type="text/css" href="../css/styles-virgin.css"> -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
@@ -25,43 +26,102 @@
 
 </body>
 <script>
-  function fetchAndReplaceBody(url) {
-    fetch(url)
-      .then(response => {
-        console.log('response', response);
-        if (response.ok) {
-          return response.text(); // Obtener el HTML como texto
-        }
-        throw new Error('Failed to fetch the page: ' + response.status);
-      })
-      .then(html => {
-        const parser = new DOMParser(); // Crear un nuevo DOMParser
-        const doc = parser.parseFromString(html, "text/html"); // Parsear el HTML
-        const newBody = doc.body; // Obtener el <body> del documento parseado
+  document.addEventListener('DOMContentLoaded', function () {
 
-        // Reemplazar el contenido del body actual con el nuevo
-        // document.body.innerHTML = newBody.innerHTML;
-        document.documentElement.replaceChild(newBody, document.body);
+    function fetchAndReplaceBody(url) {
+      fetch(url)
+        .then(response => {
+          console.log('response', response);
+          if (response.ok) {
+            return response.text(); // Obtener el HTML como texto
+          }
+          throw new Error('Failed to fetch the page: ' + response.status);
+        })
+        .then(html => {
+          const parser = new DOMParser(); // Crear un nuevo DOMParser
+          const doc = parser.parseFromString(html, "text/html"); // Parsear el HTML
+          const newBody = doc.body; // Obtener el <body> del documento parseado
+
+          // Reemplazar el contenido del body actual con el nuevo
+          // document.body.innerHTML = newBody.innerHTML;
+          document.documentElement.replaceChild(newBody, document.body);
+          document.body.classList.remove('diagonal-transparencies-theme');
 
 
-      })
-      .catch(error => {
-        console.error('Error fetching the URL:', error);
-      });
+
+        })
+        .catch(error => {
+          console.error('Error fetching the URL:', error);
+        });
+    }
+
+    // fetchAndReplaceBody('/portal/SeaDream.html');
+    fetchAndReplaceBody('/portal/cruceros');
+    setTimeout(() => {
+      // loadSliderConfigAll();
+      loadAdditionalScripts();
+    }, 1000);
+  });
+
+
+  function loadAdditionalScripts() {
+    // Scripts externos
+    const scripts = [
+      "https://code.jquery.com/jquery-3.6.0.min.js",
+      "/wlgs/prtltmmc-js/modernizr-2.6.2.min.js",
+      "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js",
+      "../js/portlets-vm.js",
+      "/wlgs/prtltmmc-js/global-functions-v24.2.js?v23",
+      "/wlgs/prtltmmc-js/search-functions-v21.3-a.js",
+      "/api-lib/requirejs/require.js"
+    ];
+
+    scripts.forEach(src => {
+      const script = document.createElement('script');
+      script.src = src;
+      script.async = false; // Para asegurar la ejecución en el orden
+      document.body.appendChild(script);
+    });
+
+    // Script con atributos especiales
+    const requireScript = document.createElement('script');
+    requireScript.src = "/api-lib/requirejs/require.js";
+    requireScript.setAttribute("data-main", "/wlgs/main-v24.1b.min");
+    requireScript.setAttribute("data-module", "wlgs/controller-cruises");
+    document.body.appendChild(requireScript);
+
+    setTimeout(() => {
+      prtltmmcPopUps.init();
+      prtltmmcNav.init();
+    }, 1000);
   }
 
-  // fetchAndReplaceBody('/portal/SeaDream.html');
-  fetchAndReplaceBody('/portal/Prueba-Virgin-Portlets-DigitUp.html');
-  setTimeout(() => {
-    loadSliderConfigAll();
-  }, 2000);
-
-
 </script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-<!-- <script type="module" src="../js/portlets-vm.js"></script> -->
 <script src="../js/portlets-vm.js"></script>
+<script type="text/javascript" src="/wlgs/prtltmmc-js/global-functions-v24.2.js?v23"></script>
+<script type="text/javascript" src="/wlgs/prtltmmc-js/search-functions-v21.3-a.js"></script> -->
+
+<script>
+  var prtltmmcrequest = { "canNavigate": false };
+  var
+    MMC = {
+      "cookie": "liobb0i0nlh2g1prbrj7rch7tl", "language": "es", "label": "virgin", "member": "mundomar", "api": "\/api-wlgs\/wlgs", "init": {
+        "portlet3js": {
+          "waitplease": "Un momento por favor", "updatecruises": "Cargando Cruceros", "updatenopromotions": "En este momento no existe ninguna promoci\u00f3n disponible dentro de los criterios de b\u00fasqueda seleccionados\", \"features\" : \"En este momento no existe ninguna caracter\u00edstica disponible dentro de los criterios de b\u00fasqueda seleccionados", "updateerror": "No se han encontrado cruceros con las opciones de b\u00fasqueda seleccionadas.Por favor, reintente con un nuevo criterio de b\u00fasqueda.", "errorsendmail": "Error enviando email", "soldout": "Vendido", "updatenewcruises": "Cargando m\u00e1s Cruceros"
+        }, "portlet2": true, "portlet2opened": true, "findCruise": "/portal/buscador.html", "result": "/portal/cruceros", "pageURL": "https:\/\/www.mundomarcruceros.com\/portal\/cruceros"
+      }, "criteria": { "company": "VVS" }
+    };
+</script>
+
+<!-- <script src="/api-lib/requirejs/require.js" data-main="/wlgs/main-v24.1b.min"
+  data-module="wlgs/controller-cruises"></script> -->
+<!-- <script>
+  prtltmmcPopUps.init();
+  prtltmmcNav.init();
+</script> -->
 
 
 </html>

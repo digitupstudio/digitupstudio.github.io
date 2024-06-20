@@ -14,16 +14,25 @@
           <div class="footer_language_line">
             <div class="footer_language_line_left">
               <label class="languageSelector__label" for="footerLanguageSelect">
-                Idioma:
+                $message.language:
               </label>
             </div>
+            #if ($languages.size() > 0)
             <div class="footer_language_line_right">
               <div class="dropdown_virgin">
-                <button class="dropbtn">Español</button>
+                <button class="dropbtn">
+                  #if ($languages.size() > 0)
+                  #foreach( $language in $languages )
+                  #if ($language.selected)
+                  $language.text
+                  #end
+                  #end
+                  #end
+                </button>
                 <div class="dropdown-content">
-                  <a href="/es">Español</a>
-                  <a href="/en">English</a>
-                  <a href="/pt">Portuguese</a>
+                  #foreach( $language in $languages )
+                  <a href="$language.link">$language.text</a>
+                  #end
                 </div>
               </div>
               <span class="Icon">
@@ -33,6 +42,7 @@
                 </svg>
               </span>
             </div>
+            #end
           </div>
         </div>
       </div>
@@ -104,15 +114,5 @@
       </div>
     </div>
   </div>
-  <p>©2006-2024 Mundomar Cruceros S.L. All Rights Reserved. Site content may not be reproduced without express
-    written permission.
-    <a style="display:none" class="prtltmmc-open-popup prtltmmc-open-popup-cookies-definition"
-      href="/wlgs/cookie-consent.php?member=mundomar&amp;label=portal&amp;language=es&amp;mode=2"
-      rel="/wlgs/cookie-consent.php?member=mundomar&amp;label=portal&amp;language=es&amp;mode=2"
-      data-add-class="prtltmmc-without-margins prtltmmc-fixed-modal"></a>
-    <a style="display:none" class="prtltmmc-open-popup prtltmmc-open-cookie-policy"
-      href="/wlgs/cookie-consent.php?member=mundomar&amp;label=portal&amp;language=es&amp;mode=3"
-      rel="/wlgs/cookie-consent.php?member=mundomar&amp;label=portal&amp;language=es&amp;mode=3"
-      data-add-class="prtltmmc-without-margins prtltmmc-fixed-modal"></a>
-  </p>
+  <p>$message.allrightsreserved</p>
 </div>

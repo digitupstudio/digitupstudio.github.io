@@ -30,51 +30,113 @@
       #end
       #end
       <div class="bottom_side_account is_mobile_virgin">
-        <a class="prtltmmc-open-popup prtltmmc-signup-button" href="#"
-          rel="/api-portal-login/wlgs/portal/es/loginform/0/none" data-add-class="prtltmmc-without-margins"
-          data-max-width="600px" data-max-height="600px">
+        <a class="prtltmmc-open-popup prtltmmc-signup-button" href="#" rel="$link.signup.link"
+          data-add-class="prtltmmc-without-margins" data-max-width="600px" data-max-height="600px">
           <svg class="AD_TriggerIcon_Account" viewBox="0 0 24 24">
             <path class="AD_TriggerIcon_Account_Status" fill="#ffffff" d="M11.3 20H3.2v-5.7h8.2V20z"></path>
             <path
               d="M18.23 10.42a4.19 4.19 0 1 0-4.76 0A6.16 6.16 0 0 0 10.56 13a2.61 2.61 0 0 0-.48 0h-.34a2.45 2.45 0 0 0-4.87 0h-.43A2.44 2.44 0 0 0 2 15.42v3.39a2.44 2.44 0 0 0 2.44 2.44h5.63a2.45 2.45 0 0 0 2.44-2.44v-3.38a2.37 2.37 0 0 0-.4-1.37 4.27 4.27 0 0 1 8 2H22a6.2 6.2 0 0 0-3.77-5.64zM7.31 12.29a1 1 0 0 1 .91.69H6.39a1 1 0 0 1 .92-.69zm3.44 6.52a.69.69 0 0 1-.68.68H4.44a.68.68 0 0 1-.68-.68v-3.39a.68.68 0 0 1 .68-.68h5.63a.69.69 0 0 1 .68.68zm5.1-9.53A2.33 2.33 0 1 1 18.17 7a2.32 2.32 0 0 1-2.32 2.28z">
             </path>
           </svg>
-          Account
+          $link.signup.text
         </a>
       </div>
       <li class="small is_mobile_virgin">
-        <a class=" with_arrow" href="#">España</a>
+        <a class="with_arrow" href="#">
+          #if ($markets.size() > 0)
+          #foreach( $market in $markets )
+          #if ($market.selected)
+          $market.text
+          #end
+          #end
+          #end
+        </a>
         <div class="prtltmmc-navbar-dropdown-menu">
           <ul>
-            <li><a href="http://www.mundomarcruceros.mx/?prtltmmc-changemarket">México</a></li>
-            <li><a href="http://www.mundomarcruzeiros.pt/?prtltmmc-changemarket">Portugal</a></li>
+            #if ($markets.size() > 0)
+            #foreach( $market in $markets )
+            <li><a href="$market.link">$market.text</a></li>
+            #end
+            #end
           </ul>
         </div>
       </li>
       <li class="small is_mobile_virgin">
-        <a class="with_arrow" href="#">Español</a>
+        <a class="with_arrow" href="#">
+          #if ($languages.size() > 0)
+          #foreach( $language in $languages )
+          #if ($language.selected)
+          $language.text
+          #end
+          #end
+          #end
+        </a>
         <div class="prtltmmc-navbar-dropdown-menu">
           <ul>
-            <li><a href="/portal/Prueba-Virgin-Portlets-DigitUp.html">Español</a></li>
-            <li><a href="/portal/Prueba-Virgin-Portlets-DigitUp-tp.html">Portuguese</a></li>
+            #if ($languages.size() > 0)
+            #foreach( $language in $languages )
+            <li><a href="$language.link">$language.text</a></li>
+            #end
+            #end
           </ul>
         </div>
       </li>
     </ul>
   </div>
   <div class="right_side">
-    <a class="prtltmmc-open-popup prtltmmc-signup-button with_arrow" href="#"
-      rel="/api-portal-login/wlgs/portal/es/loginform/0/none" data-add-class="prtltmmc-without-margins"
-      data-max-width="600px" data-max-height="600px">
-      <svg class="AD_TriggerIcon_Account" viewBox="0 0 24 24">
-        <path class="AD_TriggerIcon_Account_Status" fill="#ffffff" d="M11.3 20H3.2v-5.7h8.2V20z"></path>
-        <path
-          d="M18.23 10.42a4.19 4.19 0 1 0-4.76 0A6.16 6.16 0 0 0 10.56 13a2.61 2.61 0 0 0-.48 0h-.34a2.45 2.45 0 0 0-4.87 0h-.43A2.44 2.44 0 0 0 2 15.42v3.39a2.44 2.44 0 0 0 2.44 2.44h5.63a2.45 2.45 0 0 0 2.44-2.44v-3.38a2.37 2.37 0 0 0-.4-1.37 4.27 4.27 0 0 1 8 2H22a6.2 6.2 0 0 0-3.77-5.64zM7.31 12.29a1 1 0 0 1 .91.69H6.39a1 1 0 0 1 .92-.69zm3.44 6.52a.69.69 0 0 1-.68.68H4.44a.68.68 0 0 1-.68-.68v-3.39a.68.68 0 0 1 .68-.68h5.63a.69.69 0 0 1 .68.68zm5.1-9.53A2.33 2.33 0 1 1 18.17 7a2.32 2.32 0 0 1-2.32 2.28z">
-        </path>
-      </svg>
-    </a>
-    <a href="/portal/buscador.html" class="book_button">
-      BOOK
-    </a>
+    <div class="top_side display_992">
+      <div class="prtltmmc-nav-preheader">
+        <li class="prtltmmc-desktop-view prtltmmc-dropdown with_arrow small">
+          <span>
+            #if ($markets.size() > 0)
+            #foreach( $market in $markets )
+            #if ($market.selected)
+            $market.text
+            #end
+            #end
+            #end
+          </span>
+          <ul>
+            #if ($markets.size() > 0)
+            #foreach( $market in $markets )
+            <li><a href="$market.link">$market.text</a></li>
+            #end
+            #end
+          </ul>
+        </li>
+        <li class="prtltmmc-desktop-view prtltmmc-dropdown prtltmmc-last-child with_arrow small">
+          <span>
+            #if ($languages.size() > 0)
+            #foreach( $language in $languages )
+            #if ($language.selected)
+            $language.text
+            #end
+            #end
+            #end
+          </span>
+          <ul>
+            #if ($languages.size() > 0)
+            #foreach( $language in $languages )
+            <li><a href="$language.link">$language.text</a></li>
+            #end
+            #end
+          </ul>
+        </li>
+      </div>
+    </div>
+    <div class="bottom_side">
+      <a class="prtltmmc-open-popup prtltmmc-signup-button with_arrow" href="#" rel="$link.signup.link"
+        data-add-class="prtltmmc-without-margins" data-max-width="600px" data-max-height="600px">
+        <svg class="AD_TriggerIcon_Account" viewBox="0 0 24 24">
+          <path class="AD_TriggerIcon_Account_Status" fill="#ffffff" d="M11.3 20H3.2v-5.7h8.2V20z"></path>
+          <path
+            d="M18.23 10.42a4.19 4.19 0 1 0-4.76 0A6.16 6.16 0 0 0 10.56 13a2.61 2.61 0 0 0-.48 0h-.34a2.45 2.45 0 0 0-4.87 0h-.43A2.44 2.44 0 0 0 2 15.42v3.39a2.44 2.44 0 0 0 2.44 2.44h5.63a2.45 2.45 0 0 0 2.44-2.44v-3.38a2.37 2.37 0 0 0-.4-1.37 4.27 4.27 0 0 1 8 2H22a6.2 6.2 0 0 0-3.77-5.64zM7.31 12.29a1 1 0 0 1 .91.69H6.39a1 1 0 0 1 .92-.69zm3.44 6.52a.69.69 0 0 1-.68.68H4.44a.68.68 0 0 1-.68-.68v-3.39a.68.68 0 0 1 .68-.68h5.63a.69.69 0 0 1 .68.68zm5.1-9.53A2.33 2.33 0 1 1 18.17 7a2.32 2.32 0 0 1-2.32 2.28z">
+          </path>
+        </svg>
+      </a>
+      <a href="$link.findcruise.link" class="book_button">
+        $link.findcruise.text
+      </a>
+    </div>
   </div>
 </div>

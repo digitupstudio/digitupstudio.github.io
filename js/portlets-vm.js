@@ -600,7 +600,41 @@ document.addEventListener("DOMContentLoaded", function () {
 
     initializeSelectedOption();
   });
+
 });
+
+$(document).ready(function () {
+  $('#explore-link').on('click', function (event) {
+    event.preventDefault();
+
+    var baseUrl = MMC.init.result;
+
+    // Recoger los valores de los selects
+    var zones = $('#zones').val();
+    var embarks = $('#embarks').val();
+    var duration = $('#durations').val();
+
+    // Recoger los valores de los li seleccionados
+    var selectedDates = $('#departures .prtltmmc-selected').map(function () {
+      return $(this).attr('id'); // Obtener el valor del atributo id
+    }).get().join(',');
+
+    // Construir los query parameters
+    var queryParams = [];
+    if (zones && zones !== '') queryParams.push('zones=' + encodeURIComponent(zones));
+    if (embarks && embarks !== '') queryParams.push('embarks=' + encodeURIComponent(embarks));
+    if (duration && duration !== '') queryParams.push('duration=' + encodeURIComponent(duration));
+    if (selectedDates) queryParams.push('departure=' + encodeURIComponent(selectedDates));
+
+    // Crear la URL con los query parameters
+    var url = baseUrl + '?' + queryParams.join('&');
+
+    // Navegar a la URL
+    window.location.href = url;
+  });
+});
+
+
 
 
 
