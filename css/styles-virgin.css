@@ -591,6 +591,10 @@ body.prtltmmc {
   margin: 0;
 }
 
+.prtltmmc-popup {
+  z-index: 9999;
+}
+
 
 .virgin_explore.prtltmmc-search-02 .prtltmmc-search-block-B.show {
   display: flex;
@@ -1434,6 +1438,11 @@ body.prtltmmc {
   z-index: 1;
 }
 
+.edit_mode .swiper_items .slider-controls {
+  top: 16px;
+  transform: translateX(-50%);
+}
+
 @media(min-width: 1400px) {
   .swiper_items .swiper_item .swiper_item_content_box .swiper_item_content {
     max-width: 65%;
@@ -1869,4 +1878,16 @@ body.prtltmmc {
 .prtltmmc-results-list .prtltmmc-item .prtltmmc-item-header .prtltmmc-title>a,
 .prtltmmc-results-list .prtltmmc-item .prtltmmc-item-header .prtltmmc-title>a:hover {
   color: #c00 !important;
+}
+
+.prtltmmc-corporative-header {
+  background: #fff no-repeat 15px center url(../prtltmmc-images/logo-reduced-mmc.svg);
+  color: #c00;
+  padding: 16px 24px;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+.prtltmmc-box.prtltmmc-box-light {
+  background: #ccf2eb;
 }

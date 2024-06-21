@@ -485,7 +485,7 @@ document.addEventListener("DOMContentLoaded", function () {
       dateComponent.classList.toggle("show");
 
       // Detener la propagación del evento para evitar el cierre inmediato
-      event.stopPropagation();
+      // event.stopPropagation();
 
       // Añadir el evento de clic al documento para ocultar el dateComponent cuando se hace clic fuera
       document.addEventListener("click", function (event) {
