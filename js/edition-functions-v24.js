@@ -293,12 +293,42 @@ var prtltmmcCkEditor = {
 		$('body').on('click', '.prtltmmc-change-desktop-image', function (e) {
 			e.preventDefault();
 			openImageChangeBox($(this), '.main_image.is_desktop');
+			removeVideo($(this));
+		});
+
+		$('body').on('click', '.prtltmmc-change-mobile-image', function (e) {
+			e.preventDefault();
+			openImageChangeBox($(this), '.main_image.is_mobile');
+			removeVideo($(this));
 		});
 
 		$('body').on('click', '.prtlt-change-video', function (e) {
 			e.preventDefault();
 			openImageChangeBox($(this), '.prtlt-video-content', true);
+			removeImageSetVideo($(this));
 		});
+
+		function removeImageSetVideo(clickedElement) {
+			const videoBox = clickedElement.closest('.edit-option-video')?.find('.video_side');
+			videoBox?.removeClass('hidden');
+			const imageBox = clickedElement.closest('.edit-option-video')?.find('.image_video_box');
+			if (!imageBox) {
+				return;
+			}
+			const imageElem = imageBox?.find('img');
+			if (imageElem.length) {
+				imageElem.attr('src', '');
+			}
+		}
+
+		function removeVideo(clickedElement) {
+			const videoBox = clickedElement.closest('.edit-option-video')?.find('.video_side');
+			videoBox?.addClass('hidden');
+			const videoElem = videoBox?.find('.prtlt-video-content');
+			if (videoElem.length) {
+				videoElem.attr('src', '');
+			}
+		}
 
 		function changePosition(e, addClass) {
 			e.preventDefault();
@@ -327,6 +357,9 @@ var prtltmmcCkEditor = {
 		/////////////////////////////////////////////////////
 		$('body').on('click', '.prtlt-change-addSlide', function (e) {
 			e.preventDefault();
+			if (!swiper.initialized) {
+				swiper.init();
+			}
 			var $container = $(this).closest('.prtltmmc-image-content');
 			var $lastElement = $container.find('.swiper_item').last();
 			var $newElement = $lastElement.clone();
@@ -337,6 +370,9 @@ var prtltmmcCkEditor = {
 
 		$('body').on('click', '.prtlt-change-deleteSlide', function (e) {
 			e.preventDefault();
+			if (!swiper.initialized) {
+				swiper.init();
+			}
 			var activeIndex = swiper.activeIndex;
 			var $slides = $(swiper.slides);
 			if ($slides.length > 1) {
@@ -355,40 +391,28 @@ var prtltmmcCkEditor = {
 
 		function moveSlide(swiper, fromIndex, toIndex) {
 			if (fromIndex === toIndex || fromIndex < 0 || toIndex < 0 || fromIndex >= swiper.slides.length || toIndex >= swiper.slides.length) {
-				return; // No hacer nada si los índices son iguales o están fuera de los límites
+				return;
 			}
-
-			// Obtener el contenedor de las diapositivas
 			const wrapper = swiper.wrapperEl;
-
-			// Obtener todas las diapositivas
 			const slides = Array.from(wrapper.children);
-
-			// Seleccionar la diapositiva que queremos mover
 			const slideToMove = slides[fromIndex];
-
-			// Ajustar el índice de destino si la diapositiva se mueve hacia adelante (a la derecha)
 			if (fromIndex < toIndex) {
 				toIndex += 1;
 			}
-
-			// Mover la diapositiva a la nueva posición
-			console.log('toIndex', toIndex);
 			if (toIndex >= slides.length) {
 				wrapper.appendChild(slideToMove);
 			} else {
 				wrapper.insertBefore(slideToMove, slides[toIndex]);
 			}
-
-			// Actualizar Swiper para reconocer el nuevo orden
 			swiper.update();
-
-			// Deslizar a la nueva posición
 			swiper.slideTo(toIndex > fromIndex ? toIndex - 1 : toIndex);
 		}
 
 		$('body').on('click', '.prtlt-change-moveSlideLeft', function (e) {
 			e.preventDefault();
+			if (!swiper.initialized) {
+				swiper.init();
+			}
 			var activeIndex = swiper.activeIndex;
 			var $slides = $(swiper.slides);
 			if ($slides.length > 1) {
@@ -399,12 +423,15 @@ var prtltmmcCkEditor = {
 				}
 
 			} else {
-				alert('No se puede eliminar la única diapositiva.');
+				alert('No se puede mover la única diapositiva.');
 			}
 		});
 
 		$('body').on('click', '.prtlt-change-moveSlideRight', function (e) {
 			e.preventDefault();
+			if (!swiper.initialized) {
+				swiper.init();
+			}
 			var activeIndex = swiper.activeIndex;
 			var $slides = $(swiper.slides);
 
@@ -421,9 +448,11 @@ var prtltmmcCkEditor = {
 			}
 		});
 
-		$('body').on('click', '.prtltmmc-change-mobile-image', function (e) {
+		$('body').on('click', '.prtlt-change-toggleButton', function (e) {
 			e.preventDefault();
-			openImageChangeBox($(this), '.main_image.is_mobile');
+			var $container = $(e.target).closest('.prtltmmc-image-content');
+			var $element = $container.find('.button_side');
+			$element.toggleClass('hidden');
 		});
 
 		$('body').on('click', '.prtltmmc-change-class-promo', function (e) {
@@ -576,6 +605,9 @@ var prtltmmcCkEditor = {
 			}
 			if ($this.hasClass('edit-option-moveSlideRight')) {
 				toolBarMenu += '<li><a href="#" class="prtlt-change-moveSlideRight">Move right</a></li>';
+			}
+			if ($this.hasClass('edit-option-toggleButton')) {
+				toolBarMenu += '<li><a href="#" class="prtlt-change-toggleButton">Toggle button</a></li>';
 			}
 			if ($this.hasClass('edit-option-position')) {
 				toolBarMenu += '<li><a href="#" class="prtlt-change-topPosition">Top position</a></li>';
