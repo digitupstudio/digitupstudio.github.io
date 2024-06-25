@@ -10,41 +10,6 @@
               alt="VV logo">
           </a>
         </div>
-        <div class="footer_language">
-          <div class="footer_language_line">
-            <div class="footer_language_line_left">
-              <label class="languageSelector__label" for="footerLanguageSelect">
-                $message.language:
-              </label>
-            </div>
-            #if ($languages.size() > 0)
-            <div class="footer_language_line_right">
-              <div class="dropdown_virgin">
-                <button class="dropbtn">
-                  #if ($languages.size() > 0)
-                  #foreach( $language in $languages )
-                  #if ($language.selected)
-                  $language.text
-                  #end
-                  #end
-                  #end
-                </button>
-                <div class="dropdown-content">
-                  #foreach( $language in $languages )
-                  <a href="$language.link">$language.text</a>
-                  #end
-                </div>
-              </div>
-              <span class="Icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="#fe1b0a" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M11.74121,15.20947a.52488.52488,0,0,1-.47749-.312L8.24121,8.15l.954-.44055,2.546,5.68176,2.5455-5.68176.9545.44055-3.023,6.7474A.52217.52217,0,0,1,11.74121,15.20947Z" />
-                </svg>
-              </span>
-            </div>
-            #end
-          </div>
-        </div>
       </div>
       <div class="prtltmmc-discell">
         #foreach( $item in $menu )
@@ -86,27 +51,19 @@
       </div>
       <div class="prtltmmc-discell">
         <h2 class="prtltmmc-title-web-map">Siguenos en</h2>
-        <a target="_blank" title="Follow Princess on Facebook" class="prtltmmc-social-icon prtltmmc-fb"
-          href="https://www.facebook.com/MundomarCrucero/">Facebook </a> <a target="_blank"
+        <!-- <a target="_blank" title="Follow Princess on Facebook" class="prtltmmc-social-icon prtltmmc-fb"
+          href="https://www.facebook.com/MundomarCrucero/">Facebook </a>
+        <a target="_blank"
           title="Follow Princess on Twitter" class="prtltmmc-social-icon prtltmmc-tw"
-          href="https://twitter.com/mundomarcrucero">Twitter;</a> <a target="_blank"
-          title="Follow Princess on Instagram" class="prtltmmc-social-icon prtltmmc-ig"
+          href="https://twitter.com/mundomarcrucero">Twitter;</a> -->
+        <a target="_blank" title="Follow Princess on Instagram" class="prtltmmc-social-icon prtltmmc-ig"
           href="https://www.instagram.com/mundomarcruceros/">Instagram</a>
         <h2 class="prtltmmc-title-web-map">Notas de prensa</h2>
         <ul class="prtltmmc-list-press-releases">
-          <li><a class="prtltmmc-open-popup" href="/portal/popup/NP-Cunard-nombra-Liverpool-madrina-del-Queen-Anne.html"
-              rel="/portal/popup/NP-Cunard-nombra-Liverpool-madrina-del-Queen-Anne.html">Cunard ha nombrado a
-              Liverpool como madrina del Queen Anne con cinco icónicas celebridades de la ciudad (10/06/2024)</a>
+          #foreach( $item in $press )
+          <li><a class="prtltmmc-open-popup" href="$item.link" rel="$item.link">$item.title</a>
           </li>
-          <li><a class="prtltmmc-open-popup" href="/portal/popup/NP-Princess-Presenta-Love-Line-Premium-Liquors.html"
-              rel="/portal/popup/NP-Princess-Presenta-Love-Line-Premium-Liquors.html">Princess Cruises se asocia
-              con Pitbull, Jason Aldean y Romero Britto para presentar la exclusiva colección “Love Line Premium
-              Liquors” (05/06/2024)</a>
-          </li>
-          <li><a class="prtltmmc-open-popup" href="/portal/popup/NP-Andrea-Bocelli-Ceremonia-Queen-Anne.html"
-              rel="/portal/popup/NP-Andrea-Bocelli-Ceremonia-Queen-Anne.html">El legendario tenor andrea bocelli,
-              protagonista de la ceremonia de nombramiento del queen anne de cunard en liverpool (30/05/2024)</a>
-          </li>
+          #end
         </ul>
         <a href="/portal/press.html">Ver más notas de prensa</a>
         <h2 class="prtltmmc-title-web-map">Soporte técnico</h2>

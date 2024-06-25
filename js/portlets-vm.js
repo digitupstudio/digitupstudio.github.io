@@ -621,8 +621,8 @@ $(document).ready(function () {
 
     // Construir los query parameters
     var queryParams = [];
-    if (zones && zones !== '') queryParams.push('zones=' + encodeURIComponent(zones));
-    if (embarks && embarks !== '') queryParams.push('embarks=' + encodeURIComponent(embarks));
+    if (zones && zones !== '') queryParams.push('zone=' + encodeURIComponent(zones));
+    if (embarks && embarks !== '') queryParams.push('embark=' + encodeURIComponent(embarks));
     if (duration && duration !== '') queryParams.push('duration=' + encodeURIComponent(duration));
     if (selectedDates) queryParams.push('departure=' + encodeURIComponent(selectedDates));
 

@@ -317,7 +317,7 @@ var prtltmmcCkEditor = {
 			}
 			const imageElem = imageBox?.find('img');
 			if (imageElem.length) {
-				imageElem.attr('src', '');
+				imageElem.attr('src', '').addClass('hidden');;
 			}
 		}
 
@@ -327,6 +327,14 @@ var prtltmmcCkEditor = {
 			const videoElem = videoBox?.find('.prtlt-video-content');
 			if (videoElem.length) {
 				videoElem.attr('src', '');
+			}
+			const imageBox = clickedElement.closest('.edit-option-video')?.find('.image_video_box');
+			if (!imageBox) {
+				return;
+			}
+			const imageElem = imageBox?.find('img');
+			if (imageElem.length) {
+				imageElem.removeClass('hidden');;
 			}
 		}
 
