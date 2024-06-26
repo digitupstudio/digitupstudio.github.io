@@ -147,6 +147,11 @@ ul.prtltmmc-nav-navbar li:hover a.with_arrow::after {
 }
 
 .prtltmmc-global-content {
+  /* max-width: 96.25rem; */
+  padding: 0 24px;
+}
+
+.prtltmmc-global-content.virgin_header_bar {
   max-width: 96.25rem;
   padding: 0 24px;
 }
@@ -1665,7 +1670,7 @@ body.prtltmmc {
 }
 
 .prtltmmc-search-02 .prtltmmc-header-seacrh {
-  background-color: #ccf2eb;
+  background-color: #f2f2f2;
   color: #000;
 }
 
@@ -1712,7 +1717,7 @@ body.prtltmmc {
 }
 
 .prtltmmc-note-seacrh {
-  background: #d9f4f999;
+  background: #e9e9e9;
   color: #686d72;
   font-size: 12px;
 }
@@ -1815,7 +1820,7 @@ body.prtltmmc {
 }
 
 .prtltmmc-results-list-02 .prtltmmc-item .prtltmmc-dates-price-cruise {
-  background: #e9f8fb;
+  background: #f2f2f2;
 }
 
 .prtltmmc-global-wrap a.prtltmmc-link-button,
@@ -1890,4 +1895,94 @@ body.prtltmmc {
 
 .prtltmmc-box.prtltmmc-box-light {
   background: #ccf2eb;
+}
+
+.prtltmmc-results-list-02 .prtltmmc-popup-loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.prtltmmc-popup-loading .prtltmmc-content-popup {
+  margin: 0 !important;
+}
+
+.prtltmmc-popup-loading .prtltmmc-content-popup .prtltmmc-popup-image-loading {
+  background-color: transparent;
+  height: 100%;
+}
+
+.prtltmmc-popup-image-loading .prtltmmc-popup-loader {
+  display: none;
+}
+
+.prtltmmc-popup-loading .prtltmmc-content-popup .prtltmmc-popup-image-loading:after {
+  display: none;
+}
+
+.prtltmmc-popup-loading .prtltmmc-content-popup .prtltmmc-popup-image-loading:before {
+  opacity: 1;
+  filter: unset;
+  background: center url("https://prod.cdn-vv.com/book/_next/static/media/spinner.79c365e8.gif");
+  background-repeat: no-repeat;
+}
+
+.prtltmmc-popup-loading .prtltmmc-content-popup .prtltmmc-title-loading {
+  display: none;
+}
+
+.prtltmmc-popup .prtltmmc-content-popup p {
+  display: none;
+}
+
+.prtltmmc-popup .prtltmmc-content-popup {
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+.prtltmmc-popup>*>*>* {
+  width: 100%;
+  height: 100%;
+}
+
+.prtltmmc-popup-loading .prtltmmc-content-popup {
+  max-width: 100%;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.prtltmmc-separator-nav .prtltmmc-nav a {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  color: #212529;
+  font-weight: 600;
+  padding: .6em 22px;
+}
+
+.prtltmmc-separator-nav .prtltmmc-nav a.prtltmmc-on {
+  color: #c00;
+  border-bottom: solid 3px #c00;
+}
+
+.prtltmmc-separator-nav .prtltmmc-nav a:hover {
+  background: white;
+  color: #c20000;
+}
+
+.prtltmmc-global-wrap.prtltmmc-separator-nav.prtltmmc-content-portlet {
+  background: white;
+  position: relative;
+}
+
+.prtltmmc-global-wrap.prtltmmc-separator-nav.prtltmmc-content-portlet::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, .1) 0%, rgba(0, 0, 0, 0) 100%);
+  z-index: 11;
 }

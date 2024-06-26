@@ -607,7 +607,7 @@ $(document).ready(function () {
   $('#explore-link').on('click', function (event) {
     event.preventDefault();
 
-    var baseUrl = MMC.init.result;
+    var baseUrl = $(this).attr('href') || MMC.init.result;
 
     // Recoger los valores de los selects
     var zones = $('#zones').val();

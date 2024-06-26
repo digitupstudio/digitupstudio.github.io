@@ -57,7 +57,7 @@
           title="Follow Princess on Twitter" class="prtltmmc-social-icon prtltmmc-tw"
           href="https://twitter.com/mundomarcrucero">Twitter;</a> -->
         <a target="_blank" title="Follow Princess on Instagram" class="prtltmmc-social-icon prtltmmc-ig"
-          href="https://www.instagram.com/mundomarcruceros/">Instagram</a>
+          href="https://www.instagram.com/virginvoyagesespt/">Instagram</a>
         <h2 class="prtltmmc-title-web-map">Notas de prensa</h2>
         <ul class="prtltmmc-list-press-releases">
           #foreach( $item in $press )
@@ -66,8 +66,8 @@
           #end
         </ul>
         <a href="/portal/press.html">Ver más notas de prensa</a>
-        <h2 class="prtltmmc-title-web-map">Soporte técnico</h2>
-        <a href="/portal/Soporte-tecnico.html">Autorización del soporte remoto</a>
+        <!-- <h2 class="prtltmmc-title-web-map">Soporte técnico</h2>
+        <a href="/portal/Soporte-tecnico.html">Autorización del soporte remoto</a> -->
       </div>
     </div>
   </div>
